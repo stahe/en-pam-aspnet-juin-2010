@@ -1,0 +1,1452 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-pam-aspnet-juin-2010/the-simupaie-application---version-1---aspnet.html">
+      
+      
+        <link rel="prev" href="the-case-study.html">
+      
+      
+        <link rel="next" href="the-simupaie-application---version-2---ajax--aspnet-.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4. The [SimuPaie] application – version 1 – ASP.NET - Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-the-simupaie-application-version-1-aspnet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" class="md-header__button md-logo" aria-label="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. The [SimuPaie] application – version 1 – ASP.NET
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" class="md-nav__button md-logo" aria-label="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-quick-introduction-to-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. A Quick Introduction to ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-case-study.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. The [SimuPaie] application – version 1 – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="the-simupaie-application---version-1---aspnet.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. The [SimuPaie] application – version 1 – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-the-defaultaspx-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1. The [ Default.aspx] form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2. Input validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-application-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3. Application Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4. Application Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#425-application-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.5. Application Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-events-of-the-defaultaspx-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Events of the [Default.aspx] form
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Events of the [Default.aspx] form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-the-p-age_load-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1. The [P age_Load] procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-salary-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2. Salary calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The [SimuPaie] application – version 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Introduction to the NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-3---3-tier-architecture-with-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. The [SimuPaie] application – version 3 – 3-tier architecture with NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-4---aspnet--multi-view--single-page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. The [SimuPaie] application – version 4 – ASP.NET / multi-view / single-page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-5---aspnet--web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The [SimuPaie] application – version 5 – ASP.NET / web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-6---an-aspnet-client-of-a-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. The [SimuPaie] application – version 6 – an ASP.NET client of a web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-8---an-aspnet-client-of-a-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. The [SimuPaie] application – version 8 – an ASP.NET client of a web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-9---springnhibernate-integration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The [SimuPaie] application – version 9 – Spring/NHibernate integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-10---a-flex-client-for-an-aspnet-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. The [SimuPaie] application – version 10 – a Flex client for an ASP.NET web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="pam-v1"></a></p>
+<h1 id="4-the-simupaie-application-version-1-aspnet">4. <span style="color: #365f91"><strong>The [SimuPaie] application –</strong> <strong>version 1 – ASP.NET</strong></span></h1>
+<h2 id="41-introduction">4.1. <span style="color: #4f81bd"><strong>Introduction</strong></span></h2>
+<p>We want to write a .NET application that allows a user to simulate payroll calculations for child care providers at the &quot;Maison de la petite enfance&quot; association in a municipality.</p>
+<p>The ASP.NET salary calculation form<a id="formulaire-version1"></a> will look like this:</p>
+<p><img src="images/100000000000020F000002CD27C5E04B.png" style="width:8.37cm;height:11.388cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020F000002CD27C5E04B.png" /></p>
+<p>The ASP.NET application will have the following architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CE00000177F771384D.png" style="display:inline-block; margin:4px;width:12.885cm;height:4.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CE00000177F771384D.png" /></td></tr></table>
+
+<ul>
+  <li>When the first request is made to the application, an object of type [Global] derived from the [System.Web.HttpApplication] type is instantiated. This object will process the web application’s [web.config] configuration file and cache certain data from the database (operation 0 above). 
+  </li>
+  <li>When the first request (operation 1) is made to the [Default.aspx] page, which is the application’s only page, the [Load] event is handled. This is where the employee combo box is populated. The data required for the combo box is retrieved from the [Global] object, which has cached it. This is operation 2 above. Operation 4 sends the initialized page to the user.
+  </li>
+  <li>When the request to calculate the salary (operation 1) is made to the [Default.aspx] page, the [Load] event is processed again. Nothing is done because this is a POST request, and the [Pam_Load] handler was written to do nothing in this case (using the <i>IsPostBack</i> boolean). Once the [Load] event is handled, the [Click] event on the [Salary] button is handled next. This event requires data that has not been cached in [Global]. Therefore, the event handler retrieves it from the database. This is operation 3 above. The salary is then calculated, and operation 4 sends the results to the user.
+## 4.2. <span style="color: #4f81bd">**The Visual Web Developer 2008**</span>
+
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FD0000015BC94819DA.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FD0000015BC94819DA.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], create a new project
+  </li>
+  <li>in [2], of type [Web / ASP.NET Web Application]
+  </li>
+  <li>In [3], name the project
+  </li>
+  <li>in [4], specify its name and in [5] its location. A folder [c:\temp\pam-aspnet\pam-v1-adonet] will be created for the project.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044A000001734FDEDD4D.png" style="display:inline-block; margin:4px;width:14.526cm;height:4.907cm;" class="odt-zoomable" data-zoom-src="images/100000000000044A000001734FDEDD4D.png" /></td></tr></table>
+
+<ul>
+  <li>In [5], the Visual Web Developer project
+  </li>
+  <li>In [6], the project properties (right-click on the project / Properties / Application). 
+  </li>
+  <li>in [7], the name of the assembly that will be generated when the project is built
+  </li>
+  <li>in [8], the default namespace we want to use for the project&#x27;s classes. The [_Default] class defined in the [Default.aspx.cs] and [Default.aspx.designer.cs] files was created in the [pam_v1_adonet] namespace, derived from the project name. You can change this namespace directly in the code of these two files:
+  </li>
+</ul>
+
+<p>[Default.aspx.cs]</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span><span style="font-weight:bold;color:#ff0000">pam_v1</span></span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public partial class </span><span style="color:#2b91af">_Default </span>: System.Web.UI.<span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+</code></pre></div>
+
+<p>[Default.aspx.designer.cs]</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">//------------------------------------------------------------------------------</span>
+<span class="odt-code-line">// &lt;auto-generated&gt;</span>
+<span class="odt-code-line">//     This code was generated by a tool.</span>
+<span class="odt-code-line">//     Runtime version: 2.0.50727.3603</span>
+<span class="odt-code-line">//</span>
+<span class="odt-code-line">//     Changes made to this file may cause incorrect behavior and will be lost if</span>
+<span class="odt-code-line">//     the code is regenerated.</span>
+<span class="odt-code-line">// &lt;/auto-generated&gt;</span>
+<span class="odt-code-line">//------------------------------------------------------------------------------</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span><span style="font-weight:bold;color:#ff0000">pam_v1 </span>{</span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">    <span style="color:#0000ff">public partial class </span><span style="color:#2b91af">_Default </span>{</span>
+<span class="odt-code-line">        </span>
+<span class="odt-code-line">.........</span>
+</code></pre></div>
+
+<p>The markup for the [Default.aspx] file must also be modified:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB000000A0CB7852B2.png" style="display:inline-block; margin:4px;width:4.35cm;height:2.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000A0CB7852B2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;Default.aspx.cs&quot; Inherits=&quot;</span><span style="font-weight:bold;color:#ff0000">pam_v1</span><span style="color:#0000ff">._Default&quot; </span>%&gt;</span>
+<span class="odt-code-line">...</span>
+</code></pre></div>
+
+<p>The <em>Inherits</em> attribute above refers to the class defined in the [Default.aspx.cs] and [Default.aspx.designer.cs] files. The <em>pam_v1</em> namespace is used there.</p>
+<p><a id="formulaire-v1"></a>
+<a id="pam-v3-default-aspx11"></a></p>
+<h3 id="421-the-defaultaspx-form">4.2.1. <span style="color: #4f81bd"><strong>The [</strong> <strong>Default.aspx] form</strong></span></h3>
+<p>The visual appearance of the [<a id="pam-v3-default-aspx1"></a> Default.aspx] form is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036F0000041B98506F69.png" style="display:inline-block; margin:4px;width:11.629cm;height:13.905cm;" class="odt-zoomable" data-zoom-src="images/100000000000036F0000041B98506F69.png" /></td></tr></table>
+
+<p>The components are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>No.</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">DropDownList</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">EmployeeComboBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Contains the list of employee names</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">TextBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">TextBoxHours</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Number of hours worked – actual number</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>3
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">TextBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">TextBoxDays</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Number of days worked – integer</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>4
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Button</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ButtonSalary</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Calculate salary</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>5
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">TextBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Error TextBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Information message for the user</div><div style="margin:0 0 0.5em 0"><i>ReadOnly=true</i>, <i>TextMode=MultiLine</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>6
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelName</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Name of the employee selected in (1)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>7
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelFirstName</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">First name of the employee selected in (1)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>8
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelAddress</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Address</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>9
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelCity</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">City</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>10
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Postal Code</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Zip code</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>11
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelIndex</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Index</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>12
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelCSGRDS</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">CSGRDS Contribution Rate</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>13
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">CSGD Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">CSGD contribution rate</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>14
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Retirement Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Retirement Contribution Rate</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>15
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelSS</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Social Security Contribution Rate</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>16
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelSH</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Base hourly wage for the index indicated in (11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>17
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelEJ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Daily living allowance for the index indicated in (11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>18
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelRJ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Daily meal allowance for the index indicated in (11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>19
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelVacation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Paid leave allowance rate to be applied to the base salary</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>20
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelSB</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Base salary amount</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>21
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelCS</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Amount of social security contributions to be paid</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>22
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelIE</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Amount of child care allowance</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>23
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelIR</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Amount of meal allowances for the child in care</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>24
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LabelSN</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Net salary to be paid to the employee</div></td></tr></table>
+
+<p>The form also contains two [Panel] containers:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>PanelErrors
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">contains the (5) <i>TextBoxError</i> component</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>PanelSalary
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">contains components (6) through (24)</div></td></tr></table>
+
+<p>A [Panel] component can be made visible or hidden programmatically using its Boolean property <em>[Panel].Visible</em>.</p>
+<h3 id="422-input-validation">4.2.2. <span style="color: #4f81bd"><strong>Input validation</strong></span></h3>
+<p>To calculate a salary, the user:</p>
+<ul>
+  <li>selects an employee in [1]
+  </li>
+  <li>enters the number of hours worked in [2]. This number can be a decimal, such as 2.5 for 2 hours and 30 minutes.
+  </li>
+  <li>enters the number of days worked in [3]. This number is an integer.
+  </li>
+  <li>calculate the salary using the [4] button
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035D000001191D426465.png" style="display:inline-block; margin:4px;width:11.391cm;height:3.718cm;" class="odt-zoomable" data-zoom-src="images/100000000000035D000001191D426465.png" /></td></tr></table>
+
+<p>When the user enters incorrect data in [2] and [3], it is validated as soon as the user switches input fields. Thus, the screenshot below was taken before the user even clicked the [Salary] button:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A100000117863BBD44.png" style="display:inline-block; margin:4px;width:12.291cm;height:3.692cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A100000117863BBD44.png" /></td></tr></table>
+
+<p>Two conditions are required for the behavior described above:</p>
+<ul>
+  <li>the validation components must have their <i>EnableClientScript</i> property set to true:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D20000007F5CA4D367.png" style="display:inline-block; margin:4px;width:3.889cm;height:2.351cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D20000007F5CA4D367.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>The browser displaying the page must be able to execute the JavaScript code embedded in an HTML page. 
+  </li>
+</ul>
+
+<p>If the client browser does not verify the validity of the data itself, the data will only be verified when the browser posts the form entries to the server. It is then the code on the server that processes the browser’s request that will verify the validity of the data. Note that this validation must always be performed, even if the page displayed in the client browser contains JavaScript code that performs the same validation. This is because the server cannot be certain that the POST request it receives actually comes from that page and that the data has therefore been validated.</p>
+<p>The list of validators is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>No.</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>25
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RequiredFieldValidator</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RequiredFieldValidatorHours</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">checks that the [2] [TextBoxHeures] field is not empty</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>26
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RangeValidator</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RangeValidatorHours</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">checks that the field [2] [TextBoxHours] is a real number in the range [0, 200]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>27
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RequiredFieldValidator</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RequiredFieldValidatorDays</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">checks that field [3] [TextBoxDays] is not empty</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>28
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RangeValidator</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">RangeValidatorDays</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">checks that the [3] [TextBoxDays] field is an integer in the range [0,31]</div></td></tr></table>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Task</strong>: Build the [Default.aspx] page. First, place the two containers [PanelErrors] and [PanelSalary] so that you can then place the components they are supposed to contain.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="423-application-entities">4.2.3. <span style="color: #4f81bd"><strong>Application Entities</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017D000001A5B73A4907.png" style="display:inline-block; margin:4px;width:5.041cm;height:5.57cm;" class="odt-zoomable" data-zoom-src="images/100000000000017D000001A5B73A4907.png" /></td></tr></table>
+
+<p>Once read, the rows from the [contributions], [employees], and [allowances] tables will be stored in objects of type [Contributions], [Employee], and [Allowances] defined as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Pam.Entities</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Contributions</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#008000">// automatic properties</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>CsgRds { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>Csgd { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>SocialSecurity { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>Retirement { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// constructors</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>Contributions()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>Contributions(<span style="color:#0000ff">double </span>employerContrib, <span style="color:#0000ff">double </span>employeeContrib, <span style="color:#0000ff">double </span>socialSecurity, <span style="color:#0000ff">double </span>pension)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      CsgRds = csgRds;</span>
+<span class="odt-code-line">      Csgd = csgd;</span>
+<span class="odt-code-line">      Secu = secu;</span>
+<span class="odt-code-line">      Retirement = retirement;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// ToString</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public override string </span>ToString()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return string</span>.Format(<span style="color:#a31515">&quot;[{0},{1},{2},{3}]&quot;</span>, CsgRds, Csgd, Secu, Retraite);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Pam.Entities</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Employee</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#008000">// automatic properties</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>SS { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>LastName { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>LastName { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Address { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">private string </span>City { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">private string </span>ZipCode { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">private int </span>Index { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// constructors</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>Employee()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>Employee(<span style="color:#0000ff">string </span>lastName, <span style="color:#0000ff">string </span>firstName, <span style="color:#0000ff">string </span>address, <span style="color:#0000ff">string </span>zipCode, <span style="color:#0000ff">string </span>city, <span style="color:#0000ff">int </span>index)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      SS = ss;</span>
+<span class="odt-code-line">      LastName = lastName;</span>
+<span class="odt-code-line">      FirstName = firstName;</span>
+<span class="odt-code-line">      Address = address;</span>
+<span class="odt-code-line">      ZipCode = zipCode;</span>
+<span class="odt-code-line">      City = city;</span>
+<span class="odt-code-line">      Index = index;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// ToString</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public override string </span>ToString()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return string</span>.Format(<span style="color:#a31515">&quot;[{0},{1},{2},{3},{4},{5},{6}]&quot;</span>, SS, LastName, FirstName, Address, City, ZipCode, Index);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Pam.Entities</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Compensation</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// automatic properties</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public int </span>Index { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>BaseHour { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>DailyMaintenance { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>DailyMeal { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>CPAllowances { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// constructors</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>Allowances()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>Indemnities(<span style="color:#0000ff">int </span>index, <span style="color:#0000ff">double </span>baseHour, <span style="color:#0000ff">double </span>dailyMaintenance, <span style="color:#0000ff">double </span>dailyMeal, <span style="color:#0000ff">double </span>CPIndemnities)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      Index = index;</span>
+<span class="odt-code-line">      BaseHour = baseHour;</span>
+<span class="odt-code-line">      DailyMaintenance = dailyMaintenance;</span>
+<span class="odt-code-line">      DailyMeal = dailyMeal;</span>
+<span class="odt-code-line">      CPAllowances = CPAllowances;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// identity</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public override string </span>ToString()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return string</span>.Format(<span style="color:#a31515">&quot;[{0}, {1}, {2}, {3}, {4}]&quot;</span>, Index, BaseHour, DailyMaintenance, DailyMeal, CPAllowances);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<h3 id="424-application-configuration">4.2.4. <span style="color: #4f81bd"><strong>Application Configuration</strong></span></h3>
+<p>The [Web.config] file that configures the application will be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">/configSections</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">dbpamSqlServer2005</span>&quot; <span style="color:#0000ff">connectionString=</span>&quot;<span style="color:#0000ff">Data Source=.\SQLEXPRESS;AttachDbFilename=C:\data\...\dbpam.mdf;User Id=sa;Password=msde;Connect Timeout=30;</span>&quot; <span style="color:#0000ff">providerName=</span>&quot;<span style="color:#0000ff">System.Data.SqlClient</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">/connectionStrings</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">appSettings</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add </span><span style="color:#0000ff">key=</span>&quot;<span style="color:#0000ff">selectEmployee</span>&quot; <span style="color:#0000ff">value=</span>&quot;<span style="color:#0000ff">select LAST_NAME, FIRST_NAME, ADDRESS, CITY, ZIP_CODE, ID from EMPLOYEES where SS=@SS</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add </span><span style="color:#0000ff">key=</span>&quot;<span style="color:#0000ff">selectEmployees</span>&quot; <span style="color:#0000ff">value=</span>&quot;<span style="color:#0000ff">select FIRST_NAME, LAST_NAME, SS from EMPLOYEES</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add </span><span style="color:#0000ff">key=</span>&quot;<span style="color:#0000ff">selectContributions</span>&quot; <span style="color:#0000ff">value=</span>&quot;<span style="color:#0000ff">select CSGRDS,CSGD,SECU,PENSION from CONTRIBUTIONS</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add </span><span style="color:#0000ff">key=</span>&quot;<span style="color:#0000ff">SelectIndemnities</span>&quot; <span style="color:#0000ff">value=</span>&quot;<span style="color:#0000ff">select INDEX,HOURLYRATE,DAILYMAINTENANCE,DAILYMEAL,CPALLOWANCES from ALLOWANCES</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">/appSettings</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.web</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;!-- </span></span>
+<span class="odt-code-line">            Set `compilation debug=&quot;true&quot;` to insert debug symbols </span>
+<span class="odt-code-line">            in the compiled page. Since this </span>
+<span class="odt-code-line">            affects performance, set this value to true only </span>
+<span class="odt-code-line">            during development.</span>
+<span class="odt-code-line"><span style="color:#008000">        </span><span style="color:#0000ff">--&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">compilation </span><span style="color:#0000ff">debug=</span>&quot;<span style="color:#0000ff">false</span>&quot;<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/configuration</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 9: defines the connection string to the SQL Server database
+  </li>
+  <li>lines 13–16: define SQL queries used by the application to avoid hard-coding them in the code.
+  </li>
+  <li>line 13: the SQL query is parameterized. The parameter notation is specific to SQL Server.
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Task</strong>: Enter these parameters into the [Web.config] file. Line 9 will be adapted to the actual path of the database [dbpam.mdf].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="425-application-initialization">4.2.5. <span style="color: #4f81bd"><strong>Application Initialization</strong></span></h3>
+<p>An ASP.NET application is initialized by the [Global.asax.cs] file. It is structured as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005860000025018FECFE7.png" style="display:inline-block; margin:4px;width:17.997cm;height:7.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000005860000025018FECFE7.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], add a new item to the project
+  </li>
+  <li>In [2], add the global application class, which is named [Global.asax] by default [3]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BC0000019AB982E5E9.png" style="display:inline-block; margin:4px;width:12.647cm;height:5.424cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BC0000019AB982E5E9.png" /></td></tr></table>
+
+<ul>
+  <li>in [4], the [Global.asax] file and the associated class [Global.asax.cs]
+  </li>
+  <li>In [5], display the markup for [Global.asax]
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Application </span><span style="color:#0000ff">Codebehind=&quot;Global.asax.cs&quot; Inherits=&quot;pam_v1.Global&quot; Language=&quot;C#&quot; </span>%&gt;</span>
+</code></pre></div>
+
+<p>The [pam_v1.Global] class is defined in the [Global.asax.cs] file. For our purposes, it will be defined as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Configuration;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Data.SqlClient;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Entities;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v1</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#008000">// --- application static data ---</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">Employee</span>[] Employees;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">Contributions </span>Contributions;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">Dictionary</span>&lt;<span style="color:#0000ff">int</span>, <span style="color:#2b91af">Benefits</span>&gt; Benefits = <span style="color:#0000ff">new </span><span style="color:#2b91af">Dictionary</span>&lt;<span style="color:#0000ff">int</span>, <span style="color:#2b91af">Benefits</span>&gt;();</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static string </span>Msg = <span style="color:#0000ff">string</span>.Empty;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static bool </span>Error = <span style="color:#0000ff">false</span>;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static string </span>ConnectionString = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// Start the application</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">      <span style="color:#0000ff">try</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// connection</span></span>
+<span class="odt-code-line">        ConnectionString = ...</span>
+<span class="odt-code-line">        <span style="color:#0000ff">using </span>(<span style="color:#2b91af">SqlConnection </span>connection = <span style="color:#0000ff">new </span><span style="color:#2b91af">SqlConnection</span>(ConnectionString))</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">          connection.Open();</span>
+<span class="odt-code-line">          <span style="color:#008000">// retrieve the list of employees and store it in the static array [Employees]</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">          <span style="color:#008000">// retrieve the contribution rates and store them in the static variable [Contributions]</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">          <span style="color:#008000">// retrieve the allowances and store them in the static dictionary [Allowances]</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">          <span style="color:#008000">// Success</span></span>
+<span class="odt-code-line">          Msg = <span style="color:#a31515">&quot;Database loaded...&quot;</span>;</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">Exception </span>ex)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// log the error</span></span>
+<span class="odt-code-line">        Msg = <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;The following error occurred while accessing the database: {0}&quot;</span>, ex);</span>
+<span class="odt-code-line">        Error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 20: The [Application_Start] method is executed when the web application starts. It is executed only once.
+  </li>
+  <li>lines 12–17: public and <b>static</b> fields of the class. A static field is shared by all instances of the class. Thus, if multiple instances of the [Global] class are created, they all share the same static field [Employees], accessible via the reference [Global.Employees], i.e., <i>[ClassName].StaticField</i>. [Global] is the name of a class. It is therefore a data type. This name is arbitrary. The class always derives from [System.Web.HttpApplication].
+  </li>
+</ul>
+
+<p>Let’s return to our [Global] class. One might wonder whether it is necessary to declare its fields <strong>as static</strong>. In fact, it appears that in some cases, there may be multiple instances of the [Global] class, which justifies making the fields that need to be shared by all these instances static.</p>
+<p>There is another way to share &quot;application&quot; scope data between the different pages of a web application. Thus, the Employees array could be stored in the <em>Application_Start</em> procedure as follows:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">            Application.Add(<span style="color:#a31515">&quot;employes&quot;,</span>Employes);</span>
+</code></pre></div>
+
+<p>By default, [Application] in any ASP.NET application is a reference to an instance of the class defined in [Global.asax.cs]. <em>Application</em> is a container capable of storing objects of any type. The <em>Employees</em> array could then be retrieved in the code of any page in the web application as follows:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">            Employees[] employees = Application.Get[<span style="color:#a31515">&quot;employees&quot;] as </span>Employee[];</span>
+</code></pre></div>
+
+<p>Because the <em>Application</em> container stores objects of any type, we retrieve an <em>Object</em> type that must then be cast. This method is always usable, but sharing data via typed static fields of the [Global] object avoids casting and allows the compiler to perform type checks that assist the developer. This is the method that will be used here.</p>
+<p>The data shared by all users is as follows:</p>
+<ul>
+  <li>line 12: the array of [Employee] objects that will store the simplified list (SSN, LAST_NAME, FIRST_NAME) of all employees
+  </li>
+  <li>line 13: the object of type [Contributions] that will store the contribution rates
+  </li>
+  <li>line 14: the dictionary that will store the allowances linked to the various employee indices. It will be indexed by the employee’s index, and its values will be of type [Allowances]
+  </li>
+  <li>line 15: a message indicating whether the initialization completed successfully or with an error
+  </li>
+  <li>line 16: a Boolean indicating whether the initialization ended with an error or not
+  </li>
+  <li>line 17: the database connection string.
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Question</strong>: Complete the code for the [Application_Start] class.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h2 id="43-events-of-the-defaultaspx-form">4.3. <span style="color: #4f81bd"><strong>Events of the [Default.aspx] form</strong></span></h2>
+<p><a id="pageload-aspnet-v31"></a></p>
+<h3 id="431-the-p-age_load-procedure">4.3.1. <span style="color: #4f81bd"><strong>The [P</strong> <strong>age_Load] procedure</strong></span></h3>
+<p>When the [Default.aspx] form loads, it retrieves the employees&#x27; names from the [Global.Employees] array (line 12) and populates the drop-down list [1] with them:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003670000014F6B0C9BE4.png" style="display:inline-block; margin:4px;width:11.523cm;height:4.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000003670000014F6B0C9BE4.png" /></td></tr></table>
+
+<ul>
+  <li>The drop-down list [1] has been populated
+  </li>
+  <li>TextBox [5] indicates that the database was read correctly
+  </li>
+</ul>
+
+<p>If initialization errors occurred when the application started, TextBox [5] indicates this:</p>
+<p><img src="images/10000000000002A3000001354E334A5C.png" style="width:12.501cm;height:5.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A3000001354E334A5C.png" /></p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Question</strong>: Write the [Page_Load] procedure for the [Default.aspx] web page, which, when executed at application startup, ensures the behavior described above.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="432-salary-calculation">4.3.2. <span style="color: #4f81bd"><strong>Salary calculation</strong></span></h3>
+<p>Clicking button [4] triggers the handler:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>ButtonSalaire_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+</code></pre></div>
+
+<p>This handler begins by verifying the validity of the entries made in [2] and [3]. If either is incorrect, the error is reported as shown previously. Once the entries in [2] and [3] have been verified and found to be valid, the application must display additional data about the user selected in [1] as well as their salary (see screenshot in section<a href="#formulaire-version1"><u><span style="color: #0563c1"> 4.1</span></u></a>).</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Question</strong>: Write the code for the [ButtonSalaire_Click] procedure.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

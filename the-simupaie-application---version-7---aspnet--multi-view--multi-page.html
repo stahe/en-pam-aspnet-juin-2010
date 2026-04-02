@@ -1,0 +1,2476 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-pam-aspnet-juin-2010/the-simupaie-application---version-7---aspnet--multi-view--multi-page.html">
+      
+      
+        <link rel="prev" href="the-simupaie-application---version-6---an-aspnet-client-of-a-web-service.html">
+      
+      
+        <link rel="next" href="the-simupaie-application---version-8---an-aspnet-client-of-a-web-service.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page - Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-the-simupaie-application-version-7-aspnet-multi-view-multi-page" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" class="md-header__button md-logo" aria-label="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" class="md-nav__button md-logo" aria-label="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-quick-introduction-to-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. A Quick Introduction to ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-case-study.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-1---aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. The [SimuPaie] application – version 1 – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The [SimuPaie] application – version 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Introduction to the NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-3---3-tier-architecture-with-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. The [SimuPaie] application – version 3 – 3-tier architecture with NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-4---aspnet--multi-view--single-page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. The [SimuPaie] application – version 4 – ASP.NET / multi-view / single-page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-5---aspnet--web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The [SimuPaie] application – version 5 – ASP.NET / web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-6---an-aspnet-client-of-a-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. The [SimuPaie] application – version 6 – an ASP.NET client of a web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#112-generating-views-in-a-multi-controller-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2. Generating views in a multi-controller context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.2. Generating views in a multi-controller context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1122-case-2-a-single-controller-page-a-controllerview-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2.2. Case 2: a single-controller page, a controller/view page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-the-page-presentation-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4. The page presentation code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.4. The page presentation code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1141-the-master-page-masterpagemaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4.1. The master page [MasterPage.master]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1142-the-formulaireaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4.2. The [Formulaire.aspx] page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1143-the-simulationsaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4.3. The [Simulations.aspx] page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1144-the-errorsaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4.4. The [Errors.aspx] page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-page-control-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5. Page control code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.5. Page control code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1151-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1152-control-code-for-the-masterpagemaster-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2. Control code for the [MasterPage.master] page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.5.2. Control code for the [MasterPage.master] page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11521-class-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2.1. Class skeleton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11523-the-setmenu-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2.3. The SetMenu method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11524-event-handling-on-the-master-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2.4. Event handling on the master page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11525-the-init-event-of-the-master-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2.5. The Init event of the master page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1153-control-code-for-the-errorsaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.3. Control code for the [Errors.aspx] page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.5.3. Control code for the [Errors.aspx] page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11542-page-load-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.4.2. Page Load event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11543-handling-click-events-on-menu-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.4.3. Handling Click events on menu links
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1155-control-code-for-the-simulationsaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.5. Control code for the [Simulations.aspx] page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1156-control-code-for-the-defaultaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.6. Control code for the [Default.aspx] page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-8---an-aspnet-client-of-a-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. The [SimuPaie] application – version 8 – an ASP.NET client of a web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-9---springnhibernate-integration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The [SimuPaie] application – version 9 – Spring/NHibernate integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-10---a-flex-client-for-an-aspnet-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. The [SimuPaie] application – version 10 – a Flex client for an ASP.NET web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="pam-v7"></a></p>
+<h1 id="11-the-simupaie-application-version-7-aspnet-multi-view-multi-page">11. <span style="color: #365f91"><strong>The [SimuPaie] application –</strong> <strong>version 7 – ASP.NET / multi-view / multi-page</strong></span></h1>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Recommended reading</strong>: reference [1], <a href="https://stahe.github.io/en-aspnet1.1-avril-2004/"><u><span style="color: #0563c1">Web Development with ASP.NET 1.1</span></u></a>, section: <strong>Examples</strong></p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>We are now examining a version that is functionally identical to the three-tier ASP.NET application [pam-v4-3tier-nhibernate-multivues-monopage] discussed earlier, but we are modifying its architecture as follows: whereas in the previous version the views were implemented by a single ASPX page, here they will be implemented by three ASPX pages.</p>
+<p>The architecture of the previous application was as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052600000237FC72B109.png" style="display:inline-block; margin:4px;width:17.436cm;height:7.502cm;" class="odt-zoomable" data-zoom-src="images/100000000000052600000237FC72B109.png" /></td></tr></table>
+
+<p>Here we have an MVC (Model–View–Controller) architecture:</p>
+<ul>
+  <li>[Default.aspx.cs] contains the <b>controller</b> code. The [Default.aspx] page is the client’s sole point of contact. It handles all requests from the client.
+  </li>
+  <li>[Saisies, Simulation, Simulations, ...] are the <b>views</b>. These views are implemented here using [View] components on the [Default.aspx] page.
+  </li>
+</ul>
+
+<p>The architecture of the new version will be as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005310000028183233A9D.png" style="display:inline-block; margin:4px;width:17.582cm;height:8.481cm;" class="odt-zoomable" data-zoom-src="images/10000000000005310000028183233A9D.png" /></td></tr></table>
+
+<ul>
+  <li>only the [web] layer changes
+  </li>
+  <li>the views (what is presented to the user) remain unchanged.
+  </li>
+  <li>the controller code, which in the previous version was entirely in [Default.aspx.cs], is now distributed across several pages:
+    <ul>
+      <li>[MasterPage.master]: a page that encapsulates elements common to the different views: the top banner with its menu options
+      </li>
+      <li>[Formulaire.aspx]: the page that displays the simulation form and manages the actions that take place on this form
+      </li>
+      <li>[Simulations.aspx]: the page that displays the list of simulations and handles the actions that occur on this page
+      </li>
+      <li>[Errors.aspx]: the page displayed when an application initialization error occurs. No actions are possible on this page.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>This can be considered a multi-controller MVC architecture, whereas the architecture of the previous version was a single-controller MVC architecture.</p>
+<p>Processing a client request follows these steps:</p>
+<ol>
+  <li>The client makes a request to the application. They make it to one of the two pages [Formulaire.aspx, Simulations.aspx].
+  </li>
+  <li>The requested page processes this request. To do so, it may need assistance from the [business] layer, which itself may need the [DAO] layer if data needs to be exchanged with the database. The application receives a response from the [business] layer.
+  </li>
+  <li>Based on this response, it selects (3) the view (= the response) to send to the client, providing it (4) with the information (the model) it needs.
+  </li>
+  <li>The response is sent to the client (5)
+<a id="3tier-multipages-vues"></a>
+
+## 11.1. <span style="color: #4f81bd">**The application&#x27;s views**</span>
+
+  </li>
+</ol>
+
+<p>The different views presented to the user are as follows:</p>
+<ul>
+  <li>- the [VueSaisies] view, which displays the simulation form
+  </li>
+</ul>
+
+<p><img src="images/10000000000001CB000000BAD87AD425.png" style="width:7.29cm;height:2.955cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000000BAD87AD425.png" /></p>
+<ul>
+  <li>- the [VueSimulation] view used to display the detailed simulation results:
+  </li>
+</ul>
+
+<p><img src="images/10000000000001F6000002F2EC5D340C.png" style="width:7.969cm;height:11.97cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F6000002F2EC5D340C.png" /></p>
+<ul>
+  <li>-  the [SimulationView] view, which lists the simulations performed by the client
+  </li>
+</ul>
+
+<p><img src="images/100000000000035500000111BCFF1542.png" style="width:13.54cm;height:4.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000035500000111BCFF1542.png" /></p>
+<ul>
+  <li>- the [EmptySimulationsView] view, which indicates that the client has no simulations or no more simulations:
+  </li>
+</ul>
+
+<p><img src="images/100000000000021E000000B8AB0D531C.png" style="width:8.601cm;height:2.919cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021E000000B8AB0D531C.png" /></p>
+<ul>
+  <li>the [ErrorView] view, which indicates an application initialization error:
+  </li>
+</ul>
+
+<p><img src="images/10000000000002280000014FE9E97A4C.png" style="width:10.22cm;height:6.202cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002280000014FE9E97A4C.png" /></p>
+<h2 id="112-generating-views-in-a-multi-controller-context">11.2. <span style="color: #4f81bd"><strong>Generating views in a multi-controller context</strong></span></h2>
+<p>In the previous version, all views were generated from the single [Default.aspx] page. This page contained two [MultiView] components, and the views consisted of a combination of one or two [View] components belonging to these two [MultiView] components.</p>
+<p>While effective when there are few views, this architecture reaches its limits as soon as the number of components forming the various views becomes large: indeed, with every request made to the single [Default.aspx] page, all of its components are instantiated, even though only some of them will be used to generate the response to the user. Unnecessary work is thus performed with each new request, which becomes a bottleneck when the total number of components on the page is large.</p>
+<p>One solution is to distribute the views across different pages. That is what we are doing here. Let’s examine two different cases of view generation:</p>
+<ol>
+  <li>the request is made to page P1, and it generates the response
+  </li>
+  <li>the request is made to a page P1, and this page asks a page P2 to generate the response
+### 11.2.1. <span style="color: #4f81bd">**Case 1: a controller/view page**</span>
+
+  </li>
+</ol>
+
+<p>In Case 1, we return to the single-controller architecture of the previous version, where the [Default.aspx] page is page P1:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050E00000235DFEE9CD5.png" style="display:inline-block; margin:4px;width:17.119cm;height:7.475cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E00000235DFEE9CD5.png" /></td></tr></table>
+
+<ol>
+  <li>the client makes a request to page P1 (1)
+  </li>
+  <li>Page P1 processes this request. To do so, it may need assistance from the [business] layer (2), which itself may need the [DAO] layer if data needs to be exchanged with the database. The application receives a response from the [business] layer.
+  </li>
+  <li>Based on this response, it selects (3) the view (= the response) to send to the client, providing it (4) with the information (the model) it needs. This involves selecting the [Panel] or [View] components to display on page P1 and initializing the components they contain.
+  </li>
+  <li>The response is sent to the client (5)
+  </li>
+</ol>
+
+<p>Here are two examples taken from the application under study:</p>
+<p>[<strong>Formulaire.aspx page</strong>]</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000060600000266C59E90AB.png" style="display:inline-block; margin:4px;width:17.997cm;height:7.167cm;" class="odt-zoomable" data-zoom-src="images/100000000000060600000266C59E90AB.png" /></td></tr></table>
+
+<ul>
+  <li>in [1]: after requesting the [Formulaire.aspx] page, the user requests a simulation
+  </li>
+  <li>in [2]: the [Formulaire.aspx] page processed this request and generated the response itself by displaying a [View] component that had not been displayed in [1]
+  </li>
+</ul>
+
+<p>[<strong>page Simulations.aspx</strong>]</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005DB000001FB450B5CFD.png" style="display:inline-block; margin:4px;width:17.997cm;height:6.087cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DB000001FB450B5CFD.png" /></td></tr></table>
+
+<ul>
+  <li>in [1]: after requesting the [Simulations.aspx] page, the user wants to remove a simulation
+  </li>
+  <li>in [2]: the [Simulations.aspx] page processed this request and generated the response itself by re-displaying the new list of simulations.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035500000119E2BC3D16.png" style="display:inline-block; margin:4px;width:15.799cm;height:5.205cm;" class="odt-zoomable" data-zoom-src="images/100000000000035500000119E2BC3D16.png" /></td></tr></table>
+
+<h3 id="1122-case-2-a-single-controller-page-a-controllerview-page">11.2.2. <span style="color: #4f81bd"><strong>Case 2: a single-controller page, a controller/view page</strong></span></h3>
+<p>Case 2 can cover various architectures. We will choose the following:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051E00000238752E2E1A.png" style="display:inline-block; margin:4px;width:17.33cm;height:7.514cm;" class="odt-zoomable" data-zoom-src="images/100000000000051E00000238752E2E1A.png" /></td></tr></table>
+
+<ol>
+  <li>the client makes a request to page P1 (1)
+  </li>
+  <li>Page P1 processes this request. To do so, it may need assistance from the [business] layer (2), which itself may need the [DAO] layer if data needs to be exchanged with the database. The application receives a response from the [business] layer. 
+  </li>
+  <li>Based on this, it selects (3) the view (= the response) to send to the client by providing it (4) with the information (the template) it needs. In this case, the view to be generated must be created by a page other than P1—specifically, page P2. To perform operations (3) and (4), page P1 has two options:
+    <ul>
+      <li><b>transfer execution to page P2 </b>using the operation [<b>Server.Transfer(&quot;P2.aspx&quot;)</b>]. In this case, it can place the model intended for page P2 in the request context [<i>Context.Items[&quot;key&quot;]=value</i>] or in the user session [<i>Session.[&quot;key&quot;]=value</i>]. Page P2 will then be instantiated, and when its <i>Load</i> event is processed, for example, it can retrieve the information passed by page P1 using the operations [<i>value=(Type)Context.Items[&quot;key&quot;</i>] or [<i>value=(Type)Session[&quot;key&quot;</i>], as appropriate, where <i>Type </i>is the type of the value associated with the key. Transmitting values via the <i>Context </i>is most appropriate if there is no need for the model values to be retained for a future client request.
+      </li>
+      <li>Ask the client to <b>redirect to page P2 </b>using the operation [<b>Response.Redirect(&quot;P2.aspx&quot;)</b>]. In this case, page P1 will place the model intended for page P2 into the session, since the request<i> context </i>is cleared at the end of each request. However, here, the redirection will cause the first client request to P1 to end and trigger a second request from the same client, this time to P2. There are two successive requests. We know that the session is one way to preserve &quot;memory&quot; between requests. There are other solutions besides the session.
+      </li>
+    </ul>
+  </li>
+  <li>Regardless of how P2 takes over, we then return to case 1: P2 has received a request that it will process (5) and will generate the response itself (6, 7). We can also imagine that after processing the request, page P2 will hand off to page P3, and so on.
+  </li>
+</ol>
+
+<p>Here is an example taken from the application under study:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000061E000001A2B5023C66.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.805cm;" class="odt-zoomable" data-zoom-src="images/100000000000061E000001A2B5023C66.png" /></td></tr></table>
+
+<ul>
+  <li>in [1]: the user who requested the [Formulaire.aspx] page asks to see the list of simulations
+  </li>
+  <li>in [2]: the [Formulaire.aspx] page processes this request and redirects the client to the [Simulations.aspx] page. It is the latter that provides the response to the user. Instead of asking the client to redirect, the [Formulaire.aspx] page could have forwarded the client’s request to the [Simulations.aspx] page. In this case in [2], we would have seen the same URL as in [1]. In fact, a browser always displays the last requested URL:
+    <ul>
+      <li>The action requested in [1] is intended for the [Formulaire.aspx] page. The browser sends a POST request to this page.
+      </li>
+      <li>If the [Formulaire.aspx] page processes the request and then forwards it via [Server.Transfer(&quot;Simulations.aspx&quot;)] to the [Simulations.aspx] page, we remain within the same request. The browser will then display in [2] the URL of [Formulaire.aspx] to which the POST was sent.
+      </li>
+      <li>If the [Formulaire.aspx] page processes the request and then redirects it via [Response.Redirect(&quot;Simulations.aspx&quot;)] to the [Simulations.aspx] page, the browser then makes a second request, a GET request to [Simulations.aspx]. The browser will then display in [2] the URL of [Simulations.aspx] to which the GET request was sent. This is what screenshot [2] above shows us.
+## 11.3. <span style="color: #4f81bd">**The Visual Web Developer project for the [web] layer**</span>
+
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The Visual Web Developer project for the [web] layer is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F7000001C288F49CB6.png" style="display:inline-block; margin:4px;width:16.815cm;height:5.953cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F7000001C288F49CB6.png" /></td></tr></table>
+
+<ul>
+  <li>In [1] we find:
+    <ul>
+      <li>the application’s configuration file [Web.config] – which is identical to that of the [pam-v4-3tier-nhibernate-multivues-monopage] application.
+      </li>
+      <li>the [Default.aspx] page – simply redirects the client to the [Formulaire.aspx] page
+      </li>
+      <li>the [Formulaire.aspx] page, which displays the simulation form to the user and handles actions related to this form
+      </li>
+      <li>the [Simulations.aspx] page, which displays the user’s list of simulations and handles actions related to this page
+      </li>
+      <li>The [Errors.aspx] page, which displays a page to the user indicating an error encountered when the web application starts.
+      </li>
+    </ul>
+  </li>
+  <li>In [2], we see the project references. 
+  </li>
+</ul>
+
+<p>Let’s return to the architecture of the new project:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005250000027CABBB351B.png" style="display:inline-block; margin:4px;width:17.424cm;height:8.414cm;" class="odt-zoomable" data-zoom-src="images/10000000000005250000027CABBB351B.png" /></td></tr></table>
+
+<p>Compared to the [pam-v4-3tier-nhibernate-multivues-monopage] project, only the views have changed. This is why the new project reuses some of the files from that project:</p>
+<ul>
+  <li>the configuration file [Web.config]
+  </li>
+  <li>the referenced DLLs [pam-dao-nhibernate, pam-metier-dao-nhibernate, Spring.Core, NHibernate]
+  </li>
+  <li>the global application class [Global.asax]
+  </li>
+  <li>the folders [images, resources, pam]
+  </li>
+</ul>
+
+<p>To maintain consistency with the project currently under development, we will ensure that the namespace for the views and the global application class is [pam-v7]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A50000007E6BDBC78D.png" style="display:inline-block; margin:4px;width:7.8cm;height:2.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A50000007E6BDBC78D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<h2 id="114-the-page-presentation-code">11.4. <span style="color: #4f81bd"><strong>The page presentation code</strong></span></h2>
+<h3 id="1141-the-master-page-masterpagemaster">11.4.1. <span style="color: #4f81bd"><strong>The master page [MasterPage.master]</strong></span></h3>
+<p>The application views presented in Section<a href="#3tier-multipages-vues"><u><span style="color: #0563c1"> 11.1</span></u></a> have common elements that can be factored into a Master Page, known as the <strong>Master Page</strong> in Visual Studio. Take, for example, the views [VueSaisies] and [VueSimulationsVides] below, generated respectively by the pages [Formulaire.aspx] and [Simulations.aspx]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006860000012E4C787732.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/10000000000006860000012E4C787732.png" /></td></tr></table>
+
+<p>These two views share the top banner (Title and Menu Options). This is true of all views that will be presented to the user: they will all have the same top banner. To enable different pages to share the same presentation fragment, there are various solutions, including the following:</p>
+<ul>
+  <li>Place this common fragment in a user control. This was the primary technique in ASP.NET 1.1
+  </li>
+  <li>Place this common fragment in a Master page. This technique was introduced with ASP.NET 2.0. This is the one we are using here.
+  </li>
+</ul>
+
+<p>To create a Master Page in a web application, follow these steps:</p>
+<ul>
+  <li>Right-click on the project / Add New Item / Master Page:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051D000001DDB9E473DB.png" style="display:inline-block; margin:4px;width:17.318cm;height:6.311cm;" class="odt-zoomable" data-zoom-src="images/100000000000051D000001DDB9E473DB.png" /></td></tr></table>
+
+<p>Adding a Master Page adds three files to the web application by default:</p>
+<ul>
+  <li>[MasterPage.master]: the layout code for the Master Page
+  </li>
+  <li>[MasterPage.master.cs]: the control code for the Master Page
+  </li>
+  <li>[MasterPage.Master.Designer.cs]: the component declarations for the Master Page
+  </li>
+</ul>
+
+<p>The code generated by Visual Studio in [MasterPage.master] is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Master </span><span style="color:#0000ff">Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;MasterPage.master.cs&quot; Inherits=&quot;pam_v7.MasterPage&quot; </span>%&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#a31515">DOCTYPE </span><span style="color:#ff0000">html PUBLIC </span><span style="color:#0000ff">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">html </span><span style="color:#0000ff">xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">head </span><span style="color:#0000ff">runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">title</span><span style="color:#0000ff">&gt;</span>Untitled Page<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder </span><span style="color:#0000ff">id=&quot;head&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">form </span><span style="color:#0000ff">id=&quot;form1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder </span><span style="color:#0000ff">id=&quot;ContentPlaceHolder1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">        </span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/form</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/html</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 1: The &lt;%@ Master ... %&gt; tag is used to define the page as a Master page. The page&#x27;s control code will be in the file specified by the <i>CodeBehind</i> attribute, and the page will inherit from the class specified by the <i>Inherits</i> attribute.
+  </li>
+  <li>Lines 12–18: The Master page form
+  </li>
+  <li>Lines 14–16: An empty container that, in our application, will hold one of the pages [Form.aspx, Simulations.aspx, Errors.aspx]. The client always receives the same page in response—the Master page—in which the [ContentPlaceHolder1] container will receive an HTML stream provided by one of the pages [Form.aspx, Simulations.aspx, Errors.aspx]. Thus, to change the appearance of the pages sent to clients, simply change the appearance of the Master page.
+  </li>
+  <li>Lines 8–9: an empty container that allows the &quot;child&quot; pages to customize the header &lt;head&gt;...&lt;/head&gt;.
+  </li>
+</ul>
+
+<p>The visual representation (Design tab) of this source code is shown in (1) below. Additionally, you can add as many containers as desired using the [ContentPlaceHolder] component (2) from the [Standard] toolbar.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FC000000C0D1D69A5F.png" style="display:inline-block; margin:4px;width:16.88cm;height:2.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FC000000C0D1D69A5F.png" /></td></tr></table>
+
+<p>The control code generated by Visual Studio in [MasterPage.master.cs] is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">public partial class </span><span style="color:#2b91af">MasterPage </span>: System.Web.UI.<span style="color:#2b91af">MasterPage</span></span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 3: The class referenced by the [Inherits] attribute of the &lt;%@ Master ... %&gt; directive in the [MasterPage.master] page derives from the [System.Web.UI.MasterPage] class
+  </li>
+</ul>
+
+<p>Above, we see the presence of the <em>Page_Load</em> method, which handles the <em>Load</em> event of the master page. The master page will contain another page within it. In what order do the <em>Load</em> events of the two pages occur? This is a general rule: the <em>Load</em> event of a component occurs before that of its container. Here, the <em>Load</em> event of the page embedded in the master page will therefore occur before that of the master page itself.</p>
+<p>To generate a page in<a id="3tier-multipages-pagefille"></a> that uses the previous [MasterPage.master] page as its master page, you can proceed as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000336000000FF03B92A94.png" style="display:inline-block; margin:4px;width:10.874cm;height:3.373cm;" class="odt-zoomable" data-zoom-src="images/1000000000000336000000FF03B92A94.png" /></td></tr></table>
+
+<ul>
+  <li>in [1]: right-click on the master page, then select [Add Content Page]
+  </li>
+  <li>in [2]: a default page, in this case [WebForm1.aspx], is generated.
+  </li>
+</ul>
+
+<p>The presentation code for [WebForm1.aspx] is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Title=&quot;&quot; Language=&quot;C#&quot; MasterPageFile=&quot;~/MasterPage.Master&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;</span>WebForm1<span style="color:#0000ff">.aspx.cs&quot; Inherits=&quot;pam_v7.</span>WebForm1<span style="color:#0000ff">&quot; </span>%&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content </span><span style="color:#0000ff">ID=&quot;Content1&quot; ContentPlaceHolderID=&quot;ContentPlaceHolder1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">Line 1: The </span><b>Page</b><span style="color: #000000"> directive and its attributes</span>
+    <ul>
+      <li><i>MasterPageFile</i><span style="color: #000000">: specifies the master page file for the page described by the directive. The ~ symbol denotes the project folder.</span>
+      </li>
+      <li><span style="color: #000000">The other parameters are the standard ones for an ASP web page</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">Lines 2–3: The &lt;</span><i>asp:Content</i><span style="color: #000000">&gt; tags are linked one by one to </span>the &lt;<i>asp:ContentPlaceHolder</i>&gt; directives in the master page via the <i>ContentPlaceHolderID</i> attribute. The components placed between lines 2–3 above will, at runtime, be placed in the <i>ContentPlaceHolder1</i> container on the master page.
+  </li>
+</ul>
+
+<p><span style="color: #000000">By renaming the page [</span>WebForm1<span style="color: #000000">.aspx] generated in this way, we can build the various pages using [MasterPage.master] as the master page.</span></p>
+<p>For our [SimuPaie] application, the visual appearance of the master page will be as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D80000016EF196DE77.png" style="display:inline-block; margin:4px;width:16.404cm;height:4.842cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D80000016EF196DE77.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>No.</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>A
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Panel (pink above)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">header</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">page header</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>B
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Panel (yellow above)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">content</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">page content</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonRunSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">requests the simulation calculation</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonClearSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clears the input form</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>3
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonViewSimulations</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">displays the list of simulations already performed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>4
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonSimulationForm</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">returns to the input form</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>5
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonSaveSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">saves the current simulation to the simulation list</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>6
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonEndSession</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ends the current session</div></td></tr></table>
+
+<p>The corresponding source code is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Master </span><span style="color:#0000ff">Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;MasterPage.master.cs&quot; Inherits=&quot;pam_v7.MasterPage&quot; </span>%&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#a31515">DOCTYPE </span><span style="color:#ff0000">html PUBLIC </span><span style="color:#0000ff">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">html </span><span style="color:#0000ff">xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">head </span><span style="color:#0000ff">id=&quot;Head1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">title</span><span style="color:#0000ff">&gt;</span>PAM Application<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body </span><span style="color:#0000ff">background=&quot;resources/standard.jpg&quot;&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">form </span><span style="color:#0000ff">id=&quot;form1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ScriptManager </span><span style="color:#0000ff">ID=&quot;ScriptManager1&quot; runat=&quot;server&quot; EnablePartialRendering=&quot;true&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel </span><span style="color:#0000ff">runat=&quot;server&quot; ID=&quot;UpdatePanelPam&quot; UpdateMode=&quot;Conditional&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ContentTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel </span><span style="color:#0000ff">ID=&quot;header&quot; runat=&quot;server&quot; BackColor=&quot;#FFE0C0&quot;&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                Payroll Calculator<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">label</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#ff0000">&amp;nbsp;&amp;nbsp;&amp;nbsp</span><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/label</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress </span><span style="color:#0000ff">ID=&quot;UpdateProgress1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">img </span><span style="color:#0000ff">alt=&quot;&quot; src=&quot;images/indicator.gif&quot; /&gt;</span></span>
+<span class="odt-code-line">                  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label </span><span style="color:#0000ff">ID=&quot;Label5&quot; runat=&quot;server&quot; BackColor=&quot;#FF8000&quot;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                            </span> <span style="color:#0000ff">EnableViewState=&quot;False&quot; Text=&quot;Calculating. Please wait....&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                        &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonFaireSimulation&quot; runat=&quot;server&quot;</span></span>
+<span class="odt-code-line">                         <span style="color:#0000ff">Caus</span><span style="color:#a31515">es</span><span style="color:#0000ff">Validation=&quot;False&quot;&gt;</span>| Run simulation<span style="color:#0000ff">&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                    &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonClearSimulation&quot; runat=&quot;server&quot;</span></span>
+<span class="odt-code-line">                         <span style="color:#0000ff">Caus</span><span style="color:#a31515">es</span><span style="color:#0000ff">Validation=&quot;False&quot;&gt;</span>| Clear simulation<span style="color:#0000ff">&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                    &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonViewSimulations&quot; runat=&quot;server&quot;</span></span>
+<span class="odt-code-line">                     <span style="color:#0000ff">Caus</span><span style="color:#a31515">es</span><span style="color:#0000ff">Validation=&quot;False&quot;&gt;</span>| View simulations<span style="color:#0000ff">&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                    &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonSimulationForm&quot; runat=&quot;server&quot;</span></span>
+<span class="odt-code-line">                         <span style="color:#0000ff">CausesValidation=&quot;False&quot;&gt;</span>| Back to the simulation form<span style="color:#0000ff">&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                    &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonSaveSimulation&quot; runat=&quot;server&quot;</span></span>
+<span class="odt-code-line">                         <span style="color:#0000ff">Caus</span><span style="color:#a31515">es</span><span style="color:#0000ff">Validation=&quot;False&quot;&gt;</span>| Save simulation<span style="color:#0000ff">&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                    &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonTerminerSession&quot; runat=&quot;server&quot;</span></span>
+<span class="odt-code-line">                         <span style="color:#0000ff">CausesValidation=&quot;False&quot;&gt;</span>| End session<span style="color:#0000ff">&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                    &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">hr </span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel </span><span style="color:#0000ff">ID=&quot;content&quot; runat=&quot;server&quot; BackColor=&quot;#FFFFC0&quot;&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder </span><span style="color:#0000ff">ID=&quot;ContentPlaceHolder1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ContentTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/form</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/html</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 1: Note the name of the master page class: <b>MasterPage</b>
+  </li>
+  <li>Line 8: Define a background image for the page.
+  </li>
+  <li>Lines 9–64: the form
+  </li>
+  <li>Line 10: The ScriptManager component required for Ajax effects
+  </li>
+  <li>Lines 11–63: the AJAX container
+  </li>
+  <li>Lines 12–62: the Ajax-enabled content
+  </li>
+  <li>lines 13–55: the Panel component [header]
+  </li>
+  <li>lines 57-60: the Panel component [content]
+  </li>
+  <li>lines 58–59: the [ContentPlaceHolder1] component, which will contain the encapsulated page [Formulaire.aspx, Simulations.aspx, Erreurs.aspx]
+  </li>
+</ul>
+
+<p>To build this page, we can insert into the [header] panel the ASPX code of the [HeaderView] view from the [Default.aspx] page of the [pam-v4-3tier-nhibernate-multivues-monopage] version, described in section<a href="#3tier-multivues-entete"><u><span style="color: #0563c1"> 8.5.2</span></u></a>.</p>
+<h3 id="1142-the-formulaireaspx-page">11.4.2. <span style="color: #4f81bd"><strong>The [Formulaire.aspx] page</strong></span></h3>
+<p>To generate this page, follow the method described in section<a href="#3tier-multipages-pagefille"><u><span style="color: #0563c1"> 11.4.1</span></u></a> and rename the generated [WebForm1.aspx] page to [Form.aspx]. The visual appearance of the [Form.aspx] page under construction will be as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C6000002DC51B7088A.png" style="display:inline-block; margin:4px;width:16.166cm;height:9.684cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C6000002DC51B7088A.png" /></td></tr></table>
+
+<p>The visual appearance of the [Formulaire.aspx] page consists of two elements:</p>
+<ul>
+  <li>[1] the master page with its [ContentPlaceHolder1] container (2)
+  </li>
+  <li>[2] the components placed in the [ContentPlaceHolder1] container. These are identical to those in the previous application.
+  </li>
+</ul>
+
+<p>The source code for this page is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; MasterPageFile=&quot;~/MasterPage.master&quot; AutoEventWireup=&quot;true&quot;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">CodeBehind=&quot;Formulaire.aspx.cs&quot; Inherits=&quot;pam_v7.PageFormulaire&quot; Title=&quot;Payroll calculation simulation: form&quot; </span>%&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">MasterType </span><span style="color:#0000ff">VirtualPath=&quot;~/MasterPage.master&quot; </span>%&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content </span><span style="color:#0000ff">ID=&quot;Content1&quot; ContentPlaceHolderID=&quot;ContentPlaceHolder1&quot; runat=&quot;Server&quot;&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          Employee</span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          Hours worked</span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          Days worked</span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 1: The <i>Page</i> directive with its <i>MasterPageFile</i> attribute
+  </li>
+  <li>line 4: the master page control class can expose <b>public</b> fields and properties. These are accessible to the encapsulated pages using the syntax <b>Master.[field] </b>or <b>Master.[property]</b>. The <b>Master</b> property of the page refers to the master page as an instance of type [System.Web.UI.MasterPage]. Therefore, in our example, we should actually write (<i>MasterPage</i>)<i>(Master).[field] </i>or <i>(MasterPage)(Master).[property]</i>. This type casting can be avoided by inserting the <i>MasterType</i> directive from line 4 into the page. The <i>VirtualPath</i> attribute of this directive specifies the master page file. The compiler can then recognize the public fields, properties, and methods exposed by the master page class, in this case of type [MasterPage].
+  </li>
+  <li>Lines 5–22: the content to be inserted into the [ContentPlaceHolder1] container of the master page.
+  </li>
+</ul>
+
+<p>This page can be built by setting its content (lines 6–21) to that of the [VueSaisies] view described in Section<a href="#3tier-multivues-saisies"><u><span style="color: #0563c1"> 8.5.3</span></u></a> and that of the [VueSimulation] view described in Section<a href="#3tier-multivues-simulation"><u><span style="color: #0563c1"> 8.5.4</span></u></a>.</p>
+<h3 id="1143-the-simulationsaspx-page">11.4.3. <span style="color: #4f81bd"><strong>The [Simulations.aspx] page</strong></span></h3>
+<p>To generate this page, follow the method described in section<a href="#3tier-multipages-pagefille"><u><span style="color: #0563c1"> 11.4.1</span></u></a> and rename the resulting [WebForm1.aspx] page to [Simulations.aspx]. The visual appearance of the [Simulations.aspx] page currently under construction is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D80000026CC87BA075.png" style="display:inline-block; margin:4px;width:16.404cm;height:8.202cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D80000026CC87BA075.png" /></td></tr></table>
+
+<p>The visual appearance of the [Simulations.aspx] page consists of two elements:</p>
+<ul>
+  <li>[1] the master page with its [ContentPlaceHolder1] container
+  </li>
+  <li>at [2] the components placed in the [ContentPlaceHolder1] container. These are identical to those in the previous application.
+  </li>
+</ul>
+
+<p>The source code for this page is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; MasterPageFile=&quot;~/MasterPage.master&quot; AutoEventWireup=&quot;true&quot;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">CodeBehind=&quot;Simulations.aspx.cs&quot; Inherits=&quot;pam_v7.PageSimulations&quot; Title=&quot;Pam: list of simulations&quot; </span>%&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">MasterType </span><span style="color:#0000ff">VirtualPath=&quot;~/MasterPage.master&quot; </span>%&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content </span><span style="color:#0000ff">ID=&quot;Content1&quot; ContentPlaceHolderID=&quot;ContentPlaceHolder1&quot; runat=&quot;Server&quot;&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView </span><span style="color:#0000ff">ID=&quot;MultiView1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;View1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        List of your simulations<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">p</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">GridView </span><span style="color:#0000ff">ID=&quot;GridViewSimulations&quot; runat=&quot;server&quot; ...&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">GridView</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/p</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;View2&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        Your simulation list is empty<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#a31515">br </span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p>We can build this page by setting its content (lines 5–21) to that of the [VueSimulations] view described in section<a href="#3tier-multivues-simulations"><u><span style="color: #0563c1"> 8.5.5</span></u></a> and that of the [VueSimulationsVides] view described in section<a href="#3tier-multivues-simulationsvides"><u><span style="color: #0563c1"> 8.5.6</span></u></a>.</p>
+<h3 id="1144-the-errorsaspx-page">11.4.4. <span style="color: #4f81bd"><strong>The [Errors.aspx] page</strong></span></h3>
+<p>To generate this page, follow the method described in section<a href="#3tier-multipages-pagefille"><u><span style="color: #0563c1"> 11.4.1</span></u></a> and rename the resulting [WebForm1.aspx] page to [Errors.aspx]. The visual appearance of the [Errors.aspx] page currently under construction is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C200000260103CEF54.png" style="display:inline-block; margin:4px;width:16.113cm;height:8.043cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C200000260103CEF54.png" /></td></tr></table>
+
+<p>The visual appearance of the [Errors.aspx] page consists of two elements:</p>
+<ul>
+  <li>[1] the master page with its [ContentPlaceHolder1] container
+  </li>
+  <li>[2] the components placed in the [ContentPlaceHolder1] container. These are identical to those in the previous application.
+  </li>
+</ul>
+
+<p>The source code for this page is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; MasterPageFile=&quot;~/MasterPage.master&quot; AutoEventWireup=&quot;true&quot;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">CodeBehind=&quot;Errors.aspx.cs&quot; Inherits=&quot;pam_v7.PageErrors&quot; Title=&quot;Pam: Errors&quot; </span>%&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">MasterType </span><span style="color:#0000ff">VirtualPath=&quot;~/MasterPage.master&quot; </span>%&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content </span><span style="color:#0000ff">ID=&quot;Content1&quot; ContentPlaceHolderID=&quot;ContentPlaceHolder1&quot; Runat=&quot;Server&quot;&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h3</span><span style="color:#0000ff">&gt;</span>The following errors occurred when the application started<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/h3</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ul</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater </span><span style="color:#0000ff">id=&quot;rptErrors&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">li</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        &lt;<span style="color:#0000ff">%# </span>Container.DataItem %&gt;</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/li</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ul</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<h2 id="115-page-control-code">11.5. <span style="color: #4f81bd"><strong>Page control code</strong></span></h2>
+<h3 id="1151-overview">11.5.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h3>
+<p>Let’s return to the application architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051F00000261231B8FF6.png" style="display:inline-block; margin:4px;width:17.344cm;height:8.057cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F00000261231B8FF6.png" /></td></tr></table>
+
+<ul>
+  <li>[Global] is the [HttpApplication] object that initializes (step 0) the application. This class is identical to the one in the previous version.
+  </li>
+  <li>The controller code, which in the previous version was entirely in [Default.aspx.cs], is now spread across several pages:
+    <ul>
+      <li>[MasterPage.master]: the master page for [Form.aspx, Simulations.aspx, Errors.aspx]. It contains the menu.
+      </li>
+      <li>[Formulaire.aspx]: the page that displays the simulation form and handles the actions performed on this form
+      </li>
+      <li>[Simulations.aspx]: the page that displays the list of simulations and handles the actions that occur on this page
+      </li>
+      <li>[Errors.aspx]: the page displayed when an application initialization error occurs. No actions are possible on this page.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Processing a client request follows these steps:</p>
+<ol>
+  <li>The customer makes a request to the application. They typically do so on one of the two pages [Form.aspx, Simulations.aspx], but nothing prevents them from requesting the [Errors.aspx] page. This scenario must be accounted for.
+  </li>
+  <li>The requested page processes this request (step 1). To do so, it may need assistance from the [business] layer (step 2), which itself may need the [DAO] layer if data needs to be exchanged with the database. The application receives a response from the [business] layer.
+  </li>
+  <li>Based on this, it selects (step 3) the view (= the response) to send to the client and provides it (step 4) with the information (the model) it needs. We have seen three possibilities for generating this response:
+    <ul>
+      <li>the requested page (D) is also the page (R) sent in response. Building the response model (R) then consists of assigning certain components of page (D) the values they must have in the response.
+      </li>
+      <li>The requested page (D) is not the page (R) sent in response. The page (D) can then:
+        <ul>
+          <li>Transfer the execution flow to page (R) using the <i>Server.Transfer(&quot; R &quot;) </i>statement. The model can then be placed in the context using <i>Context.Items(&quot;key&quot;)=value </i>or, less commonly, in the session using <i>Session.Items(&quot;key&quot;)=value</i>
+          </li>
+          <li>Redirect the client to page (R) using the statement <i>Response.redirect(&quot; R &quot;)</i>. The model can then be placed in the session but not in the context.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The response is sent to the client (step 5)
+  </li>
+</ol>
+
+<p>Each of the pages [MasterPage.master, Form.aspx, Simulations.aspx, Errors.aspx] will respond to one or more of the following events:</p>
+<ul>
+  <li><b>Init</b>: first event in the page lifecycle
+  </li>
+  <li><b>Load</b>: occurs when the page loads
+  </li>
+  <li><b>Click</b>: a click on one of the links in the master page menu
+  </li>
+</ul>
+
+<p>We process the pages one after another, starting with the master page.</p>
+<h3 id="1152-control-code-for-the-masterpagemaster-page">11.5.2. <span style="color: #4f81bd"><strong>Control code for the [MasterPage.master] page</strong></span></h3>
+<h4 id="11521-class-skeleton">11.5.2.1. <span style="color: #4f81bd"><em>Class skeleton</em></span></h4>
+<p>The master page control code has the following skeleton:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.UI.WebControls;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v7</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public partial class </span><span style="color:#2b91af">MasterPage </span>: System.Web.UI.<span style="color:#2b91af">MasterPage</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// the menu </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>RunSimulation</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonRunSimulation; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// set the menu </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public void </span>SetMenu(<span style="color:#0000ff">bool </span>runSimulation, <span style="color:#0000ff">bool </span>saveSimulation, <span style="color:#0000ff">bool </span>clearSimulation, <span style="color:#0000ff">bool </span>simulationForm, <span style="color:#0000ff">bool </span>viewSimulations, <span style="color:#0000ff">bool </span>endSession)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// Handle the [End Session] option </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonEndSession_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// Initialize master page </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Init(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>line 5: the class is named [MasterPage] and derives from the system class [System.Web.UI.MasterPage].
+  </li>
+  <li>lines 9–14: the 6 menu options are exposed as public properties of the class
+  </li>
+  <li>lines 16–19: the public <i>SetMenu</i> method allows the pages [Formulaire.aspx, Simulations.aspx, Erreurs.aspx] to set the master page menu
+  </li>
+  <li>lines 22–25: the procedure that handles the click on the [LinkButtonTerminerSession] link
+  </li>
+  <li>Lines 28–31: The procedure that handles the <i>Init</i> event of the master page
+#### 11.5.2.2. <span style="color: #4f81bd">*Public properties of the class*</span>
+
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.UI.WebControls;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v7</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public partial class </span><span style="color:#2b91af">MasterPage </span>: System.Web.UI.<span style="color:#2b91af">MasterPage</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// the menu </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>RunSimulation</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonRunSimulation; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>ClearSimulationOption</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonClearSimulation; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>SaveSimulationOption</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonSaveSimulation; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>ViewSimulationsOption</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonViewSimulations; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>OptionEndSession</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonEndSession; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">LinkButton </span>SimulationFormOption</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">get </span>{ <span style="color:#0000ff">return </span>LinkButtonSimulationForm; }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>To understand this code, you need to recall the components that make up the master page:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EA0000018676032138.png" style="display:inline-block; margin:4px;width:16.642cm;height:5.159cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EA0000018676032138.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>No.</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>A
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Panel (pink above)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">header</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">page header</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>B
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Panel (yellow above)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">content</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">page content</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonRunSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Request simulation calculation</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonClearSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">clears the input form</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>3
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonViewSimulations</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">displays the list of simulations already performed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>4
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonSimulationForm</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">returns to the input form</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>5
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonSaveSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">saves the current simulation to the simulation list</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>6
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">LinkButtonEndSession</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ends the current session</div></td></tr></table>
+
+<p>Components 1 through 6 are not accessible outside the page that contains them. The properties in lines 9 through 37 are intended to make them accessible to external classes, in this case the classes of the application’s other pages.</p>
+<h4 id="11523-the-setmenu-method">11.5.2.3. <span style="color: #4f81bd"><em>The SetMenu method</em></span></h4>
+<p>The public <em>SetMenu</em> method allows the pages [Formulaire.aspx, Simulations.aspx, Erreurs.aspx] to set the master page’s menu. Its code is basic:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line">        <span style="color:#008000">// set the menu </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">public void </span>SetMenu(<span style="color:#0000ff">bool </span>runSimulation, <span style="color:#0000ff">bool </span>saveSimulation, <span style="color:#0000ff">bool </span>clearSimulation, <span style="color:#0000ff">bool </span>simulationForm, <span style="color:#0000ff">bool </span>viewSimulations, <span style="color:#0000ff">bool </span>endSession)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// set the menu options </span></span>
+<span class="odt-code-line">            LinkButtonRunSimulation.Visible = boolRunSimulation;</span>
+<span class="odt-code-line">            LinkButtonSaveSimulation.Visible = boolSaveSimulation;</span>
+<span class="odt-code-line">            LinkButtonClearSimulation.Visible = boolClearSimulation;</span>
+<span class="odt-code-line">            LinkButtonViewSimulations.Visible = boolViewSimulations;</span>
+<span class="odt-code-line">            LinkButtonSimulationForm.Visible = boolSimulationForm;</span>
+<span class="odt-code-line">            LinkButtonEndSession.Visible = boolEndSession;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<h4 id="11524-event-handling-on-the-master-page">11.5.2.4. <span style="color: #4f81bd"><em>Event handling on the master page</em></span></h4>
+<p>The master page will handle two events:</p>
+<ul>
+  <li>the <i>Init</i> event, which is the first event in the page&#x27;s lifecycle
+  </li>
+  <li>the <i>Click</i> event on the [LinkButtonTerminerSession] link
+  </li>
+</ul>
+
+<p>The master page has five other links: [LinkButtonRunSimulation, LinkButtonSaveSimulation, LinkButtonClearSimulation, LinkButtonViewSimulations, LinkButtonSimulationForm]. As an example, let’s examine what needs to be done when the [LinkButtonRunSimulation] link is clicked:</p>
+<ol>
+  <li>verify the data entered (hours, days) on the [Form.aspx] page
+  </li>
+  <li>calculate the salary
+  </li>
+  <li>display the results on the [Form.aspx] page
+  </li>
+</ol>
+
+<p>Steps 1 and 3 require access to the components on the [Form.aspx] page. This is not the case. In fact, the master page has no knowledge of the components on the pages that may be inserted into its [ContentPlaceHolder1] container. In our example, it is up to the [Formulaire.aspx] page to handle the click on the [LinkButtonFaireSimulation] link, since it is the page that is displayed when this event occurs. How can it be notified of this event?</p>
+<ul>
+  <li>Since the [LinkButtonFaireSimulation] link is not part of the [Formulaire.aspx] page, we cannot write the usual procedure in [Formulaire.aspx]:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>LinkButtonFaireSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>You can work around the problem with the following code in [Formulaire.aspx]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v7</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public partial class </span><span style="color:#2b91af">Form</span>: System.Web.UI.<span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">// Page load </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// event handler</span></span>
+<span class="odt-code-line">        Master.OptionRunSimulation.Click += RunSimulation_Click;</span>
+<span class="odt-code-line">        Master.OptionClearSimulation.Click += OptClearSimulation_Click;</span>
+<span class="odt-code-line">        Master.OptionViewSimulations.Click += OptViewSimulations_Click;</span>
+<span class="odt-code-line">        Master.OptionSaveSimulation.Click += OptSaveSimulation_Click;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// payroll calculation </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>OptRunSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// Clear simulation </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>OptClearSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptViewSimulations_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptSaveSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"> }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>lines 12–15: When the <i>Load</i> event of the [Formulaire.aspx] page occurs, the [MasterPage] class of the master page has been instantiated. Its public <i>Optionxx</i> properties are accessible and are of type <i>LinkButton</i>, a component that supports the <i>Click</i> event. We associate the following methods with these <i>Click</i> events:
+    <ul>
+      <li><i>OptFaireSimulation_Click </i>for the <i>Click</i> event on the <i>LinkButtonFaireSimulation</i> link
+      </li>
+      <li><i>OptEffacerSimulation_Click </i>for the <i>Click</i> event on the <i>LinkButtonEffacerSimulation</i> link
+      </li>
+      <li><i>OptVoirSimulations_Click </i>for the <i>Click</i> event on the <i>LinkButtonVoirSimulations</i> link
+      </li>
+      <li><i>OptEnregistrerSimulation_Click </i>for the <i>Click</i> event on the <i>LinkButtonEnregistrerSimulation</i> link
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Handling of <em>Click</em> events on the six menu links will be distributed as follows:</p>
+<ul>
+  <li>the [Formulaire.aspx] page will handle the [LinkButtonRunSimulation, LinkButtonSaveSimulation, LinkButtonClearSimulation, LinkButtonViewSimulations] links
+  </li>
+  <li>the [Simulations.aspx] page will handle the [LinkButtonSimulationForm] link
+  </li>
+  <li>the master page [MasterPage.master] will handle the [LinkButtonEndSession] link. For this event, it does not need to know which page it encapsulates.
+  </li>
+</ul>
+
+<h4 id="11525-the-init-event-of-the-master-page">11.5.2.5. <span style="color: #4f81bd"><em>The Init event of the master page</em></span></h4>
+<p>The three pages [Form.aspx, Simulations.aspx, Errors.aspx] of the application use [MasterPage.master] as their master page. Let’s call the master page M and the encapsulated page E. When page E is requested by the client, the following events occur in order:</p>
+<ul>
+  <li>E.Init
+  </li>
+  <li>M.Init
+  </li>
+  <li>E.Load
+  </li>
+  <li>M.Load
+  </li>
+  <li>...
+  </li>
+</ul>
+
+<p>We will use the <em>Init</em> event of page M to execute code that should be run as early as possible, regardless of the target page E. To identify this code, let’s review the application overview:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B0000025AE3DDE58F.png" style="display:inline-block; margin:4px;width:17.503cm;height:7.964cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B0000025AE3DDE58F.png" /></td></tr></table>
+
+<p>Above, [Global] is the [HttpApplication] object that initializes the application. This class is the same as in the [pam-v4-3tier-nhibernate-multivues-monopage] version:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v7</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#008000">// --- application static data ---</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">Employee</span>[] Employees;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">IPamMetier </span>PamMetier = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static string </span>Msg;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static bool </span>Error = <span style="color:#0000ff">false</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// Application startup</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public void </span>Session_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>If the [Global] class fails to initialize the application correctly, it sets two static public variables:</p>
+<ul>
+  <li>the boolean <b>Error </b>on line 12 is set to <i>true</i>
+  </li>
+  <li>the `<b>Msg` </b>variable on line 11 contains a message providing details about the error encountered
+  </li>
+</ul>
+
+<p>When a user requests one of the pages [Form.aspx, Simulations.aspx] while the application has not initialized correctly, that request must be forwarded or redirected to the [Errors.aspx] page, which will display the error message from the [Global] class. There are several ways to handle this situation:</p>
+<ul>
+  <li>Perform the initialization error check in the <i>Init </i>or <i>Load </i>event handler of each of the pages [Formulaire.aspx, Simulations.aspx]
+  </li>
+  <li>Perform the initialization error check in the <i>Init </i>or <i>Load </i>event handler of the master page for these two pages. This method has the advantage of placing the initialization error check in a single location.
+  </li>
+</ul>
+
+<p>We choose to perform the initialization error check in the <em>Init</em> event handler of the <strong>master page</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">        <span style="color:#0000ff">protected void </span>Page_Init(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// event handler </span></span>
+<span class="odt-code-line">            LinkButtonTerminerSession.Click += LinkButtonTerminerSession_Click;</span>
+<span class="odt-code-line">            <span style="color:#008000">// Initialization errors? </span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">if </span>(<span style="color:#2b91af">Global</span>.Error)</span>
+<span class="odt-code-line">            {</span>
+<span class="odt-code-line">                <span style="color:#008000">// Is the encapsulated page the error page? </span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">bool </span>isErrorPage =<span style="color:#0000ff">...</span>;</span>
+<span class="odt-code-line">                <span style="color:#008000">// if the error page is displayed, let it be; otherwise, redirect the client to the error page </span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">if </span>(!isErrorPage)</span>
+<span class="odt-code-line">                    Response.Redirect(<span style="color:#a31515">&quot;Errors.aspx&quot;</span>);</span>
+<span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>The code above will execute as soon as one of the pages [Form.aspx, Simulations.aspx, Errors.aspx] is requested. If the requested page is [Form.aspx] or [Simulations.aspx], we simply (line 12) redirect the client to the [Errors.aspx] page, which displays the error message from the [Global] class.  If the requested page is [Errors.aspx], this redirection must not occur: the [Errors.aspx] page must be displayed. We therefore need to know, within the [Page_Init] method of the master page, which page it encapsulates.</p>
+<p>Let’s revisit the master page’s component tree:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">...</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body </span><span style="color:#0000ff">background=&quot;resources/standard.jpg&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">form </span><span style="color:#0000ff">id=&quot;form1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel </span><span style="color:#0000ff">ID=&quot;entete&quot; runat=&quot;server&quot; BackColor=&quot;#FFE0C0&quot; Width=&quot;1239px&quot; &gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">...</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel </span><span style="color:#0000ff">ID=&quot;content&quot; runat=&quot;server&quot; BackColor=&quot;#FFFFC0&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder </span><span style="color:#0000ff">ID=&quot;ContentPlaceHolder1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ContentPlaceHolder</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/div</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/form</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/html</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 1-13: the container with id &quot;form1&quot;
+  </li>
+  <li>lines 4-6: the container with ID &quot;entete&quot;, included in the container with ID &quot;form1&quot;
+  </li>
+  <li>lines 8-11: the container with id &quot;content&quot;, included in the container with id &quot;form1&quot;
+  </li>
+  <li>lines 9-10: the container with id &quot;ContentPlaceHolder1&quot;, included in the container with id &quot;content&quot;
+  </li>
+</ul>
+
+<p>A page E embedded in master page M is contained within the container with id &quot;ContentPlaceHolder1&quot;. To reference a component with id C on this page E, we would write: </p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#0000ff">this</span>.FindControl(<span style="color:#a31515">&quot;form1&quot;</span>).FindControl(<span style="color:#a31515">&quot;content&quot;</span>).FindControl(<span style="color:#a31515">&quot;ContentPlaceHolder1&quot;</span>).FindControl(<span style="color:#a31515">&quot;C&quot;</span>);</span>
+</code></pre></div>
+
+<p>The component tree for the [Errors.aspx] page is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; MasterPageFile=&quot;~/MasterPage.master&quot; AutoEventWireup=&quot;true&quot;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">CodeBehind=&quot;Errors.aspx.cs&quot; Inherits=&quot;pam_v7.PageErrors&quot; Title=&quot;Pam: Errors&quot; </span>%&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">MasterType </span><span style="color:#0000ff">VirtualPath=&quot;~/MasterPage.master&quot; </span>%&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content </span><span style="color:#0000ff">ID=&quot;Content1&quot; ContentPlaceHolderID=&quot;ContentPlaceHolder1&quot; Runat=&quot;Server&quot;&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h3</span><span style="color:#0000ff">&gt;</span>The following errors occurred when the application started<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/h3</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ul</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater </span><span style="color:#0000ff">id=&quot;rptErrors&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">li</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        &lt;<span style="color:#0000ff">%# </span>Container.DataItem %&gt;</span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/li</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ul</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Content</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p>When the [Errors.aspx] page is merged with the M master page, the content of the &lt;<em>asp:Content</em>&gt; tag above (lines 5–16) is integrated into the &lt;<em>asp:ContentPlaceHolder</em>&gt; tag with the ID &quot;ContentPlaceholder1&quot; on the M page,  resulting in the following component tree:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">...</span></span>
+<span class="odt-code-line">&lt;body background=&quot;resources/standard.jpg&quot;&gt;</span>
+<span class="odt-code-line">    &lt;form id=&quot;form1&quot; runat=&quot;server&quot;&gt;</span>
+<span class="odt-code-line">        &lt;asp:panel ID=&quot;header&quot; runat=&quot;server&quot; BackColor=&quot;#FFE0C0&quot; Width=&quot;1239px&quot; &gt;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        &lt;/asp:Panel&gt;</span>
+<span class="odt-code-line">        &lt;div&gt;</span>
+<span class="odt-code-line">            &lt;asp:Panel ID=&quot;content&quot; runat=&quot;server&quot; BackColor=&quot;#FFFFC0&quot;&gt;</span>
+<span class="odt-code-line">                &lt;asp:ContentPlaceHolder ID=&quot;ContentPlaceHolder1&quot; runat=&quot;server&quot;&gt;</span>
+<span class="odt-code-line">              &lt;h3&gt;The following errors occurred when the application started&lt;/h3&gt;</span>
+<span class="odt-code-line">              &lt;ul&gt;</span>
+<span class="odt-code-line">                  &lt;asp:Repeater id=&quot;rptErrors&quot; runat=&quot;server&quot;&gt;</span>
+<span class="odt-code-line">                      &lt;ItemTemplate&gt;</span>
+<span class="odt-code-line">                          &lt;li&gt;</span>
+<span class="odt-code-line">                              &lt;%# Container.DataItem %&gt;</span>
+<span class="odt-code-line">                          &lt;/li&gt;</span>
+<span class="odt-code-line">                      &lt;/ItemTemplate&gt;</span>
+<span class="odt-code-line">                  &lt;/asp:Repeater&gt;</span>
+<span class="odt-code-line">              &lt;/ul&gt;</span>
+<span class="odt-code-line">                &lt;/asp:ContentPlaceHolder&gt;</span>
+<span class="odt-code-line">            &lt;/asp:Panel&gt;</span>
+<span class="odt-code-line">        &lt;/div&gt;</span>
+<span class="odt-code-line">    &lt;/form&gt;</span>
+<span class="odt-code-line">&lt;/body&gt;</span>
+<span class="odt-code-line">&lt;/html&gt;</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 12: The [rptErrors] component can be used to determine whether or not the master page M contains the [Errors.aspx] page. This component exists only on this page.
+  </li>
+</ul>
+
+<p>These explanations are sufficient to understand the code of the [Page_Init] procedure in the master page:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">protected void </span>Page_Init(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// event handler </span></span>
+<span class="odt-code-line">            LinkButtonTerminerSession.Click += LinkButtonTerminerSession_Click;</span>
+<span class="odt-code-line">            <span style="color:#008000">// Initialization errors? </span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">if </span>(<span style="color:#2b91af">Global</span>.Error)</span>
+<span class="odt-code-line">            {</span>
+<span class="odt-code-line">                <span style="color:#008000">// Is the encapsulated page the error page? </span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">bool </span>isErrorPage = <span style="color:#0000ff">this</span>.FindControl(<span style="color:#a31515">&quot;form1&quot;</span>).FindControl(<span style="color:#a31515">&quot;content&quot;</span>).FindControl(<span style="color:#a31515">&quot;ContentPlaceHolder1&quot;</span>).FindControl(<span style="color:#a31515">&quot;rptErrors&quot;</span>) != <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line">                <span style="color:#008000">// if the error page is displayed, do nothing; otherwise, redirect the client to the error page </span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">if </span>(!isErrorPage)</span>
+<span class="odt-code-line">                    Response.Redirect(<span style="color:#a31515">&quot;Errors.aspx&quot;</span>);</span>
+<span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 4: We associate an event handler with the <i>Click</i> event on the <i>LinkButtonTerminerSession</i> link. This handler is in the <i>MasterPage</i> class.
+  </li>
+  <li>Line 6: We check whether the [Global] class has set its <i>Error</i> boolean
+  </li>
+  <li>line 9: if so, the <i>IsPageErrors</i> boolean indicates whether the page encapsulated in the master page is the [Errors.aspx] page
+  </li>
+  <li>line 12: if the page encapsulated in the master page is not the [Errors.aspx] page, then the client is redirected to that page; otherwise, nothing is done.
+#### 11.5.2.6. <span style="color: #4f81bd">*The Click event on the [LinkButtonTerminerSession] link*</span>
+
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006410000014EA9040AF9.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.755cm;" class="odt-zoomable" data-zoom-src="images/10000000000006410000014EA9040AF9.png" /></td></tr></table>
+
+<p>When the user clicks the [End Session] link in view (1) above, the session must be cleared of its contents and an empty form (2) must be displayed.</p>
+<p>The code for the handler of this event could be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">        <span style="color:#0000ff">protected void </span>LinkButtonTerminerSession_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// Abort the session </span></span>
+<span class="odt-code-line">            Session.Abandon();</span>
+<span class="odt-code-line">            <span style="color:#008000">// display the [form] view </span></span>
+<span class="odt-code-line">            Response.Redirect(<span style="color:#a31515">&quot;Form.aspx&quot;</span>);</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 4: The current session is abandoned
+  </li>
+  <li>line 6: the client is redirected to the [Form.aspx] page
+  </li>
+</ul>
+
+<p>We can see that this code does not involve any of the components of the [Form.aspx, Simulations.aspx, Errors.aspx] pages. The event can therefore be handled by the master page itself.</p>
+<h3 id="1153-control-code-for-the-errorsaspx-page">11.5.3. <span style="color: #4f81bd"><strong>Control code for the [Errors.aspx] page</strong></span></h3>
+<p>The control code for the [Errors.aspx] page could be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v7</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public partial class </span><span style="color:#2b91af">Errors </span>: System.Web.UI.<span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// Initialization errors? </span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(<span style="color:#2b91af">Global</span>.Error)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// prepare the [errors] page template </span></span>
+<span class="odt-code-line">        <span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">string</span>&gt; initializationErrors = <span style="color:#0000ff">new </span><span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">string</span>&gt;();</span>
+<span class="odt-code-line">        initializationErrors.Add(<span style="color:#2b91af">Global</span>.Msg);</span>
+<span class="odt-code-line">        <span style="color:#008000">// bind the error list to its component </span></span>
+<span class="odt-code-line">        rptErrors.DataSource = initialErrors;</span>
+<span class="odt-code-line">        rptErrors.DataBind();</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#008000">// Set the menu </span></span>
+<span class="odt-code-line">      Master.SetMenu(<span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Remember that the [Errors.aspx] page serves the sole purpose of displaying an application initialization error when one occurs:</p>
+<ul>
+  <li>line 10: we check if initialization ended with an error
+  </li>
+  <li>lines 13–14: if so, the error message (Global.Msg) is placed in a list [InitializationErrors]
+  </li>
+  <li>lines 16-17: the [rptErrors] component is instructed to display this list
+  </li>
+  <li>line 20: in all cases (error or not), the master page menu options are not displayed, so the user cannot initiate any new actions from this page.
+  </li>
+</ul>
+
+<p>What happens if the user directly requests the [Errors.aspx] page (which they are not supposed to do during normal use of the application)? By examining the code in [MasterPage.master.cs] and [Errors.aspx.cs], we will see that:</p>
+<ul>
+  <li>if there was an initialization error, it is displayed
+  </li>
+  <li>if there was no initialization error, the user receives a page containing only the header from [MasterPage.master] with no menu options displayed.
+### 11.5.4. <span style="color: #4f81bd">**Control code for the [Formulaire.aspx] page**</span>
+
+#### 11.5.4.1. <span style="color: #4f81bd">*Class skeleton*</span>
+
+  </li>
+</ul>
+
+<p>The skeleton of the control code for the [Form.aspx] page could be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Metier.Entities;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">partial class </span><span style="color:#2b91af">PageFormulaire </span>: System.Web.UI.<span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// page load </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// event handler</span></span>
+<span class="odt-code-line">        Master.OptionFaireSimulation.Click += OptFaireSimulation_Click;</span>
+<span class="odt-code-line">        Master.OptionDeleteSimulation.Click += OptDeleteSimulation_Click;</span>
+<span class="odt-code-line">        Master.OptionViewSimulations.Click += OptViewSimulations_Click;</span>
+<span class="odt-code-line">        Master.OptionSaveSimulation.Click += OptSaveSimulation_Click;</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// payroll calculation </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>OptRunSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// clear simulation </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>OptClearSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptViewSimulations_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptSaveSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>The control code for the [Formulaire.aspx] page handles five events:</p>
+<ol>
+  <li>the page&#x27;s <i>Load</i> event
+  </li>
+  <li>the <i>Click</i> event on the [LinkButtonRunSimulation] link on the master page
+  </li>
+  <li>the <i>Click</i> event on the [LinkButtonClearSimulation] link on the master page
+  </li>
+  <li>the <i>Click</i> event on the [LinkButtonEnregistrerSimulation] link on the master page
+  </li>
+  <li>the <i>Click</i> event on the [LinkButtonViewSimulations] link on the master page
+  </li>
+</ol>
+
+<h4 id="11542-page-load-event">11.5.4.2. <span style="color: #4f81bd"><em>Page Load event</em></span></h4>
+<p>The skeleton of the page <em>Load</em> event handler could be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// event handler</span></span>
+<span class="odt-code-line">        Master.OptionRunSimulation.Click += RunSimulation_Click;</span>
+<span class="odt-code-line">        Master.OptionClearSimulation.Click += OptClearSimulation_Click;</span>
+<span class="odt-code-line">        Master.OptionViewSimulations.Click += OptViewSimulations_Click;</span>
+<span class="odt-code-line">        Master.OptionSaveSimulation.Click += OptSaveSimulation_Click;</span>
+<span class="odt-code-line">        <span style="color:#008000">// display [inputs] view </span></span>
+<span class="odt-code-line">        ...</span>
+<span class="odt-code-line">        <span style="color:#008000">// master page menu positioning </span></span>
+<span class="odt-code-line">        ...</span>
+<span class="odt-code-line">        <span style="color:#008000">// process GET request </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>(!IsPostBack)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// loading employee names into the dropdown </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">            <span style="color:#008000">// Initialize the [inputs] view with inputs stored in the session, if any </span></span>
+<span class="odt-code-line">....</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>An example to clarify the comment on line 17 could be this:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063F00000156E39D3EDC.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.849cm;" class="odt-zoomable" data-zoom-src="images/100000000000063F00000156E39D3EDC.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063B00000172D3461750.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.175cm;" class="odt-zoomable" data-zoom-src="images/100000000000063B00000172D3461750.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], we request to see the list of simulations. Entries have been made in [A, B, C].
+  </li>
+  <li>In [2], we see the list
+  </li>
+  <li>In [3], we ask to return to the form
+  </li>
+  <li>in [4], the form is displayed exactly as it was left. Since there were two requests, (1,2) and (3,4), this means that:
+    <ul>
+      <li>when moving from [1] to [2], the entries from [1] were saved
+      </li>
+      <li>when moving from [3] to [4], they were restored. It is the [Page_Load] procedure in [Form.aspx] that performs this restoration.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Question</strong>: Complete the Page_Load procedure using the comments and code from the [pam-v4-3tier-nhibernate-multivues-monopage] version</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h4 id="11543-handling-click-events-on-menu-links">11.5.4.3. <span style="color: #4f81bd"><em>Handling Click events on menu links</em></span></h4>
+<p>The skeleton of the <em>click</em> event handlers for the links on the master page is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">// payroll calculation </span>
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>OptFaireSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// Ajax effect</span></span>
+<span class="odt-code-line">        <span style="color:#2b91af">Thread</span>.Sleep(3000);</span>
+<span class="odt-code-line">        <span style="color:#008000">// Is the page valid? </span></span>
+<span class="odt-code-line">        Page.Validate();</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>(!Page.IsValid)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// display [input] view </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#008000">// the page is valid - retrieve the entries </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// we calculate the employee&#x27;s salary </span></span>
+<span class="odt-code-line">        <span style="color:#2b91af">PayrollSheet </span>payrollSheet;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">try</span></span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            payroll = ...;</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">PamException </span>ex)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// an error occurred </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">            <span style="color:#0000ff">return</span>;</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#008000">// we put the result in the session </span></span>
+<span class="odt-code-line">        Session[<span style="color:#a31515">&quot;simulation&quot;</span>] = ...;</span>
+<span class="odt-code-line">        <span style="color:#008000">// store the input in the session </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// display </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// display views </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// display MasterPage menu </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// clear simulation </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private void </span>OptClearSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// display [input] panel </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// Select first employee </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptViewSimulations_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// save the entries to the session </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// display the [simulations] view </span></span>
+<span class="odt-code-line">        Response.Redirect(<span style="color:#a31515">&quot;simulations.aspx&quot;</span>);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptEnregistrerSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// save the current simulation to the user&#x27;s session </span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#008000">// display the [simulations] view </span></span>
+<span class="odt-code-line">        Response.Redirect(<span style="color:#a31515">&quot;simulations.aspx&quot;</span>);</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Question</strong>: Complete the code for the procedures above using the comments and code from the [pam-v4-3tier-nhibernate-multivues-monopage] version</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="1155-control-code-for-the-simulationsaspx-page">11.5.5. <span style="color: #4f81bd"><strong>Control code for the [Simulations.aspx] page</strong></span></h3>
+<p>The skeleton of the control code for the [Simulations.aspx] page could be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Web;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.UI.WebControls;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">partial class </span><span style="color:#2b91af">PageSimulations </span>: System.Web.UI.<span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// simulations </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private </span><span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Simulation</span>&gt; simulations;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// page load</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// event handler </span></span>
+<span class="odt-code-line">        Master.SimulationFormOption.Click += SimulationFormOption_Click;</span>
+<span class="odt-code-line">        GridViewSimulations.RowDeleting += GridViewSimulations_RowDeleting;</span>
+<span class="odt-code-line">        <span style="color:#008000">// retrieve simulations from the session</span></span>
+<span class="odt-code-line">        simulations = ...;</span>
+<span class="odt-code-line">        <span style="color:#008000">// Are there any simulations? </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>(simulations.Count != 0)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// first visible view </span></span>
+<span class="odt-code-line">            ...</span>
+<span class="odt-code-line">            <span style="color:#008000">// populate the GridView </span></span>
+<span class="odt-code-line">            ...</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">else</span></span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// second view </span></span>
+<span class="odt-code-line">            ...</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#008000">// set the menu </span></span>
+<span class="odt-code-line">        ...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>GridViewSimulations_RowDeleting(<span style="color:#0000ff">object </span>sender, System.Web.UI.WebControls.<span style="color:#2b91af">GridViewDeleteEventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// retrieve the simulations from the session</span></span>
+<span class="odt-code-line">        <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Simulation</span>&gt; simulations = ...;</span>
+<span class="odt-code-line">        <span style="color:#008000">// delete the specified simulation (e.RowIndex represents the index of the row to be deleted in the GridView)</span></span>
+<span class="odt-code-line">        ..</span>
+<span class="odt-code-line">        <span style="color:#008000">// Are there any simulations left? </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>(simulations.Count != 0)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// populate the GridView </span></span>
+<span class="odt-code-line">            ...</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">else</span></span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000">// [EmptySimulations] view </span></span>
+<span class="odt-code-line">            ...</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>OptFormulaireSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// display the [form] view </span></span>
+<span class="odt-code-line">        Response.Redirect(<span style="color:#a31515">&quot;formulaire.aspx&quot;</span>);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Question</strong>: Complete the code for the procedures above using the comments and code from the [pam-v4-3tier-nhibernate-multivues-monopage] version</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="1156-control-code-for-the-defaultaspx-page">11.5.6. <span style="color: #4f81bd"><strong>Control code for the [Default.aspx] page</strong></span></h3>
+<p>You can include a [Default.aspx] page in the application to allow the user to request the application’s URL without specifying a page, as shown below:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005B000000246501AC0BC.png" style="display:inline-block; margin:4px;width:17.997cm;height:7.193cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B000000246501AC0BC.png" /></td></tr></table>
+
+<p>Request [1] received the page [Formulaire.aspx] (2) in response. We know that request (1) is handled by default by the application’s [Default.aspx] page. To obtain (2), [Default.aspx] simply needs to redirect the client to the [Formulaire.aspx] page. This can be achieved with the following code:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">partial class </span><span style="color:#2b91af">_Default </span>: System.Web.UI.<span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Init(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">        <span style="color:#008000">// redirect to the input form </span></span>
+<span class="odt-code-line">        Response.Redirect(<span style="color:#a31515">&quot;Form.aspx&quot;</span>);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>The presentation page [Default.aspx] contains only the directive that links it to [Default.aspx.cs]:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">CodeBehind=&quot;Default.aspx.cs&quot; Inherits=&quot;pam_v7._Default&quot; Title=&quot;Untitled Page&quot; </span>%&gt;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

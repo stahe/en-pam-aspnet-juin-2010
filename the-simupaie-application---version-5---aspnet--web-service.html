@@ -1,0 +1,1564 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-pam-aspnet-juin-2010/the-simupaie-application---version-5---aspnet--web-service.html">
+      
+      
+        <link rel="prev" href="the-simupaie-application---version-4---aspnet--multi-view--single-page.html">
+      
+      
+        <link rel="next" href="the-simupaie-application---version-6---an-aspnet-client-of-a-web-service.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>9. The [SimuPaie] application – version 5 – ASP.NET / web service - Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-the-simupaie-application-version-5-aspnet-web-service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" class="md-header__button md-logo" aria-label="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9. The [SimuPaie] application – version 5 – ASP.NET / web service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" class="md-nav__button md-logo" aria-label="Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Building a three-tier web application using ASP.NET 2.0, C#, Spring.Net, and NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-quick-introduction-to-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. A Quick Introduction to ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-case-study.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Case Study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-1---aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. The [SimuPaie] application – version 1 – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. The [SimuPaie] application – version 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Introduction to the NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-3---3-tier-architecture-with-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. The [SimuPaie] application – version 3 – 3-tier architecture with NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-4---aspnet--multi-view--single-page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. The [SimuPaie] application – version 4 – ASP.NET / multi-view / single-page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The [SimuPaie] application – version 5 – ASP.NET / web service
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="the-simupaie-application---version-5---aspnet--web-service.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. The [SimuPaie] application – version 5 – ASP.NET / web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-the-applications-new-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. The application&#x27;s new architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-6---an-aspnet-client-of-a-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. The [SimuPaie] application – version 6 – an ASP.NET client of a web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-8---an-aspnet-client-of-a-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. The [SimuPaie] application – version 8 – an ASP.NET client of a web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-9---springnhibernate-integration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The [SimuPaie] application – version 9 – Spring/NHibernate integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-simupaie-application---version-10---a-flex-client-for-an-aspnet-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. The [SimuPaie] application – version 10 – a Flex client for an ASP.NET web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="9-the-simupaie-application-version-5-aspnet-web-service">9. <span style="color: #365f91"><strong>The [SimuPaie] application – version 5 – ASP.NET / web service</strong></span></h1>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Recommended reading</strong>: reference [2], <strong>Introduction to C# 2008</strong>, Chapter 10 &quot;<strong>Web Services</strong>&quot;</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h2 id="91-the-applications-new-architecture">9.1. <span style="color: #4f81bd"><strong>The application&#x27;s new architecture</strong></span></h2>
+<p>The <em>Pam</em> application’s layered architecture is currently as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BE000000BEF19A80DE.png" style="display:inline-block; margin:4px;width:16.06cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BE000000BEF19A80DE.png" /></td></tr></table>
+
+<p>We will evolve it as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000067B000000F635427F8B.png" style="display:inline-block; margin:4px;width:17.997cm;height:2.669cm;" class="odt-zoomable" data-zoom-src="images/100000000000067B000000F635427F8B.png" /></td></tr></table>
+
+<p>Whereas in the previous architecture, the [web], [business], and [DAO] layers ran in the same .NET virtual machine, in the new architecture, the [web] layer will run in a different virtual machine than the [business] and [DAO] layers. This will be the case, for example, if the [web] layer is on machine M1 and the [business] and [DAO] layers are on machine M2. Here we have a client/server architecture:</p>
+<ul>
+  <li>the server consists of the [business] and [DAO] layers. Because it is a web service, it requires web server #2 to run.
+  </li>
+  <li>The client consists of the [web] layer. To run, it requires web server #1.
+  </li>
+  <li>The client and server communicate over the TCP/IP network using the HTTP/SOAP protocol. To do this, two new layers must be added to the architecture:
+    <ul>
+      <li>the [S] layer, which will be a <b>web service</b>. The web service receives requests from remote clients and uses the [business] and [DAO] layers to fulfill them. There are many ways to build a TCP/IP service. The advantage of <b>the web service </b>is twofold:
+        <ul>
+          <li>it uses the HTTP protocol, which is allowed through corporate and government firewalls
+          </li>
+          <li>it uses a standard HTTP/SOAP sub-protocol, implemented by many development platforms: .NET, Java, PHP, Flex, etc. Thus, a web service can be &quot;consumed&quot; (the standard term) by .NET, Java, PHP, Flex, etc., clients
+          </li>
+        </ul>
+      </li>
+      <li>Layer [C], which will act as the <b>client </b>for the remote web service. Its role will be to communicate with the web service [S].
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>This new architecture can be derived from the previous ones without much effort: </p>
+<ul>
+  <li>the [business] and [DAO] layers remain unchanged
+  </li>
+  <li>the [web] layer evolves slightly, primarily to reference entities such as <i>Employee </i>and <i>Payroll</i>, which have become entities of the client layer [C]. These entities are analogous to those in the [business] or [DAO] layers but belong to different namespaces. 
+  </li>
+  <li>the server layer [S] is a class that implements the <i>IPamMetier</i> interface of the [business] layer. This implementation simply calls the corresponding methods of the [business] layer. The methods implemented by the server layer [S] will be &quot;exposed&quot; to remote clients, who will be able to call them.
+  </li>
+  <li>The client layer [C] will be generated by Visual Studio.
+  </li>
+</ul>
+
+<p>The principles of the new architecture are as follows:</p>
+<ul>
+  <li>The [web] layer continues to communicate with the [business] layer as if it were local. To achieve this, the client layer [C] implements the <i>IPamMetier</i> interface of the actual [business] layer and presents itself to the [web] layer as a local [business] layer. Apart from the namespace issue mentioned earlier, the [web] layer remains unchanged. This is the advantage of working in layers. If we had built a single-layer application, it would require a major overhaul.
+  </li>
+  <li>The client layer [C] transparently forwards the [web] layer’s requests to the remote web service [S]. It handles all aspects of “network communication.” It receives a response from the remote web service, which it formats to return to the [web] layer in the form the latter expects.
+  </li>
+  <li>On the server side, the web service [S] receives commands from its remote clients. It formats them to call the methods of the <i>IPamMetier</i> interface in the [business] layer. Once it has received the response from the [business] layer, it formats it to transmit it over the network to the client [C]. The [business] and [DAO] layers do not need to be modified.
+## 9.2. <span style="color: #4f81bd">**The Visual Web Developer project for the web service**</span>
+
+  </li>
+</ul>
+
+<p>We are building a new project with Visual Web Developer:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046B0000026E45A89882.png" style="display:inline-block; margin:4px;width:14.963cm;height:8.229cm;" class="odt-zoomable" data-zoom-src="images/100000000000046B0000026E45A89882.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], we select a C# web project
+  </li>
+  <li>in [2], we select &quot;ASP.NET Web Service Application&quot;
+  </li>
+  <li>in [3], we name the web project
+  </li>
+  <li>in [4], we specify a location for this project
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025B00000106E6132AC0.png" style="display:inline-block; margin:4px;width:7.978cm;height:3.466cm;" class="odt-zoomable" data-zoom-src="images/100000000000025B00000106E6132AC0.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], the generated project. It is a standard web project with the following details:
+    <ul>
+      <li>We specified that the project is a &quot;Web service.&quot; A Web service does not send HTML web pages to its clients but rather data in XML format. Therefore, the [Default.aspx] page that is usually generated was not created.
+      </li>
+    </ul>
+  </li>
+  <li>In [2], a file [Service1.asmx] was generated with the following content:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">WebService </span><span style="color:#0000ff">Language=&quot;C#&quot; CodeBehind=&quot;Service1.asmx.cs&quot; Class=&quot;pam_v5_webservice.Service1&quot; </span>%&gt;</span>
+</code></pre></div>
+
+<ul>
+  <li>(continued)
+    <ul>
+      <li>- The <i>WebService</i> tag indicates that [Service.asmx] is a web service
+      </li>
+      <li>- The <i>CodeBehind</i> attribute specifies the location of the source code for this web service
+      </li>
+      <li>- The <i>Class</i> attribute specifies the name of the class that implements the web service in the source code
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The source code [Service.asmx.cs] for the default web service is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Services;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5_webservice</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#808080">/// &lt;summary&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#808080">/// </span><span style="color:#008000">Summary description of Service1</span></span>
+<span class="odt-code-line">  <span style="color:#808080">/// &lt;/summary&gt;</span></span>
+<span class="odt-code-line">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://tempuri.org/&quot;</span>)]</span>
+<span class="odt-code-line">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span>
+<span class="odt-code-line">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span>
+<span class="odt-code-line">  <span style="color:#008000">// To allow this Web service to be called from a script using ASP.NET AJAX, remove the comment marks from the following line. </span></span>
+<span class="odt-code-line">  <span style="color:#008000">// [System.Web.Script.Services.ScriptService]</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Service1 </span>: System.Web.Services.<span style="color:#2b91af">WebService</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>HelloWorld()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span><span style="color:#a31515">&quot;Hello World&quot;</span>;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>line 8: the <i>WebService</i> annotation, which causes the <i>Service1</i> class on line 13 to be exposed as a web service. A web service belongs to a namespace to prevent two web services in the world from having the same name. We will need to change this namespace later.
+  </li>
+  <li>line 13: the <i>Service1</i> class derives from the <i>WebService</i> class of the .NET framework.
+  </li>
+  <li>line 16: the <i>WebMethod</i> annotation ensures that the method annotated in this way will be exposed to remote clients, who will then be able to call it.
+  </li>
+  <li>Lines 17–20: The <i>HelloWorld</i> method is a demonstration method. We will remove it later. It allows us to perform initial tests and explore Visual Studio tools as well as certain key concepts regarding web services.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A7000001676B5A9D50.png" style="display:inline-block; margin:4px;width:5.597cm;height:4.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A7000001676B5A9D50.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], we run the web service [Service.asmx]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000040500000147CACAFCC9.png" style="display:inline-block; margin:4px;width:13.614cm;height:4.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000040500000147CACAFCC9.png" /></td></tr></table>
+
+<ul>
+  <li>VS Web Developer has launched its built-in web server and is listening on a random port, in this case 1599. The URL [2] was then requested from the web server. This is the URL for a web service test page.
+  </li>
+  <li>In [3], a link that allows you to view the web service description file. This file, called a WSDL (Web Service Description Language) file because of its suffix (.wsdl), is an XML file describing the methods exposed by the web service. It is from this WSDL file that clients can learn:
+    <ul>
+      <li>the namespace of the web service
+      </li>
+      <li>the list of methods exposed by the web service
+      </li>
+      <li>the parameters expected by each of them
+      </li>
+      <li>the response returned by each of them
+      </li>
+    </ul>
+  </li>
+  <li>in [4], the single method exposed by the web service<a id="pam-v5-url-wsdl"></a> .
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000421000002C7D5E7C00C.png" style="display:inline-block; margin:4px;width:13.984cm;height:9.407cm;" class="odt-zoomable" data-zoom-src="images/1000000000000421000002C7D5E7C00C.png" /></td></tr></table>
+
+<ul>
+  <li>in [5], the contents of the WSDL file obtained via the link [3]. Note the URL [6]. Knowledge of this URL is necessary for web service clients.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000575000001922489169F.png" style="display:inline-block; margin:4px;width:17.997cm;height:5.179cm;" class="odt-zoomable" data-zoom-src="images/1000000000000575000001922489169F.png" /></td></tr></table>
+
+<ul>
+  <li>In [7], the page accessed by following the link [4] allows you to call the [HelloWorld] method of the web service
+  </li>
+  <li>In [8], the result obtained: an XML response. Note the method’s URL [9].
+  </li>
+</ul>
+
+<p>Examining the previous pages helps us understand how a web service method is called and what type of response it returns. This enables us to write HTTP clients capable of communicating with the web service. Most modern IDEs allow for the automatic generation of this HTTP client, thereby saving the developer from having to write it. This is particularly the case with Visual Studio Express.</p>
+<p>Before continuing with this project, we will change the default namespace used when generating classes:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002D1000000DE54148427.png" style="display:inline-block; margin:4px;width:9.539cm;height:2.937cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D1000000DE54148427.png" /></td></tr></table>
+
+<p>When we select the project properties (right-click on the project / Properties), we see [1] the project <em>assembly</em> name and [2] its default namespace.</p>
+<p>Once this is done,</p>
+<ul>
+  <li>in [Service1.asmx.cs], we change the class namespace:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Services;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Service1 </span>: System.Web.Services.<span style="color:#2b91af">WebService</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>In [Service.asmx], we also change the namespace used for the [Service1] class (right-click / View Source):
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">WebService </span><span style="color:#0000ff">Language=&quot;C#&quot; CodeBehind=&quot;Service1.asmx.cs&quot; Class=&quot;pam_v5.Service1&quot; </span>%&gt;</span>
+</code></pre></div>
+
+<p>Let’s return to our application’s architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065F000000EBD4EC4116.png" style="display:inline-block; margin:4px;width:17.997cm;height:2.593cm;" class="odt-zoomable" data-zoom-src="images/100000000000065F000000EBD4EC4116.png" /></td></tr></table>
+
+<ul>
+  <li>The [S] layer is the web service. It simply exposes the methods of the [business] layer to remote clients. This is the layer we are currently building.
+  </li>
+  <li>The [C] layer is the web service’s HTTP client. This is the layer that IDEs can generate automatically.
+  </li>
+  <li>The [web] layer treats the [C] layer as a local [business] layer if we ensure that the [C] layer implements the interface of the remote [business] layer.
+  </li>
+</ul>
+
+<p>We can see below that our web service will:</p>
+<ul>
+  <li>expose the methods of the [business] layer
+  </li>
+  <li>communicate with the [business] layer, which in turn will communicate with the [DAO] layer.
+  </li>
+</ul>
+
+<p>The project must therefore use the DLLs for the [business] and [DAO] layers. It evolves as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003520000017B53D051F3.png" style="display:inline-block; margin:4px;width:11.245cm;height:5.015cm;" class="odt-zoomable" data-zoom-src="images/10000000000003520000017B53D051F3.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], we add references to the project
+  </li>
+  <li>in [2], we select the usual DLLs from the [lib] folder. We will ensure that their &quot;Copy to Local&quot; property is set to <i>True</i>. The selected DLLs are those that implement the [business] and [DAO] layers with NHibernate support.
+  </li>
+</ul>
+
+<p>An &quot;ASP.NET Web Service&quot; type web application can have a global application class &quot;Global.asax&quot; just like a classic &quot;ASP.NET Web Site&quot; application. We have seen the benefits of such a class:</p>
+<ul>
+  <li>it is instantiated when the application starts and remains in memory
+  </li>
+  <li>it can thus store data shared by all clients that is read-only. In our application, it will store, as in the previous ones, the simplified list of employees. This will avoid having to retrieve this list from the database when a client requests it.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A200000183BB97BA69.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A200000183BB97BA69.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], right-click on the project
+  </li>
+  <li>in [2], select the [Add New Item] option
+  </li>
+  <li>In [3], select [Global Application Class]
+  </li>
+  <li>In [4], the [Global.asax] file has been added to the project
+  </li>
+</ul>
+
+<p>The contents of the [Global.asax] file are as follows:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Application </span><span style="color:#0000ff">Codebehind=&quot;Global.asax.cs&quot; Inherits=&quot;pam_v5.Global&quot; Language=&quot;C#&quot; </span>%&gt;</span>
+</code></pre></div>
+
+<p>The contents of the [Global.asax.cs] file are as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>What should we do in the <em>Application_Start</em> method? Exactly the same thing as in previous web applications. Let’s go back to the application architecture and place the [Global] class there:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006510000013B1BEAAB88.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/10000000000006510000013B1BEAAB88.png" /></td></tr></table>
+
+<p>In the diagram above,</p>
+<ul>
+  <li>the [Global] class is instantiated when the web service starts. It remains in memory as long as the web service is active.
+  </li>
+  <li>The [Global] class instantiates the [business] and [DAO] layers in its [Application_Start] method
+  </li>
+  <li>To improve performance, the [Global] class stores the simplified list of employees in an internal field. It will retrieve the list of employees from this field.
+  </li>
+  <li>The web service is instantiated with each client request. It disappears after serving that request. It will not communicate directly with the [business] layer but with the [Global] class. The latter will implement the [business] layer’s interface.
+  </li>
+</ul>
+
+<p>The [Global] class is similar to the one already built for previous applications:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Entities;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#008000">// --- application static data ---</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">Employee</span>[] Employees;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">IPamMetier </span>PamMetier = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// instantiate [business] layer</span></span>
+<span class="odt-code-line">      PamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">IPamMetier</span>;</span>
+<span class="odt-code-line">      <span style="color:#008000">// retrieve the simplified array of employees </span></span>
+<span class="odt-code-line">      Employees = PamMetier.GetAllEmployeeIdentities();</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// simplified list of employees</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">static public </span><span style="color:#2b91af">Employee</span>[] GetAllEmployeeIdentities()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>Employees;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// employee salary</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">static public </span><span style="color:#2b91af">PayrollSheet </span>GetPayroll(<span style="color:#0000ff">string </span>SS, <span style="color:#0000ff">double </span>hoursWorked, <span style="color:#0000ff">int </span>daysWorked)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>PamMetier.GetSalary(SS, hoursWorked, daysWorked);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>The [Global] class implements the [IPamMetier] interface, but this is not explicitly stated in the declaration:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication, IPamMetier</span></span>
+</code></pre></div>
+
+<p>In fact, the methods <em>GetAllEmployeeIDs</em> (line 24) and <em>GetSalary</em> (line 30) are static, whereas the methods of the <em>IPamMetier</em> interface are not. Therefore, the <em>Global</em> class cannot implement the <em>IPamMetier</em> interface. Furthermore, it is not possible to declare the <em>GetAllEmployeeIDs</em> and <em>GetSalary</em> methods as non-static. This is because they are accessed via the class name and not via an instance of the class.</p>
+<ul>
+  <li>Line 15: The <i>Application_Start</i> method is similar to that of the [Global] classes studied in previous versions. It instantiates the [business] layer (line 18) and then initializes (line 20) the employee array from line 12.
+  </li>
+  <li>Line 24: The <i>GetAllEmployeeIDs</i> method simply returns the array of employees from line 12. This is the benefit of having stored it at the start of the application.
+  </li>
+  <li>Line 30: The <i>GetSalaire</i> method calls the method of the same name in the [business] layer.
+  </li>
+</ul>
+
+<p>To instantiate the [business] layer (line 18), the [Global] class uses the Spring framework. This is configured by the [Web.config] file, which is identical to that of the previous project: it configures Spring and NHibernate to instantiate the [business] and [DAO] layers of the web service.</p>
+<p>Let’s return to the architecture of our client/server application:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066500000156A0DC531E.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.761cm;" class="odt-zoomable" data-zoom-src="images/100000000000066500000156A0DC531E.png" /></td></tr></table>
+
+<p>On the server side, all that remains is to write the [S] web service itself. If we return to the application architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006630000017C50B231AF.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.182cm;" class="odt-zoomable" data-zoom-src="images/10000000000006630000017C50B231AF.png" /></td></tr></table>
+
+<p>we see that on the server side, all layers preceding the [business] layer implement its interface, <em>IPamMetier</em>. This is not mandatory, but it is a logical approach. This reasoning can be applied on the client side, to the client [C] of the web service [S]. Thus, all layers separating the [web] layer from the [business] layer implement the <em>IPamMetier</em> interface. We can therefore say that we have returned to a three-tier application:</p>
+<ul>
+  <li>the presentation layer [web] [1]
+  </li>
+  <li>the [business] layer [2]
+  </li>
+  <li>the data access layer [3]
+  </li>
+</ul>
+
+<p>The implementation of the web service [Service1.asmx.cs] could be as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Services;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Entities;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://st.istia.univ-angers.fr/&quot;</span>)]</span>
+<span class="odt-code-line">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span>
+<span class="odt-code-line">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Service1 </span>: System.Web.Services.<span style="color:#2b91af">WebService</span>, <span style="color:#2b91af">IPamMetier</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// list of all employee identities </span></span>
+<span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">Employee</span>[] GetAllEmployeeIDs()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span><span style="color:#2b91af">Global</span>.GetAllEmployeeIDs();</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000">// ------- salary calculation </span></span>
+<span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">Payroll </span>GetSalary(<span style="color:#0000ff">string </span>ss, <span style="color:#0000ff">double </span>hoursWorked, <span style="color:#0000ff">int </span>daysWorked)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span><span style="color:#2b91af">Global</span>.GetSalary(ss, hoursWorked, daysWorked);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<ul>
+  <li>line 8: the class is annotated with the [WebService] attribute, and we assign a name to the web service namespace
+  </li>
+  <li>line 11: the [Service1] class inherits from the [WebService] class and implements the [IPamMetier] interface
+  </li>
+  <li>lines 15 and 22: each method of the class is annotated with the [WebMethod] attribute in order to be exposed to remote clients. By default, all public methods of a web service are exposed. The attributes in lines 15 and 22 are therefore optional here. To implement the [IPamMetier] interface, each method simply calls the method of the same name in the [Global] class.
+  </li>
+</ul>
+
+<p>We are ready to run the web service:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006390000016419119FC6.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.022cm;" class="odt-zoomable" data-zoom-src="images/10000000000006390000016419119FC6.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], the project is regenerated
+  </li>
+  <li>in [2], we select the web service [Service1.asmx] and display it in the browser [3]
+  </li>
+  <li>in [4], the displayed web page. It shows the web service methods.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FB00000240EBD02E3D.png" style="display:inline-block; margin:4px;width:17.997cm;height:6.772cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FB00000240EBD02E3D.png" /></td></tr></table>
+
+<ul>
+  <li>in [4], we follow the link [GetAllIdentitesEmployes] and in [5] we get the test page for this method.
+  </li>
+  <li>in [6], the method’s URL
+  </li>
+  <li>In [7], the [Call] button used to test the method. This method does not require any parameters.
+  </li>
+  <li>In [8], the XML result returned by the web service. In this result, only the <i>SS</i>, <i>LastName</i>, and <i>FirstName </i>properties of the <i>Employee</i> objects are significant because the [GetAllEmployeeIDs] method requests only these properties. However, this method returns an array of <i>Employee</i> objects. We can see in [8] that the numeric properties <i>Id </i>and <i>Version </i>are included in the returned XML stream, but not the properties with a <i>null</i> value: <i>Address</i>, <i>City</i>, <i>ZipCode</i>, <i>Allowances</i>.
+  </li>
+</ul>
+
+<p>We have an active web service. We will now write a C# client for it. To do this, we will need the URI of the web service’s WSDL file. We obtain it from the page initially displayed when executing [Service.asmx]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C5000001FD281167BC.png" style="display:inline-block; margin:4px;width:9.38cm;height:6.735cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C5000001FD281167BC.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], the web service URI
+  </li>
+  <li>in [2], the link to its WSDL file
+  </li>
+  <li>in [3], the value of this link
+## 9.3. <span style="color: #4f81bd">**The C# project for a NUnit client of the web service**</span>
+
+  </li>
+</ul>
+
+<p>We create a C# project (using Visual C#, not Visual Web Developer) for the web service client. This will be a NUnit test client. Therefore, the project will be of the &quot;Class Library&quot; type.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006020000016560980782.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.177cm;" class="odt-zoomable" data-zoom-src="images/10000000000006020000016560980782.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], we create a C# project of the &quot;Class Library&quot; type
+  </li>
+  <li>in [2], we name the project
+  </li>
+  <li>In [3], the project. We delete [Class1.cs].
+  </li>
+  <li>In [4], the new project.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000041F000000C1CD8525CF.png" style="display:inline-block; margin:4px;width:13.958cm;height:2.552cm;" class="odt-zoomable" data-zoom-src="images/100000000000041F000000C1CD8525CF.png" /></td></tr></table>
+
+<ul>
+  <li>In the project properties, on the [Application] tab [5], we set the project namespace. Every class generated by the IDE will be in this namespace.
+  </li>
+</ul>
+
+<p>We save our new project to a location of our choice:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000111000000438B2A1320.png" style="display:inline-block; margin:4px;width:5.061cm;height:1.242cm;" class="odt-zoomable" data-zoom-src="images/1000000000000111000000438B2A1320.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>Once this is done, we generate the remote web service client. To understand what we are about to do, we need to revisit the client/server architecture currently under construction:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006720000016738878E87.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.916cm;" class="odt-zoomable" data-zoom-src="images/10000000000006720000016738878E87.png" /></td></tr></table>
+
+<p>The IDE will generate the client layer [C] from the URI of the web service’s WSDL file [S]. Recall that the URI of this file was noted earlier. We proceed from the web<a id="v10-generation-client-serviceweb1"></a> s follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065B000001572059E0CC.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000065B000001572059E0CC.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], right-click the <i>References</i> branch and add a <i>service reference</i>
+  </li>
+  <li>In [2], enter the URL of the web service&#x27;s WSDL file noted earlier. The service must be running if it is not already.
+  </li>
+  <li>In [3], request discovery of the web service via its WSDL file
+  </li>
+  <li>In [4], the discovered web service
+  </li>
+  <li>In [5], the methods exposed by the web service.
+  </li>
+  <li>In [6], the namespace in which you want to place the classes and interfaces of the client that will be generated.
+  </li>
+  <li>Confirm the wizard
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006310000021FADA7D792.png" style="display:inline-block; margin:4px;width:17.997cm;height:6.167cm;" class="odt-zoomable" data-zoom-src="images/10000000000006310000021FADA7D792.png" /></td></tr></table>
+
+<p><a id="v10-servicesoapclient1"></a></p>
+<ul>
+  <li>In [1], the generated client file (<a id="client-csharp-webservice"></a> ). Double-click it to view its contents.
+  </li>
+  <li>in [2], in the Object Explorer, the classes and interfaces of the <i>Client.WsPam </i>namespace are displayed. This is the namespace of the generated client.
+  </li>
+  <li>In [3], the class that implements the web service client.
+  </li>
+  <li>In [4], the methods implemented by the client [Service1SoapClient]. Here you will find the two methods of the remote web service [5] and [6].
+  </li>
+  <li>In [2], you can see the entity diagrams for the layers:
+    <ul>
+      <li>[business]: <i>Payroll</i>, <i>PayrollItems</i>
+      </li>
+      <li>[DAO]: <i>Employee</i>, <i>Contributions</i>, <i>Allowances</i>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Moving forward, keep in mind that these representations of the remote entities are located on the client side and in the <em>PamV5Client.WsPam</em> namespace.</p>
+<p>Let’s examine the methods and properties exposed by one of them:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003FC0000027A658721C5.png" style="display:inline-block; margin:4px;width:13.494cm;height:8.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000003FC0000027A658721C5.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], we select the local [Employee] class
+  </li>
+  <li>In [2], we see the properties of the remote [Employee] entity as well as private fields used for the local entity’s specific needs. 
+  </li>
+</ul>
+
+<p>Let’s return to our C# application. We add a NUnit test class to it:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C30000019F017880A6.png" style="display:inline-block; margin:4px;width:17.997cm;height:5.064cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C30000019F017880A6.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], the added [NUnit] class. The [NUnit] class will require the NUnit framework and therefore a reference to its DLL. We assume here that the NUnit framework has been installed on the machine (http://nunit.org/).
+  </li>
+  <li>In [2], we add a reference to the project
+  </li>
+  <li>in the [3] .NET tab, which lists the DLLs registered on the machine, we select [4], the [nunit.framework] DLL, version 2.4.6 or later.
+  </li>
+</ul>
+
+<p>Additionally, we will use Spring to instantiate the local client [C] of the web service [S]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000068500000177114EA989.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.045cm;" class="odt-zoomable" data-zoom-src="images/100000000000068500000177114EA989.png" /></td></tr></table>
+
+<p>The reference to the Spring DLL can be added in the same way as for the NUnit framework if the DLLs have already been registered on the machine (http://www.springframework.net/download.html).</p>
+<p>We proceed differently. We use the [lib] folder from previous projects, which contained the DLLs required by Spring, and add the Spring reference to the project:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D5000000EDBF9AEB8A.png" style="display:inline-block; margin:4px;width:6.205cm;height:3.136cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D5000000EDBF9AEB8A.png" /></td></tr></table>
+
+<p>Let’s revisit the architecture of the client currently under development:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B40000018AE82310FE.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.133cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B40000018AE82310FE.png" /></td></tr></table>
+
+<p>Above, we see that the test client [1] interfaces with an extended [business] layer [2]. This layer has the same methods as the remote [business] layer. We can therefore use the test class already encountered when testing the [business] layer in the C# project [pam-metier-dao-nhibernate]: </p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>NUnit.Framework;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Entities;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Pam.Business.Tests {</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    [<span style="color:#2b91af">TestFixture</span>()]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public class </span><span style="color:#2b91af">NunitTestPamMetier </span>: <span style="color:#2b91af">AssertionHelper </span>{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000">// the [business] layer to be tested </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">private </span><span style="color:#2b91af">IPamMetier </span>pamMetier;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000">// constructor</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">public </span>NunitTestPamMetier() {</span>
+<span class="odt-code-line">            <span style="color:#008000">// instantiation of the [DAO] layer</span></span>
+<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">IPamMetier</span>;</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetAllEmployeeIdentities() {</span>
+<span class="odt-code-line">            <span style="color:#008000">// Check number of employees </span></span>
+<span class="odt-code-line">            Expect(2, EqualTo(pamMetier.GetAllEmployeeIdentities().Length));</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetSalary1() {</span>
+<span class="odt-code-line">            <span style="color:#008000">// Calculate a pay stub </span></span>
+<span class="odt-code-line">            <span style="color:#2b91af">PayrollSheet </span>payrollSheet = pamMetier.GetSalary(<span style="color:#a31515">&quot;254104940426058&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            <span style="color:#008000">// checks </span></span>
+<span class="odt-code-line">            Expect(368.77, EqualTo(payrollSheet.PayrollElements.NetPay).Within(1E-06));</span>
+<span class="odt-code-line">            <span style="color:#008000">// Payroll for a non-existent employee </span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">bool </span>error = <span style="color:#0000ff">false</span>;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try </span>{</span>
+<span class="odt-code-line">                payrollSheet = pamBusiness.GetSalary(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            } <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">PamException</span>) {</span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">            Expect(error, True);</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>There are a few changes to make:</p>
+<ul>
+  <li>On line 18, we instantiate the [business] layer using the Spring framework. The class is not the same in both cases. Here, the local [business] layer is an instance of the [PamV5Client.WsPam.Service1SoapClient] class, the class generated by the IDE. Therefore, Spring is configured as follows in the [app.config] file of the C# project:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot; <span style="color:#0000ff">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">sectionGroup </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">spring</span>&quot;<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">context</span>&quot; <span style="color:#0000ff">type=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.ContextHandler, Spring.Core</span>&quot; <span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">objects</span>&quot; <span style="color:#0000ff">type=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.DefaultSectionHandler, Spring.Core</span>&quot; <span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">/sectionGroup</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">/configSections</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">resource </span><span style="color:#0000ff">uri=</span>&quot;<span style="color:#0000ff">config://spring/objects</span>&quot; <span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">/context</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">objects </span><span style="color:#0000ff">xmlns=</span>&quot;<span style="color:#0000ff">http://www.springframework.net</span>&quot;<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">object </span><span style="color:#0000ff">id=</span>&quot;<span style="color:#0000ff">pammetier</span>&quot; <span style="color:#0000ff">type=</span>&quot;<span style="color:#0000ff">PamV5Client.WsPam.Service1SoapClient, pam-v5-client-csharp-webservice</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">/objects</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">/spring</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.serviceModel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+</code></pre></div>
+
+<ul>
+  <li>line 16 above, the [pammetier] object is an instance of the [PamV5Client.WsPam.Service1SoapClient] class located in the [pam-v5-client-csharp-webservice] assembly. To find the first piece of information, simply go back to the definition of the [Service1SoapClient] class in the Object Explorer (Section<a href="#client-csharp-webservice"><u><span style="color: #0563c1"> 9.3</span></u></a>):
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053200000222F940039B.png" style="display:inline-block; margin:4px;width:17.595cm;height:7.223cm;" class="odt-zoomable" data-zoom-src="images/100000000000053200000222F940039B.png" /></td></tr></table>
+
+<ul>
+  <li>in [2], the implementation class of the local [business] layer, and in [1] its namespace
+  </li>
+  <li>in [3], in the project properties, the assembly name, the second piece of information needed to configure the Spring object [pammetier].
+  </li>
+</ul>
+
+<p>Let’s return to the code for instantiating the local [business] layer in [NUnit.cs]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line">        <span style="color:#008000">// the [business] layer to be tested </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">private </span><span style="color:#2b91af">IPamMetier </span>pamMetier;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000">// constructor</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">public </span>NunitTestPamMetier() {</span>
+<span class="odt-code-line">            <span style="color:#008000">// instantiate the [DAO] layer</span></span>
+<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">IPamMetier</span>;</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"></span>
+</code></pre></div>
+
+<p>Line 7: The remote [business] layer was of type <em>IPamMetier</em>. Here, the [business] layer is of type [Service1SoapClient]:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">public class </span><span style="font-weight:bold;color:#000000">Service1SoapClient </span><span style="color:#000000">: </span><span style="font-weight:bold;text-decoration:underline;color:#215dc6">System.ServiceModel.ClientBase&lt;Service1Soap&gt;</span></span>
+</code></pre></div>
+
+<p>We see that the <em>Service1SoapClient</em> class does not implement the <em>IPamMetier</em> interface even though it exposes methods with the same names. We must therefore write the instantiation of the local [business] layer as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line">        <span style="color:#008000">// the [business] layer to be tested </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">private </span><span style="color:#2b91af">Service1SoapClient </span>pamMetier;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000">// constructor</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">public </span>NunitTestPamMetier() {</span>
+<span class="odt-code-line">            <span style="color:#008000">// instantiate the [business] layer</span></span>
+<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">Service1SoapClient</span>;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Another change to make:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetSalary1() {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try </span>{</span>
+<span class="odt-code-line">                salarySheet = pamJob.GetSalary(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            } <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">PamException</span>) {</span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">            Expect(error, True);</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"></span>
+</code></pre></div>
+
+<p>The code above uses, on line 6, the <em>PamException</em> type, which does not exist on the client side. We will replace it with its parent class, the <em>Exception</em> type. </p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetSalary1() {</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try </span>{</span>
+<span class="odt-code-line">                payrollSheet = jobClass.GetSalary(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            } <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">Exception</span>) {</span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">            Expect(error, True);</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line"></span>
+</code></pre></div>
+
+<p>Finally, the imported namespaces are no longer the same:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>PamV5Client.WsPam;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>NUnit.Framework;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
+</code></pre></div>
+
+<p>Once this is done, the &quot;Class Library&quot; project can be built. The following DLL is created:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059B00000151C46311D1.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.226cm;" class="odt-zoomable" data-zoom-src="images/100000000000059B00000151C46311D1.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], the [bin/Release] folder of the C# project
+  </li>
+  <li>in [2], the project&#x27;s DLL.
+  </li>
+</ul>
+
+<p>The NUnit test is then run by the NUnit framework (the MySQL database <em>dbpam_nhibernate</em> must be active for the test):</p>
+<ul>
+  <li>in [3] and [4], the DLL [2] is loaded into the NUnit test application
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006010000013BE03C9519.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.688cm;" class="odt-zoomable" data-zoom-src="images/10000000000006010000013BE03C9519.png" /></td></tr></table>
+
+<ul>
+  <li>in [5], the test class is selected and executed [6]
+  </li>
+  <li>in [7], the results of a successful test
+  </li>
+</ul>
+
+<p>We now have a working web service.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
