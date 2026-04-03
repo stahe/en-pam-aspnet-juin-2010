@@ -413,6 +413,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#212-the-defaultaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. The [Default.aspx] page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#213-the-defaultaspxdesignercs-and-defaultaspxcs-files" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -451,6 +462,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#24-managing-application-scope-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Managing Application-Scope Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#25-managing-session-scoped-data" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -473,10 +495,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#27-managing-the-viewstate-of-elements-on-an-aspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Managing the VIEWSTATE of elements on an ASPX page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#28-forwarding-from-one-page-to-another" class="md-nav__link">
     <span class="md-ellipsis">
       
         2.8. Forwarding from one page to another
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-redirecting-from-one-page-to-another" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Redirecting from one page to another
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#210-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10. Conclusion
       
     </span>
   </a>
@@ -871,11 +926,9 @@
   <li>[Web.config] is the configuration file for the ASP.NET project.
   </li>
   <li>[References] is the list of DLLs used by the web project. These DLLs are class libraries that the project needs to use. In [7] is the list of DLLs included by default in the project references. Most of them are unnecessary. If the project needs to use a DLL not listed in [7], it can be added via [8].
-### 2.1.2. <span style="color: #4f81bd">**The [Default.aspx] page**</span>
-
   </li>
 </ul>
-
+<h3 id="212-the-defaultaspx-page">2.1.2. <span style="color: #4f81bd"><strong>The [Default.aspx] page</strong></span></h3>
 <p>If you run the project using [Ctrl-F5], the [Default.aspx] page is displayed in a browser:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A500000116D4CCECC4.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.463cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A500000116D4CCECC4.png" /></td></tr></table>
 
@@ -1570,11 +1623,9 @@
 
 <ul>
   <li>In [8], an example obtained with valid data. [9,10] show that the posted elements have been validated. When performing repeated tests, set the <i>EnableViewState</i> property of the [LabelValidation] label to <i>False </i>so that the validation message does not remain displayed across runs.
-## 2.4. <span style="color: #4f81bd">**Managing Application-Scope Data**</span>
-
   </li>
 </ul>
-
+<h2 id="24-managing-application-scope-data">2.4. <span style="color: #4f81bd"><strong>Managing Application-Scope Data</strong></span></h2>
 <p>Let’s revisit the execution architecture of an ASPX page:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F70000011845ED25E5.png" style="display:inline-block; margin:4px;width:13.428cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F70000011845ED25E5.png" /></td></tr></table>
 
@@ -2085,11 +2136,9 @@
   <li>The list is populated both after the initial GET and during subsequent POST requests. Since <i>EnableViewState </i>is set to <i>true</i>, there are 3 names after the initial GET, 6 names after the first POST, 9 names after the second POST, ...
   </li>
   <li>The list is populated both after the initial GET and during the subsequent POSTs. Since <i>EnableViewState </i>is set to <i>false</i>, the list is populated with only 3 names for each request, whether it is the initial GET or the subsequent POSTs. We see the same behavior as in Case 1. There are therefore two ways to achieve the same result.
-## 2.7. <span style="color: #4f81bd">**Managing the VIEWSTATE of elements on an ASPX page**</span>
-
   </li>
 </ol>
-
+<h2 id="27-managing-the-viewstate-of-elements-on-an-aspx-page">2.7. <span style="color: #4f81bd"><strong>Managing the VIEWSTATE of elements on an ASPX page</strong></span></h2>
 <p>By default, all elements on an ASPX page have their <em>EnableViewState</em> property set to <em>True</em>. Every time the ASPX page is sent to the client browser, it contains the hidden field __VIEWSTATE, whose value is a string encoding all the values of the components with their <em>EnableViewState</em> property set to <em>True</em>. To minimize the size of this string, we can try to reduce the number of components with their <em>EnableViewState</em> property set to <em>True</em>.</p>
 <p>Let’s review how components on an ASPX page obtain their values following a POST request:</p>
 <ol>
@@ -2250,11 +2299,9 @@
   <li>At [4], the message created in [Default.aspx] and displayed by [Page1.aspx]
   </li>
   <li>At [5], the URL displayed in the browser is that of the [Default.aspx] page
-## 2.9. <span style="color: #4f81bd">**Redirecting from one page to another**</span>
-
   </li>
 </ul>
-
+<h2 id="29-redirecting-from-one-page-to-another">2.9. <span style="color: #4f81bd"><strong>Redirecting from one page to another</strong></span></h2>
 <p>Here we present another technique that is functionally similar to the previous one: when the user requests the [Default.aspx] page via a POST request, they receive another page [Page2.aspx] in response. In the previous method, the user’s request was processed successively by two pages: [Default.aspx] and [Page1.aspx]. In the page redirection method we are now presenting, there are two separate requests from the browser:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F000000137AD49199E.png" style="display:inline-block; margin:4px;width:16.722cm;height:4.113cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F000000137AD49199E.png" /></td></tr></table>
 
@@ -2353,11 +2400,9 @@
   <li>In [2], the browser has been redirected to [Page2.aspx]. This can be seen in the URL displayed by the browser. In the previous method, this URL was that of [Default.aspx] because the only request made by the browser was to that URL. Here, there is a first POST request to [Default.aspx], followed by a second GET request to [Page2.aspx] without the user’s knowledge.
   </li>
   <li>In [3], we see that [Page2.aspx] has correctly retrieved the message placed by [Default.aspx] in the session.
-## 2.10. <span style="color: #4f81bd">**Conclusion**</span>
-
   </li>
 </ul>
-
+<h2 id="210-conclusion">2.10. <span style="color: #4f81bd"><strong>Conclusion</strong></span></h2>
 <p>We have introduced, using a few examples, the ASP.NET concepts that will be useful to us in the rest of this document. This introduction does not cover the subtleties of client/server communication in a web application. For that, you can read:</p>
 <ul>
   <li><b>ASP.NET Programming </b>[<a href="https://stahe.github.io/aspnet1.1-avril-2004/"><u><span style="color: #0563c1">Web Development with ASP.NET 1.1</span></u></a>]

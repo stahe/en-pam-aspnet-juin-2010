@@ -574,6 +574,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#83-the-globalcs-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. The [Global.cs] file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-the-simulation-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. The [Simulation] class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#85-the-defaultaspx-page" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -641,10 +663,60 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#856-the-simulation-svides-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5.6. The [Simulation sVides] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#857-the-e-rrors-view" class="md-nav__link">
     <span class="md-ellipsis">
       
         8.5.7. The [E rrors] view
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-the-controller-defaultaspxcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6. The controller [Default.aspx.cs]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.6. The controller [Default.aspx.cs]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#861-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6.1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#862-the-load-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6.2. The Load event
       
     </span>
   </a>
@@ -1005,11 +1077,9 @@
 
 <ul>
   <li>In [2] are the project references – they are identical to those of the previous version
-## 8.3. <span style="color: #4f81bd">**The [Global.cs] file**</span>
-
   </li>
 </ul>
-
+<h2 id="83-the-globalcs-file">8.3. <span style="color: #4f81bd"><strong>The [Global.cs] file</strong></span></h2>
 <p>The [Global.cs] file, which handles the web application&#x27;s events, is identical to that of the previous application, except that it also handles the start of the user session:</p>
 <p><strong>Global.cs</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -1055,11 +1125,9 @@
   <li>line 30: An empty list of simulations is created. A simulation is an object of type [Simulation], which we will describe in detail shortly.
   </li>
   <li>line 31: the list of simulations is placed in the session associated with the &quot;simulations&quot; key
-## 8.4. <span style="color: #4f81bd">**The [Simulation] class**</span>
-
   </li>
 </ul>
-
+<h2 id="84-the-simulation-class">8.4. <span style="color: #4f81bd"><strong>The [Simulation] class</strong></span></h2>
 <p>An object of type [Simulation] is used to encapsulate a row of the simulation table:</p>
 <p><img src="images/1000000000000336000000EB676014B3.png" style="width:15.221cm;height:4.352cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000336000000EB676014B3.png" /></p>
 <p>Its code is as follows:</p>
@@ -1355,13 +1423,10 @@
   <li>in [4]: only the delete link will be visible.
   </li>
   <li>in [5]: the text of this link
-<a id="3tier-multivues-simulationsvides"></a>
-
-### 8.5.6. <span style="color: #4f81bd">**The [Simulation** **sVides] view**</span>
-
   </li>
 </ul>
-
+<p><a id="3tier-multivues-simulationsvides"></a></p>
+<h3 id="856-the-simulation-svides-view">8.5.6. <span style="color: #4f81bd"><strong>The [Simulation</strong> <strong>sVides] view</strong></span></h3>
 <p>The [View] component named [VueSimulationsVides] simply contains text:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C70000004025D47492.png" style="display:inline-block; margin:4px;width:8.43cm;height:1.185cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C70000004025D47492.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -1390,13 +1455,10 @@
   <li>Line 2: &lt;<i>ItemTemplate</i>&gt; defines the code that will be repeated for each item in the data source.
   </li>
   <li>Line 4: displays the value of the <i>Container.DataItem </i>expression, which refers to the current element in the data source. Since this element is an object, the <i>ToString</i> method of that object is used to include it in the page’s HTML output. Our collection of objects will be a <i>List(Of String) </i>collection containing error messages. Lines 3–5 will include <i>&lt;li&gt;Message&lt;/li&gt; </i>sequences in the page’s HTML output.
-## 8.6. <span style="color: #4f81bd">**The controller [Default.aspx.cs]**</span>
-
-### 8.6.1. <span style="color: #4f81bd">**Overview**</span>
-
   </li>
 </ul>
-
+<h2 id="86-the-controller-defaultaspxcs">8.6. <span style="color: #4f81bd"><strong>The controller [Default.aspx.cs]</strong></span></h2>
+<h3 id="861-overview">8.6.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h3>
 <p>Let’s return to the application’s MVC architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051F0000023DAC5DF3C0.png" style="display:inline-block; margin:4px;width:17.344cm;height:7.581cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F0000023DAC5DF3C0.png" /></td></tr></table>
 
@@ -1509,11 +1571,9 @@
   <li><b>setVues</b>, lines 7–14: sets the view(s) to display
   </li>
   <li><b>setMenu</b>, lines 16–21: sets the menu options to display
-### 8.6.2. <span style="color: #4f81bd">**The Load event**</span>
-
   </li>
 </ul>
-
+<h3 id="862-the-load-event">8.6.2. <span style="color: #4f81bd"><strong>The Load event</strong></span></h3>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Recommended reading</strong>: Reference [1], <a href="https://stahe.github.io/aspnet1.1-avril-2004/"><u><span style="color: #0563c1">Web Development with ASP.NET 1.</span></u></a>1: </p>
 <ul>

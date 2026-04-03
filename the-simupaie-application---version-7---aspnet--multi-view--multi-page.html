@@ -633,6 +633,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#111-the-applications-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1. The application&#x27;s views
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#112-generating-views-in-a-multi-controller-context" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -643,6 +654,17 @@
   
     <nav class="md-nav" aria-label="11.2. Generating views in a multi-controller context">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-case-1-a-controllerview-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2.1. Case 1: a controller/view page
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#1122-case-2-a-single-controller-page-a-controllerview-page" class="md-nav__link">
@@ -657,6 +679,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-the-visual-web-developer-project-for-the-web-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3. The Visual Web Developer project for the [web] layer
+      
+    </span>
+  </a>
   
 </li>
       
@@ -768,6 +801,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#11522-public-properties-of-the-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2.2. Public properties of the class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#11523-the-setmenu-method" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -800,6 +844,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#11526-the-click-event-on-the-linkbuttonterminersession-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.2.6. The Click event on the [LinkButtonTerminerSession] link
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -814,8 +869,30 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="11.5.3. Control code for the [Errors.aspx] page">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1154-control-code-for-the-formulaireaspx-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.4. Control code for the [Formulaire.aspx] page
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.5.4. Control code for the [Formulaire.aspx] page">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11541-class-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5.4.1. Class skeleton
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#11542-page-load-event" class="md-nav__link">
@@ -1026,13 +1103,10 @@
   <li>Based on this response, it selects (3) the view (= the response) to send to the client, providing it (4) with the information (the model) it needs.
   </li>
   <li>The response is sent to the client (5)
-<a id="3tier-multipages-vues"></a>
-
-## 11.1. <span style="color: #4f81bd">**The application&#x27;s views**</span>
-
   </li>
 </ol>
-
+<p><a id="3tier-multipages-vues"></a></p>
+<h2 id="111-the-applications-views">11.1. <span style="color: #4f81bd"><strong>The application&#x27;s views</strong></span></h2>
 <p>The different views presented to the user are as follows:</p>
 <ul>
   <li>- the [VueSaisies] view, which displays the simulation form
@@ -1072,11 +1146,9 @@
   <li>the request is made to page P1, and it generates the response
   </li>
   <li>the request is made to a page P1, and this page asks a page P2 to generate the response
-### 11.2.1. <span style="color: #4f81bd">**Case 1: a controller/view page**</span>
-
   </li>
 </ol>
-
+<h3 id="1121-case-1-a-controllerview-page">11.2.1. <span style="color: #4f81bd"><strong>Case 1: a controller/view page</strong></span></h3>
 <p>In Case 1, we return to the single-controller architecture of the previous version, where the [Default.aspx] page is page P1:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050E00000235DFEE9CD5.png" style="display:inline-block; margin:4px;width:17.119cm;height:7.475cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E00000235DFEE9CD5.png" /></td></tr></table>
 
@@ -1148,13 +1220,11 @@
       <li>If the [Formulaire.aspx] page processes the request and then forwards it via [Server.Transfer(&quot;Simulations.aspx&quot;)] to the [Simulations.aspx] page, we remain within the same request. The browser will then display in [2] the URL of [Formulaire.aspx] to which the POST was sent.
       </li>
       <li>If the [Formulaire.aspx] page processes the request and then redirects it via [Response.Redirect(&quot;Simulations.aspx&quot;)] to the [Simulations.aspx] page, the browser then makes a second request, a GET request to [Simulations.aspx]. The browser will then display in [2] the URL of [Simulations.aspx] to which the GET request was sent. This is what screenshot [2] above shows us.
-## 11.3. <span style="color: #4f81bd">**The Visual Web Developer project for the [web] layer**</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<h2 id="113-the-visual-web-developer-project-for-the-web-layer">11.3. <span style="color: #4f81bd"><strong>The Visual Web Developer project for the [web] layer</strong></span></h2>
 <p>The Visual Web Developer project for the [web] layer is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F7000001C288F49CB6.png" style="display:inline-block; margin:4px;width:16.815cm;height:5.953cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F7000001C288F49CB6.png" /></td></tr></table>
 
@@ -1660,11 +1730,9 @@
   <li>lines 22–25: the procedure that handles the click on the [LinkButtonTerminerSession] link
   </li>
   <li>Lines 28–31: The procedure that handles the <i>Init</i> event of the master page
-#### 11.5.2.2. <span style="color: #4f81bd">*Public properties of the class*</span>
-
   </li>
 </ul>
-
+<h4 id="11522-public-properties-of-the-class">11.5.2.2. <span style="color: #4f81bd"><em>Public properties of the class</em></span></h4>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.UI.WebControls;</span>
 <span class="odt-code-line"></span>
@@ -2056,11 +2124,9 @@
   <li>line 9: if so, the <i>IsPageErrors</i> boolean indicates whether the page encapsulated in the master page is the [Errors.aspx] page
   </li>
   <li>line 12: if the page encapsulated in the master page is not the [Errors.aspx] page, then the client is redirected to that page; otherwise, nothing is done.
-#### 11.5.2.6. <span style="color: #4f81bd">*The Click event on the [LinkButtonTerminerSession] link*</span>
-
   </li>
 </ul>
-
+<h4 id="11526-the-click-event-on-the-linkbuttonterminersession-link">11.5.2.6. <span style="color: #4f81bd"><em>The Click event on the [LinkButtonTerminerSession] link</em></span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006410000014EA9040AF9.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.755cm;" class="odt-zoomable" data-zoom-src="images/10000000000006410000014EA9040AF9.png" /></td></tr></table>
 
 <p>When the user clicks the [End Session] link in view (1) above, the session must be cleared of its contents and an empty form (2) must be displayed.</p>
@@ -2128,13 +2194,10 @@
   <li>if there was an initialization error, it is displayed
   </li>
   <li>if there was no initialization error, the user receives a page containing only the header from [MasterPage.master] with no menu options displayed.
-### 11.5.4. <span style="color: #4f81bd">**Control code for the [Formulaire.aspx] page**</span>
-
-#### 11.5.4.1. <span style="color: #4f81bd">*Class skeleton*</span>
-
   </li>
 </ul>
-
+<h3 id="1154-control-code-for-the-formulaireaspx-page">11.5.4. <span style="color: #4f81bd"><strong>Control code for the [Formulaire.aspx] page</strong></span></h3>
+<h4 id="11541-class-skeleton">11.5.4.1. <span style="color: #4f81bd"><em>Class skeleton</em></span></h4>
 <p>The skeleton of the control code for the [Form.aspx] page could be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Metier.Entities;</span>

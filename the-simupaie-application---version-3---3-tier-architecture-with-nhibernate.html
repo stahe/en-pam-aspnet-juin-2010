@@ -631,10 +631,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#732-the-console-test-program-maincs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2. The console test program [Main.cs]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-definition-of-the-pamdaonhibernate-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3. Definition of the [PamDaoNHibernate] class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#734-unit-testing-with-nunit" class="md-nav__link">
     <span class="md-ellipsis">
       
         7.3.4. Unit Testing with NUnit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#735-generating-th-and-the-dao-layer-dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.5. Generating th and the [dao] layer DLL
       
     </span>
   </a>
@@ -670,10 +703,54 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#742-the-ipamm-tier-interface-of-the-business-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.2. The [IPamM tier] interface of the [business] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#743-entities-in-the-business-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.3. Entities in the [business] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#744-implementation-of-the-business-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.4. Implementation of the [business] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#745-the-console-test-for-the-business-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
         7.4.5. The console test for the [business] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#746-unit-tests-for-the-business-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.6. Unit tests for the business layer
       
     </span>
   </a>
@@ -713,6 +790,28 @@
     <span class="md-ellipsis">
       
         7.5.1. The Visual Web Developer project for the [web] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#752-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.2. Application configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#753-the-defaulta-spx-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.3. The [Default.a spx] form
       
     </span>
   </a>
@@ -1338,11 +1437,9 @@
   <li>in [2], the various classes of the project. The [entities] folder contains the entities handled by the [dao] layer as well as the NHibernate mapping files. The [service] folder contains the [IPamDao] interface and its implementation [PamDaoNHibernate]. The [tests] folder contains a console test [Main.cs] and a unit test [NUnit.cs].
   </li>
   <li>in [3], the project references.
-### 7.3.2. <span style="color: #4f81bd">**The console test program [Main.cs]**</span>
-
   </li>
 </ul>
-
+<h3 id="732-the-console-test-program-maincs">7.3.2. <span style="color: #4f81bd"><strong>The console test program [Main.cs]</strong></span></h3>
 <p>The test program [Main.cs] runs in the following architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AC0000010B9E7AC44F.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.309cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AC0000010B9E7AC44F.png" /></td></tr></table>
 
@@ -1472,11 +1569,9 @@
   <li>line 4: the employee of type [Employee] with social security number [254104940426058]
   </li>
   <li>row 5: contribution rates
-### 7.3.3. <span style="color: #4f81bd">**Definition of the [PamDaoNHibernate] class**</span>
-
   </li>
 </ul>
-
+<h3 id="733-definition-of-the-pamdaonhibernate-class">7.3.3. <span style="color: #4f81bd"><strong>Definition of the [PamDaoNHibernate] class</strong></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056C0000010D33925926.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.487cm;" class="odt-zoomable" data-zoom-src="images/100000000000056C0000010D33925926.png" /></td></tr></table>
 
 <p>The [IPamDao] interface implemented by the [dao] layer is as follows:</p>
@@ -1703,13 +1798,10 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   </li>
   <li>Use different [App.config] configuration files to use different DBMSs (Firebird, MySQL, Postgres, SQL Server)<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<a id="daodll"></a>
-
-### 7.3.5. <span style="color: #4f81bd">**Generating th** **and the [dao] layer DLL**</span>
-
   </li>
 </ul>
-
+<p><a id="daodll"></a></p>
+<h3 id="735-generating-th-and-the-dao-layer-dll">7.3.5. <span style="color: #4f81bd"><strong>Generating th</strong> <strong>and the [dao] layer DLL</strong></span></h3>
 <p>Once the [PamDaoNHibernate] class has been written and tested, the [dao] layer DLL will be generated as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FD000001B97BA62AC8.png" style="display:inline-block; margin:4px;width:17.997cm;height:5.177cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FD000001B97BA62AC8.png" /></td></tr></table>
 
@@ -1742,13 +1834,10 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>in [2], the [business] layer consists of two folders [entities, service]. The [tests] folder contains a console test program (Main.cs) and a NUnit test program (NUnit.cs).
   </li>
   <li>in [3] the references used by the project. Note the [pam-dao-hibernate] DLL from the [DAO] layer discussed previously.
-<a id="ipammetier"></a>
-
-### 7.4.2. <span style="color: #4f81bd">**The [IPamM** **tier] interface of the [business] layer**</span>
-
   </li>
 </ul>
-
+<p><a id="ipammetier"></a></p>
+<h3 id="742-the-ipamm-tier-interface-of-the-business-layer">7.4.2. <span style="color: #4f81bd"><strong>The [IPamM</strong> <strong>tier] interface of the [business] layer</strong></span></h3>
 <p>Let’s return to the application’s overall architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E60000012839DF496E.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.528cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E60000012839DF496E.png" /></td></tr></table>
 
@@ -1786,11 +1875,9 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>line 7: the method that will populate the combo box [1]
   </li>
   <li>line 10: the method that will retrieve information 6 through 24. This information has been collected in an object of type [PayrollSheet].
-### 7.4.3. <span style="color: #4f81bd">**Entities in the [business] layer**</span>
-
   </li>
 </ul>
-
+<h3 id="743-entities-in-the-business-layer">7.4.3. <span style="color: #4f81bd"><strong>Entities in the [business] layer</strong></span></h3>
 <p>The [entities] folder in the Visual Studio project contains the objects handled by the business class: [Payroll] and [PayrollItems].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018C000001612569ED08.png" style="display:inline-block; margin:4px;width:5.239cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/100000000000018C000001612569ED08.png" /></td></tr></table>
 
@@ -1858,11 +1945,9 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>line 8: the net salary to be paid
   </li>
   <li>Lines 12–15: The class’s [ToString] method.
-### 7.4.4. <span style="color: #4f81bd">**Implementation of the [business] layer**</span>
-
   </li>
 </ul>
-
+<h3 id="744-implementation-of-the-business-layer">7.4.4. <span style="color: #4f81bd"><strong>Implementation of the [business] layer</strong></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001840000015226B4BCC4.png" style="display:inline-block; margin:4px;width:5.133cm;height:4.471cm;" class="odt-zoomable" data-zoom-src="images/10000000000001840000015226B4BCC4.png" /></td></tr></table>
 
 <p>We will implement the [IPamMetier] interface with two classes:</p>
@@ -2076,11 +2161,9 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>Lines 1-2: The 2 requested pay stubs
   </li>
   <li>line 3: the [PamException] exception caused by a non-existent employee.
-### 7.4.6. <span style="color: #4f81bd">**Unit tests for the business layer**</span>
-
   </li>
 </ul>
-
+<h3 id="746-unit-tests-for-the-business-layer">7.4.6. <span style="color: #4f81bd"><strong>Unit tests for the business layer</strong></span></h3>
 <p>The previous test was visual: we verified on screen that we were indeed getting the expected results. We will now move on to non-visual NUnit tests.</p>
 <p>Let’s return to the Visual Studio project for the [business] project:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047C00000173F17AB400.png" style="display:inline-block; margin:4px;width:15.187cm;height:4.907cm;" class="odt-zoomable" data-zoom-src="images/100000000000047C00000173F17AB400.png" /></td></tr></table>
@@ -2214,11 +2297,9 @@ Implement the tests for the [PamMetier] class on the machine.
     </ul>
   </li>
   <li>in [2], the DLLs required by the web application. Note the DLLs for the [DAO] and [business] layers built previously.
-### 7.5.2. <span style="color: #4f81bd">**Application configuration**</span>
-
   </li>
 </ul>
-
+<h3 id="752-application-configuration">7.5.2. <span style="color: #4f81bd"><strong>Application configuration</strong></span></h3>
 <p>The [Web.config] file that configures the application defines the same data as the [App.config] file configuring the [business] layer discussed earlier. This data must be placed in the pre-generated code of the [Web.config] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span>
@@ -2355,13 +2436,10 @@ Implement the tests for the [PamMetier] class on the machine.
   <li>line 27: the success message
   </li>
   <li>line 32: the error message
-<a id="pageload-aspnet-v7"></a>
-
-### 7.5.3. <span style="color: #4f81bd">**The [Default.a** **spx] form**</span>
-
   </li>
 </ul>
-
+<p><a id="pageload-aspnet-v7"></a></p>
+<h3 id="753-the-defaulta-spx-form">7.5.3. <span style="color: #4f81bd"><strong>The [Default.a</strong> <strong>spx] form</strong></span></h3>
 <p>The form is the one from version 2.</p>
 <p><img src="images/100000000000029A00000326260E6170.png" style="width:12.33cm;height:14.923cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029A00000326260E6170.png" /></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />

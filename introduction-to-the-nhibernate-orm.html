@@ -592,6 +592,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-the-nhibernate-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. The NHibernate API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. The NHibernate API">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#641-the-sessionfactory-object" class="md-nav__link">
     <span class="md-ellipsis">
@@ -604,10 +621,60 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#642-the-nhibernate-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.2. The NHibernate session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#643-the-isession-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3. The ISession Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#644-the-iquery-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
         6.4.4. The IQuery interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-some-code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Some code examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5. Some code examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-retrieving-the-database-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.1. Retrieving the database contents
       
     </span>
   </a>
@@ -1676,13 +1743,10 @@
   <li>In [1], select the properties of a mapping file
   </li>
   <li>in [2], the generation action must be [Embedded Resource] [3]. This means that when the project is generated, the mapping file must be embedded in the generated assembly.
-<a id="refheading1883401168461456"></a>
-
-## 6.4. <span style="color: #4f81bd">**The NHibernate API**</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1883401168461456"></a></p>
+<h2 id="64-the-nhibernate-api">6.4. <span style="color: #4f81bd"><strong>The NHibernate API</strong></span></h2>
 <p>Let’s return to the architecture of our example project:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E1000000E8E91925DC.png" style="display:inline-block; margin:4px;width:16.524cm;height:3.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E1000000E8E91925DC.png" /></td></tr></table>
 
@@ -1740,13 +1804,10 @@
   <li>information to create a connection to the target database
   </li>
   <li>mapping files between database tables and persistent classes managed by NHibernate.
-<a id="refheading1883441168461456"></a>
-
-### 6.4.2. <span style="color: #4f81bd">**The NHibernate session**</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1883441168461456"></a></p>
+<h3 id="642-the-nhibernate-session">6.4.2. <span style="color: #4f81bd"><strong>The NHibernate session</strong></span></h3>
 <p>Once the <em>SessionFactory</em> has been created (this is done only once), you can obtain sessions that allow you to perform NHibernate persistence operations. A common code snippet is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">try{</span>
@@ -1772,13 +1833,10 @@
   <li>Line 6: Persistence operations will be performed within a transaction. Either they all succeed, or none of them succeed. Within the <i>`using` </i>block<i>, </i>the transaction is committed with a `<i>Commit` </i>(line 10). If a persistence operation within the transaction throws an exception, the transaction will be automatically <i>rolled back </i>when exiting the <i>`using`</i> block.
   </li>
   <li>The try/catch blocks on lines 1 and 13 allow for the interception of any exception thrown by the code inside the try block (session, transaction, persistence).
-<a id="refheading1883461168461456"></a>
-
-### 6.4.3. <span style="color: #4f81bd">**The ISession Interface**</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1883461168461456"></a></p>
+<h3 id="643-the-isession-interface">6.4.3. <span style="color: #4f81bd"><strong>The ISession Interface</strong></span></h3>
 <p>We will now present some of the methods of the <strong>ISession</strong> interface implemented by an NHibernate session:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ITransaction BeginTransaction()
@@ -1852,14 +1910,11 @@
   <li>- <b>SetInt32</b>(string name, int32 value)
   </li>
   <li>..
-<a id="refheading1883501168461456"></a>
-<a id="exemples-nhibernate"></a>
-
-## 6.5. <span style="color: #4f81bd">**Some code examples**</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1883501168461456"></a>
+<a id="exemples-nhibernate"></a></p>
+<h2 id="65-some-code-examples">6.5. <span style="color: #4f81bd"><strong>Some code examples</strong></span></h2>
 <p>The following examples are based on the architecture discussed previously and summarized below. The database is the MySQL database [dbpam_nhibernate] also presented. The examples are console programs [1] using the NHibernate framework [3] to manipulate the database [2].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050E000000D610FB9ED8.png" style="display:inline-block; margin:4px;width:17.119cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E000000D610FB9ED8.png" /></td></tr></table>
 
@@ -1882,13 +1937,10 @@
   <li>in [3], the [App.config] file that configures the entire application, including the [NHibernate] framework
   </li>
   <li>in [4], test console applications. It is these that we will present in part.
-<a id="refheading1883521168461456"></a>
-
-### 6.5.1. <span style="color: #4f81bd">**Retrieving the database contents**</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1883521168461456"></a></p>
+<h3 id="651-retrieving-the-database-contents">6.5.1. <span style="color: #4f81bd"><strong>Retrieving the database contents</strong></span></h3>
 <p>The [ShowDataBase.cs] program displays the database contents:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
