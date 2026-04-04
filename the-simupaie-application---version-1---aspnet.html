@@ -862,7 +862,7 @@
 
 <p><a id="pam-v1"></a></p>
 <h1 id="4-the-simupaie-application-version-1-aspnet">4. <span style="color: #365f91"><strong>The [SimuPaie] application –</strong> <strong>version 1 – ASP.NET</strong></span></h1>
-<h2 id="41-introduction">4.1. <span style="color: #4f81bd"><strong>Introduction</strong></span></h2>
+<h2 id="41-introduction">4.1. <span style="color: #4f81bd">Introduction</span></h2>
 <p>We want to write a .NET application that allows a user to simulate payroll calculations for child care providers at the &quot;Maison de la petite enfance&quot; association in a municipality.</p>
 <p>The ASP.NET salary calculation form<a id="formulaire-version1"></a> will look like this:</p>
 <p><img src="images/100000000000020F000002CD27C5E04B.png" style="width:8.37cm;height:11.388cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020F000002CD27C5E04B.png" /></p>
@@ -877,7 +877,7 @@
   <li>When the request to calculate the salary (operation 1) is made to the [Default.aspx] page, the [Load] event is processed again. Nothing is done because this is a POST request, and the [Pam_Load] handler was written to do nothing in this case (using the <i>IsPostBack</i> boolean). Once the [Load] event is handled, the [Click] event on the [Salary] button is handled next. This event requires data that has not been cached in [Global]. Therefore, the event handler retrieves it from the database. This is operation 3 above. The salary is then calculated, and operation 4 sends the results to the user.
   </li>
 </ul>
-<h2 id="42-the-visual-web-developer-2008">4.2. <span style="color: #4f81bd"><strong>The Visual Web Developer 2008</strong></span></h2>
+<h2 id="42-the-visual-web-developer-2008">4.2. <span style="color: #4f81bd">The Visual Web Developer 2008</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FD0000015BC94819DA.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FD0000015BC94819DA.png" /></td></tr></table>
 
 <ul>
@@ -1036,7 +1036,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">contains components (6) through (24)</div></td></tr></table>
 
 <p>A [Panel] component can be made visible or hidden programmatically using its Boolean property <em>[Panel].Visible</em>.</p>
-<h3 id="422-input-validation">4.2.2. <span style="color: #4f81bd"><strong>Input validation</strong></span></h3>
+<h3 id="422-input-validation">4.2.2. <span style="color: #4f81bd">Input validation</span></h3>
 <p>To calculate a salary, the user:</p>
 <ul>
   <li>selects an employee in [1]
@@ -1202,7 +1202,7 @@
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
-<h3 id="424-application-configuration">4.2.4. <span style="color: #4f81bd"><strong>Application Configuration</strong></span></h3>
+<h3 id="424-application-configuration">4.2.4. <span style="color: #4f81bd">Application Configuration</span></h3>
 <p>The [Web.config] file that configures the application will be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span>
@@ -1224,7 +1224,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">/appSettings</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.web</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">        &lt;!-- </span></span>
+<span class="odt-code-line">        &lt;!-- </span>
 <span class="odt-code-line">            Set `compilation debug=&quot;true&quot;` to insert debug symbols </span>
 <span class="odt-code-line">            in the compiled page. Since this </span>
 <span class="odt-code-line">            affects performance, set this value to true only </span>
@@ -1248,7 +1248,7 @@
 <p><strong>Task</strong>: Enter these parameters into the [Web.config] file. Line 9 will be adapted to the actual path of the database [dbpam.mdf].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="425-application-initialization">4.2.5. <span style="color: #4f81bd"><strong>Application Initialization</strong></span></h3>
+<h3 id="425-application-initialization">4.2.5. <span style="color: #4f81bd">Application Initialization</span></h3>
 <p>An ASP.NET application is initialized by the [Global.asax.cs] file. It is structured as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005860000025018FECFE7.png" style="display:inline-block; margin:4px;width:17.997cm;height:7.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000005860000025018FECFE7.png" /></td></tr></table>
 
@@ -1363,7 +1363,7 @@
 <p><strong>Question</strong>: Complete the code for the [Application_Start] class.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h2 id="43-events-of-the-defaultaspx-form">4.3. <span style="color: #4f81bd"><strong>Events of the [Default.aspx] form</strong></span></h2>
+<h2 id="43-events-of-the-defaultaspx-form">4.3. <span style="color: #4f81bd">Events of the [Default.aspx] form</span></h2>
 <p><a id="pageload-aspnet-v31"></a></p>
 <h3 id="431-the-p-age_load-procedure">4.3.1. <span style="color: #4f81bd"><strong>The [P</strong> <strong>age_Load] procedure</strong></span></h3>
 <p>When the [Default.aspx] form loads, it retrieves the employees&#x27; names from the [Global.Employees] array (line 12) and populates the drop-down list [1] with them:</p>
@@ -1382,7 +1382,7 @@
 <p><strong>Question</strong>: Write the [Page_Load] procedure for the [Default.aspx] web page, which, when executed at application startup, ensures the behavior described above.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="432-salary-calculation">4.3.2. <span style="color: #4f81bd"><strong>Salary calculation</strong></span></h3>
+<h3 id="432-salary-calculation">4.3.2. <span style="color: #4f81bd">Salary calculation</span></h3>
 <p>Clicking button [4] triggers the handler:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">    <span style="color:#0000ff">protected void </span>ButtonSalaire_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>

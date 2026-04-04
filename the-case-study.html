@@ -772,7 +772,7 @@
 
 
 <p><a id="etude-de-cas"></a></p>
-<h1 id="3-the-case-study">3. <span style="color: #365f91"><strong>The Case Study</strong></span></h1>
+<h1 id="3-the-case-study">3. <span style="color: #365f91">The Case Study</span></h1>
 <p>We want to write a .NET application that allows a user to simulate payroll calculations for child care providers at the &quot;Maison de la petite enfance&quot; association in a municipality. We will focus as much on the organization of the application’s .NET code as on the code itself.</p>
 <p><a id="refheadingtoc744714255346799"></a>
 <a id="bd"></a></p>
@@ -884,9 +884,9 @@
 </ol>
 
 <p>This technique for attaching a database is useful for transferring a database from one computer to another, and we will use it occasionally here.</p>
-<p><a id="reglesmetier"></a>
-<a id="calculsalaire"></a></p>
-<h2 id="32-calculation-method-for-a-child-care-providers-salary">3.2. <span style="color: #4f81bd"><strong>calculation method for a child care provider’s salary</strong></span></h2>
+<p><a id="calculsalaire"></a>
+<a id="reglesmetier"></a></p>
+<h2 id="32-calculation-method-for-a-child-care-providers-salary">3.2. <span style="color: #4f81bd">calculation method for a child care provider’s salary</span></h2>
 <p>We will now present the method for calculating a childminder’s monthly salary. As an example, we will use the salary of Ms. Marie Jouveinal, who worked 150 hours over 20 days during the pay period.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The following factors are taken into account:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">[<span style="background-color:#ffcc99">TOTALHOURS</span>]: total</span>
@@ -900,12 +900,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[TOTALHOURS]=150
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>[TOTALDAYS] = 20
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The child care provider&#x27;s base salary is calculated using the following formula:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="background-color:#ffcc99">[BASESALARY]=([TOTALHOURS]*</span></span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">[HOURLYRATE])*(1+</span></span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">[CPALLOWANCE]/100)</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[BASESALARY]=(150*[2.1])*(1+0.15)= 362.25
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The child care provider&#x27;s base salary is calculated using the following formula:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[BASESALARY]=([TOTALHOURS]*
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[HOURLYRATE])*(1+
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>[CPALLOWANCE]/100)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[BASESALARY]=(150*[2.1])*(1+0.15)= 362.25
 </code></pre></div>
 </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">A number of social security contributions must be deducted from this base salary:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">General social contribution</span>
@@ -923,48 +924,52 @@
 <span class="odt-code-line"> old age:</span>
 <span class="odt-code-line"> <span style="background-color:#ffcc99">[BASESALARY]*[SECU/100]</span></span>
 </code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Supplementary Pension +</span>
-<span class="odt-code-line">AGPF + Unemployment Insurance:</span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">[BASESALARY]*[PENSION/100]</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>CSGRDS: 12.64
+<div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Supplementary Pension +
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>AGPF + Unemployment Insurance:
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>[BASESALARY]*[PENSION/100]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>CSGRDS: 12.64
 </code></pre></div>
 </div>
 <div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>CSGD: 22.28
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>CSGD: 22.28
 </code></pre></div>
 </div>
 <div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Social Security: 34.02
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Social Security: 34.02
 </code></pre></div>
 </div>
 <div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Pension: 28.55
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Pension: 28.55
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Total social security contributions:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="background-color:#ffcc99">[SOCIALCONTRIBUTIONS] = [SALARY</span></span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">EBASE]*(CSGRDS+CSGD+SECU+RETR</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>[SOCIALCONTRIBUTIONS]=97.48
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Total social security contributions:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>[SOCIALCONTRIBUTIONS] = [SALARY
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>EBASE]*(CSGRDS+CSGD+SECU+RETR
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">In addition, the child care provider is entitled to a daily living allowance and a meal allowance for each day worked. As such, she receives the following allowances:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="background-color:#ffcc99">[Compensation] = [TOTAL_DAYS] * (EN</span></span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">DAILY ALLOWANCE + DAILY MEAL ALLOWANCE)</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>[ALLOWANCES]=104
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>[SOCIALCONTRIBUTIONS]=97.48
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">In the end, the net salary to be paid to the childminder is as follows:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="background-color:#ffcc99">[BASESALARY]-</span></span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">[SOCIALSECURITYCONTRIBUTIONS]+</span></span>
-<span class="odt-code-line"><span style="background-color:#ffcc99">[ALLOWANCES]</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>[NET SALARY]=368.77
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">In addition, the child care provider is entitled to a daily living allowance and a meal allowance for each day worked. As such, she receives the following allowances:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>[Compensation] = [TOTAL_DAYS] * (EN
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>DAILY ALLOWANCE + DAILY MEAL ALLOWANCE)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>[ALLOWANCES]=104
+</code></pre></div>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">In the end, the net salary to be paid to the childminder is as follows:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>[BASESALARY]-
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>[SOCIALSECURITYCONTRIBUTIONS]+
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>[ALLOWANCES]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>[NET SALARY]=368.77
 </code></pre></div>
 </div></td></tr></table>
 
 <p><a id="refheadingtoc744694255346799"></a></p>
-<h2 id="33-adonet-reminders">3.3. <span style="color: #4f81bd"><strong>ADO.NET Reminders</strong></span></h2>
+<h2 id="33-adonet-reminders">3.3. <span style="color: #4f81bd">ADO.NET Reminders</span></h2>
 <p>The payroll calculation application requires information from the [dbpam] database. Its architecture will be as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C0000016F17902B39.png" style="display:inline-block; margin:4px;width:17.939cm;height:4.854cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000016F17902B39.png" /></td></tr></table>
 
@@ -1005,160 +1010,160 @@
 <p><u><strong>The IDbConnection interface</strong></u></p>
 <p>is used to manage the connection to the database. Among the methods (<strong>M)</strong> and properties (<strong>P)</strong> of this interface are the following:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ConnectionString
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ConnectionString
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Database <b>connection string</b>. It specifies all the parameters required to establish a connection with a specific database.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Open
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Open
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Opens the connection to the database defined by <i>ConnectionString</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Close
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Close
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Closes the connection</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>BeginTransaction
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>BeginTransaction
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">starts a transaction.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>State
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>State
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Connection state: <i>ConnectionState.Closed</i>, <i> ConnectionState.Open</i>, <i> ConnectionState.Connecting</i>, <i> ConnectionState.Executing</i>, <i> ConnectionState.Fetching</i>, <i> ConnectionState.Broken</i></div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Connection state: <i>ConnectionState.Closed</i>, <i> ConnectionState.Open</i>, <i> ConnectionState.Connecting</i>, <i> ConnectionState.Executing</i>, <i> </i><i>ConnectionState.Fetching</i>, <i> ConnectionState.Broken</i></div></td></tr></table>
 
 <p>If <em>Connection</em> is a class that implements the <em>IDbConnection</em> interface, the connection can be opened as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
-<span class="normal"><a href="#__codelineno-26-2">2</a></span>
-<span class="normal"><a href="#__codelineno-26-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>IDbConnection connection = new Connection();
-<a id="__codelineno-26-2" name="__codelineno-26-2"></a>connection.ConnectionString = ...;
-<a id="__codelineno-26-3" name="__codelineno-26-3"></a>connection.Open();
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>IDbConnection connection = new Connection();
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a>connection.ConnectionString = ...;
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a>connection.Open();
 </code></pre></div></td></tr></table></div>
 <p><u><strong>The IDbCommand interface</strong></u></p>
 <p>is used to execute an SQL statement or a stored procedure. Among the methods <strong>M</strong> and properties <strong>P</strong> of this interface are the following:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>CommandType
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>CommandType
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">specifies what to execute -  takes its values from an enumeration:</div><div style="margin:0 0 0.5em 0">- <i>CommandType.Text</i>: executes the SQL statement defined in the <i>CommandText</i> property. This is the default value.</div><div style="margin:0 0 0.5em 0">- <i>CommandType.StoredProcedure</i>: executes a stored procedure in the database</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>CommandText
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>CommandText
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- the text of the SQL statement to execute if CommandType= <i>CommandType.Text</i></div><div style="margin:0 0 0.5em 0">- the name of the stored procedure to execute if CommandType= <i>CommandType.StoredProcedure</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Connection
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Connection
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the <i>IDbConnection</i> connection to use to execute the SQL statement</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Transaction
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Transaction
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the <i>IDbTransaction</i> transaction in which to execute the SQL statement</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Parameters
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Parameters
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The list of parameters for a parameterized SQL statement. The statement `<i>update articles set price=price*1.1 where id=@id` </i>has the parameter `@id`.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>ExecuteReader
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ExecuteReader
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">To execute a <i>SELECT</i> SQL statement. This returns an <i>IDataReader</i> object representing the result of the <i>SELECT statement</i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>ExecuteNonQuery
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>ExecuteNonQuery
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">to execute an SQL <i>Update, Insert, or Delete </i>statement. The number of rows affected by the operation (updated, inserted, or deleted) is returned.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>ExecuteScalar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>ExecuteScalar
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">to execute an SQL <i>Select</i> statement that returns a single result, such as: <i>select count(*) from articles</i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>CreateParameter
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>CreateParameter
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">to create the <i>IDbParameter</i> parameters of a parameterized SQL statement.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Prepare
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Prepare
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">allows you to optimize the execution of a parameterized query when it is executed multiple times with different parameters.</div></td></tr></table>
 
 <p>If <em>Command</em> is a class that implements the <em>IDbCommand</em> interface, executing an SQL statement without a transaction will take the following form:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-37-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-37-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-37-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-37-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-37-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-37-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-37-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-37-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-37-10">10</a></span>
-<span class="normal"><a href="#__codelineno-37-11">11</a></span>
-<span class="normal"><a href="#__codelineno-37-12">12</a></span>
-<span class="normal"><a href="#__codelineno-37-13">13</a></span>
-<span class="normal"><a href="#__codelineno-37-14">14</a></span>
-<span class="normal"><a href="#__codelineno-37-15">15</a></span>
-<span class="normal"><a href="#__codelineno-37-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="o">//</span><span class="w"> </span><span class="k">open</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span>
-<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="k">connection</span><span class="o">=</span><span class="p">...</span>
-<a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="k">connection</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
-<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="o">//</span><span class="w"> </span><span class="k">prepare</span><span class="w"> </span><span class="n">command</span>
-<a id="__codelineno-37-5" name="__codelineno-37-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
-<a id="__codelineno-37-6" name="__codelineno-37-6"></a><span class="n">command</span><span class="p">.</span><span class="k">Connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">connection</span><span class="p">;</span>
-<a id="__codelineno-37-7" name="__codelineno-37-7"></a><span class="o">//</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">statement</span>
-<a id="__codelineno-37-8" name="__codelineno-37-8"></a><span class="n">command</span><span class="p">.</span><span class="n">CommandText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;select ...&quot;</span><span class="p">;</span>
-<a id="__codelineno-37-9" name="__codelineno-37-9"></a><span class="n">IDbDataReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
-<a id="__codelineno-37-10" name="__codelineno-37-10"></a><span class="p">...</span>
-<a id="__codelineno-37-11" name="__codelineno-37-11"></a><span class="o">//</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="k">update</span><span class="p">,</span><span class="w"> </span><span class="k">insert</span><span class="p">,</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">commands</span>
-<a id="__codelineno-37-12" name="__codelineno-37-12"></a><span class="n">command</span><span class="p">.</span><span class="n">CommandText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;insert ...&quot;</span><span class="p">;</span>
-<a id="__codelineno-37-13" name="__codelineno-37-13"></a><span class="nb">int</span><span class="w"> </span><span class="n">rowsInserted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
-<a id="__codelineno-37-14" name="__codelineno-37-14"></a><span class="p">...</span>
-<a id="__codelineno-37-15" name="__codelineno-37-15"></a><span class="o">//</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="k">connection</span>
-<a id="__codelineno-37-16" name="__codelineno-37-16"></a><span class="k">connection</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-42-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-42-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-42-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-42-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-42-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-42-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-42-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-42-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-42-10">10</a></span>
+<span class="normal"><a href="#__codelineno-42-11">11</a></span>
+<span class="normal"><a href="#__codelineno-42-12">12</a></span>
+<span class="normal"><a href="#__codelineno-42-13">13</a></span>
+<span class="normal"><a href="#__codelineno-42-14">14</a></span>
+<span class="normal"><a href="#__codelineno-42-15">15</a></span>
+<span class="normal"><a href="#__codelineno-42-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="o">//</span><span class="w"> </span><span class="k">open</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="k">connection</span><span class="o">=</span><span class="p">...</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="k">connection</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="o">//</span><span class="w"> </span><span class="k">prepare</span><span class="w"> </span><span class="n">command</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6"></a><span class="n">command</span><span class="p">.</span><span class="k">Connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">connection</span><span class="p">;</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="o">//</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">statement</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8"></a><span class="n">command</span><span class="p">.</span><span class="n">CommandText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;select ...&quot;</span><span class="p">;</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9"></a><span class="n">IDbDataReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10"></a><span class="p">...</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11"></a><span class="o">//</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="k">update</span><span class="p">,</span><span class="w"> </span><span class="k">insert</span><span class="p">,</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">commands</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12"></a><span class="n">command</span><span class="p">.</span><span class="n">CommandText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;insert ...&quot;</span><span class="p">;</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13"></a><span class="nb">int</span><span class="w"> </span><span class="n">rowsInserted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14"></a><span class="p">...</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15"></a><span class="o">//</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="k">connection</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16"></a><span class="k">connection</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <p><u><strong>The IDataReader interface</strong></u></p>
 <p>Used to encapsulate the results of an SQL <em>Select</em> statement. An <em>IDataReader</em> object represents a table with rows and columns, which are processed sequentially: first the first row, then the second, and so on. Among the methods (<strong>M)</strong> and properties (<strong>P)</strong> of this interface are the following:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>FieldCount
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>FieldCount
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The number of columns in the <i>IDataReader</i> table</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>GetName
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>GetName
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>GetName(i) </i>returns the name of column i in the <i>IDataReader</i> table.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Item
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>Item
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>Item[i] </i>represents column number i of the current row in the <i>IDataReader</i> table.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Read
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>Read
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Moves to the next row in the <i>IDataReader</i> table. Returns <i>True </i>if the row was successfully read, <i>False </i>otherwise.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>Close
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>Close
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Closes the <i>IDataReader </i>table.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>GetBoolean
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>GetBoolean
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>GetBoolean</i>(i): returns the Boolean value of column i in the current row of the <i>IDataReader</i> table. Other similar methods include: <i>GetDateTime</i>, <i>GetDecimal</i>, <i>GetDouble</i>, <i>GetFloat</i>, <i>GetInt16</i>, <i>GetInt32</i>, <i>GetInt64</i>, <i>GetString</i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>Getvalue
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>Getvalue
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>Getvalue</i>(i): returns the value of column i in the current row of the <i>IDataReader</i> table as <i>an object</i> type.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>IsDBNull
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>IsDBNull
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>IsDBNull(i) </i>returns <i>True </i>if column i of the current row in the <i>IDataReader</i> table has no value, which is represented by the SQL NULL value.</div></td></tr></table>
 
 <p>Using an <em>IDataReader</em> object often looks like the following:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-46-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-46-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-46-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-46-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-46-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-46-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-46-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-46-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-46-10">10</a></span>
-<span class="normal"><a href="#__codelineno-46-11">11</a></span>
-<span class="normal"><a href="#__codelineno-46-12">12</a></span>
-<span class="normal"><a href="#__codelineno-46-13">13</a></span>
-<span class="normal"><a href="#__codelineno-46-14">14</a></span>
-<span class="normal"><a href="#__codelineno-46-15">15</a></span>
-<span class="normal"><a href="#__codelineno-46-16">16</a></span>
-<span class="normal"><a href="#__codelineno-46-17">17</a></span>
-<span class="normal"><a href="#__codelineno-46-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="o">//</span><span class="w"> </span><span class="k">Open</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span>
-<a id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
-<a id="__codelineno-46-3" name="__codelineno-46-3"></a><span class="k">connection</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
-<a id="__codelineno-46-4" name="__codelineno-46-4"></a><span class="o">//</span><span class="w"> </span><span class="k">prepare</span><span class="w"> </span><span class="n">command</span>
-<a id="__codelineno-46-5" name="__codelineno-46-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
-<a id="__codelineno-46-6" name="__codelineno-46-6"></a><span class="n">command</span><span class="p">.</span><span class="k">Connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">connection</span><span class="p">;</span>
-<a id="__codelineno-46-7" name="__codelineno-46-7"></a><span class="o">//</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">statement</span>
-<a id="__codelineno-46-8" name="__codelineno-46-8"></a><span class="n">command</span><span class="p">.</span><span class="n">CommandText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;select ...&quot;</span><span class="p">;</span>
-<a id="__codelineno-46-9" name="__codelineno-46-9"></a><span class="n">IDataReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
-<a id="__codelineno-46-10" name="__codelineno-46-10"></a><span class="o">//</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="n">results</span>
-<a id="__codelineno-46-11" name="__codelineno-46-11"></a><span class="n">while</span><span class="w"> </span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="k">Read</span><span class="p">())</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-46-12" name="__codelineno-46-12"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="k">row</span>
-<a id="__codelineno-46-13" name="__codelineno-46-13"></a><span class="w">        </span><span class="p">...</span>
-<a id="__codelineno-46-14" name="__codelineno-46-14"></a><span class="err">}</span>
-<a id="__codelineno-46-15" name="__codelineno-46-15"></a><span class="o">//</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="n">reader</span>
-<a id="__codelineno-46-16" name="__codelineno-46-16"></a><span class="n">reader</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
-<a id="__codelineno-46-17" name="__codelineno-46-17"></a><span class="o">//</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="k">connection</span>
-<a id="__codelineno-46-18" name="__codelineno-46-18"></a><span class="k">connection</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-51-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-51-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-51-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-51-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-51-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-51-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-51-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-51-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-51-10">10</a></span>
+<span class="normal"><a href="#__codelineno-51-11">11</a></span>
+<span class="normal"><a href="#__codelineno-51-12">12</a></span>
+<span class="normal"><a href="#__codelineno-51-13">13</a></span>
+<span class="normal"><a href="#__codelineno-51-14">14</a></span>
+<span class="normal"><a href="#__codelineno-51-15">15</a></span>
+<span class="normal"><a href="#__codelineno-51-16">16</a></span>
+<span class="normal"><a href="#__codelineno-51-17">17</a></span>
+<span class="normal"><a href="#__codelineno-51-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="o">//</span><span class="w"> </span><span class="k">Open</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span>
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="k">connection</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4"></a><span class="o">//</span><span class="w"> </span><span class="k">prepare</span><span class="w"> </span><span class="n">command</span>
+<a id="__codelineno-51-5" name="__codelineno-51-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6"></a><span class="n">command</span><span class="p">.</span><span class="k">Connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">connection</span><span class="p">;</span>
+<a id="__codelineno-51-7" name="__codelineno-51-7"></a><span class="o">//</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">statement</span>
+<a id="__codelineno-51-8" name="__codelineno-51-8"></a><span class="n">command</span><span class="p">.</span><span class="n">CommandText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;select ...&quot;</span><span class="p">;</span>
+<a id="__codelineno-51-9" name="__codelineno-51-9"></a><span class="n">IDataReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<a id="__codelineno-51-10" name="__codelineno-51-10"></a><span class="o">//</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="n">results</span>
+<a id="__codelineno-51-11" name="__codelineno-51-11"></a><span class="n">while</span><span class="w"> </span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="k">Read</span><span class="p">())</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-51-12" name="__codelineno-51-12"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="k">row</span>
+<a id="__codelineno-51-13" name="__codelineno-51-13"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-51-14" name="__codelineno-51-14"></a><span class="err">}</span>
+<a id="__codelineno-51-15" name="__codelineno-51-15"></a><span class="o">//</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="n">reader</span>
+<a id="__codelineno-51-16" name="__codelineno-51-16"></a><span class="n">reader</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
+<a id="__codelineno-51-17" name="__codelineno-51-17"></a><span class="o">//</span><span class="w"> </span><span class="k">close</span><span class="w"> </span><span class="k">connection</span>
+<a id="__codelineno-51-18" name="__codelineno-51-18"></a><span class="k">connection</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 
 

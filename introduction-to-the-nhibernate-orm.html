@@ -1022,7 +1022,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DE0000013A0ECC9A76.png" style="display:inline-block; margin:4px;width:4.11cm;height:5.814cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE0000013A0ECC9A76.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1883301168461456"></a></p>
-<h2 id="61-the-role-of-nhibernate-in-a-layered-net-architecture">6.1. <span style="color: #4f81bd"><strong>The Role of NHIBERNATE in a Layered .NET Architecture</strong></span></h2>
+<h2 id="61-the-role-of-nhibernate-in-a-layered-net-architecture">6.1. <span style="color: #4f81bd">The Role of NHIBERNATE in a Layered .NET Architecture</span></h2>
 <p>A .NET application using a database can be structured in layers as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007610000011AE340E2D6.png" style="display:inline-block; margin:4px;width:17.997cm;height:2.686cm;" class="odt-zoomable" data-zoom-src="images/10000000000007610000011AE340E2D6.png" /></td></tr></table>
 
@@ -1038,9 +1038,9 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000075B00000109312D915D.png" style="display:inline-block; margin:4px;width:17.997cm;height:2.533cm;" class="odt-zoomable" data-zoom-src="images/100000000000075B00000109312D915D.png" /></td></tr></table>
 
 <p>In the diagram above, the [DAO] layer no longer communicates with the [ADO.NET] connector but with the NHibernate framework, which provides it with an interface independent of the [ADO.NET] connector used. This architecture allows you to switch DBMSes without changing the [DAO] layer. Only the [ADO.NET] connector needs to be changed.</p>
-<p><a id="refheading1883321168461456"></a>
-<a id="bd-mysql-nhibernate"></a></p>
-<h2 id="62-the-sample-database">6.2. <span style="color: #4f81bd"><strong>The sample database</strong></span></h2>
+<p><a id="bd-mysql-nhibernate"></a>
+<a id="refheading1883321168461456"></a></p>
+<h2 id="62-the-sample-database">6.2. <span style="color: #4f81bd">The sample database</span></h2>
 <p>To demonstrate how to work with NHibernate, we will use the following MySQL database [dbpam_nhibernate] described in Section<a href="#refheadingtoc744714255346799"><u><span style="color: #0563c1"> 3.1</span></u></a>. Exporting the database structure to an SQL file yields the following result:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1142,7 +1142,7 @@
 </code></pre></div></td></tr></table></div>
 <p>Note that in lines 6, 20, and 36, the primary keys <code>ID</code> have the <em><code>*&lt;a id="autoincrement"&gt;&lt;/a&gt; *</code></em> attribute set to <code>*autoincrement</code>*. This means that MySQL will automatically generate the primary key values whenever a new record is added. The developer does not need to worry about this.</p>
 <p><a id="refheading1883341168461456"></a></p>
-<h2 id="63-the-c-demo-project">6.3. <span style="color: #4f81bd"><strong>The C# Demo Project</strong></span></h2>
+<h2 id="63-the-c-demo-project">6.3. <span style="color: #4f81bd">The C# Demo Project</span></h2>
 <p>To introduce the configuration and use of NHibernate, we will use the following architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F30000011AD9BF416D.png" style="display:inline-block; margin:4px;width:16.762cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F30000011AD9BF416D.png" /></td></tr></table>
 
@@ -1177,9 +1177,9 @@
   </li>
 </ul>
 
-<p><a id="refheading1883361168461456"></a>
-<a id="appconfig-nhibernate"></a></p>
-<h3 id="631-configuring-the-database-connection">6.3.1. <span style="color: #4f81bd"><strong>Configuring the database connection</strong></span></h3>
+<p><a id="appconfig-nhibernate"></a>
+<a id="refheading1883361168461456"></a></p>
+<h3 id="631-configuring-the-database-connection">6.3.1. <span style="color: #4f81bd">Configuring the database connection</span></h3>
 <p>Let’s return to the test architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F3000000F1E7206578.png" style="display:inline-block; margin:4px;width:16.762cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F3000000F1E7206578.png" /></td></tr></table>
 
@@ -1447,9 +1447,9 @@
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Table</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Class</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Mapping</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">contributions</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">MembershipFees.cs</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Contributions.hbm.xml</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">employees</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Employee.cs</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Employee.hbm.xml</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">allowances</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Allowances.cs</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Allowances.hbm.xml</div></td></tr></table>
 
-<p><a id="refheading2521961168461456"></a>
-<a id="mapping-cotisations"></a></p>
-<h4 id="6321-mapping-of-the-contributions-table">6.3.2.1. <span style="color: #4f81bd"><em>Mapping of the [contributions] table</em></span></h4>
+<p><a id="mapping-cotisations"></a>
+<a id="refheading2521961168461456"></a></p>
+<h4 id="6321-mapping-of-the-contributions-table">6.3.2.1. <span style="color: #4f81bd">Mapping of the [contributions] table</span></h4>
 <p>Consider the [contributions] table:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017C000000916AACFD59.png" style="display:inline-block; margin:4px;width:7.04cm;height:2.686cm;" class="odt-zoomable" data-zoom-src="images/100000000000017C000000916AACFD59.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ID
@@ -1534,9 +1534,9 @@
   </li>
 </ul>
 
-<p><a id="refheading2521981168461456"></a>
-<a id="mapping-indemnites"></a></p>
-<h4 id="6322-mapping-of-the-indemnites-table">6.3.2.2. <span style="color: #4f81bd"><em>Mapping of the [indemnites] table</em></span></h4>
+<p><a id="mapping-indemnites"></a>
+<a id="refheading2521981168461456"></a></p>
+<h4 id="6322-mapping-of-the-indemnites-table">6.3.2.2. <span style="color: #4f81bd">Mapping of the [indemnites] table</span></h4>
 <p>Consider the [indemnites] table:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019D0000009D663003AE.png" style="display:inline-block; margin:4px;width:7.04cm;height:2.676cm;" class="odt-zoomable" data-zoom-src="images/100000000000019D0000009D663003AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ID
@@ -1605,9 +1605,9 @@
 </code></pre></div>
 
 <p>There is nothing new here compared to the mapping file explained earlier. The only difference is on line 9. The attribute unique=&quot;true&quot; indicates that there is a uniqueness constraint on the [INDICE] column in the [indemnites] table: there cannot be two rows with the same value for the [INDICE] column.</p>
-<p><a id="refheading2522001168461456"></a>
-<a id="mapping-employes"></a></p>
-<h4 id="6323-mapping-of-the-employes-table">6.3.2.3. <span style="color: #4f81bd"><em>Mapping of the [employes] table</em></span></h4>
+<p><a id="mapping-employes"></a>
+<a id="refheading2522001168461456"></a></p>
+<h4 id="6323-mapping-of-the-employes-table">6.3.2.3. <span style="color: #4f81bd">Mapping of the [employes] table</span></h4>
 <p>Let’s consider the [employes] table:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000163000000CBCEC3582C.png" style="display:inline-block; margin:4px;width:6.57cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/1000000000000163000000CBCEC3582C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ID
@@ -1746,7 +1746,7 @@
   </li>
 </ul>
 <p><a id="refheading1883401168461456"></a></p>
-<h2 id="64-the-nhibernate-api">6.4. <span style="color: #4f81bd"><strong>The NHibernate API</strong></span></h2>
+<h2 id="64-the-nhibernate-api">6.4. <span style="color: #4f81bd">The NHibernate API</span></h2>
 <p>Let’s return to the architecture of our example project:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E1000000E8E91925DC.png" style="display:inline-block; margin:4px;width:16.524cm;height:3.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E1000000E8E91925DC.png" /></td></tr></table>
 
@@ -1760,7 +1760,7 @@
 
 <p>We still need to explore the methods offered by NHibernate for manipulating database data: insert, update, delete, and list.</p>
 <p><a id="refheading1883421168461456"></a></p>
-<h3 id="641-the-sessionfactory-object">6.4.1. <span style="color: #4f81bd"><strong>The SessionFactory Object</strong></span></h3>
+<h3 id="641-the-sessionfactory-object">6.4.1. <span style="color: #4f81bd">The SessionFactory Object</span></h3>
 <p>Every NHibernate operation takes place within a session. A typical sequence of NHibernate operations is as follows:</p>
 <ul>
   <li>open an NHibernate session
@@ -1807,7 +1807,7 @@
   </li>
 </ul>
 <p><a id="refheading1883441168461456"></a></p>
-<h3 id="642-the-nhibernate-session">6.4.2. <span style="color: #4f81bd"><strong>The NHibernate session</strong></span></h3>
+<h3 id="642-the-nhibernate-session">6.4.2. <span style="color: #4f81bd">The NHibernate session</span></h3>
 <p>Once the <em>SessionFactory</em> has been created (this is done only once), you can obtain sessions that allow you to perform NHibernate persistence operations. A common code snippet is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">try{</span>
@@ -1836,7 +1836,7 @@
   </li>
 </ul>
 <p><a id="refheading1883461168461456"></a></p>
-<h3 id="643-the-isession-interface">6.4.3. <span style="color: #4f81bd"><strong>The ISession Interface</strong></span></h3>
+<h3 id="643-the-isession-interface">6.4.3. <span style="color: #4f81bd">The ISession Interface</span></h3>
 <p>We will now present some of the methods of the <strong>ISession</strong> interface implemented by an NHibernate session:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ITransaction BeginTransaction()
@@ -1912,9 +1912,9 @@
   <li>..
   </li>
 </ul>
-<p><a id="refheading1883501168461456"></a>
-<a id="exemples-nhibernate"></a></p>
-<h2 id="65-some-code-examples">6.5. <span style="color: #4f81bd"><strong>Some code examples</strong></span></h2>
+<p><a id="exemples-nhibernate"></a>
+<a id="refheading1883501168461456"></a></p>
+<h2 id="65-some-code-examples">6.5. <span style="color: #4f81bd">Some code examples</span></h2>
 <p>The following examples are based on the architecture discussed previously and summarized below. The database is the MySQL database [dbpam_nhibernate] also presented. The examples are console programs [1] using the NHibernate framework [3] to manipulate the database [2].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050E000000D610FB9ED8.png" style="display:inline-block; margin:4px;width:17.119cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E000000D610FB9ED8.png" /></td></tr></table>
 
@@ -1940,7 +1940,7 @@
   </li>
 </ul>
 <p><a id="refheading1883521168461456"></a></p>
-<h3 id="651-retrieving-the-database-contents">6.5.1. <span style="color: #4f81bd"><strong>Retrieving the database contents</strong></span></h3>
+<h3 id="651-retrieving-the-database-contents">6.5.1. <span style="color: #4f81bd">Retrieving the database contents</span></h3>
 <p>The [ShowDataBase.cs] program displays the database contents:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
@@ -2073,7 +2073,7 @@
 </code></pre></div></td></tr></table></div>
 <p>Note that in rows 3 and 4, when querying for an employee, their compensation was also returned.</p>
 <p><a id="refheading1883541168461456"></a></p>
-<h3 id="652-inserting-data-into-the-database">6.5.2. <span style="color: #4f81bd"><strong>Inserting data into the database</strong></span></h3>
+<h3 id="652-inserting-data-into-the-database">6.5.2. <span style="color: #4f81bd">Inserting data into the database</span></h3>
 <p>The [FillDataBase.cs] program allows you to insert data into the database:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
@@ -2271,7 +2271,7 @@
 <a id="__codelineno-38-19" name="__codelineno-38-19" href="#__codelineno-38-19"></a><span class="p">[</span><span class="mf">3.49</span><span class="o">|</span><span class="mf">6.15</span><span class="o">|</span><span class="mf">9.39</span><span class="o">|</span><span class="mf">7.88</span><span class="p">]</span>
 </code></pre></div>
 <p><a id="refheading1883561168461456"></a></p>
-<h3 id="653-search-for-an-employee">6.5.3. <span style="color: #4f81bd"><strong>Search for an employee</strong></span></h3>
+<h3 id="653-search-for-an-employee">6.5.3. <span style="color: #4f81bd">Search for an employee</span></h3>
 <p>The program [Program.cs] contains various methods demonstrating how to access and manipulate data in the database. We present a few of them here.</p>
 <p>The [FindEmployee] method allows you to find an employee by their Social Security number:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
@@ -2324,7 +2324,7 @@
 <a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>Employee[xx] not found...
 </code></pre></div>
 <p><a id="refheading1883581168461456"></a></p>
-<h3 id="654-insertion-of-invalid-entities">6.5.4. <span style="color: #4f81bd"><strong>Insertion of invalid entities</strong></span></h3>
+<h3 id="654-insertion-of-invalid-entities">6.5.4. <span style="color: #4f81bd">Insertion of invalid entities</span></h3>
 <p>The following method attempts to save an uninitialized [Employee] entity.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">// SaveEmptyEmployee</span>
@@ -2386,7 +2386,7 @@
 <a id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="k">exception</span><span class="w"> </span><span class="n">occurred</span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Employee</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">EMPLOYEES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">SS</span><span class="p">,</span><span class="w"> </span><span class="n">LAST_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">FIRST_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">CITY</span><span class="p">,</span><span class="w"> </span><span class="n">ZIP</span><span class="p">,</span><span class="w"> </span><span class="n">BENEFIT_ID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div>
 <p><a id="refheading1883601168461456"></a></p>
-<h3 id="655-creating-two-allowances-with-the-same-index-within-a-transaction">6.5.5. <span style="color: #4f81bd"><strong>Creating two allowances with the same index within a transaction</strong></span></h3>
+<h3 id="655-creating-two-allowances-with-the-same-index-within-a-transaction">6.5.5. <span style="color: #4f81bd">Creating two allowances with the same index within a transaction</span></h3>
 <p>In the [indemnites] table, the [index] column has been declared with the <strong>unique</strong> attribute, which prevents two rows from having the same index. The following method creates two allowances with the same index within a transaction:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">// CreateIndemnites1</span>
@@ -2443,7 +2443,7 @@
 </code></pre></div></td></tr></table></div>
 <p>Line 9: We can see that the [indemnites] table is empty. No insertions have been made.</p>
 <p><a id="refheading1883621168461456"></a></p>
-<h3 id="656-creating-two-allowances-with-the-same-index-without-a-transaction">6.5.6. <span style="color: #4f81bd"><strong>Creating two allowances with the same index without a transaction</strong></span></h3>
+<h3 id="656-creating-two-allowances-with-the-same-index-without-a-transaction">6.5.6. <span style="color: #4f81bd">Creating two allowances with the same index without a transaction</span></h3>
 <p>The following method creates two allowances with the same index without using a transaction:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">// CreateIndemnites2</span>

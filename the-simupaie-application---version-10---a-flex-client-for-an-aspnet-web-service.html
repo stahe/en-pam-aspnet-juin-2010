@@ -802,7 +802,7 @@
 
 
 
-<h1 id="14-the-simupaie-application-version-10-a-flex-client-for-an-aspnet-web-service">14. <span style="color: #365f91"><strong>The [SimuPaie] application – version 10 – a Flex client for an ASP.NET web service</strong></span></h1>
+<h1 id="14-the-simupaie-application-version-10-a-flex-client-for-an-aspnet-web-service">14. <span style="color: #365f91">The [SimuPaie] application – version 10 – a Flex client for an ASP.NET web service</span></h1>
 <p>We now present a <strong>Flex</strong> client for the ASP.NET web service, version 5. The IDE used is Flex Builder 3. A demo version of this product can be downloaded at the URL [https://www.adobe.com/cfusion/tdrc/index.cfm?loc=fr_fr&amp;product=flex]. Flex Builder 3 is an Eclipse-based IDE. Additionally, to run the Flex client, we use an Apache web server from the <strong>Wamp</strong> tool [http://www.wampserver.com/]. Any <strong>Apache</strong> server will work. The browser displaying the Flex client must have <strong>Flash Player</strong> version 9 or higher installed.</p>
 <p>Flex applications are unique in that they run within the browser’s Flash Player plugin. In this respect, they are similar to Ajax applications, which embed JavaScript scripts in the pages sent to the browser, which are then executed within the browser. A Flex application is not a web application in the usual sense: it is a client application for services delivered by web servers. In this respect, it is analogous to a desktop application that would be a client for those same services. It differs, however, in one respect: it is initially downloaded from a web server into a browser equipped with the Flash Player plugin capable of running it. </p>
 <p>Like a desktop application, a Flex application consists primarily of two elements:</p>
@@ -837,7 +837,7 @@
 </ul>
 
 <p>We have described the execution architecture of a Flex application so that the reader can understand the difference between it and that of a traditional web application, where pages do not embed code (JavaScript, Flex, Silverlight, etc.) that the browser would execute. In the latter, the browser is passive: it simply displays HTML pages built on the web server that sends them to it.</p>
-<h2 id="141-clientserver-application-architecture">14.1. <span style="color: #4f81bd"><strong>Client/server application architecture</strong></span></h2>
+<h2 id="141-clientserver-application-architecture">14.1. <span style="color: #4f81bd">Client/server application architecture</span></h2>
 <p>The client/server architecture implemented here is similar to that of versions 6 and 8:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066000000183281AB48F.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.269cm;" class="odt-zoomable" data-zoom-src="images/100000000000066000000183281AB48F.png" /></td></tr></table>
 
@@ -848,7 +848,7 @@
   <li>an Apache web server that runs the web client [1]
   </li>
 </ul>
-<h2 id="142-the-flex-3-client-project">14.2. <span style="color: #4f81bd"><strong>The Flex 3 client project</strong></span></h2>
+<h2 id="142-the-flex-3-client-project">14.2. <span style="color: #4f81bd">The Flex 3 client project</span></h2>
 <p>We build the Flex client using the Flex Builder 3 IDE:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000545000000D90204185F.png" style="display:inline-block; margin:4px;width:17.847cm;height:2.872cm;" class="odt-zoomable" data-zoom-src="images/1000000000000545000000D90204185F.png" /></td></tr></table>
 
@@ -873,7 +873,7 @@
   <li>The view can be built graphically using the [Design] tab [8]. The MXML tags describing the view are then automatically generated in the [Source] tab. The reverse is also true: MXML tags added directly in the [Source] tab are reflected graphically in the [Design] tab.
   </li>
 </ul>
-<h2 id="143-view-no-1">14.3. <span style="color: #4f81bd"><strong>View No. 1</strong></span></h2>
+<h2 id="143-view-no-1">14.3. <span style="color: #4f81bd">View No. 1</span></h2>
 <p><span style="color: #000000">We will gradually build a web interface similar to that of Version 1 (see </span>Section<a href="#pam-v1"><u><span style="color: #0563c1"> 4</span></u></a><span style="color: #000000">). First, we will build the following interface:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000634000001728320E3F1.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.193cm;" class="odt-zoomable" data-zoom-src="images/1000000000000634000001728320E3F1.png" /></td></tr></table>
 
@@ -1769,7 +1769,7 @@
   <li>in [4], the result obtained: <i>Justine Laverti</i>’s profile.
   </li>
 </ul>
-<h2 id="145-view-3">14.5. <span style="color: #4f81bd"><strong>View #3</strong></span></h2>
+<h2 id="145-view-3">14.5. <span style="color: #4f81bd">View #3</span></h2>
 <p>View 3 handles the form validation. Here, only the &quot;<em>txtHeuresTravaillees</em>&quot; input field is checked. As long as the form is invalid, the &quot;<em>btnSalaire</em>&quot; button will remain disabled.</p>
 <p>To add this functionality, we duplicate [main2.mxml] into [main3.mxml]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014A00000110FA84D79D.png" style="display:inline-block; margin:4px;width:4.366cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/100000000000014A00000110FA84D79D.png" /></td></tr></table>
@@ -1863,7 +1863,7 @@
   <li>In [4], note that the [Salary] button is active because the number of hours worked is correct.
   </li>
 </ul>
-<h2 id="146-view-4">14.6. <span style="color: #4f81bd"><strong>View #4</strong></span></h2>
+<h2 id="146-view-4">14.6. <span style="color: #4f81bd">View #4</span></h2>
 <p>View 4 completes the salary calculation form. To do this, we duplicate [main3.xml] into [main4.xml] and now work with <em>main4</em>, which we set as the default application (see section<a href="#v13-application-par-defaut"><u><span style="color: #0563c1"> 14.4</span></u></a>).</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D1000002159955DAA4.png" style="display:inline-block; margin:4px;width:17.997cm;height:6.442cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D1000002159955DAA4.png" /></td></tr></table>
 

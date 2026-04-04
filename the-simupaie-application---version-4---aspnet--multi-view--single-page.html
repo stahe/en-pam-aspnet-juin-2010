@@ -1036,7 +1036,7 @@
 </ul>
 
 <p>Only basic applications can support this MVC implementation. In fact, with each request, all components of the [Default.aspx] page are instantiated, meaning all views. When sending the response, one of them is selected by the application’s control code simply by making the corresponding [View] component visible and hiding the others. If the application has many views, the [Default.aspx] page will have many components, and the cost of instantiating them can become prohibitive. Furthermore, the page’s [Design] mode may become unmanageable due to having too many views. This type of architecture is suitable for applications with few views and developed by a single person. When it can be adopted, it allows for the development of an MVC architecture very simply. This is what we will explore in this new version.</p>
-<h2 id="81-the-applications-views">8.1. <span style="color: #4f81bd"><strong>The application&#x27;s views</strong></span></h2>
+<h2 id="81-the-applications-views">8.1. <span style="color: #4f81bd">The application&#x27;s views</span></h2>
 <p>The different views presented to the user will be as follows:</p>
 <ul>
 <li>the [VueSaisies] view, which displays the simulation form</li>
@@ -1060,7 +1060,7 @@
 </ul>
 
 <p><img src="images/10000000000002F10000010EB43DE331.png" style="width:13.951cm;height:5.002cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F10000010EB43DE331.png" /></p>
-<h2 id="82-the-visual-web-developer-project-for-the-web-layer">8.2. <span style="color: #4f81bd"><strong>The Visual Web Developer project for the [web] layer</strong></span></h2>
+<h2 id="82-the-visual-web-developer-project-for-the-web-layer">8.2. <span style="color: #4f81bd">The Visual Web Developer project for the [web] layer</span></h2>
 <p>The Visual Web Developer project for the [web] layer is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BD000001F521E4FA05.png" style="display:inline-block; margin:4px;width:12.661cm;height:6.629cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BD000001F521E4FA05.png" /></td></tr></table>
 
@@ -1127,7 +1127,7 @@
   <li>line 31: the list of simulations is placed in the session associated with the &quot;simulations&quot; key
   </li>
 </ul>
-<h2 id="84-the-simulation-class">8.4. <span style="color: #4f81bd"><strong>The [Simulation] class</strong></span></h2>
+<h2 id="84-the-simulation-class">8.4. <span style="color: #4f81bd">The [Simulation] class</span></h2>
 <p>An object of type [Simulation] is used to encapsulate a row of the simulation table:</p>
 <p><img src="images/1000000000000336000000EB676014B3.png" style="width:15.221cm;height:4.352cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000336000000EB676014B3.png" /></p>
 <p>Its code is as follows:</p>
@@ -1171,8 +1171,8 @@
 </code></pre></div>
 
 <p>The fields of the class correspond to the columns of the simulation table.</p>
-<h2 id="85-the-defaultaspx-page">8.5. <span style="color: #4f81bd"><strong>The [Default.aspx] page</strong></span></h2>
-<h3 id="851-overview">8.5.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h3>
+<h2 id="85-the-defaultaspx-page">8.5. <span style="color: #4f81bd">The [Default.aspx] page</span></h2>
+<h3 id="851-overview">8.5.1. <span style="color: #4f81bd">Overview</span></h3>
 <p>The [Default.aspx] page contains several [View] components, one for each view. Its skeleton is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeFile=&quot;Default.aspx.cs&quot; Inherits=&quot;pam_v4.PagePam&quot; </span>%&gt;</span>
@@ -1457,8 +1457,8 @@
   <li>Line 4: displays the value of the <i>Container.DataItem </i>expression, which refers to the current element in the data source. Since this element is an object, the <i>ToString</i> method of that object is used to include it in the page’s HTML output. Our collection of objects will be a <i>List(Of String) </i>collection containing error messages. Lines 3–5 will include <i>&lt;li&gt;Message&lt;/li&gt; </i>sequences in the page’s HTML output.
   </li>
 </ul>
-<h2 id="86-the-controller-defaultaspxcs">8.6. <span style="color: #4f81bd"><strong>The controller [Default.aspx.cs]</strong></span></h2>
-<h3 id="861-overview">8.6.1. <span style="color: #4f81bd"><strong>Overview</strong></span></h3>
+<h2 id="86-the-controller-defaultaspxcs">8.6. <span style="color: #4f81bd">The controller [Default.aspx.cs]</span></h2>
+<h3 id="861-overview">8.6.1. <span style="color: #4f81bd">Overview</span></h3>
 <p>Let’s return to the application’s MVC architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051F0000023DAC5DF3C0.png" style="display:inline-block; margin:4px;width:17.344cm;height:7.581cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F0000023DAC5DF3C0.png" /></td></tr></table>
 
@@ -1573,7 +1573,7 @@
   <li><b>setMenu</b>, lines 16–21: sets the menu options to display
   </li>
 </ul>
-<h3 id="862-the-load-event">8.6.2. <span style="color: #4f81bd"><strong>The Load event</strong></span></h3>
+<h3 id="862-the-load-event">8.6.2. <span style="color: #4f81bd">The Load event</span></h3>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Recommended reading</strong>: Reference [1], <a href="https://stahe.github.io/aspnet1.1-avril-2004/"><u><span style="color: #0563c1">Web Development with ASP.NET 1.</span></u></a>1: </p>
 <ul>
@@ -1615,7 +1615,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="863-action-run-the-simulation">8.6.3. <span style="color: #4f81bd"><strong>Action: Run the simulation</strong></span></h3>
+<h3 id="863-action-run-the-simulation">8.6.3. <span style="color: #4f81bd">Action: Run the simulation</span></h3>
 <p>In the following, screen (1) is the user’s request, and screen (2) is the response sent to the user by the web application. From the home screen, the user can start a simulation:</p>
 <p><img src="images/10000000000001C80000008E4C12237A.png" style="width:8.451cm;height:2.632cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C80000008E4C12237A.png" /></p>
 <div style="margin:0 0 0.75em 0; background-color:#ffcc99; padding:0.35em 0.6em">- (1): The user requests a simulation</div>
@@ -1668,7 +1668,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="864-action-save-the-simulation">8.6.4. <span style="color: #4f81bd"><strong>Action: Save the simulation</strong></span></h3>
+<h3 id="864-action-save-the-simulation">8.6.4. <span style="color: #4f81bd">Action: Save the simulation</span></h3>
 <p>Once the simulation is complete, the user can request to save it:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DB000001106FA1EDB2.png" style="display:inline-block; margin:4px;width:7.541cm;height:4.318cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DB000001106FA1EDB2.png" /></td></tr></table>
 
@@ -1692,7 +1692,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="865-action-return-to-the-simulation-form">8.6.5. <span style="color: #4f81bd"><strong>Action: Return to the simulation form</strong></span></h3>
+<h3 id="865-action-return-to-the-simulation-form">8.6.5. <span style="color: #4f81bd">Action: Return to the simulation form</span></h3>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Recommended reading</strong>: reference [1], [<a href="https://stahe.github.io/aspnet1.1-avril-2004/"><u><span style="color: #0563c1">Web Development with ASP.NET 1.1</span></u></a>]: the role of the hidden field _VIEWSTATE</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -1715,7 +1715,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="866-action-clear-the-simulation">8.6.6. <span style="color: #4f81bd"><strong>Action: Clear the simulation</strong></span></h3>
+<h3 id="866-action-clear-the-simulation">8.6.6. <span style="color: #4f81bd">Action: Clear the simulation</span></h3>
 <p>Once back at the simulation form, the user can request to clear the current entries:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063C000001AC3EF53359.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.826cm;" class="odt-zoomable" data-zoom-src="images/100000000000063C000001AC3EF53359.png" /></td></tr></table>
 
@@ -1732,7 +1732,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="867-action-view-simulations">8.6.7. <span style="color: #4f81bd"><strong>Action: View simulations</strong></span></h3>
+<h3 id="867-action-view-simulations">8.6.7. <span style="color: #4f81bd">Action: View simulations</span></h3>
 <p>The user can request to view the simulations they have already created:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A2000001A7E2C12E7D.png" style="display:inline-block; margin:4px;width:15.69cm;height:5.597cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A2000001A7E2C12E7D.png" /></td></tr></table>
 
@@ -1764,7 +1764,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="868-action-delete-a-simulation">8.6.8. <span style="color: #4f81bd"><strong>Action: Delete a simulation</strong></span></h3>
+<h3 id="868-action-delete-a-simulation">8.6.8. <span style="color: #4f81bd">Action: Delete a simulation</span></h3>
 <p>The user can request to delete a simulation:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A2000001D2BAD4E875.png" style="display:inline-block; margin:4px;width:17.997cm;height:5.816cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A2000001D2BAD4E875.png" /></td></tr></table>
 
@@ -1796,7 +1796,7 @@
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="869-action-end-session">8.6.9. <span style="color: #4f81bd"><strong>Action: End session</strong></span></h3>
+<h3 id="869-action-end-session">8.6.9. <span style="color: #4f81bd">Action: End session</span></h3>
 <p>The user can request to end their simulation session. This discards the session&#x27;s contents and displays an empty form:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056B000001AF7C8AFA8C.png" style="display:inline-block; margin:4px;width:17.997cm;height:5.592cm;" class="odt-zoomable" data-zoom-src="images/100000000000056B000001AF7C8AFA8C.png" /></td></tr></table>
 

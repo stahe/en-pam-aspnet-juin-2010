@@ -1127,7 +1127,7 @@
 </ul>
 
 <p>We begin by implementing the [DAO] layer using the NHibernate framework.</p>
-<h2 id="72-the-dao-data-access-layer">7.2. <span style="color: #4f81bd"><strong>The [DAO] data access layer</strong></span></h2>
+<h2 id="72-the-dao-data-access-layer">7.2. <span style="color: #4f81bd">The [DAO] data access layer</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F500000116A369708D.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F500000116A369708D.png" /></td></tr></table>
 
 <p><a id="vsdaoibatis1"></a></p>
@@ -1194,7 +1194,7 @@
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
-<h3 id="723-the-pamexception-class">7.2.3. <span style="color: #4f81bd"><strong>The [PamException] class</strong></span></h3>
+<h3 id="723-the-pamexception-class">7.2.3. <span style="color: #4f81bd">The [PamException] class</span></h3>
 <p>The [dao] layer is responsible for exchanging data with an external source. This exchange may fail. For example, if information is requested from a remote service on the Internet, retrieving it will fail due to any network outage. For this type of error, it is standard practice in Java to throw an exception. If the exception is not of type [RunTimeException] or a derived type, you must indicate in the method signature that the method throws an exception. In .NET, all exceptions are unhandled, i.e., equivalent to Java’s [RunTimeException] type. Therefore, there is no need to declare that the methods [GetAllEmployeeIDs, GetEmployee, GetContributions] are likely to throw an exception.</p>
 <p>However, it is useful to be able to distinguish between different exceptions, as their handling may differ. Thus, the code handling various types of exceptions can be written as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>try{
@@ -1273,7 +1273,7 @@
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
 </code></pre></div>
 <p>This second method has the advantage of not losing the information contained in the first exception.</p>
-<h3 id="724-nhibernate-mapping-files-classes">7.2.4. <span style="color: #4f81bd"><strong>NHibernate mapping files &lt;--&gt; classes</strong></span></h3>
+<h3 id="724-nhibernate-mapping-files-classes">7.2.4. <span style="color: #4f81bd">NHibernate mapping files &lt;--&gt; classes</span></h3>
 <p>Let’s return to the application architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E70000011CB79C69D4.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.383cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E70000011CB79C69D4.png" /></td></tr></table>
 
@@ -1427,7 +1427,7 @@
 </ul>
 
 <h2 id="73-implementation-and-testing-of-the-dao-layer">7.3. <span style="color: #4f81bd"><strong>Implementation and testing of the [dao] layer</strong></span></h2>
-<h3 id="731-the-visual-studio-project">7.3.1. <span style="color: #4f81bd"><strong>The Visual Studio project</strong></span></h3>
+<h3 id="731-the-visual-studio-project">7.3.1. <span style="color: #4f81bd">The Visual Studio project</span></h3>
 <p>The Visual Studio project has already been presented. As a reminder:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C000001BAA8B49F92.png" style="display:inline-block; margin:4px;width:15.61cm;height:5.847cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C000001BAA8B49F92.png" /></td></tr></table>
 
@@ -1439,7 +1439,7 @@
   <li>in [3], the project references.
   </li>
 </ul>
-<h3 id="732-the-console-test-program-maincs">7.3.2. <span style="color: #4f81bd"><strong>The console test program [Main.cs]</strong></span></h3>
+<h3 id="732-the-console-test-program-maincs">7.3.2. <span style="color: #4f81bd">The console test program [Main.cs]</span></h3>
 <p>The test program [Main.cs] runs in the following architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AC0000010B9E7AC44F.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.309cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AC0000010B9E7AC44F.png" /></td></tr></table>
 
@@ -1533,7 +1533,7 @@
 <span class="odt-code-line">    using the statement log4net.Config.XmlConfigurator.Configure();</span>
 <span class="odt-code-line"><span style="color:#008000">    ! </span><span style="color:#0000ff">--&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">log4net</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">    ...</span></span>
+<span class="odt-code-line">    ...</span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">/log4net</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/configuration</span><span style="color:#0000ff">&gt;</span></span>
@@ -1571,7 +1571,7 @@
   <li>row 5: contribution rates
   </li>
 </ul>
-<h3 id="733-definition-of-the-pamdaonhibernate-class">7.3.3. <span style="color: #4f81bd"><strong>Definition of the [PamDaoNHibernate] class</strong></span></h3>
+<h3 id="733-definition-of-the-pamdaonhibernate-class">7.3.3. <span style="color: #4f81bd">Definition of the [PamDaoNHibernate] class</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056C0000010D33925926.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.487cm;" class="odt-zoomable" data-zoom-src="images/100000000000056C0000010D33925926.png" /></td></tr></table>
 
 <p>The [IPamDao] interface implemented by the [dao] layer is as follows:</p>
@@ -1648,7 +1648,7 @@
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
-<h3 id="734-unit-testing-with-nunit">7.3.4. <span style="color: #4f81bd"><strong>Unit Testing with NUnit</strong></span></h3>
+<h3 id="734-unit-testing-with-nunit">7.3.4. <span style="color: #4f81bd">Unit Testing with NUnit</span></h3>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Recommended reading</strong>: &quot;<strong>C# 2008, Chapter 4: Three-tier architectures, NUnit testing, Spring framework&quot;</strong>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -1818,7 +1818,7 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000164000001CD94A0D07D.png" style="display:inline-block; margin:4px;width:4.71cm;height:6.1cm;" class="odt-zoomable" data-zoom-src="images/1000000000000164000001CD94A0D07D.png" /></td></tr></table>
 
-<h2 id="74-the-business-layer">7.4. <span style="color: #4f81bd"><strong>The business layer</strong></span></h2>
+<h2 id="74-the-business-layer">7.4. <span style="color: #4f81bd">The business layer</span></h2>
 <p>Let’s revisit the general architecture of the [SimuPaie] application:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F20000012BEE09A03F.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F20000012BEE09A03F.png" /></td></tr></table>
 
@@ -1877,7 +1877,7 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>line 10: the method that will retrieve information 6 through 24. This information has been collected in an object of type [PayrollSheet].
   </li>
 </ul>
-<h3 id="743-entities-in-the-business-layer">7.4.3. <span style="color: #4f81bd"><strong>Entities in the [business] layer</strong></span></h3>
+<h3 id="743-entities-in-the-business-layer">7.4.3. <span style="color: #4f81bd">Entities in the [business] layer</span></h3>
 <p>The [entities] folder in the Visual Studio project contains the objects handled by the business class: [Payroll] and [PayrollItems].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018C000001612569ED08.png" style="display:inline-block; margin:4px;width:5.239cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/100000000000018C000001612569ED08.png" /></td></tr></table>
 
@@ -1947,7 +1947,7 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>Lines 12–15: The class’s [ToString] method.
   </li>
 </ul>
-<h3 id="744-implementation-of-the-business-layer">7.4.4. <span style="color: #4f81bd"><strong>Implementation of the [business] layer</strong></span></h3>
+<h3 id="744-implementation-of-the-business-layer">7.4.4. <span style="color: #4f81bd">Implementation of the [business] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001840000015226B4BCC4.png" style="display:inline-block; margin:4px;width:5.133cm;height:4.471cm;" class="odt-zoomable" data-zoom-src="images/10000000000001840000015226B4BCC4.png" /></td></tr></table>
 
 <p>We will implement the [IPamMetier] interface with two classes:</p>
@@ -2047,7 +2047,7 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
 <p><strong>Question</strong>: Write the code for the [GetSalaire] method.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
-<h3 id="745-the-console-test-for-the-business-layer">7.4.5. <span style="color: #4f81bd"><strong>The console test for the [business] layer</strong></span></h3>
+<h3 id="745-the-console-test-for-the-business-layer">7.4.5. <span style="color: #4f81bd">The console test for the [business] layer</span></h3>
 <p>Let’s review the Visual Studio project for the [business] layer:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001880000016A7A7F7376.png" style="display:inline-block; margin:4px;width:5.186cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000001880000016A7A7F7376.png" /></td></tr></table>
 
@@ -2091,7 +2091,7 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   </li>
 </ul>
 
-<p>The test program uses the following configuration file<a id="spring-metier"></a> [<a id="appconfig-metier-dao-nhibernate"></a><a id="pam-ibatis-appconfig"></a> App.config]:</p>
+<p>The test program uses the following configuration file<a id="spring-metier"></a> [<a id="pam-ibatis-appconfig"></a><a id="appconfig-metier-dao-nhibernate"></a> App.config]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot; <span style="color:#0000ff">?&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span>
@@ -2163,7 +2163,7 @@ Implement the tests for the [PamDaoNHibernate] class on a machine.
   <li>line 3: the [PamException] exception caused by a non-existent employee.
   </li>
 </ul>
-<h3 id="746-unit-tests-for-the-business-layer">7.4.6. <span style="color: #4f81bd"><strong>Unit tests for the business layer</strong></span></h3>
+<h3 id="746-unit-tests-for-the-business-layer">7.4.6. <span style="color: #4f81bd">Unit tests for the business layer</span></h3>
 <p>The previous test was visual: we verified on screen that we were indeed getting the expected results. We will now move on to non-visual NUnit tests.</p>
 <p>Let’s return to the Visual Studio project for the [business] project:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047C00000173F17AB400.png" style="display:inline-block; margin:4px;width:15.187cm;height:4.907cm;" class="odt-zoomable" data-zoom-src="images/100000000000047C00000173F17AB400.png" /></td></tr></table>
@@ -2274,17 +2274,17 @@ Implement the tests for the [PamMetier] class on the machine.
   </li>
 </ul>
 
-<h3 id="747-generating-the-business-layer-dll">7.4.7. <span style="color: #4f81bd"><strong>Generating the [business] layer DLL</strong></span></h3>
+<h3 id="747-generating-the-business-layer-dll">7.4.7. <span style="color: #4f81bd">Generating the [business] layer DLL</span></h3>
 <p>Once the [PamMetier] class has been written and tested, we will generate the [pam-metier-dao-hibernate.dll] DLL for the [business] layer by following the method described in section<a href="#daodll"><u><span style="color: #0563c1"> 7.3.5.</span></u></a> We will take care not to include the test programs [Main.cs] and [NUnit.cs] in the DLL. We will then place it in the [lib] folder of the DLLs [1].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000165000001D54C0FA0C3.png" style="display:inline-block; margin:4px;width:4.724cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000165000001D54C0FA0C3.png" /></td></tr></table>
 
 <p><a id="refheadingtoc549421911809479"></a></p>
-<h2 id="75-the-web-layer">7.5. <span style="color: #4f81bd"><strong>The [web] layer</strong></span></h2>
+<h2 id="75-the-web-layer">7.5. <span style="color: #4f81bd">The [web] layer</span></h2>
 <p>Let’s revisit the general architecture of the [SimuPaie] application:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FA00000122744B2F21.png" style="display:inline-block; margin:4px;width:17.997cm;height:3.411cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FA00000122744B2F21.png" /></td></tr></table>
 
 <p>We assume that the [dao] and [business] layers are complete and encapsulated in the DLLs [pam-dao-hibernate, pam-business-dao-hibernate.dll]. We will now describe the web layer. </p>
-<h3 id="751-the-visual-web-developer-project-for-the-web-layer">7.5.1. <span style="color: #4f81bd"><strong>The Visual Web Developer project for the [web] layer</strong></span></h3>
+<h3 id="751-the-visual-web-developer-project-for-the-web-layer">7.5.1. <span style="color: #4f81bd">The Visual Web Developer project for the [web] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000317000001B5171F3E34.png" style="display:inline-block; margin:4px;width:10.465cm;height:5.782cm;" class="odt-zoomable" data-zoom-src="images/1000000000000317000001B5171F3E34.png" /></td></tr></table>
 
 <ul>
@@ -2299,7 +2299,7 @@ Implement the tests for the [PamMetier] class on the machine.
   <li>in [2], the DLLs required by the web application. Note the DLLs for the [DAO] and [business] layers built previously.
   </li>
 </ul>
-<h3 id="752-application-configuration">7.5.2. <span style="color: #4f81bd"><strong>Application configuration</strong></span></h3>
+<h3 id="752-application-configuration">7.5.2. <span style="color: #4f81bd">Application configuration</span></h3>
 <p>The [Web.config] file that configures the application defines the same data as the [App.config] file configuring the [business] layer discussed earlier. This data must be placed in the pre-generated code of the [Web.config] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span>
@@ -2355,7 +2355,7 @@ Implement the tests for the [PamMetier] class on the machine.
 <span class="odt-code-line">....</span>
 <span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">/log4net</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">  &lt;appSettings/&gt;</span></span>
+<span class="odt-code-line">  &lt;appSettings/&gt;</span>
 <span class="odt-code-line"><span style="color:#0000ff">  &lt;connectionStrings/&gt;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.web</span><span style="color:#0000ff">&gt;</span></span>
