@@ -887,43 +887,43 @@
 <p><span style="color: #000000">The client’s main file [main.xml] is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:Application </span><span style="color:#000000">xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    creationComplete=&quot;init()&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">width=&quot;</span><span style="color:#990000">100%</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Pay stub</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">30</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> width=&quot;</span><span style="color:#990000">100%</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Feuille de salaire</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">30</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:HBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Employees</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:ComboBox </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">cmbEmployees</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employees</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmployee</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Employés</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:ComboBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Hours worked</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:TextInput </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">txtHoursWorked</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Heures travaillées</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:TextInput</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Days worked</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:NumericStepper </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">daysWorked</span><span style="color:#000000">&quot; minimum=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; maximum=&quot;</span><span style="color:#990000">31</span><span style="color:#000000">&quot; stepSize=&quot;</span><span style="color:#990000">1</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Jours travaillés</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:NumericStepper</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">joursTravailles</span><span style="color:#000000">&quot; minimum=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; maximum=&quot;</span><span style="color:#990000">31</span><span style="color:#000000">&quot; stepSize=&quot;</span><span style="color:#990000">1</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Button </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">btnSalary</span><span style="color:#000000">&quot; label=&quot;</span><span style="color:#990000">Salary</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">btnSalaire</span><span style="color:#000000">&quot; label=&quot;</span><span style="color:#990000">Salaire</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:HBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:TextArea </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">msg</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">400</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; editable=&quot;</span><span style="color:#990000">false</span><span style="color:#000000">&quot; visible=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot; enabled=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot; horizontalScrollPolicy=&quot;</span><span style="color:#990000">auto</span><span style="color:#000000">&quot; verticalScrollPolicy=&quot;</span><span style="color:#990000">auto</span><span style="color:#000000">&quot; x=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; y=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; maxHeight=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; maxWidth=&quot;</span><span style="color:#990000">400</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span><span style="color:#000000">        </span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:TextArea</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">msg</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">400</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; editable=&quot;</span><span style="color:#990000">false</span><span style="color:#000000">&quot; visible=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot; enabled=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot; horizontalScrollPolicy=&quot;</span><span style="color:#990000">auto</span><span style="color:#000000">&quot; verticalScrollPolicy=&quot;</span><span style="color:#990000">auto</span><span style="color:#000000">&quot; x=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; y=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; maxHeight=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; maxWidth=&quot;</span><span style="color:#990000">400</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span><span style="color:#000000">        </span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:WebService </span><span style="color:#000000">...</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:WebService</span><span style="color:#000000"> ...</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">...</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:WebService&gt;</span></span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span>
 <span class="odt-code-line">        &lt;![CDATA[</span>
 <span class="odt-code-line"><span style="color:#000000">...</span>    </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-style:italic;color:#009900">// data</span></span>
+<span class="odt-code-line">            <span style="color:#000000">// données</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">employees : ArrayCollection;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        ]]&gt;</span>
@@ -1012,19 +1012,19 @@
 </ul>
 
 <p><span style="color: #000000">Now let’s examine the declaration of the remote web service:</span></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:WebService </span>id=&quot;<span style="color:#990000">pam</span>&quot;</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:WebService</span> id=&quot;<span style="color:#990000">pam</span>&quot;</span>
 <span class="odt-code-line"><span style="color:#000000">        wsdl=&quot;</span><span style="color:#990000">http://localhost:1077/Service1.asmx?WSDL</span><span style="color:#000000">&quot; </span></span>
 <span class="odt-code-line">        fault=&quot;wsFault(event);&quot; </span>
 <span class="odt-code-line"><span style="color:#000000">        showBusyCursor=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation </span></span>
-<span class="odt-code-line"><span style="color:#000000">            name=&quot;</span><span style="color:#990000">GetAllEmployeeIDs</span><span style="color:#000000">&quot; </span></span>
-<span class="odt-code-line">            result=&quot;loadEmployeesCompleted(event)&quot; </span>
-<span class="odt-code-line"><span style="color:#000000">            fault=&quot;loadEmployeesFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> </span></span>
+<span class="odt-code-line"><span style="color:#000000">            name=&quot;</span><span style="color:#990000">GetAllIdentitesEmployes</span><span style="color:#000000">&quot; </span></span>
+<span class="odt-code-line">            result=&quot;loadEmployesCompleted(event)&quot; </span>
+<span class="odt-code-line"><span style="color:#000000">            fault=&quot;loadEmployesFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:WebService&gt;</span></span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 </code></pre></div>
 
 <ul>
@@ -1047,64 +1047,64 @@
 </ul>
 
 <p><span style="color: #000000">Let’s now examine the ActionScript code linked to the web service:</span></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">&lt;mx:Script&gt;</span>
 <span class="odt-code-line">        &lt;![CDATA[</span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import </span><span style="color:#000000">mx.rpc.events.FaultEvent;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import </span><span style="color:#000000">mx.collections.ArrayCollection;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import </span><span style="color:#000000">mx.rpc.events.ResultEvent;</span></span>
-<span class="odt-code-line">                        </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-style:italic;color:#009900">// data</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.FaultEvent;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">            <span style="color:#000000">// données</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">employees : ArrayCollection;</span></span>
-<span class="odt-code-line">    </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// Record the coordinates of the message area</span></span>
-<span class="odt-code-line">                msgHeight = msg.height;</span>
-<span class="odt-code-line">                msgWidth = msg.width;</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// hide the message area</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// on note les coordonnées de la zone de message</span></span>
+<span class="odt-code-line">                msgHeight=msg.height;</span>
+<span class="odt-code-line">                msgWidth=msg.width;</span>
+<span class="odt-code-line">                <span style="color:#000000">// on cache la zone de message</span></span>
 <span class="odt-code-line">                hideMsg();</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// Send a request to the remote web service to retrieve the simplified list of employees</span></span>
-<span class="odt-code-line">                pam.GetAllEmployeeIdentities.send();</span>
+<span class="odt-code-line">                <span style="color:#000000">// requête au service web distant pour avoir la liste simplifiée des employés</span></span>
+<span class="odt-code-line">                pam.GetAllIdentitesEmployes.send();</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">wsFault(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-style:italic;color:#009900">// report the error</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    msg.text=</span><span style="font-weight:bold;color:#990000">&quot;Remote service unavailable&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> wsFault(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                    <span style="color:#000000">// on signale l&#x27;erreur</span></span>
+<span class="odt-code-line"><span style="color:#000000">                    msg.text=</span><span style="font-weight:bold;color:#990000">&quot;Service distant indisponible&quot;</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line">                    showMsg();</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">loadEmployeesCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// populate the employees combo box</span></span>
-<span class="odt-code-line"><span style="color:#000000">                employees = event.result </span><span style="font-weight:bold;color:#0033ff">as </span><span style="color:#000000">ArrayCollection;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadEmployesCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// remplissage combo des employés</span></span>
+<span class="odt-code-line"><span style="color:#000000">                employes=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">displayEmployee(employee:Object):String{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// Employee details</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return </span><span style="color:#000000">employee.FirstName + </span><span style="font-weight:bold;color:#990000">&quot; &quot; </span><span style="color:#000000">+ employee.LastName;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayEmploye(employe:Object):String{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// identité d&#x27;un employé</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> employe.Prenom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + employe.Nom;</span></span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">loadEmployeesFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// display error message</span></span>
-<span class="odt-code-line">                msg.text = event.fault.message;</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// form</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadEmployesFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// affichage msg d&#x27;erreur</span></span>
+<span class="odt-code-line">                msg.text=event.fault.message;</span>
+<span class="odt-code-line">                <span style="color:#000000">// formulaire</span></span>
 <span class="odt-code-line">                showMsg();</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-style:italic;color:#009900">// block management</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">msgWidth:int;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">msgHeight:int;</span></span>
-<span class="odt-code-line">        </span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">hideMsg():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line">            msg.height = 0;</span>
-<span class="odt-code-line">            msg.width = 0;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#000000">// gestion des blocs</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> msgWidth:int;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> msgHeight:int;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> hideMsg():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">            msg.height=0;</span>
+<span class="odt-code-line">            msg.width=0;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        </span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">showMsg():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line">            msg.height = msgHeight;</span>
-<span class="odt-code-line">            msg.width = msgWidth;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> showMsg():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">            msg.height=msgHeight;</span>
+<span class="odt-code-line">            msg.width=msgWidth;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        </span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">      </span>
 <span class="odt-code-line">        ]]&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span>
@@ -1116,7 +1116,7 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:Application </span><span style="color:#000000">xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    creationComplete=&quot;init()&quot;</span><span style="color:#0000ff">&gt;</span></span>
 </code></pre></div>
 
@@ -1162,8 +1162,8 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:ComboBox </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:ComboBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
 
 <p><span style="color: #000000">For each employee in its data source, the combo box will call the </span><em><span style="color: #000000">displayEmploye</span></em><span style="color: #000000"> method (</span><em><span style="color: #000000">labelFunction</span></em><span style="color: #000000"> attribute) to display the employee. Lines 32–34 show that this method displays the employee’s first and last names.</span></p>
@@ -1291,8 +1291,8 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&lt;!--</span><span class="w"> </span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">Smart</span><span class="w"> </span><span class="n">developers</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">Source</span><span class="p">.</span><span class="w"> </span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">This</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">built</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">Adobe</span><span class="w"> </span><span class="n">Flex</span><span class="p">,</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">open</span><span class="o">-</span><span class="n">source</span><span class="w"> </span><span class="n">framework</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">for</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">rich</span><span class="w"> </span><span class="n">Internet</span><span class="w"> </span><span class="n">applications</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">delivered</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">the</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">This</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">built</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">Adobe</span><span class="w"> </span><span class="n">Flex</span><span class="p">,</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">framework</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">for</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">rich</span><span class="w"> </span><span class="n">Internet</span><span class="w"> </span><span class="n">applications</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">delivered</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">the</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Flash</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">desktops</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">Adobe</span><span class="w"> </span><span class="n">AIR</span><span class="p">.</span><span class="w"> </span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">Learn</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="n">Flex</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="c1">//flex.org </span>
@@ -1370,46 +1370,46 @@
 </ul>
 
 <p>The complete code for the &quot;employe&quot; container is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">employe</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">100%</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Employee</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; color=&quot;</span><span style="color:#990000">#09F3EB</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">employe</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">100%</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Employé</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; color=&quot;</span><span style="color:#990000">#09F3EB</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:HBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox &gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Last Name</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">lblName</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Nom</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblNom</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox &gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">First Name</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">lblFirstName</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Prénom</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblPreNom</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox &gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Address</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">lblAddress</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">250</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Adresse</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblAdresse</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">250</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:HBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:HBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox &gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">City</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">lblCity</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Ville</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblVille</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox &gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Zip Code</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">lblZipCode</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">70</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Code Postal</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblCodePostal</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">70</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox &gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label </span><span style="color:#000000">text=&quot;</span><span style="color:#990000">Index</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox </span><span style="color:#000000">backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">lblIndex</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Indice</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblIndice</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:HBox&gt;</span></span>
@@ -1430,39 +1430,39 @@
 
 <p>We will use the &quot;<em>employee</em>&quot; container to display the employee information that the user selects from the employee dropdown, independently of the [Salary] button, which will later be used to calculate the salary once all necessary information has been entered.</p>
 <p>To handle the change in selection in the &quot;<em>employees</em>&quot; combo box, its MXML code changes as follows:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:ComboBox </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot; change=&quot;displayInfosEmploye();&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:ComboBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot; change=&quot;displayInfosEmploye();&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
 
 <p>The <strong>change</strong> event is triggered by the combo box when the user changes their selection. The handler for this event will be the <strong>displayInfosEmploye</strong> method.</p>
 <p>Let’s review the methods exposed by the remote web service:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">    <span style="color:#008000">// list of all employee IDs </span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">Employee</span>[] GetAllEmployeeIDs();</span>
-<span class="odt-code-line">    <span style="color:#008000">// ------- salary calculation </span></span>
-<span class="odt-code-line"><span style="color:#0000ff">public </span><span style="color:#2b91af">Payroll </span>GetSalary(<span style="color:#0000ff">string </span>ss, <span style="color:#0000ff">double </span>hoursWorked, <span style="color:#0000ff">int </span>daysWorked);</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">    <span style="color:#008000">// liste de toutes les identités des employés </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes();</span>
+<span class="odt-code-line">    <span style="color:#008000">// ------- le calcul du salaire </span></span>
+<span class="odt-code-line"><span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">double</span> heuresTravaillees, <span style="color:#0000ff">int</span> joursTravailles);</span>
 </code></pre></div>
 
 <p>Here, we want to display the information (last name, first name, etc.) for the employee selected in the dropdown. The web service does not expose a method to retrieve this information. However, we can use the <em>GetSalary</em> method by passing the selected employee’s SSN and 0 for hours and days worked. A redundant salary calculation will be performed, but the <em>GetSalary</em> method will return a <em>PayStub</em> object containing the information we need.</p>
 <p>The current web service declaration is modified to include the definition of the <em>GetSalaire</em> method:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:WebService </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">pam</span><span style="color:#000000">&quot;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:WebService</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">pam</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        wsdl=&quot;</span><span style="color:#990000">http://localhost:1077/Service1.asmx?WSDL</span><span style="color:#000000">&quot; </span></span>
 <span class="odt-code-line">        fault=&quot;wsFault(event);&quot; </span>
 <span class="odt-code-line"><span style="color:#000000">        showBusyCursor=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation </span></span>
-<span class="odt-code-line"><span style="color:#000000">            name=&quot;</span><span style="color:#990000">GetAllEmployeeIDs</span><span style="color:#000000">&quot; </span></span>
-<span class="odt-code-line">            result=&quot;loadEmployeesCompleted(event)&quot; </span>
-<span class="odt-code-line"><span style="color:#000000">            fault=&quot;loadEmployeesFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> </span></span>
+<span class="odt-code-line"><span style="color:#000000">            name=&quot;</span><span style="color:#990000">GetAllIdentitesEmployes</span><span style="color:#000000">&quot; </span></span>
+<span class="odt-code-line">            result=&quot;loadEmployesCompleted(event)&quot; </span>
+<span class="odt-code-line"><span style="color:#000000">            fault=&quot;loadEmployesFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation </span><span style="color:#000000">name=&quot;</span><span style="color:#990000">GetSalary</span><span style="color:#000000">&quot; </span></span>
-<span class="odt-code-line">            result=&quot;getSalaryCompleted(event)&quot;</span>
-<span class="odt-code-line"><span style="color:#000000">            fault=&quot;getSalaryFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span>
+<span class="odt-code-line">            result=&quot;getSalaireCompleted(event)&quot;</span>
+<span class="odt-code-line"><span style="color:#000000">            fault=&quot;getSalaireFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employees.getItemAt(cmbEmployees.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;hoursWorked&gt;</span><span style="color:#000000">{hoursWorked}</span><span style="color:#0000ff">&lt;/hoursWorked&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;daysWorked&gt;</span><span style="color:#000000">{daysWorked}</span><span style="color:#0000ff">&lt;/daysWorked&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:request&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span>
 <span class="odt-code-line">&lt;/mx:WebService&gt;</span>
@@ -1492,13 +1492,13 @@
 
 <p>Let’s return to the web service declaration:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation </span><span style="color:#000000">name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span>
 <span class="odt-code-line">            result=&quot;getSalaireCompleted(event)&quot;</span>
 <span class="odt-code-line"><span style="color:#000000">            fault=&quot;getSalaireFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employees.getItemAt(cmbEmployees.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;hoursWorked&gt;</span><span style="color:#000000">{hoursWorked}</span><span style="color:#0000ff">&lt;/hoursWorked&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;daysWorked&gt;</span><span style="color:#000000">{daysWorked}</span><span style="color:#0000ff">&lt;/daysWorked&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:request&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span>
 </code></pre></div>
@@ -1532,13 +1532,13 @@
 
 <p>Let’s conclude our examination of the web service:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation </span><span style="color:#000000">name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span>
 <span class="odt-code-line">            result=&quot;getSalaireCompleted(event)&quot;</span>
 <span class="odt-code-line"><span style="color:#000000">            fault=&quot;getSalaireFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employees.getItemAt(cmbEmployees.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;hoursWorked&gt;</span><span style="color:#000000">{hoursWorked}</span><span style="color:#0000ff">&lt;/hoursWorked&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;daysWorked&gt;</span><span style="color:#000000">{daysWorked}</span><span style="color:#0000ff">&lt;/daysWorked&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:request&gt;</span></span>
 <span class="odt-code-line">&lt;/mx:operation&gt;</span>
 </code></pre></div>
@@ -1555,13 +1555,13 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span>
 <span class="odt-code-line">        &lt;![CDATA[</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-style:italic;color:#009900">// data</span></span>
+<span class="odt-code-line">            <span style="color:#000000">// données</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">employees : ArrayCollection;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">hoursWorked: Number;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> heuresTravaillees:Number;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">workDays: int;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> joursDeTravail:int;</span></span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">&lt;/mx:Script&gt;</span>
 </code></pre></div>
@@ -1570,56 +1570,56 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line">&lt;mx:Script&gt;</span>
 <span class="odt-code-line">        &lt;![CDATA[</span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import </span><span style="color:#000000">mx.rpc.events.FaultEvent;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import </span><span style="color:#000000">mx.collections.ArrayCollection;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import </span><span style="color:#000000">mx.rpc.events.ResultEvent;</span></span>
-<span class="odt-code-line">                        </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-style:italic;color:#009900">// data</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.FaultEvent;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">            <span style="color:#000000">// données</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">employees: ArrayCollection;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">hoursWorked: Number;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> heuresTravaillees:Number;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">workDays: int;</span></span>
-<span class="odt-code-line">    </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// record the height and width of # blocks</span></span>
-<span class="odt-code-line">                employeeHeight = employee.height;</span>
-<span class="odt-code-line">                employeeWidth = employee.width;</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// hide certain elements</span></span>
-<span class="odt-code-line">                hideEmployee();</span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> joursDeTravail:int;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// on note les hauteur / largeur de # blocs</span></span>
+<span class="odt-code-line">                employeHeight=employe.height;</span>
+<span class="odt-code-line">                employeWidth=employe.width;</span>
+<span class="odt-code-line">                <span style="color:#000000">// on cache certains éléments</span></span>
+<span class="odt-code-line">                hideEmploye();</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">displayEmployeeInfo():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// form</span></span>
-<span class="odt-code-line">                hideEmployee();</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// calculate a fictitious salary</span></span>
-<span class="odt-code-line">                hoursWorked = 0;</span>
-<span class="odt-code-line">                daysWorked = 0;</span>
-<span class="odt-code-line">                pam.GetSalary.send();</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayInfosEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// formulaire</span></span>
+<span class="odt-code-line">                hideEmploye();</span>
+<span class="odt-code-line">                <span style="color:#000000">// on calcule un salaire fictif</span></span>
+<span class="odt-code-line">                heuresTravaillees=0;</span>
+<span class="odt-code-line">                joursDeTravail=0;</span>
+<span class="odt-code-line">                pam.GetSalaire.send();</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">getSalaryCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-style:italic;color:#009900">...</span></span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            </span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">getSalaryFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-style:italic;color:#009900">...</span></span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-style:italic;color:#009900">// partial views -------------------------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">employeeHeight: int;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">employeeWidth: int;</span></span>
-<span class="odt-code-line">        </span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">hideEmployee():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line">            employee.height = 0;</span>
-<span class="odt-code-line">            employee.width = 0;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        <span style="color:#000000">// vues partielles -------------------------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employeHeight:int;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employeWidth:int;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> hideEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">            employe.height=0;</span>
+<span class="odt-code-line">            employe.width=0;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        </span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">showEmployee():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line">            employee.height = employeeHeight;</span>
-<span class="odt-code-line">            employee.width = employeeWidth;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> showEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">            employe.height=employeHeight;</span>
+<span class="odt-code-line">            employe.width=employeWidth;</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">        ]]&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span>
@@ -1637,9 +1637,9 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employees.getItemAt(cmbEmployees.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;hoursWorked&gt;</span><span style="color:#000000">{hoursWorked}</span><span style="color:#0000ff">&lt;/hoursWorked&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#0000ff"> &lt;daysWorked&gt;</span><span style="color:#000000">{daysWorked}</span><span style="color:#0000ff">&lt;/daysWorked&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span>
 </code></pre></div>
 
 <ul>
@@ -1653,19 +1653,19 @@
 
 <p><span style="color: #000000">The </span><em><span style="color: #000000">GetSalaireCompleted</span></em><span style="color: #000000"> method is executed if the </span><em><span style="color: #000000">GetSalaire</span></em><span style="color: #000000"> method of the web service completes successfully:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// hide the error message</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// hide error msg</span></span>
 <span class="odt-code-line">                hideMsg();</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// We receive a pay stub</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">payStub:Object = event.result;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// display</span></span>
-<span class="odt-code-line">                lblLastName.text = payStub.Employee.LastName;</span>
-<span class="odt-code-line">                lblLastName.text = payStub.Employee.LastName;</span>
-<span class="odt-code-line">                lblAddress.text = paystub.Employee.Address;</span>
-<span class="odt-code-line">                lblCity.text = PayrollSheet.Employee.City;</span>
-<span class="odt-code-line">                lblZipCode.text = Payroll.Employee.ZipCode;</span>
-<span class="odt-code-line">                lblIndex.text = Payroll.Employee.Index;</span>
-<span class="odt-code-line">                showEmployee();</span>
+<span class="odt-code-line">                <span style="color:#000000">// you receive a payslip</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> feuilleSalaire:Object=event.result;</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// display</span></span>
+<span class="odt-code-line">                lblNom.text=feuilleSalaire.Employe.Nom;</span>
+<span class="odt-code-line">                lblPreNom.text=feuilleSalaire.Employe.Prenom;</span>
+<span class="odt-code-line">                lblAdresse.text=feuilleSalaire.Employe.Adresse;</span>
+<span class="odt-code-line">                lblVille.text=feuilleSalaire.Employe.Ville;</span>
+<span class="odt-code-line">                lblCodePostal.text=feuilleSalaire.Employe.CodePostal;</span>
+<span class="odt-code-line">                lblIndice.text=feuilleSalaire.Employe.Indice;</span>
+<span class="odt-code-line">                showEmploye();</span>
 <span class="odt-code-line">            }</span>
 </code></pre></div>
 
@@ -1692,19 +1692,19 @@
 
 <p><span style="color: #000000">Let’s return to the </span><em><span style="color: #000000">getSalaireCompleted</span></em><span style="color: #000000"> method:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// hide the error message</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// hide error msg</span></span>
 <span class="odt-code-line">                hideMsg();</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// we receive a pay stub</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var </span><span style="color:#000000">payslip:Object = event.result;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// display</span></span>
-<span class="odt-code-line">                lblLastName.text = payStub.Employee.LastName;</span>
-<span class="odt-code-line">                lblLastName.text = payStub.Employee.LastName;</span>
-<span class="odt-code-line">                lblAddress.text = paystub.Employee.Address;</span>
-<span class="odt-code-line">                lblCity.text = PayrollSheet.Employee.City;</span>
-<span class="odt-code-line">                lblZipCode.text = PayrollSheet.Employee.ZipCode;</span>
-<span class="odt-code-line">                lblIndex.text = PayrollSheet.Employee.Allowances.Index;</span>
-<span class="odt-code-line">                showEmployee();</span>
+<span class="odt-code-line">                <span style="color:#000000">// you receive a payslip</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> feuilleSalaire:Object=event.result;</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// display</span></span>
+<span class="odt-code-line">                lblNom.text=feuilleSalaire.Employe.Nom;</span>
+<span class="odt-code-line">                lblPreNom.text=feuilleSalaire.Employe.Prenom;</span>
+<span class="odt-code-line">                lblAdresse.text=feuilleSalaire.Employe.Adresse;</span>
+<span class="odt-code-line">                lblVille.text=feuilleSalaire.Employe.Ville;</span>
+<span class="odt-code-line">                lblCodePostal.text=feuilleSalaire.Employe.CodePostal;</span>
+<span class="odt-code-line">                lblIndice.text=feuilleSalaire.Employe.Indemnites.Indice;</span>
+<span class="odt-code-line">                showEmploye();</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -1726,11 +1726,11 @@
 </ul>
 
 <p><span style="color: #000000">The </span><em><span style="color: #000000">getSalaireFault</span></em><span style="color: #000000"> method is executed if the </span><em><span style="color: #000000">GetSalaire</span></em><span style="color: #000000"> method of the web service fails:</span></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">getSalaireFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// display error message</span></span>
-<span class="odt-code-line">                msg.text = event.fault.message;</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// form</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// error msg display</span></span>
+<span class="odt-code-line">                msg.text=event.fault.message;</span>
+<span class="odt-code-line">                <span style="color:#000000">// form</span></span>
 <span class="odt-code-line">                showMsg();            </span>
 <span class="odt-code-line">            }</span>
 </code></pre></div>
@@ -1775,20 +1775,20 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014A00000110FA84D79D.png" style="display:inline-block; margin:4px;width:4.366cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/100000000000014A00000110FA84D79D.png" /></td></tr></table>
 
 <p>From now on, we will work with [main3.mxml], which we will set as the default application (see this concept in section<a href="#v13-application-par-defaut"><u><span style="color: #0563c1"> 14.4</span></u></a>). First, we add an attribute to the &quot;<em>txtHeuresTravaillees</em>&quot; component:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:TextInput </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot; change=&quot;validateForm(event)&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:TextInput</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot; change=&quot;validateForm(event)&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
 
 <p>Every time the content of the &quot;<em>txtHeuresTravaillees</em>&quot; input field changes, the <em>validateForm</em> method is called. This is a local method written by the developer. In it, we could verify that the content of the &quot;<em>txtHeuresTravaillees</em>&quot; input field is indeed a positive integer. We will proceed differently by using a validation component:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:NumberValidator </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">heuresTravailleesValidator</span><span style="color:#000000">&quot; source=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">txtHeuresTravaillees</span><span style="color:#990000">}</span><span style="color:#000000">&quot; property=&quot;</span><span style="color:#990000">text</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:NumberValidator</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">heuresTravailleesValidator</span><span style="color:#000000">&quot; source=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">txtHeuresTravaillees</span><span style="color:#990000">}</span><span style="color:#000000">&quot; property=&quot;t</span><span style="color:#990000">ext</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    precision=&quot;</span><span style="color:#990000">2</span><span style="color:#000000">&quot; allowNegative=&quot;</span><span style="color:#990000">false</span><span style="color:#000000">&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    invalidCharError=&quot;</span><span style="color:#990000">Invalid characters</span><span style="color:#000000">&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    precisionError=&quot;</span><span style="color:#990000">No more than two digits after the decimal point</span><span style="color:#000000">&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    negativeError=&quot;</span><span style="color:#990000">The number of hours must be positive or zero</span><span style="color:#000000">&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    invalidFormatCharsError=&quot;</span><span style="color:#990000">Invalid format</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    invalidCharError=&quot;</span><span style="color:#990000">Caractères invalides</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    precisionError=&quot;</span><span style="color:#990000">Deux chiffres au plus après la virgule</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    negativeError=&quot;</span><span style="color:#990000">Le nombre d&#x27;heures doit être positif ou nul</span><span style="color:#000000">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    invalidFormatCharsError=&quot;</span><span style="color:#990000">Format invalide</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    required=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">requiredFieldError=&quot;</span><span style="color:#990000">Required field</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">requiredFieldError=&quot;</span><span style="color:#990000">Donnée requise</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
 
 <ul>
@@ -1827,18 +1827,18 @@
 </ul>
 
 <p>Let’s return to the &quot;<em>txtHeuresTravaillees</em>&quot; component:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:TextInput </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot; change=&quot;validateForm(event)&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;mx:TextInput</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot; change=&quot;validateForm(event)&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
 
 <p>The <em>validateForm</em> method could be as follows within the &lt;<em>mx:Script</em>&gt; tag:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">validateForm(event:Event):</span><span style="font-weight:bold;color:#0033ff">void </span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> validateForm(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000"> </span></span>
 <span class="odt-code-line">        {                    </span>
-<span class="odt-code-line"><span style="color:#000000">           </span><span style="font-style:italic;color:#009900"> // validate the hours worked</span></span>
-<span class="odt-code-line"><span style="color:#000000">           </span><span style="font-weight:bold;color:#6699cc"> var </span><span style="color:#000000">evt:ValidationResultEvent = hoursWorkedValidator.validate();</span></span>
-<span class="odt-code-line"><span style="color:#000000">           </span><span style="font-style:italic;color:#009900"> // Validation successful?</span></span>
-<span class="odt-code-line">            btnSalary.enabled = evt.type == ValidationResultEvent.VALID;</span>
+<span class="odt-code-line">            <span style="color:#000000">// validate hours worked</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> evt:ValidationResultEvent = heuresTravailleesValidator.validate();</span></span>
+<span class="odt-code-line">            <span style="color:#000000">// successful validation?</span></span>
+<span class="odt-code-line">            btnSalaire.enabled=evt.type==ValidationResultEvent.VALID;</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -1888,21 +1888,21 @@
 <p><strong>Question 2</strong>: Write the methods to hide/show the <em>complements</em> container. Draw inspiration from what was done previously for the <em>employee</em> container.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>We associate a handler with the &quot;click&quot; event of the &quot;btnSalaire&quot; button:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Button </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">btnSalaire</span><span style="color:#000000">&quot; label=&quot;</span><span style="color:#990000">Salary</span><span style="color:#000000">&quot; click=&quot;calculateSalary()&quot;</span><span style="color:#0000ff">/&gt;</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">btnSalaire</span><span style="color:#000000">&quot; label=&quot;</span><span style="color:#990000">Salaire</span><span style="color:#000000">&quot; click=&quot;calculerSalaire()&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
 
 <p>The <code>*calculerSalaire</code>* method is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private </span><span style="font-weight:bold;color:#339966">function </span><span style="color:#000000">calculateSalary():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// prepare form</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">displaySalary</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#0033ff">true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> calculerSalaire():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span>
+<span class="odt-code-line">                <span style="color:#000000">// form preparation</span></span>
+<span class="odt-code-line"><span style="color:#000000">                affichageSalaire=</span><span style="font-weight:bold;color:#0033ff">true</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                msg.text=</span><span style="font-weight:bold;color:#990000">&quot;&quot;</span><span style="color:#000000">;                </span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// salary calculation parameters</span></span>
-<span class="odt-code-line">                hoursWorked = Number(txtHoursWorked.text);</span>
-<span class="odt-code-line">                daysWorked = int(daysWorked.value);</span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="font-style:italic;color:#009900">// Request the salary from the web service</span></span>
-<span class="odt-code-line">                pam.GetSalary.send();</span>
+<span class="odt-code-line">                <span style="color:#000000">// salary calculation parameters</span></span>
+<span class="odt-code-line">                heuresTravaillees=Number(txtHeuresTravaillees.text);</span>
+<span class="odt-code-line">                joursDeTravail=int(joursTravailles.value);</span>
+<span class="odt-code-line">                <span style="color:#000000">// the salary is requested from the web service</span></span>
+<span class="odt-code-line">                pam.GetSalaire.send();</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -1933,8 +1933,8 @@
 <p><strong>Question 3</strong>: Complete the current <em>getSalaireCompleted</em> method so that it displays the employee’s salary if the <em>btnSalaire</em> button has been clicked.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>Currently, salary items are displayed without the euro symbol. You can include it in the code or use a formatter. This is the approach we are taking now. The formatter will be as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:CurrencyFormatter </span><span style="color:#000000">id=&quot;</span><span style="color:#990000">eurosFormatter</span><span style="color:#000000">&quot; precision=&quot;</span><span style="color:#990000">2</span><span style="color:#000000">&quot;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-flex">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:CurrencyFormatter</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">eurosFormatter</span><span style="color:#000000">&quot; precision=&quot;</span><span style="color:#990000">2</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        currencySymbol=&quot;</span><span style="color:#990000">€</span><span style="color:#000000">&quot; useNegativeSign=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">alignSymbol=&quot;</span><span style="color:#990000">right</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span>
 </code></pre></div>
@@ -1949,7 +1949,7 @@
 </ul>
 
 <p>This formatter is used in the script code as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>                    lblSH.text=eurosFormatter.format(payrollSheet.Allowances.BaseHour);
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>                    lblSH.text=eurosFormatter.format(feuilleSalaire.Indemnites.BaseHeure);
 </code></pre></div>
 <ul>
   <li><i>eurosFormatter </i>is the ID of the formatter to use

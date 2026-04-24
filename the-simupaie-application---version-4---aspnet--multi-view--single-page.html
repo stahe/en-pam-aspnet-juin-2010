@@ -1083,38 +1083,38 @@
 <p>The [Global.cs] file, which handles the web application&#x27;s events, is identical to that of the previous application, except that it also handles the start of the user session:</p>
 <p><strong>Global.cs</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>istia.st.pam.web;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v4</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System.Web;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Spring.Context.Support;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System.Collections.Generic;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> istia.st.pam.web;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> pam_v4</span>
 <span class="odt-code-line">{</span>
-<span class="odt-code-line">    <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: <span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : <span style="color:#2b91af">HttpApplication</span></span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// --- application static data ---</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public static </span><span style="color:#2b91af">Employee</span>[] Employees;</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public static string </span>Msg = <span style="color:#0000ff">string</span>.Empty;</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public static bool </span>Error = <span style="color:#0000ff">false</span>;</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public static </span><span style="color:#2b91af">IPamMetier </span>PamMetier = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// Application startup</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // --- static application data ---</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Employe</span>[] Employes;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">string</span> Msg = <span style="color:#0000ff">string</span>.Empty;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">bool</span> Erreur = <span style="color:#0000ff">false</span>;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IPamMetier</span> PamMetier = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // application startup</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">        {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// Start a user session </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public void </span>Session_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // start user session </span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> Session_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// add an empty list of simulations to the session </span></span>
-<span class="odt-code-line">            Session[<span style="color:#a31515">&quot;simulations&quot;</span>] = <span style="color:#0000ff">new </span><span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Simulation</span>&gt;();</span>
+<span class="odt-code-line">            // put an empty simulation list in the session </span>
+<span class="odt-code-line">            Session[<span style="color:#a31515">&quot;simulations&quot;</span>] = <span style="color:#0000ff">new</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Simulation</span>&gt;();</span>
 <span class="odt-code-line">        } </span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1131,39 +1131,39 @@
 <p>An object of type [Simulation] is used to encapsulate a row of the simulation table:</p>
 <p><img src="images/1000000000000336000000EB676014B3.png" style="width:15.221cm;height:4.352cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000336000000EB676014B3.png" /></p>
 <p>Its code is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Pam.Web</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> Pam.Web</span>
 <span class="odt-code-line">{</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">public class </span><span style="color:#2b91af">Simulation</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Simulation</span></span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// simulation data </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public string </span>LastName { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public string </span>LastName { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public double </span>HoursWorked { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public int </span>DaysWorked { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public double </span>BaseSalary { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public double </span>Allowances { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public double </span>SocialSecurityContributions { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public double </span>NetSalary { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// constructors </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public </span>Simulation()</span>
+<span class="odt-code-line">        // simulation data </span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Nom { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Prenom { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> HeuresTravaillees { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> JoursTravailles { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> SalaireBase { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> Indemnites { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> CotisationsSociales { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> SalaireNet { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // manufacturers </span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> Simulation()</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public </span>Simulation(<span style="color:#0000ff">string </span>lastName, <span style="color:#0000ff">string </span>firstName, <span style="color:#0000ff">double </span>hoursWorked, <span style="color:#0000ff">int </span>daysWorked, <span style="color:#0000ff">double </span>baseSalary, <span style="color:#0000ff">double </span>allowances, <span style="color:#0000ff">double </span>socialContributions, <span style="color:#0000ff">double </span>netSalary)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> Simulation(<span style="color:#0000ff">string</span> nom, <span style="color:#0000ff">string</span> prenom, <span style="color:#0000ff">double</span> heuresTravailllees, <span style="color:#0000ff">int</span> joursTravailles, <span style="color:#0000ff">double</span> salaireBase, <span style="color:#0000ff">double</span> indemnites, <span style="color:#0000ff">double</span> cotisationsSociales, <span style="color:#0000ff">double</span> salaireNet)</span>
 <span class="odt-code-line">        {</span>
 <span class="odt-code-line">            {</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.LastName = lastName;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.FirstName = firstName;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.HoursWorked = hoursWorked;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.DaysWorked = daysWorked;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.BaseSalary = baseSalary;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.Allowances = allowances;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.SocialSecurityContributions = socialSecurityContributions;</span>
-<span class="odt-code-line">                <span style="color:#0000ff">this</span>.NetSalary = netSalary;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.Nom = nom;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.Prenom = prenom;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.HeuresTravaillees = heuresTravailllees;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.JoursTravailles = joursTravailles;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.SalaireBase = salaireBase;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.Indemnites = indemnites;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.CotisationsSociales = cotisationsSociales;</span>
+<span class="odt-code-line">                <span style="color:#0000ff">this</span>.SalaireNet = salaireNet;</span>
 <span class="odt-code-line">            }</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
@@ -1175,82 +1175,82 @@
 <h3 id="851-overview">8.5.1. <span style="color: #4f81bd">Overview</span></h3>
 <p>The [Default.aspx] page contains several [View] components, one for each view. Its skeleton is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Page </span><span style="color:#0000ff">Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeFile=&quot;Default.aspx.cs&quot; Inherits=&quot;pam_v4.PagePam&quot; </span>%&gt;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#a31515">DOCTYPE </span><span style="color:#ff0000">html PUBLIC </span><span style="color:#0000ff">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">html </span><span style="color:#0000ff">xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">head </span><span style="color:#0000ff">id=&quot;Head1&quot; runat=&quot;server&quot;&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">title</span><span style="color:#0000ff">&gt;</span>Payroll Simulator<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/title</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/head</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body </span><span style="color:#0000ff">background=&quot;resources/standard.jpg&quot;&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">form </span><span style="color:#0000ff">id=&quot;form1&quot; runat=&quot;server&quot;&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ScriptManager </span><span style="color:#0000ff">ID=&quot;ScriptManager1&quot; runat=&quot;server&quot; EnablePartialRendering=&quot;true&quot; /&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel </span><span style="color:#0000ff">runat=&quot;server&quot; ID=&quot;UpdatePanelPam&quot; UpdateMode=&quot;Conditional&quot;&gt;</span></span>
+<span class="odt-code-line">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#ff0000">CodeFile</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;pam_v4.PagePam&quot;</span> %&gt;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#a31515">DOCTYPE</span> <span style="color:#ff0000">html</span> <span style="color:#ff0000">PUBLIC</span> <span style="color:#0000ff">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span> <span style="color:#0000ff">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">html</span> <span style="color:#ff0000">xmlns</span><span style="color:#0000ff">=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">head</span> <span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;Head1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">title</span><span style="color:#0000ff">&gt;</span>Simulateur de paie<span style="color:#0000ff">&lt;/</span><span style="color:#a31515">title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body</span> <span style="color:#ff0000">background</span><span style="color:#0000ff">=&quot;ressources/standard.jpg&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">form</span> <span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;form1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ScriptManager</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;ScriptManager1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">EnablePartialRendering</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;UpdatePanelPam&quot;</span> <span style="color:#ff0000">UpdateMode</span><span style="color:#0000ff">=&quot;Conditional&quot;&gt;</span></span>
 <span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ContentTemplate</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h2</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                            Payroll Calculator<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/h2</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                            Simulateur de calcul de paie<span style="color:#0000ff">&lt;/</span><span style="color:#a31515">h2</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">label</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                            <span style="color:#ff0000">&amp;nbsp;&amp;nbsp;&amp;nbsp</span><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/label</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress </span><span style="color:#0000ff">ID=&quot;UpdateProgress1&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                            <span style="color:#ff0000">&amp;nbsp;&amp;nbsp;&amp;nbsp</span><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">label</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;UpdateProgress1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">                            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">img </span><span style="color:#0000ff">src=&quot;images/indicator.gif&quot; /&gt;</span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label </span><span style="color:#0000ff">ID=&quot;Label5&quot; runat=&quot;server&quot; BackColor=&quot;#FF8000&quot;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                        </span> <span style="color:#0000ff">EnableViewState=&quot;False&quot; Text=&quot;Calculating. Please wait....&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                        &lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">img</span> <span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;images/indicator.gif&quot;</span> <span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line">                                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;Label5&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">BackColor</span><span style="color:#0000ff">=&quot;#FF8000&quot;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                        </span> <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False&quot; </span><span style="color:#ff0000">Text</span><span style="color:#0000ff">=&quot;Calcul en cours. Patientez ....&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                        &lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                       <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonRunSimulation&quot; runat=&quot;server&quot; </span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">CausesValidation=&quot;False&quot; OnClick=&quot;LinkButtonFaireSimulation_Click&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Run simulation<span style="color:#a31515">&lt;br/&gt;</span><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                       <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonClearSimulation&quot; runat=&quot;server&quot;</span></span>
-<span class="odt-code-line">                                     <span style="color:#0000ff">CausesValidation=&quot;False&quot; OnClick=&quot;LinkButtonClearSimulation_Click&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Clear Simulation<span style="color:#a31515">&lt;br/&gt;</span><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                       <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonViewSimulations&quot; runat=&quot;server&quot; </span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">CausesValidation=&quot;False&quot; OnClick=&quot;LinkButtonViewSimulations_Click&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| View simulations&lt;br/&gt;<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonSimulationForm&quot; runat=&quot;server&quot;</span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">CausesValidation=&quot;False&quot; OnClick=&quot;LinkButtonSimulationForm_Click&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                </span>| Back to the simulation form<span style="color:#0000ff">&lt;br/&gt;&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonSaveSimulation&quot; runat=&quot;server&quot;</span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">CausesValidation=&quot;False&quot; OnClick=&quot;LinkButtonSaveSimulation_Click&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Save simulation&lt;br/&gt;<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton </span><span style="color:#0000ff">ID=&quot;LinkButtonTerminerSession&quot; runat=&quot;server&quot;</span></span>
-<span class="odt-code-line">                                <span style="color:#0000ff">CausesValidation=&quot;False&quot; OnClick=&quot;LinkButtonTerminerSession_Click&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| End Session&lt;br/&gt;<span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/td</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/table</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">hr </span><span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView </span><span style="color:#0000ff">ID=&quot;Views1&quot; ActiveViewIndex=&quot;0&quot; runat=&quot;server&quot;&gt;</span></span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;EntryView&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                       <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonFaireSimulation&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> </span>
+<span class="odt-code-line">                                <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot;</span> <span style="color:#ff0000">OnClick</span><span style="color:#0000ff">=&quot;LinkButtonFaireSimulation_Click&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Faire la simulation<span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                       <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonEffacerSimulation&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span></span>
+<span class="odt-code-line">                                     <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot; </span><span style="color:#ff0000">OnClick</span><span style="color:#0000ff">=&quot;LinkButtonEffacerSimulation_Click&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Effacer la simulation<span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                       <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonVoirSimulations&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> </span>
+<span class="odt-code-line">                                <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot; </span><span style="color:#ff0000">OnClick</span><span style="color:#0000ff">=&quot;LinkButtonVoirSimulations_Click&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Voir les simulations<span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonFormulaireSimulation&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span></span>
+<span class="odt-code-line">                                <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot; </span><span style="color:#ff0000">OnClick</span><span style="color:#0000ff">=&quot;LinkButtonFormulaireSimulation_Click&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                </span>| Retour au formulaire de simulation<span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonEnregistrerSimulation&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span></span>
+<span class="odt-code-line">                                <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot; </span><span style="color:#ff0000">OnClick</span><span style="color:#0000ff">=&quot;LinkButtonEnregistrerSimulation_Click&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Enregistrer la simulation<span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonTerminerSession&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span></span>
+<span class="odt-code-line">                                <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot; </span><span style="color:#ff0000">OnClick</span><span style="color:#0000ff">=&quot;LinkButtonTerminerSession_Click&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">                                    </span>| Terminer la session<span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">hr</span> <span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;Vues1&quot;</span> <span style="color:#ff0000">ActiveViewIndex</span><span style="color:#0000ff">=&quot;0&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;VueSaisies&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView </span><span style="color:#0000ff">ID=&quot;Views2&quot; runat=&quot;server&quot;&gt;</span></span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;SimulationView&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;Vues2&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;VueSimulation&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;SimulationViews&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;VueSimulations&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;VueSimulationsVides&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;VueSimulationsVides&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View </span><span style="color:#0000ff">ID=&quot;ErrorView&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;VueErreurs&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/ContentTemplate</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">/form</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/body</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">/html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">View</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">MultiView</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ContentTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">form</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">html</span><span style="color:#0000ff">&gt;</span></span>
 </code></pre></div>
 
 <ul>
@@ -1442,13 +1442,13 @@
 
 <p>The [Repeater] component allows you to repeat ASP.NET/HTML code for each object in a data source, typically a collection. This code is defined directly in the page&#x27;s ASP.NET source code:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#800000">asp</span><span style="color:#0000ff">:</span><span style="color:#800000">Repeater </span><span style="color:#0000ff">ID=&quot;RptErrors&quot; runat=&quot;server&quot;&gt;</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">&lt;</span><span style="color:#800000">asp</span><span style="color:#0000ff">:</span><span style="color:#800000">Repeater</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;RptErreurs&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span>
 <span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#800000">li</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                            &lt;<span style="color:#0000ff">%# </span>Container.DataItem %&gt;</span>
-<span class="odt-code-line">                        <span style="color:#0000ff">&lt;</span><span style="color:#800000">/li</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line">                    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/asp</span><span style="color:#0000ff">:</span><span style="color:#800000">Repeater</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                            &lt;%<span style="color:#0000ff">#</span> Container.DataItem %&gt;</span>
+<span class="odt-code-line">                        <span style="color:#0000ff">&lt;/</span><span style="color:#800000">li</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">                    <span style="color:#0000ff">&lt;/</span><span style="color:#800000">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;/</span><span style="color:#800000">asp</span><span style="color:#0000ff">:</span><span style="color:#800000">Repeater</span><span style="color:#0000ff">&gt;</span></span>
 </code></pre></div>
 
 <ul>
@@ -1471,70 +1471,70 @@
 
 <p>The skeleton of the [Default.aspx.cs] controller code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System.Collections.Generic;</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">public partial class </span><span style="color:#2b91af">PagePam </span>: <span style="color:#2b91af">Page</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">PagePam</span> : <span style="color:#2b91af">Page</span></span>
 <span class="odt-code-line">{</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">private void </span>setViews(<span style="color:#0000ff">bool </span>view1, <span style="color:#0000ff">bool </span>view2, <span style="color:#0000ff">int </span>index)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> setVues(<span style="color:#0000ff">bool</span> boolVues1, <span style="color:#0000ff">bool</span> boolVues2, <span style="color:#0000ff">int</span> index)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// display the requested views </span></span>
-<span class="odt-code-line">        <span style="color:#008000">// boolViews1: true if the multi-view Views1 should be visible </span></span>
-<span class="odt-code-line">        <span style="color:#008000">// boolViews1: true if the multi-view Views1 should be visible </span></span>
-<span class="odt-code-line">        <span style="color:#008000">// index: index of the Vues2 view to display </span></span>
+<span class="odt-code-line">        // display the requested views </span>
+<span class="odt-code-line">        // boolVues1 : true if Vues1 multi-view is to be visible </span>
+<span class="odt-code-line">        // boolVues1 : true if the Vues2 multiview is to be visible </span>
+<span class="odt-code-line">        // index: index of the Vues2 view to be displayed </span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">private void </span>setMenu(<span style="color:#0000ff">bool </span>runSimulation, <span style="color:#0000ff">bool </span>saveSimulation, <span style="color:#0000ff">bool </span>clearSimulation, <span style="color:#0000ff">bool </span>simulationForm, <span style="color:#0000ff">bool </span>viewSimulations, <span style="color:#0000ff">bool </span>endSession)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> setMenu(<span style="color:#0000ff">bool</span> boolFaireSimulation, <span style="color:#0000ff">bool</span> boolEnregistrerSimulation, <span style="color:#0000ff">bool</span> boolEffacerSimulation, <span style="color:#0000ff">bool</span> boolFormulaireSimulation, <span style="color:#0000ff">bool</span> boolVoirSimulations, <span style="color:#0000ff">bool</span> boolTerminerSession)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// Set the menu options </span></span>
-<span class="odt-code-line">        <span style="color:#008000">// each boolean is assigned to the Visible property of the corresponding link </span></span>
+<span class="odt-code-line">        // set menu options </span>
+<span class="odt-code-line">        // each Boolean is assigned to the Visible property of the corresponding link </span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000">// loading the page </span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    // page loading </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// processing initial request </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>(!IsPostBack)</span>
+<span class="odt-code-line">        // initial request processing </span>
+<span class="odt-code-line">        <span style="color:#0000ff">if</span> (!IsPostBack)</span>
 <span class="odt-code-line">        {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonRunSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonFaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonClearSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonEffacerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">....</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonViewSimulations_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonVoirSimulations_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonSaveSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonEnregistrerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonEndSession_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonTerminerSession_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonSimulationForm_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonFormulaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>GridViewSimulations_RowDeleting(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">GridViewDeleteEventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> GridViewSimulations_RowDeleting(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">GridViewDeleteEventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">    }</span>
@@ -1586,26 +1586,26 @@
 <p><img src="images/100000000000022A0000012501D74D84.png" style="width:10.261cm;height:5.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022A0000012501D74D84.png" /></p>
 <p>The [Load] event is handled in a similar way to previous ASP.NET versions:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#008000">// page load </span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Page_Load(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    // page loading </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// processing initial request </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>(!IsPostBack)</span>
+<span class="odt-code-line">        // initial request processing </span>
+<span class="odt-code-line">        <span style="color:#0000ff">if</span> (!IsPostBack)</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// Initialization errors? </span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">if </span>(<span style="color:#2b91af">Global</span>.Error)</span>
+<span class="odt-code-line">            // initialization errors? </span>
+<span class="odt-code-line">            <span style="color:#0000ff">if</span> (<span style="color:#2b91af">Global</span>.Erreur)</span>
 <span class="odt-code-line">            {</span>
-<span class="odt-code-line">                <span style="color:#008000">// display [errors] view </span></span>
+<span class="odt-code-line">                // display view [errors] </span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">                <span style="color:#008000">// menu positioning </span></span>
+<span class="odt-code-line">                // menu positioning </span>
 <span class="odt-code-line">                ...</span>
 <span class="odt-code-line">                <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            <span style="color:#008000">// loading employee names into the dropdown </span></span>
+<span class="odt-code-line">            // loading employee names into the combo </span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#008000">// menu positioning </span></span>
+<span class="odt-code-line">            // menu positioning </span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#008000">// display [input] view </span></span>
+<span class="odt-code-line">            // view display [input] </span>
 <span class="odt-code-line"> ...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">}</span>
@@ -1627,39 +1627,39 @@
 
 <p>The procedure that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonRunSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonFaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// calculate salary </span></span>
-<span class="odt-code-line">        <span style="color:#008000">// Is the page valid? </span></span>
+<span class="odt-code-line">        // wage calculation </span>
+<span class="odt-code-line">        // valid page? </span>
 <span class="odt-code-line">        Page.Validate();</span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>(!Page.IsValid)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if</span> (!Page.IsValid)</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// display [input] view </span></span>
+<span class="odt-code-line">            // view display [input] </span>
 <span class="odt-code-line">            ...</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#008000">// the page is valid - retrieve the entries </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">double </span>HoursWorked = ...;</span>
-<span class="odt-code-line">        <span style="color:#0000ff">int </span>DaysWorked = ...;</span>
-<span class="odt-code-line">        <span style="color:#008000">// calculate the employee&#x27;s salary </span></span>
-<span class="odt-code-line">        <span style="color:#2b91af">PayrollSheet </span>payrollSheet;</span>
+<span class="odt-code-line">        // the page is validated - inputs are retrieved </span>
+<span class="odt-code-line">        <span style="color:#0000ff">double</span> HeuresTravaillées = ...;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">int</span> JoursTravaillés = ...;</span>
+<span class="odt-code-line">        // we calculate the employee&#x27;s salary </span>
+<span class="odt-code-line">        <span style="color:#2b91af">FeuilleSalaire</span> feuillesalaire;</span>
 <span class="odt-code-line">        <span style="color:#0000ff">try</span></span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            payroll = ...</span>
+<span class="odt-code-line">            feuillesalaire = ...</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">PamException </span>ex)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">PamException</span> ex)</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// display [errors] view </span></span>
+<span class="odt-code-line">            // display view [errors] </span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">            <span style="color:#0000ff">return</span>;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#008000">// store the result in the session </span></span>
+<span class="odt-code-line">        // put the result in the session </span>
 <span class="odt-code-line">        Session[<span style="color:#a31515">&quot;simulation&quot;</span>] = ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// display results </span></span>
+<span class="odt-code-line">        // displaying results </span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">        <span style="color:#008000">// display views [entry, employee, salary] </span></span>
+<span class="odt-code-line">        // display views [entry, employee, salary] </span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// display menu </span></span>
+<span class="odt-code-line">        // menu display </span>
 <span class="odt-code-line">        ...</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1679,11 +1679,11 @@
 
 <p>The procedure that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonSaveSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonEnregistrerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// Save the current simulation to the list of simulations in the session </span></span>
+<span class="odt-code-line">        // save the current simulation in the list of simulations in the session </span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// display the [simulations] view </span></span>
+<span class="odt-code-line">        // the [simulations] view is displayed </span>
 <span class="odt-code-line">        ...</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1702,11 +1702,11 @@
 <p>Note that screen (2) displays the form as it was entered. It is important to remember here that these different views belong to the same page. Between requests, the values of the controls are preserved by the <em>ViewState</em> mechanism if these controls have their <em>EnableViewState</em> property set to <em>true</em>.</p>
 <p>The procedure that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonFormulaireSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonFormulaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// display [input] view </span></span>
+<span class="odt-code-line">        // view display [input] </span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// set menu position </span></span>
+<span class="odt-code-line">        // menu positioning </span>
 <span class="odt-code-line">        ...</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1721,9 +1721,9 @@
 
 <p>The procedure that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonClearSimulation_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonEffacerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// Clear the form </span></span>
+<span class="odt-code-line">        // RAZ of the form </span>
 <span class="odt-code-line">        ...</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1740,22 +1740,22 @@
 
 <p>The procedure that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">protected void </span>LinkButtonViewSimulations_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"><span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonVoirSimulations_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// retrieve the simulations from the session</span></span>
+<span class="odt-code-line">        // simulations are retrieved from the</span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// Are there any simulations? </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>(...)</span>
+<span class="odt-code-line">        // are there any simulations? </span>
+<span class="odt-code-line">        <span style="color:#0000ff">if</span> (...)</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// [simulations] view is visible </span></span>
+<span class="odt-code-line">            // view [simulations] visible </span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">else</span></span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// view [EmptySimulations] </span></span>
+<span class="odt-code-line">            // view [SimulationsVides] </span>
 <span class="odt-code-line">            ...</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line">        <span style="color:#008000">// set the menu </span></span>
+<span class="odt-code-line">        // set the menu </span>
 <span class="odt-code-line">        ...</span>
 <span class="odt-code-line">    }</span>
 </code></pre></div>
@@ -1772,21 +1772,21 @@
 
 <p>The procedure [GridViewSimulations_RowDeleting] that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>GridViewSimulations_RowDeleting(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">GridViewDeleteEventArgs </span>e)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> GridViewSimulations_RowDeleting(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">GridViewDeleteEventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// retrieve the simulations from the session</span></span>
+<span class="odt-code-line">        // simulations are retrieved from the</span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// delete the specified simulation (e.RowIndex is the index of the row being deleted)</span></span>
+<span class="odt-code-line">        // delete the designated simulation (e.RowIndex is the number of the deleted line)</span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// Are there any simulations left? </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>(...)</span>
+<span class="odt-code-line">        // are there any simulations left? </span>
+<span class="odt-code-line">        <span style="color:#0000ff">if</span> (...)</span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// populate the GridView </span></span>
+<span class="odt-code-line">            // fill in the GridView </span>
 <span class="odt-code-line"> ...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">        <span style="color:#0000ff">else</span></span>
 <span class="odt-code-line">        {</span>
-<span class="odt-code-line">            <span style="color:#008000">// [EmptySimulations] view </span></span>
+<span class="odt-code-line">            // view [SimulationsVides] </span>
 <span class="odt-code-line">            ...</span>
 <span class="odt-code-line">        }</span>
 <span class="odt-code-line">}</span>
@@ -1804,13 +1804,13 @@
 
 <p>The procedure that handles this action might look like the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>LinkButtonEndSession_Click(<span style="color:#0000ff">object </span>sender, System.<span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonTerminerSession_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">        <span style="color:#008000">// clear the session </span></span>
+<span class="odt-code-line">        // quit session </span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// display the [inputs] view </span></span>
+<span class="odt-code-line">        // display [entries] view </span>
 <span class="odt-code-line">        ...</span>
-<span class="odt-code-line">        <span style="color:#008000">// menu positioning </span></span>
+<span class="odt-code-line">        // menu positioning </span>
 <span class="odt-code-line">        ...</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>

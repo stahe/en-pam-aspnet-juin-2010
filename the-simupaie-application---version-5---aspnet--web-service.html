@@ -855,7 +855,7 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">WebService </span><span style="color:#0000ff">Language=&quot;C#&quot; CodeBehind=&quot;Service1.asmx.cs&quot; Class=&quot;pam_v5_webservice.Service1&quot; </span>%&gt;</span>
+<span class="odt-code-line">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">WebService</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Service1.asmx.cs&quot;</span> <span style="color:#ff0000">Class</span><span style="color:#0000ff">=&quot;pam_v5_webservice.Service1&quot;</span> %&gt;</span>
 </code></pre></div>
 
 <ul>
@@ -873,25 +873,25 @@
 
 <p>The source code [Service.asmx.cs] for the default web service is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Services;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5_webservice</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System.Web.Services;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> pam_v5_webservice</span>
 <span class="odt-code-line">{</span>
-<span class="odt-code-line">  <span style="color:#808080">/// &lt;summary&gt;</span></span>
-<span class="odt-code-line">  <span style="color:#808080">/// </span><span style="color:#008000">Summary description of Service1</span></span>
-<span class="odt-code-line">  <span style="color:#808080">/// &lt;/summary&gt;</span></span>
+<span class="odt-code-line">  /// &lt;summary&gt;</span>
+<span class="odt-code-line">  /// Service summary description1</span>
+<span class="odt-code-line">  /// &lt;/summary&gt;</span>
 <span class="odt-code-line">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://tempuri.org/&quot;</span>)]</span>
 <span class="odt-code-line">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span>
 <span class="odt-code-line">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span>
-<span class="odt-code-line">  <span style="color:#008000">// To allow this Web service to be called from a script using ASP.NET AJAX, remove the comment marks from the following line. </span></span>
-<span class="odt-code-line">  <span style="color:#008000">// [System.Web.Script.Services.ScriptService]</span></span>
-<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Service1 </span>: System.Web.Services.<span style="color:#2b91af">WebService</span></span>
+<span class="odt-code-line">  // To allow this Web service to be called from a script using ASP.NET AJAX, remove the comment marks from the following line. </span>
+<span class="odt-code-line">  // [System.Web.Script.Services.ScriptService]</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span></span>
 <span class="odt-code-line">  {</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
-<span class="odt-code-line">    <span style="color:#0000ff">public string </span>HelloWorld()</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> HelloWorld()</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span><span style="color:#a31515">&quot;Hello World&quot;</span>;</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Hello World&quot;</span>;</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">  }</span>
 <span class="odt-code-line">}</span>
@@ -964,12 +964,12 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Services;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System.Web.Services;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> pam_v5</span>
 <span class="odt-code-line">{</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Service1 </span>: System.Web.Services.<span style="color:#2b91af">WebService</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span></span>
 <span class="odt-code-line">  {</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">  }</span>
@@ -982,7 +982,7 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">WebService </span><span style="color:#0000ff">Language=&quot;C#&quot; CodeBehind=&quot;Service1.asmx.cs&quot; Class=&quot;pam_v5.Service1&quot; </span>%&gt;</span>
+<span class="odt-code-line">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">WebService</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Service1.asmx.cs&quot;</span> <span style="color:#ff0000">Class</span><span style="color:#0000ff">=&quot;pam_v5.Service1&quot;</span> %&gt;</span>
 </code></pre></div>
 
 <p>Let’s return to our application’s architecture:</p>
@@ -1038,21 +1038,21 @@
 
 <p>The contents of the [Global.asax] file are as follows:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">&lt;<span style="color:#0000ff">%@ </span><span style="color:#a31515">Application </span><span style="color:#0000ff">Codebehind=&quot;Global.asax.cs&quot; Inherits=&quot;pam_v5.Global&quot; Language=&quot;C#&quot; </span>%&gt;</span>
+<span class="odt-code-line">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Application</span> <span style="color:#ff0000">Codebehind</span><span style="color:#0000ff">=&quot;Global.asax.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;pam_v5.Global&quot;</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> %&gt;</span>
 </code></pre></div>
 
 <p>The contents of the [Global.asax.cs] file are as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> pam_v5</span>
 <span class="odt-code-line">{</span>
-<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span>
 <span class="odt-code-line">  {</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">...</span>
 <span class="odt-code-line">  }</span>
@@ -1076,46 +1076,46 @@
 
 <p>The [Global] class is similar to the one already built for previous applications:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Spring.Context.Support;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> pam_v5</span>
 <span class="odt-code-line">{</span>
-<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span>
 <span class="odt-code-line">  {</span>
-<span class="odt-code-line">    <span style="color:#008000">// --- application static data ---</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">Employee</span>[] Employees;</span>
-<span class="odt-code-line">    <span style="color:#0000ff">public static </span><span style="color:#2b91af">IPamMetier </span>PamMetier = <span style="color:#0000ff">null</span>;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">protected void </span>Application_Start(<span style="color:#0000ff">object </span>sender, <span style="color:#2b91af">EventArgs </span>e)</span>
+<span class="odt-code-line">    // --- static application data ---</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Employe</span>[] Employes;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IPamMetier</span> PamMetier = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">      <span style="color:#008000">// instantiate [business] layer</span></span>
-<span class="odt-code-line">      PamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">IPamMetier</span>;</span>
-<span class="odt-code-line">      <span style="color:#008000">// retrieve the simplified array of employees </span></span>
-<span class="odt-code-line">      Employees = PamMetier.GetAllEmployeeIdentities();</span>
+<span class="odt-code-line">      // instantiation layer [metier]</span>
+<span class="odt-code-line">      PamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span>
+<span class="odt-code-line">      // retrieve the simplified employee table </span>
+<span class="odt-code-line">      Employes = PamMetier.GetAllIdentitesEmployes();</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000">// simplified list of employees</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">static public </span><span style="color:#2b91af">Employee</span>[] GetAllEmployeeIdentities()</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    // simplified list of employees</span>
+<span class="odt-code-line">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes()</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span>Employees;</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return</span> Employes;</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000">// employee salary</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">static public </span><span style="color:#2b91af">PayrollSheet </span>GetPayroll(<span style="color:#0000ff">string </span>SS, <span style="color:#0000ff">double </span>hoursWorked, <span style="color:#0000ff">int </span>daysWorked)</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    // employee salary</span>
+<span class="odt-code-line">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> SS, <span style="color:#0000ff">double</span> heuresTravaillées, <span style="color:#0000ff">int</span> joursTravailles)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span>PamMetier.GetSalary(SS, hoursWorked, daysWorked);</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return</span> PamMetier.GetSalaire(SS, heuresTravaillées, joursTravailles);</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">  }</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>The [Global] class implements the [IPamMetier] interface, but this is not explicitly stated in the declaration:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Global </span>: System.Web.<span style="color:#2b91af">HttpApplication, IPamMetier</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication, IPamMetier</span></span>
 </code></pre></div>
 
 <p>In fact, the methods <em>GetAllEmployeeIDs</em> (line 24) and <em>GetSalary</em> (line 30) are static, whereas the methods of the <em>IPamMetier</em> interface are not. Therefore, the <em>Global</em> class cannot implement the <em>IPamMetier</em> interface. Furthermore, it is not possible to declare the <em>GetAllEmployeeIDs</em> and <em>GetSalary</em> methods as non-static. This is because they are accessed via the class name and not via an instance of the class.</p>
@@ -1147,31 +1147,31 @@
 
 <p>The implementation of the web service [Service1.asmx.cs] could be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Services;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>pam_v5</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System.Web.Services;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> pam_v5</span>
 <span class="odt-code-line">{</span>
 <span class="odt-code-line">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://st.istia.univ-angers.fr/&quot;</span>)]</span>
 <span class="odt-code-line">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span>
 <span class="odt-code-line">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span>
-<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">Service1 </span>: System.Web.Services.<span style="color:#2b91af">WebService</span>, <span style="color:#2b91af">IPamMetier</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span>, <span style="color:#2b91af">IPamMetier</span></span>
 <span class="odt-code-line">  {</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000">// list of all employee identities </span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    // list of all employee identities </span>
 <span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
-<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">Employee</span>[] GetAllEmployeeIDs()</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes()</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span><span style="color:#2b91af">Global</span>.GetAllEmployeeIDs();</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return</span> <span style="color:#2b91af">Global</span>.GetAllIdentitesEmployes();</span>
 <span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000">// ------- salary calculation </span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    // ------- salary calculation </span>
 <span class="odt-code-line">    [<span style="color:#2b91af">WebMethod</span>]</span>
-<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">Payroll </span>GetSalary(<span style="color:#0000ff">string </span>ss, <span style="color:#0000ff">double </span>hoursWorked, <span style="color:#0000ff">int </span>daysWorked)</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">double</span> heuresTravaillees, <span style="color:#0000ff">int</span> joursTravailles)</span>
 <span class="odt-code-line">    {</span>
-<span class="odt-code-line">      <span style="color:#0000ff">return </span><span style="color:#2b91af">Global</span>.GetSalary(ss, hoursWorked, daysWorked);</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return</span> <span style="color:#2b91af">Global</span>.GetSalaire(ss, heuresTravaillees, joursTravailles);</span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">  }</span>
 <span class="odt-code-line">}</span>
@@ -1327,49 +1327,49 @@
 
 <p>Above, we see that the test client [1] interfaces with an extended [business] layer [2]. This layer has the same methods as the remote [business] layer. We can therefore use the test class already encountered when testing the [business] layer in the C# project [pam-metier-dao-nhibernate]: </p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>NUnit.Framework;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Dao.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Entities;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Pam.Business.Service;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Pam.Business.Tests {</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> NUnit.Framework;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Spring.Context.Support;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace</span> Pam.Metier.Tests {</span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">    [<span style="color:#2b91af">TestFixture</span>()]</span>
-<span class="odt-code-line">    <span style="color:#0000ff">public class </span><span style="color:#2b91af">NunitTestPamMetier </span>: <span style="color:#2b91af">AssertionHelper </span>{</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// the [business] layer to be tested </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">private </span><span style="color:#2b91af">IPamMetier </span>pamMetier;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// constructor</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public </span>NunitTestPamMetier() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// instantiation of the [DAO] layer</span></span>
-<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">IPamMetier</span>;</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">NunitTestPamMetier</span> : <span style="color:#2b91af">AssertionHelper</span> {</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // the [metier] layer to test </span>
+<span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IPamMetier</span> pamMetier;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // manufacturer</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span>
+<span class="odt-code-line">            // layer instantiation [dao]</span>
+<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetAllEmployeeIdentities() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// Check number of employees </span></span>
-<span class="odt-code-line">            Expect(2, EqualTo(pamMetier.GetAllEmployeeIdentities().Length));</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetAllIdentitesEmployes() {</span>
+<span class="odt-code-line">            // audit no. of employees </span>
+<span class="odt-code-line">            Expect(2, EqualTo(pamMetier.GetAllIdentitesEmployes().Length));</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetSalary1() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// Calculate a pay stub </span></span>
-<span class="odt-code-line">            <span style="color:#2b91af">PayrollSheet </span>payrollSheet = pamMetier.GetSalary(<span style="color:#a31515">&quot;254104940426058&quot;</span>, 150, 20);</span>
-<span class="odt-code-line">            <span style="color:#008000">// checks </span></span>
-<span class="odt-code-line">            Expect(368.77, EqualTo(payrollSheet.PayrollElements.NetPay).Within(1E-06));</span>
-<span class="odt-code-line">            <span style="color:#008000">// Payroll for a non-existent employee </span></span>
-<span class="odt-code-line">            <span style="color:#0000ff">bool </span>error = <span style="color:#0000ff">false</span>;</span>
-<span class="odt-code-line">            <span style="color:#0000ff">try </span>{</span>
-<span class="odt-code-line">                payrollSheet = pamBusiness.GetSalary(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
-<span class="odt-code-line">            } <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">PamException</span>) {</span>
-<span class="odt-code-line">                error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span>
+<span class="odt-code-line">            // wage sheet calculation </span>
+<span class="odt-code-line">            <span style="color:#2b91af">FeuilleSalaire</span> feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;254104940426058&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            // checks </span>
+<span class="odt-code-line">            Expect(368.77, EqualTo(feuilleSalaire.ElementsSalaire.SalaireNet).Within(1E-06));</span>
+<span class="odt-code-line">            // non-existent employee payslip </span>
+<span class="odt-code-line">            <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
+<span class="odt-code-line">                feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">PamException</span>) {</span>
+<span class="odt-code-line">                erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            Expect(error, True);</span>
+<span class="odt-code-line">            Expect(erreur, True);</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line">    }</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
@@ -1381,26 +1381,26 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml </span><span style="color:#0000ff">version=</span>&quot;<span style="color:#0000ff">1.0</span>&quot; <span style="color:#0000ff">encoding=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot; <span style="color:#0000ff">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff"> ?&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">sectionGroup </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">spring</span>&quot;<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">context</span>&quot; <span style="color:#0000ff">type=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.ContextHandler, Spring.Core</span>&quot; <span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section </span><span style="color:#0000ff">name=</span>&quot;<span style="color:#0000ff">objects</span>&quot; <span style="color:#0000ff">type=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.DefaultSectionHandler, Spring.Core</span>&quot; <span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">/sectionGroup</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">/configSections</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">sectionGroup</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">spring</span>&quot;<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">context</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.ContextHandler, Spring.Core</span>&quot;<span style="color:#0000ff"> /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">objects</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.DefaultSectionHandler, Spring.Core</span>&quot;<span style="color:#0000ff"> /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">sectionGroup</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">resource </span><span style="color:#0000ff">uri=</span>&quot;<span style="color:#0000ff">config://spring/objects</span>&quot; <span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">/context</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">objects </span><span style="color:#0000ff">xmlns=</span>&quot;<span style="color:#0000ff">http://www.springframework.net</span>&quot;<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">object </span><span style="color:#0000ff">id=</span>&quot;<span style="color:#0000ff">pammetier</span>&quot; <span style="color:#0000ff">type=</span>&quot;<span style="color:#0000ff">PamV5Client.WsPam.Service1SoapClient, pam-v5-client-csharp-webservice</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">/objects</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">/spring</span><span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">resource</span><span style="color:#0000ff"> </span><span style="color:#ff0000">uri</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">config://spring/objects</span>&quot;<span style="color:#0000ff"> /&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">objects</span><span style="color:#0000ff"> </span><span style="color:#ff0000">xmlns</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">http://www.springframework.net</span>&quot;<span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">object</span><span style="color:#0000ff"> </span><span style="color:#ff0000">id</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">pammetier</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span>&quot;<span style="color:#2323dc">PamV5</span><span style="color:#0000ff">Client.WsPam.Service1SoapClient, pam-v5-client-csharp-webservice</span>&quot;<span style="color:#0000ff">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">objects</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"> </span>
 <span class="odt-code-line"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.serviceModel</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line">...</span>
 </code></pre></div>
@@ -1420,71 +1420,71 @@
 </ul>
 
 <p>Let’s return to the code for instantiating the local [business] layer in [NUnit.cs]:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line">        <span style="color:#008000">// the [business] layer to be tested </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">private </span><span style="color:#2b91af">IPamMetier </span>pamMetier;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// constructor</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public </span>NunitTestPamMetier() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// instantiate the [DAO] layer</span></span>
-<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">IPamMetier</span>;</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">        // the [metier] layer to test </span>
+<span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IPamMetier</span> pamMetier;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // manufacturer</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span>
+<span class="odt-code-line">            // layer instantiation [dao]</span>
+<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 </code></pre></div>
 
 <p>Line 7: The remote [business] layer was of type <em>IPamMetier</em>. Here, the [business] layer is of type [Service1SoapClient]:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">public class </span><span style="font-weight:bold;color:#000000">Service1SoapClient </span><span style="color:#000000">: </span><span style="font-weight:bold;text-decoration:underline;color:#215dc6">System.ServiceModel.ClientBase&lt;Service1Soap&gt;</span></span>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#000000">public class </span><span style="font-weight:bold;color:#000000">Service1SoapClient</span><span style="color:#000000"> : </span><span style="font-weight:bold;text-decoration:underline;color:#215dc6">System.ServiceModel.ClientBase&lt;Service1Soap&gt;</span></span>
 </code></pre></div>
 
 <p>We see that the <em>Service1SoapClient</em> class does not implement the <em>IPamMetier</em> interface even though it exposes methods with the same names. We must therefore write the instantiation of the local [business] layer as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line">        <span style="color:#008000">// the [business] layer to be tested </span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">private </span><span style="color:#2b91af">Service1SoapClient </span>pamMetier;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000">// constructor</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">public </span>NunitTestPamMetier() {</span>
-<span class="odt-code-line">            <span style="color:#008000">// instantiate the [business] layer</span></span>
-<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as </span><span style="color:#2b91af">Service1SoapClient</span>;</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">        <span style="color:#008000">// the [metier] layer to test </span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">Service1SoapClient</span> pamMetier;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">        // manufacturer</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span>
+<span class="odt-code-line">            // instantiation layer [metier]</span>
+<span class="odt-code-line">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">Service1SoapClient</span>;</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>Another change to make:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetSalary1() {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#0000ff">try </span>{</span>
-<span class="odt-code-line">                salarySheet = pamJob.GetSalary(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
-<span class="odt-code-line">            } <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">PamException</span>) {</span>
-<span class="odt-code-line">                error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
+<span class="odt-code-line">                feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">PamException</span>) {</span>
+<span class="odt-code-line">                erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            Expect(error, True);</span>
+<span class="odt-code-line">            Expect(erreur, True);</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 </code></pre></div>
 
 <p>The code above uses, on line 6, the <em>PamException</em> type, which does not exist on the client side. We will replace it with its parent class, the <em>Exception</em> type. </p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">        [<span style="color:#2b91af">Test</span>]</span>
-<span class="odt-code-line">        <span style="color:#0000ff">public void </span>GetSalary1() {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span>
 <span class="odt-code-line">...</span>
-<span class="odt-code-line">            <span style="color:#0000ff">try </span>{</span>
-<span class="odt-code-line">                payrollSheet = jobClass.GetSalary(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
-<span class="odt-code-line">            } <span style="color:#0000ff">catch </span>(<span style="color:#2b91af">Exception</span>) {</span>
-<span class="odt-code-line">                error = <span style="color:#0000ff">true</span>;</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try</span> {</span>
+<span class="odt-code-line">                 feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span>
+<span class="odt-code-line">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span>) {</span>
+<span class="odt-code-line">                erreur = <span style="color:#0000ff">true</span>;</span>
 <span class="odt-code-line">            }</span>
-<span class="odt-code-line">            Expect(error, True);</span>
+<span class="odt-code-line">            Expect(erreur, True);</span>
 <span class="odt-code-line">        }</span>
-<span class="odt-code-line"></span>
+<span class="odt-code-line"> </span>
 </code></pre></div>
 
 <p>Finally, the imported namespaces are no longer the same:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>PamV5Client.WsPam;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>NUnit.Framework;</span>
-<span class="odt-code-line"><span style="color:#0000ff">using </span>Spring.Context.Support;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> PamV5Client.WsPam;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> NUnit.Framework;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using</span> Spring.Context.Support;</span>
 </code></pre></div>
 
 <p>Once this is done, the &quot;Class Library&quot; project can be built. The following DLL is created:</p>
