@@ -778,15 +778,15 @@
 <a id="bd"></a></p>
 <h2 id="31-the-database">3.1. <span style="color: #4f81bd"><strong>The database</strong></span></h2>
 <p>The static data needed to generate the pay stub is stored in an SQL Server Express database named <strong>dbpam</strong> (pam = Paie Assistante Maternelle). This database has an administrator named <strong>sa</strong> with the password <strong>msde</strong>.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BB000000B34902BDD9.png" style="display:inline-block; margin:4px;width:3.96cm;height:3.791cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BB000000B34902BDD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BB000000B34902BDD9.png" width="150" height="143" style="display:inline-block; margin:4px;width:3.96cm;height:3.791cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BB000000B34902BDD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The database has three tables, <strong>EMPLOYEES, CONTRIBUTIONS,</strong> and <strong>ALLOWANCES,</strong> with the following structure:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Table <span style="font-weight:bold">EMPLOYES</span> : rassemble des informations sur les différentes assistantes maternelles</span>
+<span class="odt-code-line"><span class="odt-code-line-content">Table <span style="font-weight:bold">EMPLOYES</span> : rassemble des informations sur les différentes assistantes maternelles</span></span>
 </code></pre></div>
 
 <p><strong>Structure</strong>:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C80000009466CD2327.png" style="display:inline-block; margin:4px;width:4.23cm;height:3.129cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C80000009466CD2327.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C80000009466CD2327.png" width="160" height="118" style="display:inline-block; margin:4px;width:4.23cm;height:3.129cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C80000009466CD2327.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SS
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">employee&#x27;s social security number - primary key</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -810,23 +810,23 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">his processing index - foreign key on the [INDICE] field of the [INDEMNITES] table</div></td></tr></table></td></tr></table>
 
 <p>Its content could be as follows:</p>
-<p><img src="images/10000000000001EB0000003DA63DA382.png" style="width:10.389cm;height:1.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB0000003DA63DA382.png" /></p>
+<p><img src="images/10000000000001EB0000003DA63DA382.png" width="393" height="49" style="width:10.389cm;height:1.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB0000003DA63DA382.png" /></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Table <span style="font-weight:bold">COTISATIONS</span> : rassemble les taux des cotisations sociales prélevées sur le salaire</span>
+<span class="odt-code-line"><span class="odt-code-line-content">Table <span style="font-weight:bold">COTISATIONS</span> : rassemble les taux des cotisations sociales prélevées sur le salaire</span></span>
 </code></pre></div>
 
 <p><strong>Structure</strong>:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007C600000200975BAB44.png" style="display:inline-block; margin:4px;width:17.997cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C600000200975BAB44.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007C600000200975BAB44.png" width="680" height="175" style="display:inline-block; margin:4px;width:17.997cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C600000200975BAB44.png" /></td></tr></table>
 
 <p>Its content could be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001690000002C2FBA0563.png" style="display:inline-block; margin:4px;width:7.639cm;height:0.931cm;" class="odt-zoomable" data-zoom-src="images/10000000000001690000002C2FBA0563.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001690000002C2FBA0563.png" width="289" height="35" style="display:inline-block; margin:4px;width:7.639cm;height:0.931cm;" class="odt-zoomable" data-zoom-src="images/10000000000001690000002C2FBA0563.png" /></td></tr></table>
 
 <p>Social security contribution rates are independent of the employee. The previous table has only one row.</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Table <span style="font-weight:bold">INDEMNITES</span> : rassemble les différentes indemnités dépendant de l&#x27;indice de l&#x27;employé</span>
+<span class="odt-code-line"><span class="odt-code-line-content">Table <span style="font-weight:bold">INDEMNITES</span> : rassemble les différentes indemnités dépendant de l&#x27;indice de l&#x27;employé</span></span>
 </code></pre></div>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C900000076FBDB18D6.png" style="display:inline-block; margin:4px;width:4.249cm;height:2.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C900000076FBDB18D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C900000076FBDB18D6.png" width="161" height="94" style="display:inline-block; margin:4px;width:4.249cm;height:2.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C900000076FBDB18D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>INDEX
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">salary index - primary key</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -844,14 +844,14 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Paid vacation allowance. This is a percentage applied to the base salary.</div></td></tr></table></td></tr></table>
 
 <p>Its content could be as follows:</p>
-<p><img src="images/100000000000017600000040A8082BF8.png" style="width:7.92cm;height:1.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017600000040A8082BF8.png" /></p>
+<p><img src="images/100000000000017600000040A8082BF8.png" width="299" height="51" style="width:7.92cm;height:1.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017600000040A8082BF8.png" /></p>
 <p>Note that allowances may vary from one child care provider to another. They are linked to a specific child care provider via that provider’s pay grade. Thus, <em>Ms. Marie Jouveinal,</em> who has a pay grade of 2 (EMPLOYEES table), has an hourly wage of 2.1 euros (INDEMNITES table).</p>
 <p>The relationships between the three tables are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025F0000019D9AFFDD0F.png" style="display:inline-block; margin:4px;width:8.031cm;height:5.465cm;" class="odt-zoomable" data-zoom-src="images/100000000000025F0000019D9AFFDD0F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025F0000019D9AFFDD0F.png" width="304" height="207" style="display:inline-block; margin:4px;width:8.031cm;height:5.465cm;" class="odt-zoomable" data-zoom-src="images/100000000000025F0000019D9AFFDD0F.png" /></td></tr></table>
 
 <p>There is a foreign key relationship between the EMPLOYEES(INDEX) column and the ALLOWANCES(INDEX) column.</p>
 <p>The [dbpam] database created in this way generates two files in the SQL Server Express folder:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B5000001489DF09928.png" style="display:inline-block; margin:4px;width:15.942cm;height:4.339cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000001489DF09928.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B5000001489DF09928.png" width="603" height="164" style="display:inline-block; margin:4px;width:15.942cm;height:4.339cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000001489DF09928.png" /></td></tr></table>
 
 <p><a id="attachsqlserver"></a>The [dbpam.mdf, dbpam_log.ldf] files can be transferred to another machine and reattached to that machine’s SQL Server Express database management system. Here’s how to do it:</p>
 <ul>
@@ -859,7 +859,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014300000064013168B4.png" style="display:inline-block; margin:4px;width:6.84cm;height:2.118cm;" class="odt-zoomable" data-zoom-src="images/100000000000014300000064013168B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014300000064013168B4.png" width="259" height="80" style="display:inline-block; margin:4px;width:6.84cm;height:2.118cm;" class="odt-zoomable" data-zoom-src="images/100000000000014300000064013168B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
   <li>Launch SQL Server Express
@@ -868,9 +868,9 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D300000237840989AF.png" style="display:inline-block; margin:4px;width:17.997cm;height:6.844cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D300000237840989AF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D300000237840989AF.png" width="680" height="259" style="display:inline-block; margin:4px;width:17.997cm;height:6.844cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D300000237840989AF.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005BB00000241AD2AB5A6.png" style="display:inline-block; margin:4px;width:17.997cm;height:7.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BB00000241AD2AB5A6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005BB00000241AD2AB5A6.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.997cm;height:7.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BB00000241AD2AB5A6.png" /></td></tr></table>
 
 <ol>
   <li>Right-click on [Databases] / Attach
@@ -889,13 +889,13 @@
 <h2 id="32-calculation-method-for-a-child-care-providers-salary">3.2. <span style="color: #4f81bd">calculation method for a child care provider’s salary</span></h2>
 <p>We will now present the method for calculating a childminder’s monthly salary. As an example, we will use the salary of Ms. Marie Jouveinal, who worked 150 hours over 20 days during the pay period.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">The following factors are taken into account:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">[<span style="background-color:#ffcc99">TOTALHOURS</span>]: total</span>
-<span class="odt-code-line"> hours worked in the</span>
-<span class="odt-code-line"> month</span>
+<span class="odt-code-line"><span class="odt-code-line-content">[<span style="background-color:#ffcc99">TOTALHOURS</span>]: total</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> hours worked in the</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> month</span></span>
 </code></pre></div>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">[<span style="background-color:#ffcc99">TOTALDAYS</span>]: total days</span>
-<span class="odt-code-line"> worked in the month</span>
+<span class="odt-code-line"><span class="odt-code-line-content">[<span style="background-color:#ffcc99">TOTALDAYS</span>]: total days</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> worked in the month</span></span>
 </code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[TOTALHOURS]=150
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>[TOTALDAYS] = 20
@@ -909,20 +909,20 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[BASESALARY]=(150*[2.1])*(1+0.15)= 362.25
 </code></pre></div>
 </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">A number of social security contributions must be deducted from this base salary:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">General social contribution</span>
-<span class="odt-code-line"> and debt</span>
-<span class="odt-code-line"> to debt repayment</span>
-<span class="odt-code-line"> : <span style="background-color:#ffcc99">[BASESALARY]*[CSGRDS/100]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">General social contribution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> and debt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> to debt repayment</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> : <span style="background-color:#ffcc99">[BASESALARY]*[CSGRDS/100]</span></span></span>
 </code></pre></div>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Deductible</span>
-<span class="odt-code-line"> deductible:</span>
-<span class="odt-code-line"> <span style="background-color:#ffcc99">[BASESALARY]*[CSGD/100]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Deductible</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> deductible:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> <span style="background-color:#ffcc99">[BASESALARY]*[CSGD/100]</span></span></span>
 </code></pre></div>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Social Security, Widow&#x27;s,</span>
-<span class="odt-code-line"> old age:</span>
-<span class="odt-code-line"> <span style="background-color:#ffcc99">[BASESALARY]*[SECU/100]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Social Security, Widow&#x27;s,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> old age:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> <span style="background-color:#ffcc99">[BASESALARY]*[SECU/100]</span></span></span>
 </code></pre></div>
 <div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Supplementary Pension +
@@ -971,7 +971,7 @@
 <p><a id="refheadingtoc744694255346799"></a></p>
 <h2 id="33-adonet-reminders">3.3. <span style="color: #4f81bd">ADO.NET Reminders</span></h2>
 <p>The payroll calculation application requires information from the [dbpam] database. Its architecture will be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C0000016F17902B39.png" style="display:inline-block; margin:4px;width:17.939cm;height:4.854cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000016F17902B39.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C0000016F17902B39.png" width="678" height="183" style="display:inline-block; margin:4px;width:17.939cm;height:4.854cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000016F17902B39.png" /></td></tr></table>
 
 <ul>
   <li>In [1], the user makes a request
@@ -1200,8 +1200,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
