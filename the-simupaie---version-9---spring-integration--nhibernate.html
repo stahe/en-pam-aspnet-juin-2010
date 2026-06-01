@@ -521,14 +521,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie---version-5---aspnet-application--web-service.html" class="md-nav__link">
+      <a href="the-application-simupaie---version-5---aspnet--web-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. The [SimuPaie] – version 5 – ASP.NET application / web service
+    9. The application [SimuPaie] – version 5 – ASP.NET / web service
   
 
     
@@ -575,14 +575,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie-application---version-7---aspnet--multi-views--multi-pages.html" class="md-nav__link">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. The [SimuPaie] application – version 7 – ASP.NET / multi-views / multi-pages
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
   
 
     
@@ -746,10 +746,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#13141-the-appconfig-file" class="md-nav__link">
+  <a href="#13141-the-file-appconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.1.4.1. The [App.config] file
+        13.1.4.1. The file [App.config]
       
     </span>
   </a>
@@ -1002,9 +1002,9 @@
 <p>Above, the [dao] layer had been implemented using the NHibernate framework. The Spring framework was used only for integrating the layers with one another. The Spring framework provides utility classes for working with the Nhibernate framework. Using these classes makes the code for the [dao] layer easier to write. The previous architecture evolves as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E70000011AD91B23EC.png" width="680" height="127" style="display:inline-block; margin:4px;width:17.997cm;height:3.358cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E70000011AD91B23EC.png" /></td></tr></table>
 
-<p>Due to the layered structure used, the implementation of <strong>Spring/NHibernate</strong> integration results in changes to only the [dao] layer. The [presentation] (web / ASP.NET) and [metier] layers will not need to be modified. This is the main advantage of layered architectures integrated by Spring.</p>
-<p>Next, we will build the [dao] layer with [Spring / NHibernate] by commenting on the code of a working solution. We will not attempt to cover all possible configurations or uses of the [Spring / Nhibernate] framework. Readers can adapt the proposed solution to their own problems using the Spring.NET and [http://www.springframework.net/documentation.html] documentation (June 2010).</p>
-<p>The approach followed to build the [dao] and [metier] layers is that of version 3 described in paragraph<a href="the-simupaie-application---version-3---3-tier-architecture-with-nhibernate.html#pam-v3"><u><span style="color: #0563c1"> 7</span></u></a>. The procedure followed for the [présentation] layer is that of version 7 described in paragraph<a href="the-simupaie-application---version-7---aspnet--multi-views--multi-pages.html#pam-v7"><u><span style="color: #0563c1"> 11</span></u></a>.</p>
+<p>Due to the layered structure used, the implementation of <strong>Spring/NHibernate</strong> integration results in the modification of only the [dao] layer. The [presentation] (web / ASP.NET) and [metier] layers will not need to be modified. This is the main advantage of layered architectures integrated by Spring.</p>
+<p>Next, we will build the [dao] layer with [Spring / NHibernate] by commenting on the code of a working solution. We will not attempt to cover all possible configurations or uses of the [Spring / Nhibernate] framework. Readers can adapt the proposed solution to their own problems using the Spring.NET [http://www.springframework.net/documentation.html] documentation (June 2010).</p>
+<p>The approach followed to build the [dao] and [metier] layers is that of version 3 described in paragraph<a href="the-simupaie-application---version-3---3-tier-architecture-with-nhibernate.html#pam-v3"><u><span style="color: #0563c1"> 7</span></u></a>. The procedure followed for the [présentation] layer is that of version 7 described in paragraph<a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html#pam-v7"><u><span style="color: #0563c1"> 11</span></u></a>.</p>
 <h2 id="131-the-dao-data-access-layer">13.1. <span style="color: #4f81bd"><strong>The [dao] data access layer</strong></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005EA0000011B0928494D.png" width="680" height="127" style="display:inline-block; margin:4px;width:17.997cm;height:3.364cm;" class="odt-zoomable" data-zoom-src="images/10000000000005EA0000011B0928494D.png" /></td></tr></table>
 
@@ -1014,7 +1014,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000595000001D8F6E9400E.png" width="680" height="225" style="display:inline-block; margin:4px;width:17.997cm;height:5.944cm;" class="odt-zoomable" data-zoom-src="images/1000000000000595000001D8F6E9400E.png" /></td></tr></table>
 
 <ul>
-  <li>in [1], the project as a whole
+  <li>In [1], the entire project
     <ul>
       <li>The [pam] folder contains the project classes as well as the configuration of the NHibernate entities
       </li>
@@ -1038,7 +1038,7 @@
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003F00000022821380E3B.png" width="504" height="276" style="display:inline-block; margin:4px;width:13.335cm;height:7.303cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F00000022821380E3B.png" /></td></tr></table>
 
-<p>In the [3] references of the project, the following DLL files are found:</p>
+<p>In the [3] references of the project, the following DLL entries are found:</p>
 <ul>
   <li><i>NHibernate</i>: for ORM and NHibernate
   </li>
@@ -1050,11 +1050,11 @@
   </li>
   <li><i>nunit.framework</i>: a unit testing library
   </li>
-  <li><i>Spring.Data </i>and <i>Spring.Data.NHibernate12</i>: provide support for Spring / NHibernate.
+  <li><i>Spring.Data </i>and <i>Spring.Data.NHibernate12</i>: provide Spring support / NHibernate.
   </li>
 </ul>
 
-<p>These references were taken from the [lib] [4] folder. Ensure that the &quot;Local Copy&quot; property for all these references is set to &quot;True&quot; [5]:</p>
+<p>These references were added to the [lib] and [4] folders. Ensure that the &quot;Local Copy&quot; property for all these references is set to &quot;True&quot; [5]:</p>
 <h3 id="1312-the-c-project-configuration">13.1.2. <span style="color: #4f81bd">The C# project configuration</span></h3>
 <p>The project is configured as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000027E00000110E1CA1171.png" width="319" height="136" style="display:inline-block; margin:4px;width:8.44cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/100000000000027E00000110E1CA1171.png" /></td></tr></table>
@@ -1106,7 +1106,7 @@
   </li>
 </ul>
 <p><span id="appconfig-metier-dao-springnhibernate" name="appconfig-metier-dao-springnhibernate" class="odt-bookmark-anchor"></span></p>
-<h4 id="13141-the-appconfig-file">13.1.4.1. <span style="color: #4f81bd">The [App.config] file</span></h4>
+<h4 id="13141-the-file-appconfig">13.1.4.1. <span style="color: #4f81bd">The file [App.config]</span></h4>
 <p>The file [App.config] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff"> ?&gt;</span></span></span>
@@ -1224,7 +1224,7 @@
 <ul>
   <li>Lines 11–13 configure the connection to the [dbpam_nhibernate] database. They include:
     <ul>
-      <li>the ADO.NET provider required for the connection, in this case the provider for SGBD MySQL. This requires having DLL and [Mysql.Data] in the project references.
+      <li>the ADO.NET provider required for the connection, in this case the provider for SGBD and MySQL. This requires having DLL and [Mysql.Data] in the project references.
       </li>
       <li>the database connection string (server, database name, connection owner, password)
       </li>
@@ -1232,9 +1232,9 @@
   </li>
   <li>Lines 15–29 configure the <i>SessionFactory </i>of NHibernate, the object used to obtain <i>NHibernate</i> sessions. Note that all database operations are performed within a NHibernate session. In line 15, we can see that <i>SessionFactory </i>is implemented by the Spring class <i>Spring.Data.NHibernate.LocalSessionFactoryObject </i>found in DLL <i> Spring.Data.NHibernate12</i>.
   </li>
-  <li>Line 16: The <i>DbProvider</i> property sets the database connection parameters (ADO.NET provider and connection string). Here, this property references the <i>DbProvider</i> object defined earlier on lines 11–13.
+  <li>Line 16: The <i>DbProvider</i> property sets the database connection parameters (ADO provider NET and connection string). Here, this property references the <i>DbProvider</i> object defined earlier on lines 11–13.
   </li>
-  <li>Lines 17–20: define the list of assemblies containing [*.hbm.xml] files that configure entities managed by NHibernate. Line 19 indicates that these files will be found in the project assembly. Note that this name is found in the C# project properties. Also note that all [*.hbm.xml] files have been configured to be included in the project assembly.
+  <li>Lines 17–20: define the list of assemblies containing [*.hbm.xml] files that configure entities managed by NHibernate. Line 19 specifies that these files will be found in the project assembly. Note that this name is found in the C# project properties. Also note that all [*.hbm.xml] files have been configured to be included in the project assembly.
   </li>
   <li>Lines 22–27: Specific properties of NHibernate.
     <ul>
@@ -1248,7 +1248,7 @@
   </li>
   <li>Lines 32–36 define the transaction manager. Again, this manager is a Spring class from the DLL <i>Spring.Data.NHibernate12 </i>package. This manager needs to know the database connection parameters (line 34) as well as the <i>SessionFactory </i>from NHibernate (line 35).
   </li>
-  <li>Lines 39–43 define the properties of the <i>HibernateTemplate</i> class, which is also a Spring class. This class will be used as a utility class within the class that implements the [dao] layer. It facilitates interactions with NHibernate objects. This class has certain properties that must be initialized:
+  <li>Lines 39–43 define the properties of the <i>HibernateTemplate</i> class, which is also a Spring class. This class will be used as a utility class within the class implementing the [dao] layer. It facilitates interactions with NHibernate objects. This class has certain properties that must be initialized:
     <ul>
       <li>line 40: the <i>SessionFactory </i>of NHibernate
       </li>
@@ -1309,7 +1309,7 @@
   </li>
 </ul>
 
-<p>The skeleton of the implementation class for this interface using Spring / NHibernate could be as follows:</p>
+<p>The skeleton of the implementation class for this interface with Spring support (NHibernate) could look like this:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Collections;</span></span>
@@ -1358,7 +1358,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 9: The [PamDaoSpringNHibernate] class correctly implements the [dao] [IPamDao] layer interface. It also derives from the Spring class [HibernateDaoSupport]. This class has a [HibernateTemplate] property that is initialized by the Spring configuration (line 2 below):
+  <li>Line 9: The [PamDaoSpringNHibernate] class correctly implements the [dao] and [IPamDao] layer interfaces. It also derives from the Spring class [HibernateDaoSupport]. This class has a [HibernateTemplate] property that is initialized by the Spring configuration (line 2 below):
   </li>
 </ul>
 
@@ -1369,7 +1369,7 @@
 </code></pre></div>
 
 <ul>
-  <li>In line 1 above, we see that the definition of the [pamdao] object specifies that the <i>init </i>and <i>destroy </i>methods of the [PamDaoSpringNHibernate] class must be executed at specific times. These two methods are indeed present in the class on lines 16 and 21.
+  <li>line 1 above, we see that the definition of the [pamdao] object specifies that the <i>init </i>and <i>destroy </i>methods of the [PamDaoSpringNHibernate] class must be executed at specific times. These two methods are indeed present in the class on lines 16 and 21.
   </li>
   <li>Lines 15, 34: annotations that ensure the annotated method will be executed within a transaction. The attribute <i>ReadOnly=true </i>indicates that the transaction is read-only. The method executed within the transaction may throw an exception. In this case, Spring automatically rolls back the transaction. This annotation eliminates the need to manage a transaction within the method.
   </li>
@@ -1384,13 +1384,13 @@
 </ul>
 <h4 id="13152-useful-methods-of-the-hibernatetemplate-class">13.1.5.2. <span style="color: #4f81bd">Useful methods of the HibernateTemplate class</span></h4>
 <p>We will use the following methods of the <em>HibernateTemplate</em> class:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IList&lt;T&gt; Find&lt;T&gt;(string requete_hql)</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">executes the query HQL and returns a list of objects of type T</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IList&lt;T&gt; Find&lt;T&gt;(string requete_hql, object[])</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">executes a HQL query parameterized by ?. The values of these parameters are provided by the object array.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IList&lt;T&gt; LoadAll&lt;T&gt;()</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns all entities of type <i>T</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IList&lt;T&gt; Find&lt;T&gt;(string requete_hql)</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">executes the query HQL and returns a list of objects of type T</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IList&lt;T&gt; Find&lt;T&gt;(string requete_hql, object[])</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">executes a query HQL parameterized by ?. The values of these parameters are provided by the object array.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IList&lt;T&gt; LoadAll&lt;T&gt;()</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns all entities of type <i>T</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>There are other useful methods that we won’t have the opportunity to use, which allow you to retrieve, save, update, and delete entities:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>T Load&lt;T&gt;(object id)</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">adds the entity of type T with primary key <i>id</i> to the session NHibernate.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>void SaveOrUpdate(object entity)</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">inserts (INSERT) or updates (UPDATE) the <i>entity</i> object depending on whether it has a primary key (UPDATE) or not (INSERT). The absence of a primary key can be configured via the <i>unsaved-values</i> attribute in the entity&#x27;s configuration file. After the <i>SaveOrUpdate</i> operation, the <i>entity</i> object is in the NHibernate session.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>void Delete(object entity)</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">deletes the <i>entity</i> object from session NHibernate.</div></td></tr></table>
 
 <h4 id="13153-implementation-of-the-init-method">13.1.5.3. <span style="color: #4f81bd">Implementation of the init method</span></h4>
-<p>The <em>init</em> method of the [PamDaoSpringNHibernate] class is, by configuration, the method executed after Spring instantiates the class. Its purpose is to cache the simplified employee identities (last name, first name, SS) and the rates of cotisations in local memory. Its code could be as follows.</p>
+<p>The <code>*init</code>* method of the <code>[PamDaoSpringNHibernate]</code> class is, by default, the method executed after Spring instantiates the class. Its purpose is to cache the employees&#x27; simplified identities (last name, first name, SS) and the rates of cotisations in local memory. Its code could be as follows.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content">[<span style="color:#2b91af">Transaction</span>(ReadOnly = <span style="color:#0000ff">true</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> init() {</span></span>
@@ -1414,7 +1414,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 5: A HQL query is executed. It retrieves the SS, Last Name, and First Name fields from all <i>Employee</i> entities. It returns a list of objects. If we had requested the entire Employee record in the form &quot;select e from Employee e&quot;, we would have retrieved a list of objects of type <i>Employee</i>.
+  <li>Line 5: A query HQL is executed. It retrieves the fields SS, LastName, and FirstName for all <i>Employee</i> entities. It returns a list of objects. If we had requested the entire Employee record in the form &quot;select e from Employee e&quot;, we would have retrieved a list of objects of type <i>Employee</i>.
   </li>
   <li>Lines 7–12: This list of objects is copied into an array of objects of type <i>Employee</i>.
   </li>
@@ -1465,7 +1465,7 @@
   </li>
 </ol>
 
-<p>we see that the second solution resulted in simpler code.</p>
+<p>We realize that the second solution resulted in simpler code.</p>
 <h2 id="132-testing-the-dao-layer">13.2. <span style="color: #4f81bd">Testing the [dao] layer</span></h2>
 <h3 id="1321-the-visual-studio-project">13.2.1. <span style="color: #4f81bd">The Visual Studio project</span></h3>
 <p>The Visual Studio project has already been presented. To recap:</p>
@@ -1532,9 +1532,9 @@
   </li>
   <li>lines 13–15: testing the [GetAllIdentitesEmployes] method of the [IPamDao] interface
   </li>
-  <li>Line 18: Test of method [GetEmploye] of interface [IPamDao]
+  <li>line 18: testing the [GetEmploye] method of the [IPamDao] interface
   </li>
-  <li>Line 21: Test of the [GetCotisations] method of the [IPamDao] interface
+  <li>line 21: test of the [GetCotisations] method of the [IPamDao] interface
   </li>
 </ul>
 
@@ -1561,7 +1561,7 @@
   </li>
 </ul>
 <h3 id="1323-unit-tests-with-nunit">13.2.3. <span style="color: #4f81bd">Unit tests with NUnit</span></h3>
-<p>We will now move on to a unit test for NUnit. The Visual Studio project for the [dao] layer will evolve as follows:</p>
+<p>We will now move on to a unit test for NUnit. The Visual Studio project for the [dao] layer will change as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000062B000001DF8EB4E508.png" width="680" height="206" style="display:inline-block; margin:4px;width:17.997cm;height:5.459cm;" class="odt-zoomable" data-zoom-src="images/100000000000062B000001DF8EB4E508.png" /></td></tr></table>
 
 <ul>
@@ -1573,7 +1573,7 @@
   </li>
   <li>to [5], the class [Main.cs] will not be included in DLL [pam-dao-spring-nhibernate]
   </li>
-  <li>to [6], class [NUnit.cs] will be included in DLL [pam-dao-spring-nhibernate]
+  <li>in [6], class [NUnit.cs] will be included in DLL [pam-dao-spring-nhibernate]
   </li>
 </ul>
 
@@ -1692,7 +1692,7 @@ Implement the tests for the [PamDaoSpringNHibernate] class on the machine.
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004EC000001A0DC1C0301.png" width="630" height="208" style="display:inline-block; margin:4px;width:16.669cm;height:5.503cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EC000001A0DC1C0301.png" /></td></tr></table>
 
 <ul>
-  <li>In [1], the entire project is configured by the files [App.config] and [Dao.xml]. The file [App.config] is identical to what it was in the [dao] and [pam-dao-spring-nhibernate] layer project. The same applies to the [Dao.xml] file, except that it declares an additional Spring object from id <i>pammetier</i>. The declaration of the latter is identical to what it was in the [App.config] file of the [pam-metier-dao-nhibernate] project.
+  <li>In [1], the entire project is configured by the files [App.config] and [Dao.xml]. The file [App.config] is identical to what it was in the [dao] and [pam-dao-spring-nhibernate] layer project. The same applies to the [Dao.xml] file, except that it declares an additional Spring object <i>from</i> id. The declaration of the latter is identical to what it was in the [App.config] file of the [pam-metier-dao-nhibernate] project.
   </li>
   <li>In [2], the [pam] folder is identical to what it was in the [metier] layer of the [pam-metier-dao-nhibernate] project
   </li>
@@ -1710,7 +1710,7 @@ Implement the tests for the [PamDaoSpringNHibernate] class on the machine.
 <p>by the unit test [NUnit.cs] executed by the framework NUnit</p>
 </li>
 </ul>
-<p>The new project [pam-metier-dao-spring-nhibernate] can be built by simply copying the [pam-metier-dao-nhibernate] project and then modifying the elements that need to be changed.</p>
+<p>The new project [pam-metier-dao-spring-nhibernate] can be built by simply copying the project [pam-metier-dao-nhibernate] and then modifying the elements that need to be changed.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>After testing, we will generate DLL from the [metier] layer, which we will name [pam-metier-dao-spring-nhibernate]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000060F000001402F3FEC0B.png" width="680" height="140" style="display:inline-block; margin:4px;width:17.997cm;height:3.713cm;" class="odt-zoomable" data-zoom-src="images/100000000000060F000001402F3FEC0B.png" /></td></tr></table>
@@ -1733,15 +1733,15 @@ Implement the tests for the [PamDaoSpringNHibernate] class on the machine.
 <p>The Visual Web Developer project for layer [web] is first obtained by simply copying the folder from the [pam-v7-3tier-nhibernate-multivues-multipages] web project. The project is then renamed [pam-v9-3tier-spring-nhibernate-multivues-multipages]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000042A0000021A7B997313.png" width="533" height="269" style="display:inline-block; margin:4px;width:14.102cm;height:7.117cm;" class="odt-zoomable" data-zoom-src="images/100000000000042A0000021A7B997313.png" /></td></tr></table>
 
-<p>The new web project [pam-v9-3tier-spring-nhibernate-multivues-multipages] differs from the project [pam-v7-3tier-nhibernate-multivues-multipages] in the following ways:</p>
+<p>The new web project [pam-v9-3tier-spring-nhibernate-multivues-multipages] differs from the [pam-v7-3tier-nhibernate-multivues-multipages] project in the following ways:</p>
 <ul>
   <li>In [1], it is configured by the files [Dao.xml] and [Web.config]. [Dao.xml] did not exist in [pam-v7], and the file [Web.config] must include the Spring configuration / NHibernate, whereas in [pam-v7], it only configured NHibernate.
   </li>
-  <li>In [2], the DLL files for the [dao] and [metier] layers are the ones we just built.
+  <li>In [2], the DLL layers from [dao] and [metier] are the ones we just created.
   </li>
 </ul>
 
-<p>The file [Dao.xml] is the one used in the construction of the layer [metier]. The file [Web.config] is the one for [pam-v7] to which we add the Spring configuration / NHibernate configuration found in the [App.config] files of the [dao] and [metier] layers. The [Web.config] file from [pam-v9] is as follows:</p>
+<p>The file [Dao.xml] is the one used to build the layer [metier]. The file [Web.config] is the one from [pam-v7] to which we add the Spring configuration / NHibernate configuration found in the [App.config] files of the [dao] and [metier] layers. The [Web.config] file from [pam-v9] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1777,7 +1777,7 @@ Implement the tests for the [PamDaoSpringNHibernate] class on the machine.
 <p>With the following configuration:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001CD000000FE1B9C55D9.png" width="231" height="127" style="display:inline-block; margin:4px;width:6.1cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD000000FE1B9C55D9.png" /></td></tr></table>
 
-<p>the file [Dao.xml] is copied to the [bin] folder within the web project folder. With the syntax </p>
+<p>the [Dao.xml] file is copied into the [bin] folder within the web project folder. With the syntax </p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">      &lt;</span><span style="color:#a31515">resource</span><span style="color:#0000ff"> </span><span style="color:#ff0000">uri</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">Dao.xml</span>&quot;<span style="color:#0000ff"> /&gt;</span></span></span>
 </code></pre></div>

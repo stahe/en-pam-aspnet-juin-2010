@@ -453,10 +453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-management-of-posted-values" class="md-nav__link">
+  <a href="#23-handling-posted-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3. Management of Posted Values
+        2.3. Handling Posted Values
       
     </span>
   </a>
@@ -717,14 +717,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie---version-5---aspnet-application--web-service.html" class="md-nav__link">
+      <a href="the-application-simupaie---version-5---aspnet--web-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. The [SimuPaie] – version 5 – ASP.NET application / web service
+    9. The application [SimuPaie] – version 5 – ASP.NET / web service
   
 
     
@@ -771,14 +771,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie-application---version-7---aspnet--multi-views--multi-pages.html" class="md-nav__link">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. The [SimuPaie] application – version 7 – ASP.NET / multi-views / multi-pages
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
   
 
     
@@ -892,7 +892,7 @@
 <h1 id="2-a-quick-introduction-to-aspnet">2. <span style="color: #365f91">A Quick Introduction to ASP.NET</span></h1>
 <p>Here, we aim to introduce, using a few examples, the concepts of ASP.NET that will be useful to us later in this document. This introduction does not cover the intricacies of client/server communication in a web application. For that, you can read:</p>
 <ul>
-  <li><b>ASP.NET Programming </b>[<a href="https://stahe.github.io/en-aspnet1.1-avril-2004/"><u><span style="color: #000080">Web Development with ASP.NET 1.1 (2004)</span></u></a> ]
+  <li><b>ASP.NET Programming </b>[<a href="https://stahe.github.io/en-aspnet1.1-avril-2004/"><u><span style="color: #000080">Web Development with ASP.NET 1.1 (2004)</span></u></a>]
   </li>
 </ul>
 
@@ -1070,7 +1070,7 @@
 </code></pre></div>
 
 <p>Note that the class defined in the files [Default.aspx.cs] and [Default.aspx.designer.cs] is the same (line 10): <em>Intro._Default</em>. It is the <em>partial</em> keyword that makes it possible to extend a class declaration across multiple files, in this case two.</p>
-<p>In line 10 above, we see that the class [_Default] extends the class [Page] and inherits its events. One of these is the <em>Load</em> event, which occurs when the page is loaded by the web server. Line 12: the <em>Page_Load</em> method, which handles the page’s <em>Load</em> event. This is typically where the page is initialized before being displayed in the client’s browser. Here, the <em>Page_Load</em> method does nothing.</p>
+<p>In line 10 above, we see that the class [_Default] extends the class [Page] and inherits its events. One of these is the <em>Load</em> event, which occurs when the page is loaded by the web server. Line 12: the <em>Page_Load</em> method handles the page’s <em>Load</em> event. This is typically where the page is initialized before being displayed in the client’s browser. Here, the <em>Page_Load</em> method does nothing.</p>
 <p>The class associated with a web page—in this case, the <em>Intro._Default</em> class—is created at the start of the client request and destroyed once the response has been sent to the client. It cannot therefore be used to store information between requests. To do this, you must use the concept of <em>a user session</em>.</p>
 <h2 id="22-events-of-a-web-page-aspnet">2.2. <span style="color: #4f81bd">Events of a web page ASP.NET</span></h2>
 <p>We build the following [Default.aspx] page:</p>
@@ -1175,7 +1175,7 @@
   </li>
 </ul>
 
-<p>Handling each of these three events involves adding a message to the <em>Listbox</em> component named <em>ListBoxEvts</em>. This message displays the event’s time and name. Each message is placed at the top of the list. Therefore, the messages at the top of the list are the most recent.</p>
+<p>Handling each of these three events involves adding a message to the <em>Listbox</em> component named <em>ListBoxEvts</em>. This message displays the time and name of the event. Each message is placed at the top of the list. Therefore, the messages at the top of the list are the most recent.</p>
 <p>When the project is run, the following page is displayed:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002E00000024BCA64BD9F.png" width="368" height="294" style="display:inline-block; margin:4px;width:9.737cm;height:7.766cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E00000024BCA64BD9F.png" /></td></tr></table>
 
@@ -1255,7 +1255,7 @@
 <ul>
   <li>The event <i>ButtonValider_Click </i>occurred after the event <i>Page_Load</i>. Therefore, it is this handler that can decide whether to transfer or redirect to a page P2.
   </li>
-  <li>The list of events [4] retained the two events displayed during the initial loading GET of the page [Default.aspx]. This is surprising given that the [Default.aspx] page was recreated during POST. We should find the [Default.aspx] page with its design values, and therefore an empty <i>ListBox</i>. The execution of the <i>Page_Load </i>and <i>ButtonValider_Click </i>handlers should then place two messages there. However, there are four. This is explained by the mechanism of <b>VIEWSTATE</b>. During the initial GET, the web server sends the [Default.aspx] page with a HTML tag <i>&lt;input type=&quot;hidden&quot; ...&gt; </i>called <b>a hidden field </b>(line 10 below).
+  <li>The list of events [4] retained the two events displayed during the initial loading GET of the page [Default.aspx]. This is surprising given that the page [Default.aspx] was recreated during POST. We should find the page [Default.aspx] with its design values, and therefore an empty <i>ListBox</i>. The execution of the <i>Page_Load </i>and <i>ButtonValider_Click </i>handlers should then place two messages there. However, there are four. This is explained by the mechanism of <b>VIEWSTATE</b>. During the initial GET, the web server sends the [Default.aspx] page with a HTML tag <i>&lt;input type=&quot;hidden&quot; ...&gt; </i>called <b>a hidden field </b>(line 10 below).
   </li>
 </ul>
 
@@ -1338,7 +1338,7 @@
   </li>
 </ul>
 
-<h2 id="23-management-of-posted-values">2.3. <span style="color: #4f81bd">Management of Posted Values</span></h2>
+<h2 id="23-handling-posted-values">2.3. <span style="color: #4f81bd">Handling Posted Values</span></h2>
 <p>Here, we will focus on the values posted by the two <em>TextBox</em> when the user clicks the [Valider] button. The [Default.aspx] page in [Design] mode changes as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001EF0000027CF9C10A8A.png" width="248" height="318" style="display:inline-block; margin:4px;width:6.549cm;height:8.414cm;" class="odt-zoomable" data-zoom-src="images/10000000000001EF0000027CF9C10A8A.png" /></td></tr></table>
 
@@ -1402,9 +1402,9 @@
   </li>
   <li>in [3], the <i>TextBox components </i>have regained their posted values via the mechanism of the activated VIEWSTATE
   </li>
-  <li>in [4], the messages from the <i>ListBoxEvts</i> component originate from the <i>Page_Init</i>, <i>Page_Load</i>, <i>ButtonValider_Click, </i>and a disabled VIEWSTATE
+  <li>in [4], the messages from the <i>ListBoxEvts</i> component originate from the methods <i>Page_Init</i>, <i>Page_Load</i>, <i>ButtonValider_Click</i>, and a disabled VIEWSTATE
   </li>
-  <li>in [5]; the <i>LabelPost</i> component obtained its value from the <i>ButtonValider_Click</i> method. The two values entered by the user in the two <i>TextBox and </i>[1] fields were successfully retrieved.
+  <li>in [5]; the <i>LabelPost</i> component obtained its value from the <i>ButtonValider_Click</i> method. The two values entered by the user in <i>TextBox</i> and [1] were successfully retrieved.
   </li>
 </ul>
 
@@ -1416,7 +1416,7 @@
   </li>
 </ul>
 
-<p>The [Default.aspx] page evolves as follows:</p>
+<p>The [Default.aspx] page is updated as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;Intro._Default&quot;</span> %&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1590,7 +1590,7 @@
   </li>
   <li>Lines 9–15: Case where one of the validators has failed
   </li>
-  <li>lines 16-19: case where all validators have passed
+  <li>lines 16–19: case where all validators have passed
   </li>
 </ul>
 
@@ -1608,7 +1608,7 @@
   </li>
 </ul>
 
-<p>The [2] error messages were displayed by the validators executed on the client side by the page&#x27;s Javascript code. There was no POST sent to the server, as shown by the label of the posted elements [3].</p>
+<p>The [2] error messages were displayed by the validators executed on the client side by the page’s Javascript code. There was no POST sent to the server, as shown by the label of the posted elements [3].</p>
 <ul>
   <li>In [4], an example of execution in the case where:
     <ul>
@@ -1657,7 +1657,7 @@
   </li>
   <li>a specific user’s memory, or session, which contains read/write data and is accessible to successive requests from the same user.
   </li>
-  <li>Not shown above, there is request memory, or request context. A user’s request may be processed by several successive ASPX pages. The request context allows Page 1 to pass information to Page 2.
+  <li>Not shown above, there is a request memory, or request context. A user’s request may be processed by several successive ASPX pages. The request context allows Page 1 to pass information to Page 2.
   </li>
 </ul>
 
@@ -1678,7 +1678,7 @@
 <ul>
   <li>In [4], two new files have been added to the project
   </li>
-  <li>In [5], display the markup for [Global.asax]
+  <li>in [5], display the markup for [Global.asax]
   </li>
 </ul>
 
@@ -1743,7 +1743,7 @@
 </code></pre></div>
 
 <ul>
-  <li>line 5: the global application class derives from the <i>HttpApplication</i> class
+  <li>Line 5: The global application class derives from the <i>HttpApplication</i> class
   </li>
 </ul>
 
@@ -1761,7 +1761,7 @@
   </li>
 </ul>
 
-<p>The [Application_Start] method is often used to initialize the application based on information contained in [Web.Config]. The one generated during the initial creation of a project looks like this:</p>
+<p>The [Application_Start] method is often used to initialize the application based on information contained in [Web.Config]. The one generated upon initial project creation looks like this:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1999,13 +1999,13 @@
 <h2 id="26-handling-get-post-when-loading-a-page">2.6. <span style="color: #4f81bd">Handling GET / POST when loading a page</span></h2>
 <p>We mentioned that there are two types of requests to a ASPX page:</p>
 <ul>
-  <li>the initial browser request made with a HTTP or GET command. The server responds by sending the requested page. We will assume that this page is a form, c.a.d, and that the sent page ASPX contains a &lt;form runat=&quot;server&quot;...&gt; tag.
+  <li>the initial request from the browser made with a HTTP or GET command. The server responds by sending the requested page. We will assume that this page is a form, c.a.d, and that the sent page ASPX contains a &lt;form runat=&quot;server&quot;...&gt; tag.
   </li>
   <li>The following requests are made by the browser in response to certain user actions on the form. The browser then makes a request HTTP POST.
   </li>
 </ul>
 
-<p>Whether it is a GET request or a POST request, the [Page_Load] method is executed. During GET, this method is typically used to initialize the page sent to the client browser. Subsequently, through the mechanism of VIEWSTATE, the page remains initialized and is modified only by the event handlers that trigger POST. There is no need to reinitialize the page in <em>Page_Load</em>. Hence the need for this method to determine whether the client request is a GET or a POST.</p>
+<p>Whether it is a GET request or a POST request, the [Page_Load] method is executed. In GET, this method is typically used to initialize the page sent to the client browser. Subsequently, through the mechanism of VIEWSTATE, the page remains initialized and is modified only by the event handlers that trigger POST. There is no need to reinitialize the page in <em>Page_Load</em>. Hence the need for this method to determine whether the client request is a GET or a POST.</p>
 <p>Let&#x27;s look at the following example. A drop-down list is added to page [Default.aspx]. The contents of this list will be defined in the <em>Page_Load</em> manager for query GET:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001B400000169D3B5F0D8.png" width="218" height="181" style="display:inline-block; margin:4px;width:5.768cm;height:4.777cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B400000169D3B5F0D8.png" /></td></tr></table>
 
@@ -2186,7 +2186,7 @@
 </code></pre></div>
 
 <p>The value of the <em>EnableViewState</em> property for these components could be as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Component</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Posted value</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>EnableViewState</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Why</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>TextBoxNom</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">value entered in TextBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The component value is posted</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>TextBoxAge</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>RequiredFieldValidatorNom</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">none</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">no concept of component value</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>RequiredFieldValidatorAge</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>RangeValidatorAge</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelPost</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">none</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">gets its value from an event handler</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelValidation</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelErreursSaisie</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelGlobal</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelNbRequetes</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>DropDownListNoms</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&quot;value&quot; of the selected element</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">True</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">We want to keep the list content across requests without having to regenerate it</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>ListBoxEvts</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&quot;value&quot; of the selected element</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The list content is generated by an event handler</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>ButtonValider</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">button label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The component retains its design value</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Component</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Posted value</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>EnableViewState</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>Why</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>TextBoxNom</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">value entered in TextBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The component value is posted</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>TextBoxAge</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>RequiredFieldValidatorNom</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">none</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">No concept of component value</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>RequiredFieldValidatorAge</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>RangeValidatorAge</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelPost</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">none</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">gets its value from an event handler</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelValidation</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelErreursSaisie</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelGlobal</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>LabelNbRequetes</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">same</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>DropDownListNoms</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&quot;value&quot; of the selected element</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">True</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">We want to keep the list&#x27;s content across requests without having to regenerate it</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>ListBoxEvts</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&quot;value&quot; of the selected element</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The list content is generated by an event handler</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>ButtonValider</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">button label</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">False</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The component retains its design value</div></td></tr></table>
 
 <h2 id="28-forwarding-from-one-page-to-another">2.8. <span style="color: #4f81bd">Forwarding from one page to another</span></h2>
 <p>Until now, operations GET and POST always returned the same page [Default.aspx]. We will consider the case where a request is processed by two successive ASPX pages, [Default.aspx] and [Page1.aspx], and where the latter is returned to the client. Furthermore, we will see how page [Default.aspx] can pass information to page [Page1.aspx] via a memory we will call the request memory.</p>
@@ -2300,7 +2300,7 @@
   </li>
   <li>In [4], the message created in [Default.aspx] and displayed by [Page1.aspx]
   </li>
-  <li>in [5], the URL displayed in the browser is that of page [Default.aspx]
+  <li>in [5], the URL displayed in the browser is that of the page [Default.aspx]
   </li>
 </ul>
 <h2 id="29-redirecting-from-one-page-to-another">2.9. <span style="color: #4f81bd">Redirecting from one page to another</span></h2>
@@ -2308,7 +2308,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F000000137AD49199E.png" width="632" height="155" style="display:inline-block; margin:4px;width:16.722cm;height:4.113cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F000000137AD49199E.png" /></td></tr></table>
 
 <ul>
-  <li>In [1], the browser sends a request (POST) to the page [Default.aspx]. This page processes the request and sends a so-called redirect response to the browser. This response is a simple HTTP stream (lines of text) instructing the browser to redirect to another Url [Page2.aspx]. [Default.aspx] does not send a HTML stream in this first response.
+  <li>In [1], the browser sends a request (POST) to the page [Default.aspx]. This page processes the request and sends a so-called redirect response to the browser. This response is a simple stream of text (HTTP) instructing the browser to redirect to another page (Url). [Default.aspx] does not send a HTML stream in this first response.
   </li>
   <li>In [2], the browser makes a request GET to the page [Page2.aspx]. This is then sent in response to the browser.
   </li>
@@ -2324,7 +2324,7 @@
   </li>
   <li>in [2], the visual appearance of [Page2.aspx]
   </li>
-  <li>in [3], we are adding a <i>LinkButton</i> component to the [Default.aspx] page, which will redirect the user to [Page2.aspx].
+  <li>in [3], we are adding a component <i>LinkButton </i>[4] to the page [Default.aspx], which will redirect the user to [Page2.aspx].
   </li>
 </ul>
 

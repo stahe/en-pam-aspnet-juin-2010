@@ -601,14 +601,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie---version-5---aspnet-application--web-service.html" class="md-nav__link">
+      <a href="the-application-simupaie---version-5---aspnet--web-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. The [SimuPaie] – version 5 – ASP.NET application / web service
+    9. The application [SimuPaie] – version 5 – ASP.NET / web service
   
 
     
@@ -655,14 +655,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie-application---version-7---aspnet--multi-views--multi-pages.html" class="md-nav__link">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. The [SimuPaie] application – version 7 – ASP.NET / multi-views / multi-pages
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
   
 
     
@@ -775,7 +775,7 @@
 
 <p><span id="etude-de-cas" name="etude-de-cas" class="odt-bookmark-anchor"></span></p>
 <h1 id="3-the-case-study">3. <span style="color: #365f91">The Case Study</span></h1>
-<p>We want to write a .NET application that allows a user to simulate payroll calculations for child care providers at the &quot;Maison de la petite enfance&quot; association in a municipality. We will focus as much on the organization of the application&#x27;s DotNet code as on the code itself.</p>
+<p>We want to write a .NET application that allows a user to simulate payroll calculations for child care providers at the &quot;Maison de la petite enfance&quot; association in a municipality. We will focus as much on the organization of the application’s DotNet code as on the code itself.</p>
 <p><span id="refheadingtoc744714255346799" name="refheadingtoc744714255346799" class="odt-bookmark-anchor"></span>
 <span id="bd" name="bd" class="odt-bookmark-anchor"></span></p>
 <h2 id="31-the-database">3.1. <span style="color: #4f81bd"><strong>The database &quot;</strong> <strong>&quot;</strong></span></h2>
@@ -789,27 +789,27 @@
 
 <p><strong>Structure</strong>:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C80000009466CD2327.png" width="160" height="118" style="display:inline-block; margin:4px;width:4.23cm;height:3.129cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C80000009466CD2327.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SSnuméro
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> Employee’s social security number - key primaireNOMnom</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">employee&#x27;s social security number - primary key</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>NOM
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> employee</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>first name
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">employee&#x27;s last name</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>prenom
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">prénomADRESSEson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">first name</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ADRESSE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> adresseVILLEsa</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">their address</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>VILLE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> villeCODEPOSTALson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">his/her city</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CODEPOSTAL
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> code postalINDICEson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">his/her ZIP code</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>INDICE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> Processing index - foreign key on field [INDICE] in table [INDEMNITES]</div></td></tr></table></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">his processing index - foreign key in field [INDICE] of table [INDEMNITES]</div></td></tr></table></td></tr></table>
 
 <p>Its content could be as follows:</p>
 <p><img src="images/10000000000001EB0000003DA63DA382.png" width="393" height="49" style="width:10.389cm;height:1.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB0000003DA63DA382.png" /></p>
@@ -827,25 +827,25 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Table INDEMNITES : rassemble les différentes indemnités dépendant de l&#39;employee index
 </code></pre></div>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C900000076FBDB18D6.png" width="161" height="94" style="display:inline-block; margin:4px;width:4.249cm;height:2.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C900000076FBDB18D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>INDICEindice
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>INDICE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> salary index - key primaireBASEHEUREprix</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">salary index - primary key</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>BASEHEURE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> net in euros for one hour of gardeENTRETIENJOURindemnité</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">net price in euros for one hour of on-call duty</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ENTRETIENJOUR
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> maintenance in euros per day of gardeREPASJOURindemnité</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">daily allowance in euros per day of on-call duty</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>REPASJOUR
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> meal allowance in euros per day of gardeINDEMNITESCPindemnité</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Meal allowance in euros per day of care</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>INDEMNITESCP
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> for paid leave. This is a percentage to be applied to the base salary.</div></td></tr></table></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Paid vacation allowance. This is a percentage applied to the base salary.</div></td></tr></table></td></tr></table>
 
 <p>Its content could be as follows:</p>
 <p><img src="images/100000000000017600000040A8082BF8.png" width="299" height="51" style="width:7.92cm;height:1.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017600000040A8082BF8.png" /></p>
-<p>Note that allowances may vary from one child care provider to another. They are linked to a specific child care provider via that provider’s pay grade. Thus, <em>Ms. Marie Jouveinal,</em> who has a pay grade of 2 (table EMPLOYES), has an hourly wage of 2.1 euros (table INDEMNITES).</p>
+<p>Note that allowances may vary from one child care provider to another. They are linked to a specific child care provider via their pay grade. Thus, <em>Ms. Marie Jouveinal,</em> who has a pay grade of 2 (table EMPLOYES), has an hourly wage of 2.1 euros (table INDEMNITES).</p>
 <p>The relationships between the three tables are as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000025F0000019D9AFFDD0F.png" width="304" height="207" style="display:inline-block; margin:4px;width:8.031cm;height:5.465cm;" class="odt-zoomable" data-zoom-src="images/100000000000025F0000019D9AFFDD0F.png" /></td></tr></table>
 
@@ -855,7 +855,7 @@
 
 <p><span id="attachsqlserver" name="attachsqlserver" class="odt-bookmark-anchor"></span>The [dbpam.mdf, dbpam_log.ldf] files can be transferred to another machine and reattached to the SGBD SQL Server Express on that machine. Here is how to do it:</p>
 <ul>
-  <li>The BD and [dbpam] files are duplicated in a folder
+  <li>The files from BD and [dbpam] are duplicated in a folder
   </li>
 </ul>
 
@@ -875,9 +875,9 @@
 <ol>
   <li>right-click on [Databases] / Attach
   </li>
-  <li>Select the [dbpam.mdf] file via a button ([Add] not shown)
+  <li>Select the [dbpam.mdf] file using a button ([Add] not shown)
   </li>
-  <li>The attached file will create a BD file that must not already exist. Here, in the [Attach As] field, the new BD file has been named [dbpam2].
+  <li>The attached file will create a BD file that must not already exist. Here, in the [Attach As] field, we have named the new BD file [dbpam2].
   </li>
   <li>We can see the new BD and its tables
   </li>
@@ -890,12 +890,12 @@
 <p>We will now explain how to calculate a child care provider’s monthly salary. As an example, we will use the salary of Ms. Marie Jouveinal, who worked 150 hours over 20 days during the pay period.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The following factors are taken into account:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">[<span style="background-color:#ffcc99">TOTALHEURES</span>]: total des</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> hours worked in the</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> heures travaillées dans le</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> month</span></span>
 </code></pre></div>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">[<span style="background-color:#ffcc99">TOTALJOURS</span>]: total des jours</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> worked in the month</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> travaillés dans le mois</span></span>
 </code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[TOTALHEURES]=150
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[TOTALJOURS]= 20
@@ -909,13 +909,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[SALAIREBASE]=(150*[2.1])*(1+0.15)= 362,25
 </code></pre></div>
 </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">A number of social security contributions must be deducted from this base salary:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">General social security contribution</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> and debt</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> to debt repayment</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Contribution sociale</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> généralisée et contribution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> au remboursement de la dette</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> sociale : <span style="background-color:#ffcc99">[SALAIREBASE]*[CSGRDS/100]</span></span></span>
 </code></pre></div>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">Deductible</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Contribution sociale</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> deductible:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> <span style="background-color:#ffcc99">[SALAIREBASE]*[CSGD/100]</span></span></span>
 </code></pre></div>
@@ -977,15 +977,15 @@
   </li>
   <li>in [2], the payroll application processes it.
   </li>
-  <li>It may then need data from the database. It then sends a query to the ADO.NET provider for the SGBD used by [4].
+  <li>It may then need data from the database. It then sends a query to the ADO.NET provider of the SGBD used by [4].
   </li>
-  <li>The provider processes the [5] database and returns its results to the ADO.NET provider, which in turn passes them back to the application
+  <li>The latter queries the [5] database and returns its results to the ADO.NET provider, which in turn passes them back to the application
   </li>
   <li>which processes these results and generates a response [5] for the user
   </li>
 </ul>
 
-<p>We will now review the main interfaces provided by an ADO.NET provider to its clients and [3] components.</p>
+<p>We will now review the main interfaces provided by an ADO.NET provider to its clients and [3].</p>
 <p>In <strong>connected</strong> mode, the application:</p>
 <ol>
   <li>opens a connection to the data source
@@ -1017,13 +1017,13 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Opens the connection to the database defined by <i>ConnectionString</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Close
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Closes the connection</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">closes the connection</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>BeginTransaction
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">starts a transaction.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>State
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Connection status: <i>ConnectionState.Closed</i>, <i> ConnectionState.Open</i>, <i> ConnectionState.Connecting</i>, <i> ConnectionState.Executing</i>,  <i>ConnectionState.Fetching</i>, <i> ConnectionState.Broken</i></div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Connection status: <i>ConnectionState.Closed</i>,  <i>ConnectionState.Open</i>, <i> ConnectionState.Connecting</i>, <i> ConnectionState.Executing</i>, <i> ConnectionState.Fetching</i>, <i> ConnectionState.Broken</i></div></td></tr></table>
 
 <p>If <em>Connection</em> is a class that implements the <em>IDbConnection</em> interface, the connection can be opened as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
@@ -1037,7 +1037,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>CommandType
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">indicates what to execute -  takes its values from an enumeration:</div><div style="margin:0 0 0.5em 0">- <i>CommandType.Text</i>: executes the command SQL defined in the property <i>CommandText</i>. This is the default value.</div><div style="margin:0 0 0.5em 0">- <i>CommandType.StoredProcedure</i>: executes a stored procedure in the database</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">specifies what to execute -  takes its values from an enumeration:</div><div style="margin:0 0 0.5em 0">- <i>CommandType.Text</i>: executes the command SQL defined in the property <i>CommandText</i>. This is the default value.</div><div style="margin:0 0 0.5em 0">- <i>CommandType.StoredProcedure</i>: executes a stored procedure in the database</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>CommandText
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">- the text of the SQL command to execute if CommandType= <i>CommandType.Text</i></div><div style="margin:0 0 0.5em 0">- the name of the stored procedure to execute if CommandType = <i>CommandType.StoredProcedure</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
@@ -1064,9 +1064,9 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">to create the parameters <i>IDbParameter</i> for a parameterized SQL command.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Prepare
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">optimizes the execution of a parameterized query when it is executed multiple times with different parameters.</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">allows you to optimize the execution of a parameterized query when it is executed multiple times with different parameters.</div></td></tr></table>
 
-<p>If <em>Command</em> is a class implementing the <em>IDbCommand</em> interface, the execution of a SQL command without a transaction will take the following form:</p>
+<p>If <em>Command</em> is a class that implements the <em>IDbCommand</em> interface, executing a SQL command without a transaction will take the following form:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-42-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-42-3"> 3</a></span>
@@ -1127,7 +1127,7 @@
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">M</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>IsDBNull(i) </i>returns <i>True </i>if column i of the current row in table <i>IDataReader </i>has no value, which is represented by the value SQL NULL.</div></td></tr></table>
 
-<p>The evaluation of a <em>IDataReader</em> object often looks like the following:</p>
+<p>The evaluation of an object <em>IDataReader</em> often looks like the following:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-51-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-51-3"> 3</a></span>
@@ -1148,7 +1148,7 @@
 <span class="normal"><a href="#__codelineno-51-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="o">//</span><span class="w"> </span><span class="n">opening</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span>
 <a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="n">connexion</span><span class="o">=</span><span class="p">...</span>
 <a id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="n">connexion</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
-<a id="__codelineno-51-4" name="__codelineno-51-4"></a><span class="o">//</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="n">picking</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4"></a><span class="o">//</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="n">preparation</span>
 <a id="__codelineno-51-5" name="__codelineno-51-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">commande</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
 <a id="__codelineno-51-6" name="__codelineno-51-6"></a><span class="n">commande</span><span class="p">.</span><span class="k">Connection</span><span class="o">=</span><span class="n">connexion</span><span class="p">;</span>
 <a id="__codelineno-51-7" name="__codelineno-51-7"></a><span class="o">//</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="n">execution</span>

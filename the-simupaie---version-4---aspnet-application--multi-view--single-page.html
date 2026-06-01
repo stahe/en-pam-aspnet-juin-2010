@@ -18,7 +18,7 @@
         <link rel="prev" href="the-simupaie-application---version-3---3-tier-architecture-with-nhibernate.html">
       
       
-        <link rel="next" href="the-simupaie---version-5---aspnet-application--web-service.html">
+        <link rel="next" href="the-application-simupaie---version-5---aspnet--web-service.html">
       
       
         
@@ -676,10 +676,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#857-the-view-erreurs" class="md-nav__link">
+  <a href="#857-the-erreurs-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.5.7. The view [Erreurs]
+        8.5.7. The [Erreurs] view
       
     </span>
   </a>
@@ -822,14 +822,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie---version-5---aspnet-application--web-service.html" class="md-nav__link">
+      <a href="the-application-simupaie---version-5---aspnet--web-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. The [SimuPaie] – version 5 – ASP.NET application / web service
+    9. The application [SimuPaie] – version 5 – ASP.NET / web service
   
 
     
@@ -876,14 +876,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie-application---version-7---aspnet--multi-views--multi-pages.html" class="md-nav__link">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. The [SimuPaie] application – version 7 – ASP.NET / multi-views / multi-pages
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
   
 
     
@@ -1002,14 +1002,14 @@
 <p>Server components and application controller</p>
 </li>
 <li>
-<p>MVC application examples with ASP server components</p>
+<p>Examples of MVC applications with ASP server components</p>
 </li>
 </ul>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>We will now examine a version derived from the three-tier ASP.NET application discussed previously, which adds new features to it. The architecture of our application evolves as follows:</p>
+<p>We will now examine a version derived from the three-tier ASP.NET application studied previously, which adds new features to it. The architecture of our application evolves as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051F000002376AAA1C8B.png" width="656" height="284" style="display:inline-block; margin:4px;width:17.344cm;height:7.502cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F000002376AAA1C8B.png" /></td></tr></table>
 
-<p>The processing of a client request proceeds through the following steps:</p>
+<p>The processing of a client request proceeds as follows:</p>
 <ol>
   <li>The client makes a request to the application.
   </li>
@@ -1037,7 +1037,7 @@
   </li>
 </ul>
 
-<p>Only basic applications can support this MVC implementation. In fact, with each request, all components of the [Default.aspx] page are instantiated, meaning all views. When sending the response, one of them is chosen by the application’s control code simply by making the corresponding [View] component visible and hiding the others. If the application has many views, the [Default.aspx] page will have many components, and its instantiation cost can become prohibitive. Furthermore, the [Design] mode of the page risks becoming unmanageable because it has too many views. This type of architecture is suitable for applications with few views and developed by a single person. When it can be adopted, it allows for the development of a MVC architecture very simply. This is what we will see in this new version.</p>
+<p>Only basic applications can support this MVC implementation. This is because, with each request, all components of the [Default.aspx] page are instantiated, including all views. When sending the response, one of them is chosen by the application’s control code simply by making the corresponding [View] component visible and hiding the others. If the application has many views, the [Default.aspx] page will have many components, and the cost of instantiating them can become prohibitive. Furthermore, the [Design] mode of the page may become unmanageable because it has too many views. This type of architecture is suitable for applications with few views and developed by a single person. When it can be adopted, it allows for the development of a MVC architecture very simply. This is what we will see in this new version.</p>
 <h2 id="81-the-applications-views">8.1. <span style="color: #4f81bd">The application’s views</span></h2>
 <p>The different views presented to the user will be as follows:</p>
 <ul>
@@ -1071,9 +1071,9 @@
   </li>
   <li>the application&#x27;s configuration file [Web.config] – is identical to that of the previous application.
   </li>
-  <li>The file [Global.cs], which handles the web application’s events—in this case, its startup—is identical to that of the previous application, except that it also handles the start of the user session.
+  <li>The [Global.cs] file, which handles the web application&#x27;s events—specifically its startup—is identical to that of the previous application, except that it also handles the start of the user session.
   </li>
-  <li>The application form [Default.aspx] – contains the various views of the application.
+  <li>The application&#x27;s [Default.aspx] form contains the various views of the application.
   </li>
 </ul>
 
@@ -1122,9 +1122,9 @@
 </code></pre></div>
 
 <ul>
-  <li>lines 27–34: We handle the start of the session. We will place the list of simulations performed by the user in this session.
+  <li>lines 27–34: we handle the start of the session. We will place the list of simulations performed by the user in this session.
   </li>
-  <li>line 30: An empty list of simulations is created. A simulation is an object of type [Simulation], which we will describe in detail shortly.
+  <li>line 30: an empty list of simulations is created. A simulation is an object of type [Simulation], which we will describe in detail shortly.
   </li>
   <li>line 31: the list of simulations is placed in the session associated with the &quot;simulations&quot; key
   </li>
@@ -1132,7 +1132,7 @@
 <h2 id="84-the-simulation-class">8.4. <span style="color: #4f81bd"><strong>The [Simulation] class</strong></span></h2>
 <p>An object of type [Simulation] is used to encapsulate a row of the simulation table:</p>
 <p><img src="images/1000000000000336000000EB676014B3.png" width="575" height="164" style="width:15.221cm;height:4.352cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000336000000EB676014B3.png" /></p>
-<p>Its code is as follows:</p>
+<p>Here is the code:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Pam.Web</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
@@ -1175,7 +1175,7 @@
 <p>The fields of the class correspond to the columns of the simulation table.</p>
 <h2 id="85-page-defaultaspx">8.5. <span style="color: #4f81bd">Page [Default.aspx]</span></h2>
 <h3 id="851-overview">8.5.1. <span style="color: #4f81bd">Overview</span></h3>
-<p>The [Default.aspx] page contains several [View] components, one for each view. Its structure is as follows:</p>
+<p>The [Default.aspx] page contains several [View] components, one for each view. Its skeleton is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#ff0000">CodeFile</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;pam_v4.PagePam&quot;</span> %&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1266,9 +1266,9 @@
   </li>
   <li>line 33: Note the attribute <i>CausesValidation=&quot;False&quot;</i>, which ensures that the page validators will not be executed <b>implicitly </b>when the link is clicked. When this attribute is absent, its default value is <i>True</i>. Page validation can be performed <b>explicitly </b>in the server-side code using the <i>Page.Validate</i> operation.
   </li>
-  <li>lines 53–57: a [MultiView] component with a single view, [VueSaisies]. For this reason, the view number to display has been hardcoded on line 53: <i>ActiveViewIndex=&quot;0&quot; </i>
+  <li>lines 53–57: a [MultiView] component with a single [VueSaisies] view. For this reason, the view number to display has been hardcoded on line 53: <i>ActiveViewIndex=&quot;0&quot; </i>
   </li>
-  <li>Lines 53–67: a [MultiView] component with four views: the [VueSimulation] view on lines 59–61, the view [VueSimulations] lines 62–64, the view [VueSimulationsVides] lines 65–67, the view [VueErreurs] lines 68–70. A [MultiView] component displays only one view at a time. To display view #i of the <i>Views2</i> component, write the following code:
+  <li>Lines 53–67: a [MultiView] component with four views: the [VueSimulation] view on lines 59–61, the view [VueSimulations] on lines 62–64, the view [VueSimulationsVides] on lines 65–67, and the view [VueErreurs] on lines 68–70. A [MultiView] component displays only one view at a time. To display view #i of the <i>Views2</i> component, write the following code:
   </li>
 </ul>
 
@@ -1297,14 +1297,14 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">LinkButtonEnregistrerSimulation</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">saves the current simulation to the simulation list</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>6
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">LinkButtonTerminerSession</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">exits the current session</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">LinkButton</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">LinkButtonTerminerSession</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">ends the current session</div></td></tr></table>
 
 <p><span id="3tier-multivues-saisies" name="3tier-multivues-saisies" class="odt-bookmark-anchor"></span></p>
 <h3 id="853-the-view-saisies">8.5.3. <span style="color: #4f81bd">The view [Saisies]</span></h3>
 <p>The component [View] named [VueSaisies] is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000046C000000B51AE0A667.png" width="566" height="90" style="display:inline-block; margin:4px;width:14.975cm;height:2.394cm;" class="odt-zoomable" data-zoom-src="images/100000000000046C000000B51AE0A667.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>No.</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Last Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>No.</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Type</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Name</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">DropDownList</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">ComboBoxEmployes</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Contains a list of employee names</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
@@ -1433,7 +1433,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001C70000004025D47492.png" width="319" height="45" style="display:inline-block; margin:4px;width:8.43cm;height:1.185cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C70000004025D47492.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span id="3tier-multivues-erreurs" name="3tier-multivues-erreurs" class="odt-bookmark-anchor"></span></p>
-<h3 id="857-the-view-erreurs">8.5.7. <span style="color: #4f81bd">The view [Erreurs]</span></h3>
+<h3 id="857-the-erreurs-view">8.5.7. <span style="color: #4f81bd">The [Erreurs] view</span></h3>
 <p>The component [View] named [VueErreurs] is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000021B000001057F011E85.png" width="270" height="131" style="display:inline-block; margin:4px;width:7.131cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/100000000000021B000001057F011E85.png" /></td></tr></table>
 
@@ -1454,7 +1454,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 2: &lt;<i>ItemTemplate</i>&gt; defines the code that will be repeated for each element in the data source.
+  <li>Line 2: &lt;<i>ItemTemplate</i>&gt; defines the code that will be repeated for each item in the data source.
   </li>
   <li>line 4: displays the value of the expression <i>Container.DataItem, </i>which refers to the current element in the data source. Since this element is an object, the <i>ToString</i> method of this object is used to include it in the HTML flow of the page. Our collection of objects will be a <i>List(Of String) </i>collection containing error messages. Lines 3–5 will include <i>&lt;li&gt;Message&lt;/li&gt; </i>sequences in the page’s HTML flow.
   </li>
@@ -1465,7 +1465,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051F0000023DAC5DF3C0.png" width="656" height="287" style="display:inline-block; margin:4px;width:17.344cm;height:7.581cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F0000023DAC5DF3C0.png" /></td></tr></table>
 
 <ul>
-  <li>[Default.aspx.cs], which is the control code for the single page [Default.aspx], is the application controller.
+  <li>[Default.aspx.cs], which is the control code for the single page, and [Default.aspx], which is the application controller.
   </li>
   <li>[Global] is the object of type [HttpApplication] that initializes the application and has a reference to the [métier] layer.
   </li>
@@ -1543,7 +1543,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>In response to the user&#x27;s initial request (GET), only the <em>Load</em> event for lines 24–31 is processed. For subsequent requests (POST) made via the menu links, two events are processed:</p>
+<p>In response to the user&#x27;s initial request (GET), only the <em>Load</em> event in lines 24–31 is processed. For subsequent requests (POST) made via the menu links, two events are processed:</p>
 <ol>
   <li>the <i>Load</i> event (24–31), but the Boolean test <i>Page.IsPostback </i>(line 27) ensures that nothing happens.
   </li>
@@ -1556,13 +1556,13 @@
 <ul>
   <li>lines 33–36: handle the click on the link [1]
   </li>
-  <li>lines 38-41: handle the click on the link [2]
+  <li>lines 38–41: handle the click on the link [2]
   </li>
-  <li>lines 43-46: handle the click on the link [3]
+  <li>lines 43–46: handle the click on the link [3]
   </li>
   <li>lines 58-61: handle the click on the link [4]
   </li>
-  <li>lines 48-51: handle clicks on the link [5]
+  <li>lines 48-51: handle the click on the link [5]
   </li>
   <li>lines 53-56: handle the click on the link [6]
   </li>
@@ -1579,7 +1579,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Recommended reading</strong>: [1] reference, <a href="https://stahe.github.io/aspnet1.1-avril-2004/"><u><span style="color: #0563c1">WEB development with ASP.NET 1.1</span></u></a>: </p>
 <ul>
-<li>[Repeater] Component and Data Binding section.</li>
+<li>[Repeater] component and data binding.</li>
 </ul>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>The first view presented to the user is that of the empty form:</p>
@@ -1718,7 +1718,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <h3 id="866-action-clear-the-simulation">8.6.6. <span style="color: #4f81bd">Action: Clear the simulation</span></h3>
-<p>Once back at the simulation form, the user can request to clear the current entries:</p>
+<p>Once back on the simulation form, the user can request to clear the current entries:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000063C000001AC3EF53359.png" width="680" height="182" style="display:inline-block; margin:4px;width:17.997cm;height:4.826cm;" class="odt-zoomable" data-zoom-src="images/100000000000063C000001AC3EF53359.png" /></td></tr></table>
 
 <p>The procedure that handles this action might look like the following:</p>
@@ -1804,7 +1804,7 @@
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C900000184033ED0E4.png" width="613" height="194" style="display:inline-block; margin:4px;width:16.207cm;height:5.133cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C900000184033ED0E4.png" /></td></tr></table>
 
-<p>The procedure that handles this action might look like the following:</p>
+<p>The procedure that handles this action might look something like this:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonTerminerSession_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
@@ -1820,7 +1820,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Question</strong>: Complete the code above</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p><strong>Practical exercise</strong>: Implement the previous web application on your machine. Add Ajax functionality to it.</p>
+<p><strong>Practical exercise</strong>: Implement the previous web application on a machine. Add Ajax functionality to it.</p>
 
 
 

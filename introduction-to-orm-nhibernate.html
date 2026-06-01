@@ -545,15 +545,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#632-configuring-the-mapping-tables-classes" class="md-nav__link">
+  <a href="#632-configuring-the-class-mapping-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3.2. Configuring the mapping tables &lt;--&gt; classes
+        6.3.2. Configuring the &lt;--&gt;class mapping table
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.3.2. Configuring the mapping tables &lt;--&gt; classes">
+    <nav class="md-nav" aria-label="6.3.2. Configuring the &lt;--&gt;class mapping table">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -579,10 +579,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6323-mapping-of-the-employes-table" class="md-nav__link">
+  <a href="#6323-mapping-of-table-employes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3.2.3. Mapping of the [employes] table
+        6.3.2.3. Mapping of table [employes]
       
     </span>
   </a>
@@ -812,14 +812,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie---version-5---aspnet-application--web-service.html" class="md-nav__link">
+      <a href="the-application-simupaie---version-5---aspnet--web-service.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. The [SimuPaie] – version 5 – ASP.NET application / web service
+    9. The application [SimuPaie] – version 5 – ASP.NET / web service
   
 
     
@@ -866,14 +866,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-simupaie-application---version-7---aspnet--multi-views--multi-pages.html" class="md-nav__link">
+      <a href="the-simupaie-application---version-7---aspnet--multi-view--multi-page.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. The [SimuPaie] application – version 7 – ASP.NET / multi-views / multi-pages
+    11. The [SimuPaie] application – version 7 – ASP.NET / multi-view / multi-page
   
 
     
@@ -994,7 +994,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Prerequisites</strong></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>In the [débutant-intermédiaire-avancé] framework, this document is part of the [intermédiaire] section. Understanding it requires several prerequisites, which can be found in some of the documents I have written:</p>
+<p>In the [débutant-intermédiaire-avancé] series, this document is part of the [intermédiaire] section. Understanding it requires several prerequisites, which can be found in some of the documents I have written:</p>
 <ol>
   <li><b>C# 2008</b>: [Apprentissage du langage C# Version 3.0 avec le Framework .NET 3.5 ]
   </li>
@@ -1002,7 +1002,7 @@
   </li>
 </ol>
 
-<p>Reading recommendations are sometimes provided at the beginning of paragraphs in this document. They reference the preceding documents.</p>
+<p>Reading recommendations are sometimes provided at the beginning of paragraphs in this document. They refer to the preceding documents.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Tools</strong></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
@@ -1010,11 +1010,11 @@
 <ul>
   <li><b>Nhibernate 3.2 </b>available at Url [http://nhforge.org/Default.aspx]
   </li>
-  <li><b>Spring.net 1.3.2 </b>available at Url [http://www.springframework.net]. The Spring.net framework is very feature-rich. Here, we will use only the library it provides to facilitate the use of the Nhibernate framework. 
+  <li><b>Spring.net 1.3.2 </b>available at Url [http://www.springframework.net]. The Spring.net framework is very feature-rich. Here, we will only use the library it provides to facilitate the use of the Nhibernate framework. 
   </li>
-  <li><b>Log4net 1.2.10 </b>available at Url [http://logging.apache.org/log4net]. This logging framework is used by Nhibernate.
+  <li><b>Log4net 1.2.10 </b>is available at Url and [http://logging.apache.org/log4net]. This logging framework is used by Nhibernate.
   </li>
-  <li><b>Nunit 2.5 </b>is available in Url and [http://www.nunit.org/]. This unit testing framework is the equivalent for .NET of the JUnit framework for the Java platform.
+  <li><b>Nunit 2.5 </b>is available at Url [http://www.nunit.org/]. This unit testing framework is the .NET equivalent of the JUnit framework for the Java platform.
   </li>
   <li>The ADO.NET 6.4.4 driver for SGBD MySQL 5 is available at Url [http://dev.mysql.com/downloads/connector/net]
   </li>
@@ -1039,7 +1039,7 @@
 <p>The [dao] layer is thus dependent on the SGBD used. Certain frameworks (Linq, Ibatis.net, NHibernate) remove this constraint by adding an additional layer between the [dao] layer and the [ADO.NET] connector of the SGBD being used. Here, we will use the [NHibernate] framework.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000075B00000109312D915D.png" width="680" height="96" style="display:inline-block; margin:4px;width:17.997cm;height:2.533cm;" class="odt-zoomable" data-zoom-src="images/100000000000075B00000109312D915D.png" /></td></tr></table>
 
-<p>In the diagram above, the [dao] layer no longer communicates with the [ADO.NET] connector but with the NHibernate framework, which provides it with an interface independent of the [ADO.NET] connector being used. This architecture allows you to change the SGBD without changing the [dao] layer. Only the [ADO.NET] connector needs to be changed.</p>
+<p>In the diagram above, the [dao] layer no longer communicates with the [ADO.NET] connector but with the NHibernate framework, which will provide it with an interface independent of the [ADO.NET] connector being used. This architecture allows you to change the SGBD connector without changing the [dao] layer. Only the [ADO.NET] connector needs to be changed.</p>
 <p><span id="bd-mysql-nhibernate" name="bd-mysql-nhibernate" class="odt-bookmark-anchor"></span>
 <span id="refheading1883321168461456" name="refheading1883321168461456" class="odt-bookmark-anchor"></span></p>
 <h2 id="62-the-sample-database">6.2. <span style="color: #4f81bd">The sample database</span></h2>
@@ -1148,7 +1148,7 @@
 <p>To introduce the configuration and use of NHibernate, we will use the following architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F30000011AD9BF416D.png" width="634" height="141" style="display:inline-block; margin:4px;width:16.762cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F30000011AD9BF416D.png" /></td></tr></table>
 
-<p>A [1] console program will manipulate data from the preceding [2] database via the [NHibernate] [3] framework. This will lead us to present:</p>
+<p>A [1] console program will manipulate data from the preceding database [2] via the [NHibernate] [3] framework. This will lead us to present:</p>
 <ul>
   <li>the configuration files for NHibernate
   </li>
@@ -1319,19 +1319,19 @@
   </li>
   <li>Line 4: defines the connection provider, the entity from which a connection to the database is requested. The value of the [connection.provider] property is the name of a NHibernate class. This property does not depend on the SGBD used.
   </li>
-  <li>Line 6: the ADO driver to use. This is the name of a NHibernate class specialized for a given SGBD, in this case MySQL. Line 6 has been commented out because it is not essential.
+  <li>Line 6: the ADO driver NET to be used. This is the name of a NHibernate class specialized for a given SGBD, in this case MySQL. Line 6 has been commented out, as it is not essential.
   </li>
   <li>Line 8: The [dialect] property sets the SQL dialect to be used with SGBD. Here, it is the dialect of SGBD MySQL.
   </li>
 </ul>
 
-<p>If we change to SGBD, how do we find its dialect NHibernate? Let’s go back to the previous C# project and double-click on DLL [NHibernate] in the [References] tab:</p>
+<p>If we change to SGBD, how do we find its dialect, NHibernate? Let’s go back to the previous C# project and double-click on DLL [NHibernate] in the [References] tab:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000711000003CF68A5B2DA.png" width="680" height="367" style="display:inline-block; margin:4px;width:17.997cm;height:9.7cm;" class="odt-zoomable" data-zoom-src="images/1000000000000711000003CF68A5B2DA.png" /></td></tr></table>
 
 <ul>
   <li>In [1], the [Explorateur d&#x27;objets] tab displays a number of DLL entries, including those referenced by the project.
   </li>
-  <li>in [2], the DLL [NHibernate]
+  <li>In [2], the DLL and [NHibernate]
   </li>
   <li>in [3], the DLL and [NHibernate] developed. Here you will find the various namespaces defined there.
   </li>
@@ -1367,7 +1367,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Lines 9–11: the database connection string. This string is in the form &quot;param1=val1;param2=val2; ...&quot;. The set of parameters defined in this way allows the SGBD driver to establish a connection. The format of this connection string depends on the SGBD being used. Connection strings for the main SGBDs can be found on the [http://www.connectionstrings.com/] website. Here, the string &quot;<i>Server=localhost;Database=dbpam_nhibernate;Uid=root;Pwd=;</i>&quot; is a connection string for the SGBD MySQL. It indicates that:
+  <li>Lines 9–11: the database connection string. This string is in the format &quot;param1=val1;param2=val2; ...&quot;. The set of parameters defined in this way allows the SGBD driver to establish a connection. The format of this connection string depends on the SGBD being used. Connection strings for the main SGBDs can be found on the [http://www.connectionstrings.com/] website. Here, the string &quot;<i>Server=localhost;Database=dbpam_nhibernate;Uid=root;Pwd=;</i>&quot; is a connection string for the SGBD MySQL. It indicates that:
     <ul>
       <li><i>Server=localhost; </i>: the SGBD is on the same machine as the client attempting to open the connection
       </li>
@@ -1391,7 +1391,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004E30000010322F35F7D.png" width="626" height="130" style="display:inline-block; margin:4px;width:16.551cm;height:3.427cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E30000010322F35F7D.png" /></td></tr></table>
 
 <p>If the console program were a direct client of the ADO.NET and wanted the list of employees, it would have the connector execute a SQL <em>Select</em> command, and it would receive in return an object of type <em>IDataReader</em> that it would have to process to obtain the list of employees initially desired.</p>
-<p>In the example above, the console program is the client for NHibernate, and NHibernate is the client for the ADO connector NET. We will see later that API from NHibernate will allow the console program to request the list of employees. NHibernate will translate this request into a SQL <em>Select</em> statement, which it will have the ADO connector NET execute. The connector will return an object of type <em>IDataReader</em>. Using this object, Nhibernate must be able to build the list of employees that was requested. This is made possible through configuration. Each table in the database is associated with a C# class. Thus, based on the rows of the [employes] table returned by <em>IDataReader</em>, NHibernate will be able to construct a list of objects representing employees and return it to the console program. These <strong>table-to-class</strong> mappings are defined in configuration files. NHibernate uses the term &quot;mapping&quot; to describe these relationships.</p>
+<p>In the example above, the console program is the client for NHibernate, and NHibernate is the client for the ADO connector NET. We will see later that API from NHibernate will allow the console program to request the list of employees. NHibernate will translate this request into a SQL <em>Select</em> command, which it will have the ADO connector NET execute. The connector will return an object of type <em>IDataReader</em>. Using this object, Nhibernate must be able to build the list of employees that was requested. This is made possible through configuration. Each table in the database is associated with a C# class. Thus, based on the rows of the [employes] table returned by <em>IDataReader</em>, NHibernate will be able to construct a list of objects representing employees and return it to the console program. These <strong>table-to-class</strong> mappings are defined in configuration files. NHibernate uses the term &quot;mapping&quot; to describe these relationships.</p>
 <p>Let’s return to line 13 below:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;!-- configuration NHibernate --&gt;</span></span></span>
@@ -1428,12 +1428,12 @@
 <p>From the previous explanation, we can see that the mapping <strong>table &lt;--&gt; class</strong> files must be in the [pam-nhibernate-demos.exe] [6] file.</p>
 <p><span id="refheading1883381168461456" name="refheading1883381168461456" class="odt-bookmark-anchor"></span>
 <span id="nhibernate-demos-mapping" name="nhibernate-demos-mapping" class="odt-bookmark-anchor"></span></p>
-<h3 id="632-configuring-the-mapping-tables-classes">6.3.2. <span style="color: #4f81bd"><strong>Configuring the mapping tables &lt;--&gt; classes</strong></span></h3>
+<h3 id="632-configuring-the-class-mapping-table">6.3.2. <span style="color: #4f81bd"><strong>Configuring the &lt;--&gt;class mapping table</strong></span></h3>
 <p>Let’s return to the architecture of the project under consideration:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004DC000000F1999B5FF5.png" width="622" height="120" style="display:inline-block; margin:4px;width:16.457cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DC000000F1999B5FF5.png" /></td></tr></table>
 
 <ul>
-  <li>In [1], the console program uses the methods of API from the NHibernate framework. These two blocks exchange objects.
+  <li>in [1], the console program uses the methods of API from the NHibernate framework. These two blocks exchange objects.
   </li>
   <li>In [2], NHibernate uses the API of a .NET connector. It sends commands from SQL to the target SGBD.
   </li>
@@ -1454,26 +1454,26 @@
 <h4 id="6321-mapping-of-table-cotisations">6.3.2.1. <span style="color: #4f81bd">Mapping of table [cotisations]</span></h4>
 <p>Consider the table [cotisations]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000017C000000916AACFD59.png" width="266" height="102" style="display:inline-block; margin:4px;width:7.04cm;height:2.686cm;" class="odt-zoomable" data-zoom-src="images/100000000000017C000000916AACFD59.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>IDclé
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> primary table of type autoincrementVERSIONn</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">primary key of type autoincrement</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">version of enregistrementSECUtaux</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">version record number</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>SECU
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> (percentage) of contribution for social security socialeRETRAITEtaux</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">social security contribution rate (percentage)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>RETRAITE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> contribution rate for the retraiteCSGDtaux</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">pension contribution rate</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CSGD
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> contribution rate for the general social contribution déductibleCSGRDStaux</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">contribution rate for the deductible general social contribution</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CSGRDS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> contribution rate for the general social contribution and the social debt repayment contribution</div></td></tr></table></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">contribution rate for the general social contribution and the social debt repayment contribution</div></td></tr></table></td></tr></table>
 
-<p>A row in this table can be encapsulated in an object of type [Cotisations.cs]<span id="cotisation-nhibernate" name="cotisation-nhibernate" class="odt-bookmark-anchor"></span> as follows:</p>
+<p>A row from this table can be encapsulated in an object of type [Cotisations.cs]<span id="cotisation-nhibernate" name="cotisation-nhibernate" class="odt-bookmark-anchor"></span> s follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> PamNHibernateDemos {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Cotisations</span> {</span></span>
@@ -1520,11 +1520,11 @@
 <ul>
   <li>The mapping file is a Xml file defined within the &lt;hibernate-mapping&gt; tag (lines 2 and 14)
   </li>
-  <li>Line 4: The &lt;class&gt; tag links a database table to a class. Here, the table [COTISATIONS] (<i>table</i> attribute) and the class [Cotisations] (<i>name</i> attribute). In .NET, a class must be defined by its full name (including the namespace) and by the assembly that contains it. These two pieces of information are provided by line 3. The first (namespace) can be found in the class definition. The second (assembly) is the name of the project’s assembly. We have already explained how to find this name.
+  <li>Line 4: The &lt;class&gt; tag links a database table to a class. Here, the table is [COTISATIONS] (<i>table</i> attribute) and the class is [Cotisations] (<i>name</i> attribute). In .NET, a class must be defined by its full name (including the namespace) and by the assembly that contains it. These two pieces of information are provided by line 3. The first (namespace) can be found in the class definition. The second (assembly) is the name of the project’s assembly. We have already explained how to find this name.
   </li>
   <li>Lines 5–7: The &lt;id&gt; tag is used to define the mapping of the primary key for the [cotisations] table.
     <ul>
-      <li>Line 5: The attribute <i>name </i>refers to the field in class [Cotisations] that will hold the primary key of table [cotisations]. The <i>column</i> attribute designates the column in the [cotisations] table that serves as the primary key. The <i>unsaved-value</i> attribute is used to define a primary key that has not yet been generated. This value allows NHibernate to know how to save a [Cotisations] object in the [cotisations] table. If this object has a field Id=0, it will perform a SQL INSERT operation; otherwise, it will perform a SQL UPDATE operation. The value of <i>unsaved-value </i>depends on the type of the <i>Id</i> field in the [Cotisations] class. Here, it is of type <i>int, </i>and the default value for a <i>int</i> type is 0. A [Cotisations] object that has not yet been saved (and therefore has no primary key) will thus have its Id field set to 0. If the <i>Id</i> field had been of type <i>Object </i>or a derived type, we would have written <i>unsaved-value=null.  </i>
+      <li>Line 5: The <i>name</i> attribute designates the field in the [Cotisations] class that will receive the primary key from the [cotisations] table. The <i>column</i> attribute designates the column in table [cotisations] that serves as the primary key. The <i>unsaved-value</i> attribute is used to define a primary key that has not yet been generated. This value allows NHibernate to know how to save a [Cotisations] object in the [cotisations] table. If this object has a field Id=0, it will perform an operation SQL INSERT; otherwise, it will perform an operation SQL UPDATE. The value of <i>unsaved-value </i>depends on the type of the <i>Id</i> field in the [Cotisations] class. Here, it is of type <i>int, </i>and the default value for a <i>int</i> type is 0. A [Cotisations] object that has not yet been saved (and therefore has no primary key) will thus have its Id field set to 0. If the <i>Id</i> field had been of type <i>Object </i>or a derived type, we would have written <i>unsaved-value=null.  </i>
       </li>
       <li>Line 6: When NHibernate needs to save an object [Cotisations] with a field Id=0, it must perform a INSERT operation on the database during which it must obtain a value for the record’s primary key. Most SGBDs have a proprietary method to automatically generate this value. The &lt;generator&gt; tag is used to define the mechanism to be used for generating the primary key. The &lt;generator class=&quot;native&quot;&gt; tag indicates that the default mechanism of the SGBD being used should be employed. We saw in Section<a href="#autoincrement"><u><span style="color: #0563c1"> 6.2</span></u></a> that the primary keys of our three MySQL tables had the <i>autoincrement</i> attribute. During its operations, INSERT will not provide a value for the ID column of the added record, leaving MySQL to generate this value.
       </li>
@@ -1541,26 +1541,26 @@
 <h4 id="6322-mapping-of-table-indemnites">6.3.2.2. <span style="color: #4f81bd">Mapping of table [indemnites]</span></h4>
 <p>Consider the table [indemnites]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019D0000009D663003AE.png" width="266" height="101" style="display:inline-block; margin:4px;width:7.04cm;height:2.676cm;" class="odt-zoomable" data-zoom-src="images/100000000000019D0000009D663003AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>IDclé
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> primary key of type autoincrementVERSIONn</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">primary key of type autoincrement</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">° of version of the enregistrementBASE_HEUREcoût</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">version record number</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>BASE_HEURE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> in euros for one hour of gardeENTRETIEN_JOURindemnité</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">cost in euros for one hour of on-call duty</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ENTRETIEN_JOUR
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> in euros per day for gardeREPAS_JOURindemnité</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Daily allowance in euros</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>REPAS_JOUR
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> Meal allowance in euros per day for gardeINDEMNITES_CPindemnités</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Meal allowance in euros per day of care</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>INDEMNITES_CP
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> of paid leave. This is a percentage to be applied to the base salary.</div></td></tr></table></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Paid leave allowances. This is a percentage to be applied to the base salary.</div></td></tr></table></td></tr></table>
 
-<p>A row in this table can be encapsulated in an object of type [Indemnites]<span id="indemnites-nhibernate" name="indemnites-nhibernate" class="odt-bookmark-anchor"></span> as follows:</p>
+<p>A row in this table can be encapsulated in an object of type [Indemnites]<span id="indemnites-nhibernate" name="indemnites-nhibernate" class="odt-bookmark-anchor"></span> s follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> PamNHibernateDemos {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Indemnites</span> {</span></span>
@@ -1609,35 +1609,35 @@
 <p>There is nothing new here compared to the mapping file explained earlier. The only difference is on line 9. The unique=&quot;true&quot; attribute indicates that there is a uniqueness constraint on the [INDICE] column in the [indemnites] table: there cannot be two rows with the same value for the [INDICE] column.</p>
 <p><span id="mapping-employes" name="mapping-employes" class="odt-bookmark-anchor"></span>
 <span id="refheading2522001168461456" name="refheading2522001168461456" class="odt-bookmark-anchor"></span></p>
-<h4 id="6323-mapping-of-the-employes-table">6.3.2.3. <span style="color: #4f81bd">Mapping of the [employes] table</span></h4>
+<h4 id="6323-mapping-of-table-employes">6.3.2.3. <span style="color: #4f81bd">Mapping of table [employes]</span></h4>
 <p>Consider the table [employes]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000163000000CBCEC3582C.png" width="248" height="142" style="display:inline-block; margin:4px;width:6.57cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/1000000000000163000000CBCEC3582C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>IDclé
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> primary key of type autoincrementVERSIONn</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">primary key of type autoincrement</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>VERSION
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">° of version of enregistrementPRENOMprénom</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Record ID of version</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>PRENOM
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> from employéNOMson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">employee&#x27;s first name</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>NOM
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> nomADRESSEson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">employee&#x27;s last name</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ADRESSE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> adresseCPson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">their address</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>CP
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> postalVILLEsa</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">his/her zip code</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>VILLE
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> villeINDEMNITE_IDclé</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">his/her city</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>INDEMNITE_ID
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"> Foreign key on INDEMNITES (ID)</div></td></tr></table></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">foreign key on INDEMNITES(ID)</div></td></tr></table></td></tr></table>
 
-<p>The new feature compared to the previous tables is the presence of a <strong>foreign key</strong>: the [INDEMNITE_ID] column is a foreign key on the [ID] column of the [INDEMNITES] table. This field references the row in the [INDEMNITES] table to be used to calculate the employee&#x27;s indemnites.</p>
+<p>The new feature compared to the previous tables is the presence of a <strong>foreign key</strong>: the [INDEMNITE_ID] column is a foreign key on the [ID] column of the [INDEMNITES] table. This field references the row in the [INDEMNITES] table to be used to calculate the employee&#x27;s indemnites values.</p>
 <p><span id="employe-nhibernate" name="employe-nhibernate" class="odt-bookmark-anchor"></span>The [Employe] class, which is a representation of the [employes] table, could be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> PamNHibernateDemos {</span></span>
@@ -1699,7 +1699,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>The table [EMPLOYES] has a foreign key [INDEMNITE_ID] that references the column [ID] in the table [INDEMNITES]. Multiple (many) rows in the [EMPLOYES] table can reference a single (one) row in the [INDEMNITES] table. Hence the name of the &lt;many-to-one&gt; tag. This tag has the following attributes here:</p>
+<p>Table [EMPLOYES] has a foreign key [INDEMNITE_ID] that references column [ID] in table [INDEMNITES]. Multiple (many) rows in the [EMPLOYES] table can reference a single (one) row in the [INDEMNITES] table. Hence the name of the &lt;many-to-one&gt; tag. This tag has the following attributes here:</p>
 <ul>
   <li><b>column</b>: specifies the name of the column in table [EMPLOYES] that serves as a foreign key in table [INDEMNITES]
   </li>
@@ -1707,7 +1707,7 @@
   </li>
   <li><b>cascade</b>: this attribute can have various values:
     <ul>
-      <li><i>save-update</i>: an insert (save) or update operation on the [Employe] object must be propagated to the [Indemnites] object it contains.
+      <li><i>save-update</i>: an insert (save) or update operation on the object [Employe] must be propagated to the object [Indemnites] that it contains.
       </li>
       <li><i>delete</i>: The deletion of an object [Employe] must be propagated to the object [Indemnites] that it contains.
       </li>
@@ -1744,7 +1744,7 @@
 <ul>
   <li>In [1], select the properties of a mapping file
   </li>
-  <li>In [2], the build action must be [Ressource incorporée] [3]. This means that when the project is built, the mapping file must be included in the generated assembly.
+  <li>in [2], the build action must be [Ressource incorporée] [3]. This means that when the project is built, the mapping file must be included in the generated assembly.
   </li>
 </ul>
 <p><span id="refheading1883401168461456" name="refheading1883401168461456" class="odt-bookmark-anchor"></span></p>
@@ -1754,7 +1754,7 @@
 
 <p>In the previous sections, we configured NHibernate in two ways:</p>
 <ul>
-  <li>In [App.config], we configured the database connection
+  <li>in [App.config], we configured the database connection
   </li>
   <li>we wrote, for each table in the database, the table’s image class and the mapping file that allows us to convert between the class and the table.
   </li>
@@ -1763,7 +1763,7 @@
 <p>We still need to explore the methods offered by NHibernate for manipulating database data: insert, update, delete, and list.</p>
 <p><span id="refheading1883421168461456" name="refheading1883421168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="641-the-sessionfactory-object">6.4.1. <span style="color: #4f81bd">The SessionFactory object</span></h3>
-<p>All NHibernate operations are performed within a session. A typical sequence of NHibernate operations is as follows:</p>
+<p>Every NHibernate operation is performed within a session. A typical sequence of NHibernate operations is as follows:</p>
 <ul>
   <li>open a NHibernate session
   </li>
@@ -1801,7 +1801,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2b91af">ISessionFactory</span><span style="color:#2b91af"> </span>sessionFactory = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Configuration</span>().Configure().BuildSessionFactory();</span></span>
 </code></pre></div>
 
-<p>The <strong>Configuration</strong> class is a class in the NHibernate framework. The previous statement uses the NHibernate configuration section in [App.config]. The resulting [ISessionFactory] object then has the:</p>
+<p>The <strong>Configuration</strong> class is a class of the NHibernate framework. The previous statement uses the NHibernate configuration section in [App.config]. The resulting [ISessionFactory] object then has the:</p>
 <ul>
   <li>information to create a connection to the target database
   </li>
@@ -1810,7 +1810,7 @@
 </ul>
 <p><span id="refheading1883441168461456" name="refheading1883441168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="642-the-nhibernate-session">6.4.2. <span style="color: #4f81bd">The NHibernate session</span></h3>
-<p>Once <em>SessionFactory</em> has been created (this is done only once), you can obtain the sessions needed to perform NHibernate persistence operations. A common code snippet is as follows:</p>
+<p>Once <em>SessionFactory</em> has been created (this is done only once), you can obtain the sessions that allow you to perform persistence operations NHibernate. A common code snippet is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">try{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      // session opening </span></span>
@@ -1852,10 +1852,10 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">closes the session. The objects it contained are synchronized with the database. This synchronization operation is also performed at the end of a transaction. The latter case is the most common.</div><div style="margin:0 0 0.5em 0"><i>session.Close();</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>IQuery CreateQuery(string queryString)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a HQL (Hibernate Query Language) query for later execution.</div><div style="margin:0 0 0.5em 0"><i>IQuery query=session.createQuery(&quot;select e from Employee e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a HQL (Hibernate Query Language) query for later execution.</div><div style="margin:0 0 0.5em 0"><i>IQuery query = session.createQuery(&quot;select e from Employee e&quot;);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="ow">void</span><span class="w"> </span><span class="nx">Delete</span><span class="p">(</span><span class="nx">object</span><span class="w"> </span><span class="nx">obj</span><span class="p">)</span>
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">deletes an object. This object may belong to the session (attached) or not (detached). When the session is synchronized with the database, a SQL DELETE operation will be performed on this object.</div><div style="margin:0 0 0.5em 0"><i>// load an employee from BD</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = session.Get&lt;Employee&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// Delete the employee</i></div><div style="margin:0 0 0.5em 0"><i>session.Delete(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">deletes an object. This object may be part of the session (attached) or not (detached). When the session is synchronized with the database, a SQL or DELETE operation will be performed on this object.</div><div style="margin:0 0 0.5em 0"><i>// Load an employee from BD</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = session.Get&lt;Employee&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// Delete the employee</i></div><div style="margin:0 0 0.5em 0"><i>session.Delete(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>void Flush()
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">forces the session to synchronize with the database. The session&#x27;s contents do not change.</div><div style="margin:0 0 0.5em 0"><i>session.Flush();</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
@@ -1864,13 +1864,13 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">retrieves the object <b>T </b>with primary key <b>id </b>from the database. If this object does not exist, returns a <b>null</b> pointer.</div><div style="margin:0 0 0.5em 0"><i>// Load an employee from BD</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = session.Get&lt;Employee&gt;(143);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>object Save(object obj)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">adds the object <b>obj </b>to the session. This object has no primary key before the <i>Save</i>. After the <i>Save</i>, it has one. During session synchronization, a SQL INSERT operation will be performed on the database.</div><div style="margin:0 0 0.5em 0"><i>// we create an employee</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = new Employee() {...};</i></div><div style="margin:0 0 0.5em 0"><i>// save it</i></div><div style="margin:0 0 0.5em 0"><i>e = session.Save(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">adds the object <b>obj </b>to the session. This object has no primary key before the <i>Save</i>. After the <i>Save</i>, it has one. During session synchronization, a SQL INSERT operation will be performed on the database.</div><div style="margin:0 0 0.5em 0"><i>// create an employee</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = new Employee(){...};</i></div><div style="margin:0 0 0.5em 0"><i>// save it</i></div><div style="margin:0 0 0.5em 0"><i>e = session.Save(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">SaveOrUpdate</span><span class="p">(</span><span class="k">object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">performs a <i>Save</i> operation if <b>obj </b>does not have a primary key, or an <i>Update</i> operation if it already has one.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">void</span><span class="w"> </span><span class="k">Update</span><span class="p">(</span><span class="k">object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">updates the object <b>obj</b> in the database. A SQL UPDATE operation is then performed on the database.</div><div style="margin:0 0 0.5em 0"><i>// load an employee from BD</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = session.Get&lt;Employee&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// we change their name</i></div><div style="margin:0 0 0.5em 0"><i>e.Nom = ...;</i></div><div style="margin:0 0 0.5em 0"><i>// update it in the database</i></div><div style="margin:0 0 0.5em 0"><i>session.Update(e);</i></div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">updates the object <b>obj</b> in the database. A SQL UPDATE operation is then performed on the database.</div><div style="margin:0 0 0.5em 0"><i>// load an employee from BD</i></div><div style="margin:0 0 0.5em 0"><i>Employee e = session.Get&lt;Employee&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// we change their name</i></div><div style="margin:0 0 0.5em 0"><i>e.Nom = ...;</i></div><div style="margin:0 0 0.5em 0"><i>// Update it in the database</i></div><div style="margin:0 0 0.5em 0"><i>session.Update(e);</i></div></td></tr></table>
 
 <p><span id="refheading1883481168461456" name="refheading1883481168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="644-the-iquery-interface">6.4.4. <span style="color: #4f81bd">The IQuery interface</span></h3>
@@ -1889,7 +1889,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns the result of the query as a list of T objects</div><div style="margin:0 0 0.5em 0"><i>IList&lt;Employee&gt; employees = session.createQuery(&quot;select e from Employee e order by e.Nom asc&quot;).List&lt;Employee&gt;();</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>IList List()
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns the result of the query as a list where each element of the list represents a result row from <i>the SELECT statement </i>in the form of an array of objects.</div><div style="margin:0 0 0.5em 0"><i>IList rows = session.createQuery(&quot;select e.Nom, e.Prenom, e.SS from Employee e&quot;).List();</i></div><div style="margin:0 0 0.5em 0"><i>lines[i][j] </i>represents column j of row i in an <b>object</b> type. Thus, lines[10][1] is an <b>object</b> type representing a person&#x27;s first name. Type conversions are generally necessary to retrieve the data in its exact type.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns the result of the query as a list where each element of the list represents a row from the <i>SELECT statement </i>in the form of an array of objects.</div><div style="margin:0 0 0.5em 0"><i>IList rows = session.createQuery(&quot;select e.Nom, e.Prenom, e.SS from Employee e&quot;).List();</i></div><div style="margin:0 0 0.5em 0"><i>lines[i][j] </i>represents column j of row i in an <b>object</b> type. Thus, lines[10][1] is an <b>object</b> type representing a person&#x27;s first name. Type conversions are generally necessary to retrieve the data in its exact type.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>T UniqueResult&lt;T&gt;()
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">returns the first object from the query result</div><div style="margin:0 0 0.5em 0"><i>Employee e = session.createQuery(&quot;select e from Employee e where e.Nom=&#x27;MARTIN&#x27;&quot;).UniqueResult&lt;Employee&gt;();</i></div></td></tr></table>
@@ -1920,7 +1920,7 @@
 <p>The following examples are based on the architecture discussed previously and summarized below. The database is the MySQL [dbpam_nhibernate] database also presented. The examples are [1] console programs using the NHibernate [3] framework to manipulate the [2] database.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000050E000000D610FB9ED8.png" width="647" height="107" style="display:inline-block; margin:4px;width:17.119cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E000000D610FB9ED8.png" /></td></tr></table>
 
-<p>The C# project in which the following examples are embedded is the one already presented:</p>
+<p>The C# project containing the following examples is the one already presented:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000665000002C4A5F74588.png" width="680" height="294" style="display:inline-block; margin:4px;width:17.997cm;height:7.784cm;" class="odt-zoomable" data-zoom-src="images/1000000000000665000002C4A5F74588.png" /></td></tr></table>
 
 <ul>
@@ -1938,7 +1938,7 @@
   </li>
   <li>in [3], the [App.config] file that configures the entire application, including the [NHibernate] framework
   </li>
-  <li>in [4], test console applications. We will present some of these.
+  <li>in [4], and test console applications. It is these that we will present in part.
   </li>
 </ul>
 <p><span id="refheading1883521168461456" name="refheading1883521168461456" class="odt-bookmark-anchor"></span></p>
@@ -2038,17 +2038,17 @@
   </li>
   <li>line 49: a transaction is started
   </li>
-  <li>line 52: HQL query to retrieve the list of employees. Because of the foreign key linking the <i>Employee</i> entity to the <i>Compensation</i> entity, for each employee, we will have their compensation.
+  <li>line 52: query HQL to retrieve the list of employees. Because of the foreign key linking the <i>Employee</i> entity to the <i>Compensation</i> entity, for each employee, we will have their compensation.
   </li>
   <li>Line 60: Query HQL to retrieve the list of allowances.
   </li>
-  <li>Line 68: Query HQL to retrieve the single row from table cotisations.
+  <li>Line 68: Query HQL to retrieve the single row from the cotisations table.
   </li>
   <li>Line 72: End of transaction
   </li>
   <li>Line 73: End of <i>the ITransaction </i>from line 49 – the transaction is automatically closed
   </li>
-  <li>Line 74: End of the <i>using Isession </i>from line 46 – the session is automatically closed.
+  <li>Line 74: End of <i>the using Isession </i>from line 46 – the session is automatically closed.
   </li>
 </ul>
 
@@ -2222,7 +2222,7 @@
   </li>
   <li>an object <i>Cotisations</i> is created on line 108.
   </li>
-  <li>Lines 110, 111: the two Employee entities are persisted in the database
+  <li>Lines 110, 111: The two Employee entities are persisted in the database
   </li>
   <li>line 112: the Cotisations entity is persisted in turn
   </li>
@@ -2250,7 +2250,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">hibernate-mapping</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>Line 15, which maps the foreign key relationship from the <em>Employee</em> entity to the <em>Indemnites</em> entity, has the attribute <em>cascade=&quot; &quot;save-update&quot;</em>, which causes the &quot;<em>save</em>&quot; and &quot;<em>update</em>&quot; operations on the <em>Employee</em> entity to be propagated to the internal <em>Indemnites</em> entity.</p>
+<p>Line 15, which maps the foreign key relationship from the <em>Employee</em> entity to the <em>Indemnites</em> entity, has the attribute <em>cascade= &quot;save-update&quot;</em>, which means that &quot;<em>save</em>&quot; and &quot;<em>update</em>&quot; operations on the <em>Employee</em> entity are propagated to the internal <em>Indemnites</em> entity.</p>
 <p><u><strong>Screen display obtained</strong></u>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>Effacement base -------------------------------------
 <a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>--------------- elimination of employees and related benefits
@@ -2316,7 +2316,7 @@
 <ul>
   <li>line 10: the Select query configured by <i>numSecu </i>to be executed
   </li>
-  <li>line 11: assigning a value to the parameter <i>numSecu </i>and executing the method <i>UniqueResult </i>to obtain a single result.
+  <li>line 11: assigning a value to the <i>numSecu</i> parameter and executing the <i>UniqueResult</i> method to obtain a single result.
   </li>
 </ul>
 
@@ -2338,7 +2338,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction()) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            // create an empty employee</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Employe</span> e = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Employe</span>();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // we create a non-existent indemnity</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // a non-existent allowance is created</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Indemnites</span> i = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 3, BaseHeure = 1.93, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            // associated with the employee</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            e.Indemnites = i;</span></span>
@@ -2471,7 +2471,7 @@
 <ul>
   <li>We have the same code as before, but without a transaction.
   </li>
-  <li>Synchronization of the persistence context with the database will occur when this context is closed, on line 13 (closing the <i>session</i>). The synchronization will trigger two INSERT errors. The second one will fail due to the uniqueness of the INDICE column. But since we are not in a transaction, the first INSERT will not be rolled back.
+  <li>Synchronization of the persistence context with the database will occur when this context is closed, on line 13 (closing the <i>session</i>). The synchronization will trigger two INSERT operations. The second one will fail due to the uniqueness of the INDICE column. But since we are not in a transaction, the first INSERT will not be rolled back.
   </li>
 </ul>
 
